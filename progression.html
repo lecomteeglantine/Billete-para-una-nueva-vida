@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ma progression · Billete para una nueva vida</title>
+<meta name="description" content="Sauvegarder, exporter et importer la progression.">
+<meta name="theme-color" content="#c33b4a">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="route-all">
+<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Progression</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Sauvegarder le travail sans créer de compte.</h1><p class="lead">Les cases cochées sont enregistrées localement. Un fichier peut être exporté puis importé sur un autre appareil.</p></section>
+<section class="section"><div class="grid grid-3"><article class="card"><div class="progress-number" data-progress-count>0</div><h3>objectifs validés</h3></article><article class="card"><div class="progress-number" data-progress-percent>0%</div><h3>du parcours indicatif</h3><div class="progress-bar"><span></span></div></article><article class="card"><h3>Parcours sélectionné</h3><p>Le choix bac+3 ou bac+5 est également conservé dans le navigateur.</p></article></div></section>
+<section class="section"><h2>Exporter ou importer</h2><div class="grid grid-2"><article class="card"><h3>Exporter ma progression</h3><p>Télécharger un petit fichier JSON contenant uniquement les cases cochées, le parcours et les flashcards connues.</p><button class="btn btn-primary" id="exportProgress">Télécharger la sauvegarde</button></article><article class="card"><h3>Importer une sauvegarde</h3><p>Choisir un fichier précédemment exporté. Les données locales actuelles seront remplacées après confirmation.</p><input type="file" id="importFile" accept="application/json"><button class="btn btn-secondary" id="importProgress">Importer</button></article></div></section>
+<section class="section"><h2>Réinitialiser</h2><div class="notice"><p>Cette action efface la progression, les cartes connues et les réglages de parcours sur cet appareil.</p><button class="btn btn-secondary" id="resetProgress">Tout effacer</button></div></section></main>
+<script src="assets/app.js"></script>
+<script src="assets/progress.js"></script>
+</body></html>

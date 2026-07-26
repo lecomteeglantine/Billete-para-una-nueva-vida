@@ -1,0 +1,20 @@
+MISE EN LIGNE SUR GITHUB PAGES — PAS À PAS
+
+1. Télécharger puis décompresser le fichier ZIP.
+2. Sur GitHub, cliquer sur le bouton vert « New » pour créer un dépôt.
+3. Nom conseillé : billete-para-una-nueva-vida
+4. Choisir « Public », puis « Create repository ».
+5. Dans le nouveau dépôt, cliquer sur « uploading an existing file ».
+6. Ouvrir le dossier décompressé.
+7. Sélectionner TOUS les fichiers et le dossier « assets ».
+   Attention : index.html doit être visible à la racine, et non enfermé dans un second dossier.
+8. Faire glisser la sélection dans GitHub.
+9. En bas, cliquer sur « Commit changes ».
+10. Ouvrir « Settings » dans le dépôt.
+11. Dans la colonne de gauche, cliquer sur « Pages ».
+12. Sous « Build and deployment », choisir « Deploy from a branch ».
+13. Choisir la branche « main » et le dossier « / (root) ».
+14. Cliquer sur « Save ».
+15. Attendre quelques minutes puis actualiser la page « Pages » : l’adresse du site apparaîtra.
+
+Le site ne demande ni base de données ni compte externe. La prononciation utilise les voix du navigateur.
