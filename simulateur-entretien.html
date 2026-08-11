@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulateur entretien bac+3 · Billete para una nueva vida</title>
+<meta name="description" content="Simulation complète de la seconde épreuve orale d’admission du CAFEP-CAPES externe bac+3.">
+<meta name="theme-color" content="#c33b4a">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<style>
+.ent-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
+.format-card{background:linear-gradient(145deg,#fff,#fff8e8);border:2px solid #e8b44c}
+.timeline-35{display:grid;grid-template-columns:5fr 10fr 20fr;border-radius:18px;overflow:hidden;margin:1rem 0;border:1px solid var(--line)}
+.timeline-35>div{padding:1rem}.timeline-35>div:nth-child(1){background:#f8e4e6}.timeline-35>div:nth-child(2){background:#f5f8fb}.timeline-35>div:nth-child(3){background:#fff4d9}
+.timeline-35 b{display:block;font-size:1.15rem;color:#17324d}
+.builder textarea{width:100%;min-height:100px;border:1px solid var(--line);border-radius:14px;padding:.8rem;font:inherit;resize:vertical}
+.builder label{display:block;font-weight:900;margin:.9rem 0 .35rem}
+.mode-row{display:flex;gap:.55rem;flex-wrap:wrap}.mode-btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:.65rem .8rem;border-radius:999px;font-weight:900}.mode-btn.active{background:var(--ink);color:#fff}
+.exam-console{border:2px solid #d6e0e8;border-radius:26px;background:#fff;overflow:hidden}
+.console-head{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem 1.2rem;background:#f5f7fa;border-bottom:1px solid var(--line)}
+.console-stage{padding:1.2rem}.console-prompt{font-family:Georgia,serif;font-size:1.35rem;line-height:1.5;background:#fff8e8;border-radius:16px;padding:1rem;margin:1rem 0}
+.timer-big{font-family:Georgia,serif;font-size:1.6rem}
+.q-card{border-left:5px solid #d74858;background:#f7f9fb;padding:1rem;border-radius:0 15px 15px 0;margin:1rem 0}
+.q-card.general{border-left-color:#e8b44c}.q-card h3{margin-bottom:.35rem}
+.key{background:#edf6f2;border:1px solid #c8e2d8;border-radius:14px;padding:1rem;margin-top:.7rem}
+.record-box{border:1px dashed #9fb1c0;border-radius:16px;padding:1rem;margin-top:1rem}audio{width:100%;margin-top:.7rem}
+.rubric{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.rubric label{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem}.rubric input{width:100%}
+.score-big{font-family:Georgia,serif;font-size:3rem;font-weight:900;color:#17324d}
+.warning{border:2px solid #e8b44c;background:#fff8e8;border-radius:18px;padding:1rem}
+@media(max-width:850px){.ent-grid,.rubric{grid-template-columns:1fr}.timeline-35{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="route-bac3">
+<main id="main">
+<section class="page-hero">
+ <div class="breadcrumbs"><a href="index.html">Accueil</a> › <a href="oral.html">Oral</a> › Simulateur entretien</div>
+ <span class="eyebrow">BAC+3 · SECONDE ÉPREUVE D’ADMISSION</span>
+ <h1>35 minutes pour montrer qu’on peut devenir prof.</h1>
+ <p class="lead">Motivation, parcours, réflexion professionnelle, valeurs de la République et analyse d’une situation — avec le rythme réel de l’entretien.</p>
+</section>
+
+<section class="section">
+ <div class="ent-grid">
+  <article class="card">
+   <span class="badge badge-green">FORMAT OFFICIEL</span><h2>35 minutes · coefficient 3 · en français</h2>
+   <div class="timeline-35"><div><b>5 min</b><span>Présentation du parcours et de la motivation</span></div><div><b>10 min</b><span>Échange à partir de cette présentation</span></div><div><b>20 min</b><span>Une question générale + une question contextualisée</span></div></div>
+   <p>Au moins l’une des deux questions des vingt dernières minutes porte sur les <strong>valeurs de la République</strong>. La question contextualisée demande une <strong>analyse et un jugement raisonnable</strong>, pas un protocole d’action.</p>
+  </article>
+  <article class="card format-card">
+   <span class="badge badge-gold">VITESSE</span><h3>Mode d’entraînement</h3>
+   <div class="mode-row" id="speedModes"><button class="mode-btn active" data-speed="1">Durée réelle</button><button class="mode-btn" data-speed=".25">Express ×4</button><button class="mode-btn" data-speed=".1">Drill ×10</button></div>
+   <p>Les questions restent identiques. Seul le chronomètre est raccourci.</p>
+  </article>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div><span class="eyebrow">Avant de lancer le jury</span><h2>Construire la présentation de cinq minutes.</h2><p>Des points d’appui, pas un texte à apprendre mot à mot.</p></div></div>
+ <article class="card builder">
+   <label for="b1">1 · Mon parcours en une phrase</label><textarea id="b1" placeholder="Qui suis-je professionnellement / académiquement aujourd’hui ?"></textarea>
+   <label for="b2">2 · Deux expériences qui prouvent quelque chose</label><textarea id="b2" placeholder="Une expérience n’est utile que si je peux dire ce qu’elle m’a appris sur les élèves, l’enseignement, le travail collectif ou ma propre progression."></textarea>
+   <label for="b3">3 · Pourquoi l’espagnol et pourquoi enseigner ?</label><textarea id="b3" placeholder="Éviter « j’aime transmettre ». Relier discipline, culture, langue, élèves et mission éducative."></textarea>
+   <label for="b4">4 · Ce que ma première expérience du concours m’a permis d’identifier</label><textarea id="b4" placeholder="Une difficulté précise + ce que j’ai changé. Ni excuse, ni récit d’échec."></textarea>
+   <label for="b5">5 · Ma projection dans le métier</label><textarea id="b5" placeholder="Ce que je veux construire et ce que je sais encore devoir apprendre."></textarea>
+   <div class="actions"><button class="btn btn-secondary" id="saveBuilder">Sauvegarder sur cet appareil</button><button class="btn btn-primary" id="startInterview">Lancer l’entretien →</button></div>
+ </article>
+</section>
+
+<section class="section warning">
+ <h2>La règle du simulateur</h2>
+ <p>Quand la question est contextualisée, commence par : <strong>« Quels enjeux cette situation met-elle en jeu ? »</strong> Le bouton « Voir les enjeux » ne te donnera volontairement pas une liste d’actions à exécuter.</p>
+</section>
+
+<section class="section" id="interview" hidden>
+ <div class="section-head"><div><span class="eyebrow">Simulation</span><h2 id="stageHeading">Étape 1 · Présentation</h2></div></div>
+ <div class="exam-console">
+  <div class="console-head"><div><span class="badge badge-green" id="stageBadge">1 / 3</span><strong id="stageName">Présentation de motivation</strong></div><div class="timer-big" id="timer">05:00</div></div>
+  <div class="console-stage">
+    <div class="console-prompt" id="prompt"></div>
+    <div id="questions"></div>
+    <div class="record-box"><strong id="recordStatus">🎙️ Enregistrement facultatif — local uniquement.</strong><div class="actions"><button class="btn btn-secondary" id="recordStart">Enregistrer</button><button class="btn btn-secondary" id="recordStop" disabled>Arrêter</button></div><div id="recordings"></div></div>
+    <div class="actions"><button class="btn btn-primary" id="timerBtn">Démarrer le chrono</button><button class="btn btn-secondary" id="extraQ">Nouvelle relance</button><button class="btn btn-primary" id="nextStage">Étape suivante →</button></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="debrief" hidden>
+ <div class="section-head"><div><span class="eyebrow">Débrief</span><h2>Ce qui donne envie au jury de te confier des élèves.</h2></div></div>
+ <article class="card">
+  <div class="rubric">
+   <label><strong>Présentation : claire et incarnée</strong><input type="range" min="0" max="4" value="2" data-r="presentation"><span>2 / 4</span></label>
+   <label><strong>Français : précision et registre</strong><input type="range" min="0" max="4" value="2" data-r="francais"><span>2 / 4</span></label>
+   <label><strong>Connaissance du service public</strong><input type="range" min="0" max="4" value="2" data-r="service"><span>2 / 4</span></label>
+   <label><strong>Valeurs de la République</strong><input type="range" min="0" max="4" value="2" data-r="valeurs"><span>2 / 4</span></label>
+   <label><strong>Analyse de la situation</strong><input type="range" min="0" max="4" value="2" data-r="analyse"><span>2 / 4</span></label>
+   <label><strong>Réactivité et nuance</strong><input type="range" min="0" max="4" value="2" data-r="interaction"><span>2 / 4</span></label>
+  </div>
+  <p>Score d’entraînement : <span class="score-big" id="score">12 / 24</span></p>
+  <label for="debriefText"><strong>Ce que je dois corriger au prochain entretien</strong></label><textarea id="debriefText" style="width:100%;min-height:100px;border:1px solid var(--line);border-radius:14px;padding:.8rem;font:inherit"></textarea>
+  <div class="actions"><button class="btn btn-primary" id="saveDebrief">Enregistrer le bilan</button><a class="btn btn-secondary" href="francais.html">Travailler le français</a><button class="btn btn-secondary" id="restart">Recommencer</button></div>
+ </article>
+</section>
+
+<section class="section">
+ <h2>Source officielle</h2>
+ <article class="card"><p>Le ministère précise le déroulement, les quatre domaines évalués et surtout la nature de la question contextualisée.</p><a class="btn btn-secondary" href="https://www.devenirenseignant.gouv.fr/concours-externes-bac-3-nos-conseils-pour-reussir-la-seconde-epreuve-orale-d-admission-1545" target="_blank" rel="noopener">Attendus et conseils officiels ↗</a></article>
+</section>
+</main>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+let speed=1,stage=0,interval=null,remaining=300,currentGeneral=null,currentContext=null;
+const builder=["b1","b2","b3","b4","b5"];
+const motivationQs=[
+ "Vous dites vouloir enseigner : qu’est-ce qui vous attire dans le métier au-delà de votre intérêt pour l’espagnol ?",
+ "Quelle expérience de votre parcours vous a le plus appris sur la façon dont on fait progresser quelqu’un ?",
+ "Qu’est-ce qui, dans votre parcours, vous prépare au travail collectif avec d’autres professionnels ?",
+ "Quel aspect du métier vous semble aujourd’hui le plus exigeant ?",
+ "Comment votre expérience d’hispanophone peut-elle être un atout sans vous dispenser de travailler la langue française du métier ?",
+ "Qu’avez-vous changé concrètement dans votre préparation depuis votre première expérience du concours ?",
+ "Que signifie pour vous enseigner une langue vivante et pas seulement la faire parler ?",
+ "Comment réagiriez-vous si votre première année ne ressemblait pas à l’image que vous vous êtes faite du métier ?"
+];
+const general=[
+ {cat:"Valeurs de la République",values:true,q:"Pourquoi l’enseignement de l’espagnol peut-il contribuer à l’éducation à la citoyenneté ?",key:["Relier langue, cultures et altérité à la formation du jugement.","Éviter d’enfermer la citoyenneté dans une seule discipline.","Montrer que comprendre d’autres sociétés aide à interroger stéréotypes et appartenances."]},
+ {cat:"Égalité",values:true,q:"Comment l’École peut-elle contribuer à l’égalité entre les filles et les garçons ?",key:["Égalité de traitement et lutte contre les stéréotypes.","Choix des exemples, des représentations et des interactions en classe.","Dimension collective de la mission éducative."]},
+ {cat:"Discriminations",values:true,q:"Comment l’enseignement des langues peut-il contribuer à la lutte contre les discriminations ?",key:["Travail critique sur stéréotypes, hiérarchies linguistiques et représentations.","Distinguer diversité culturelle et assignation identitaire.","Créer des occasions de décentration et de comparaison raisonnée."]},
+ {cat:"Transition écologique",values:false,q:"Comment l’enseignement de l’espagnol peut-il contribuer aux enjeux de transition écologique ?",key:["Travailler des documents et réalités de l’aire hispanique sans transformer le cours de langue en cours de sciences.","Former à la compréhension, à l’argumentation et au croisement de perspectives.","Relier enjeux locaux et mondiaux."]},
+ {cat:"Épanouissement",values:false,q:"Pourquoi l’École doit-elle s’intéresser au bien-être des élèves ?",key:["Le bien-être n’est pas l’absence d’exigence.","Conditions de sécurité, inclusion et disponibilité pour apprendre.","Prendre en compte l’élève sans sortir du rôle professionnel."]},
+ {cat:"Engagement",values:false,q:"Pourquoi promouvoir la culture de l’engagement des élèves ?",key:["Développer autonomie, responsabilité et participation.","Éviter l’injonction à l’engagement : permettre et accompagner.","Relier engagement, esprit critique et vie collective."]}
+];
+const context=[
+ {cat:"Laïcité",values:true,q:"Un élève refuse de participer à une visite d’un édifice religieux prévue pour son intérêt culturel et patrimonial, au nom de ses convictions. Qu’en pensez-vous ?",key:["Distinguer étude culturelle d’un fait religieux et adhésion à une croyance.","Liberté de conscience et cadre scolaire commun.","Enjeu d’accès égal aux apprentissages et de compréhension culturelle."]},
+ {cat:"Citoyenneté",values:true,q:"En salle des professeurs, un collègue affirme que la citoyenneté n’est pas l’affaire d’un professeur de langue. Qu’en pensez-vous ?",key:["Mission éducative commune à l’ensemble des personnels.","Contribution spécifique des langues : cultures, altérité, esprit critique.","Ne pas réduire citoyenneté à un chapitre ou à une discipline."]},
+ {cat:"Discrimination",values:true,q:"Pendant un cours, un élève formule une généralisation dévalorisante sur un groupe national ou culturel étudié. Qu’en pensez-vous ?",key:["Distinguer opinion personnelle et propos discriminatoire ou stéréotypé.","Responsabilité de l’École dans la lutte contre les discriminations.","Transformer la situation en objet de réflexion sans banaliser le propos."]},
+ {cat:"Neutralité",values:true,q:"Un enseignant utilise régulièrement son cours pour exprimer ses préférences politiques personnelles. Qu’en pensez-vous ?",key:["Neutralité de l’agent public.","Distinguer éducation au débat et prosélytisme personnel.","Exigence de pluralité, rigueur des sources et liberté de conscience des élèves."]},
+ {cat:"Égalité filles-garçons",values:true,q:"Dans un travail de groupe, des élèves attribuent systématiquement la prise de parole publique aux garçons et les tâches de mise en forme aux filles. Qu’en pensez-vous ?",key:["Stéréotypes de genre et répartition des rôles.","Égalité réelle des occasions d’apprendre et de prendre la parole.","Observer les mécanismes plutôt que moraliser les individus."]},
+ {cat:"Épanouissement",values:false,q:"Une élève habituellement très investie se replie, participe moins et semble en difficulté depuis plusieurs semaines. Qu’en pensez-vous ?",key:["L’enseignant observe sans poser de diagnostic médical.","Épanouissement, disponibilité pour apprendre et attention aux signaux durables.","Importance du cadre collectif et des professionnels compétents."]},
+ {cat:"Transition écologique",values:false,q:"Des élèves contestent l’intérêt d’un projet de classe autour de l’eau en Amérique latine en disant que « cela n’a rien à voir avec l’espagnol ». Qu’en pensez-vous ?",key:["Une langue donne accès à des réalités sociales et environnementales de son aire culturelle.","Le contenu doit servir des objectifs linguistiques et culturels explicites.","Former à comprendre et argumenter sur des enjeux contemporains."]},
+ {cat:"Service public",values:false,q:"Un parent demande à l’enseignante de communiquer avec son enfant sur son compte personnel de messagerie instantanée pour aller plus vite. Qu’en pensez-vous ?",key:["Cadre professionnel et protection de la relation éducative.","Séparation des espaces personnels et institutionnels.","Égalité d’accès et traçabilité des communications."]},
+ {cat:"Inclusion",values:false,q:"Un élève ayant des besoins éducatifs particuliers bénéficie d’aménagements ; plusieurs camarades affirment que c’est « injuste » car tout le monde devrait avoir exactement les mêmes règles. Qu’en pensez-vous ?",key:["Égalité ne signifie pas identité absolue de traitement.","Aménagements visant l’accès effectif aux apprentissages.","Expliquer le principe sans exposer la situation personnelle de l’élève."]},
+ {cat:"Langues et stéréotypes",values:true,q:"Un élève se moque de l’accent français très marqué d’un camarade lorsqu’il parle espagnol. Qu’en pensez-vous ?",key:["Dignité et climat d’apprentissage.","Différencier exigence phonologique et humiliation.","Rapport aux accents, norme et discrimination linguistique."]}
+];
+function fmt(s){s=Math.max(0,Math.round(s));return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+function saveBuilder(){localStorage.setItem("billete-entretien-builder",JSON.stringify(Object.fromEntries(builder.map(id=>[id,document.getElementById(id).value]))))}
+function loadBuilder(){const x=JSON.parse(localStorage.getItem("billete-entretien-builder")||"{}");builder.forEach(id=>document.getElementById(id).value=x[id]||"")}
+document.getElementById("saveBuilder").onclick=saveBuilder;
+document.querySelectorAll("#speedModes .mode-btn").forEach(b=>b.onclick=()=>{speed=+b.dataset.speed;document.querySelectorAll("#speedModes .mode-btn").forEach(x=>x.classList.toggle("active",x===b));});
+function pick(arr){return arr[Math.floor(Math.random()*arr.length)]}
+function makePair(){
+ const valuesFromGeneral=Math.random()<.5;
+ currentGeneral=valuesFromGeneral?pick(general.filter(x=>x.values)):pick(general.filter(x=>!x.values));
+ currentContext=valuesFromGeneral?pick(context.filter(x=>!x.values)):pick(context.filter(x=>x.values));
+}
+function stageInfo(){
+ if(stage===0)return {name:"Présentation de motivation",badge:"1 / 3 · PRÉSENTATION",base:300,prompt:"Vous avez cinq minutes. Présentez votre motivation, les éléments de votre parcours et les expériences qui vous conduisent à vous présenter au concours. Montrez ce qu’elles vous ont appris et comment vous vous projetez dans le métier."};
+ if(stage===1)return {name:"Échange sur votre parcours",badge:"2 / 3 · ÉCHANGE",base:600,prompt:"Le jury rebondit sur votre présentation. Répondez directement, donnez des exemples et acceptez de nuancer une formulation si la question révèle une faiblesse."};
+ return {name:"Questions générale et contextualisée",badge:"3 / 3 · ENJEUX",base:1200,prompt:"Vous allez recevoir une question générale et une question contextualisée. L’une des deux porte sur les valeurs de la République. Pour la situation contextualisée : identifiez les enjeux et formulez un jugement raisonnable ; ne récitez pas un plan d’action."};
+}
+function renderStage(){
+ clearInterval(interval);interval=null;const s=stageInfo();remaining=Math.max(1,Math.round(s.base*speed));
+ document.getElementById("stageHeading").textContent="Étape "+(stage+1)+" · "+s.name;document.getElementById("stageBadge").textContent=s.badge;document.getElementById("stageName").textContent=s.name;document.getElementById("timer").textContent=fmt(remaining);document.getElementById("prompt").textContent=s.prompt;document.getElementById("timerBtn").textContent="Démarrer le chrono";
+ const qbox=document.getElementById("questions");qbox.innerHTML="";
+ document.getElementById("extraQ").style.display=stage===0?"none":"inline-flex";
+ if(stage===1)drawRelance();
+ if(stage===2){makePair();renderPair();}
+ document.getElementById("nextStage").textContent=stage===2?"Terminer et débriefer →":"Étape suivante →";
+}
+function drawRelance(){document.getElementById("questions").innerHTML=`<div class="q-card"><h3>Jury</h3><p>${pick(motivationQs)}</p></div>`}
+function keyHtml(item){return `<div class="key" hidden><strong>Enjeux à repérer</strong><ul>${item.key.map(x=>`<li>${x}</li>`).join("")}</ul></div>`}
+function renderPair(){document.getElementById("questions").innerHTML=`<div class="q-card general"><span class="badge">${currentGeneral.cat}</span><h3>Question générale</h3><p>${currentGeneral.q}</p><button class="btn btn-secondary show-key">Voir les enjeux</button>${keyHtml(currentGeneral)}</div><div class="q-card"><span class="badge">${currentContext.cat}</span><h3>Question contextualisée · « Qu’en pensez-vous ? »</h3><p>${currentContext.q}</p><button class="btn btn-secondary show-key">Voir les enjeux</button>${keyHtml(currentContext)}</div>`;document.querySelectorAll(".show-key").forEach(b=>b.onclick=()=>{const k=b.nextElementSibling;k.hidden=!k.hidden;b.textContent=k.hidden?"Voir les enjeux":"Masquer les enjeux";});}
+document.getElementById("extraQ").onclick=()=>{if(stage===1)drawRelance();else if(stage===2){makePair();renderPair();}};
+document.getElementById("timerBtn").onclick=()=>{if(interval){clearInterval(interval);interval=null;document.getElementById("timerBtn").textContent="Reprendre";return;}document.getElementById("timerBtn").textContent="Pause";interval=setInterval(()=>{remaining--;document.getElementById("timer").textContent=fmt(remaining);if(remaining<=0){clearInterval(interval);interval=null;document.getElementById("timerBtn").textContent="Temps écoulé";}},1000)};
+document.getElementById("nextStage").onclick=()=>{clearInterval(interval);interval=null;if(stage<2){stage++;renderStage();document.getElementById("interview").scrollIntoView({behavior:"smooth"});}else{document.getElementById("debrief").hidden=false;document.getElementById("debrief").scrollIntoView({behavior:"smooth"});}};
+document.getElementById("startInterview").onclick=()=>{saveBuilder();document.getElementById("interview").hidden=false;stage=0;renderStage();document.getElementById("interview").scrollIntoView({behavior:"smooth"});};
+
+let rec=null,chunks=[],stream=null;
+document.getElementById("recordStart").onclick=async()=>{try{stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];rec=new MediaRecorder(stream);rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};rec.onstop=()=>{const blob=new Blob(chunks,{type:rec.mimeType||"audio/webm"}),url=URL.createObjectURL(blob),d=document.createElement("div");d.innerHTML=`<audio controls src="${url}"></audio><small>Enregistrement local ; il disparaît au rechargement.</small>`;document.getElementById("recordings").prepend(d);stream.getTracks().forEach(t=>t.stop())};rec.start();document.getElementById("recordStatus").textContent="🔴 Enregistrement en cours…";document.getElementById("recordStart").disabled=true;document.getElementById("recordStop").disabled=false}catch(e){document.getElementById("recordStatus").textContent="Micro indisponible ou permission refusée."}};
+document.getElementById("recordStop").onclick=()=>{if(rec&&rec.state!=="inactive")rec.stop();document.getElementById("recordStatus").textContent="🎙️ Enregistrement terminé.";document.getElementById("recordStart").disabled=false;document.getElementById("recordStop").disabled=true};
+
+function score(){let t=0;document.querySelectorAll("[data-r]").forEach(r=>{t+=+r.value;r.nextElementSibling.textContent=r.value+" / 4"});document.getElementById("score").textContent=t+" / 24"}
+document.querySelectorAll("[data-r]").forEach(r=>r.oninput=score);
+document.getElementById("saveDebrief").onclick=()=>{const vals=Object.fromEntries([...document.querySelectorAll("[data-r]")].map(r=>[r.dataset.r,+r.value]));const total=Object.values(vals).reduce((a,b)=>a+b,0),hist=JSON.parse(localStorage.getItem("billete-entretien-history")||"[]");hist.unshift({date:new Date().toISOString(),score:total,max:24,note:document.getElementById("debriefText").value});localStorage.setItem("billete-entretien-history",JSON.stringify(hist.slice(0,30)));};
+document.getElementById("restart").onclick=()=>{document.getElementById("interview").hidden=true;document.getElementById("debrief").hidden=true;document.querySelector(".builder").scrollIntoView({behavior:"smooth"});};
+loadBuilder();score();
+})();
+</script>
+</body></html>

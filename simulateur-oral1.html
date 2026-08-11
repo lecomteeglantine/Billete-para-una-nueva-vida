@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulateur oral 1 bac+3 · Billete para una nueva vida</title>
+<meta name="description" content="Simulation complète de la première épreuve orale d’admission du CAFEP-CAPES externe bac+3 d’espagnol.">
+<meta name="theme-color" content="#c33b4a">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<style>
+.sim-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:1rem}
+.format-card{background:linear-gradient(145deg,#fff,#fff8e8);border:2px solid #e8b44c}
+.stage-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem;margin:1rem 0}
+.stage-mini{padding:.9rem;border-radius:15px;background:#fff;border:1px solid var(--line)}
+.stage-mini b{display:block;color:var(--red-dark);margin-bottom:.25rem}
+.mode-row,.dossier-tabs{display:flex;gap:.55rem;flex-wrap:wrap}
+.mode-btn,.dossier-btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:.65rem .8rem;border-radius:999px;font-weight:900;cursor:pointer}
+.mode-btn.active,.dossier-btn.active{background:var(--ink);color:white;border-color:var(--ink)}
+.dossier-panel{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.doc-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem}
+.doc-card .doc-no{font-size:.75rem;letter-spacing:.08em;font-weight:900;color:var(--red-dark)}
+.doc-card h3{margin:.35rem 0}
+.external-note{font-size:.92rem;color:var(--muted)}
+.prep-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:1rem}
+.timer-box{background:#172f49;color:#fff;border-radius:22px;padding:1.2rem;position:sticky;top:130px;height:max-content}
+.timer-time{font-family:Georgia,serif;font-size:clamp(2.7rem,7vw,5rem);line-height:1;margin:.5rem 0}
+.timer-label{font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;opacity:.8}
+.timer-box button{margin-top:.5rem}
+.notes-box textarea{width:100%;min-height:140px;border:1px solid var(--line);border-radius:14px;padding:.8rem;font:inherit;resize:vertical;background:#fff}
+.notes-box label{font-weight:900;display:block;margin-top:.85rem;margin-bottom:.35rem}
+.exam-console{border:2px solid #d6e0e8;border-radius:26px;background:#fff;overflow:hidden}
+.console-head{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem 1.2rem;background:#f5f7fa;border-bottom:1px solid var(--line)}
+.console-stage{padding:1.2rem}
+.console-prompt{font-family:Georgia,serif;font-size:1.35rem;line-height:1.5;background:#fff8e8;border-radius:16px;padding:1rem;margin:1rem 0}
+.jury-list{display:grid;gap:.7rem;margin:1rem 0}
+.jury-q{border-left:4px solid #d74858;background:#f8fafc;border-radius:0 12px 12px 0;padding:.8rem 1rem}
+.record-box{border:1px dashed #9fb1c0;border-radius:16px;padding:1rem;margin-top:1rem}
+.record-status{font-weight:900;color:var(--red-dark);margin-bottom:.5rem}
+audio{width:100%;margin-top:.7rem}
+.rubric{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.rubric label{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem}
+.rubric input[type="range"]{width:100%}
+.score-big{font-family:Georgia,serif;font-size:3.2rem;font-weight:900;color:var(--ink)}
+.saved-note{padding:.8rem;background:#eaf6ee;border-radius:12px;margin-top:1rem}
+@media(max-width:900px){.sim-hero,.dossier-panel,.prep-grid,.rubric{grid-template-columns:1fr}.stage-strip{grid-template-columns:1fr 1fr}.timer-box{position:static}}
+@media(max-width:580px){.stage-strip{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="route-bac3">
+<main id="main">
+<section class="page-hero">
+  <div class="breadcrumbs"><a href="index.html">Accueil</a> › <a href="oral.html">Oral</a> › Simulateur oral 1</div>
+  <span class="eyebrow">BAC+3 · PREMIÈRE ÉPREUVE D’ADMISSION</span>
+  <h1>Une heure de concours, vraiment.</h1>
+  <p class="lead">Préparer un dossier, parler dix minutes, encaisser les questions, changer de langue, recommencer — puis regarder précisément ce qui tient et ce qui casse.</p>
+</section>
+
+<section class="section">
+  <div class="sim-hero">
+    <article class="card">
+      <span class="badge badge-green">FORMAT OFFICIEL</span>
+      <h2>3 h de préparation · 1 h d’oral · coefficient 5</h2>
+      <p>Le dossier comporte <strong>quatre documents en espagnol</strong> : un audio ou une vidéo de cinq minutes maximum, un ou deux textes et un ou deux documents iconographiques. Il prend appui sur le programme du concours.</p>
+      <div class="stage-strip">
+        <div class="stage-mini"><b>10 min · ES</b><span>Restituer, analyser et commenter l’audiovisuel puis relier les autres documents.</span></div>
+        <div class="stage-mini"><b>20 min · ES</b><span>Échange : préciser, défendre, approfondir.</span></div>
+        <div class="stage-mini"><b>10 min · FR</b><span>Intérêt culturel et portée interculturelle du dossier.</span></div>
+        <div class="stage-mini"><b>20 min · FR</b><span>Échange : justifier, nuancer et approfondir.</span></div>
+      </div>
+    </article>
+    <article class="card format-card">
+      <span class="badge badge-gold">MODE D’ENTRAÎNEMENT</span>
+      <h3>Choisir la vitesse</h3>
+      <div class="mode-row" id="speedModes">
+        <button class="mode-btn active" data-speed="1">Durée réelle</button>
+        <button class="mode-btn" data-speed="0.25">Express ×4</button>
+        <button class="mode-btn" data-speed="0.1">Drill ×10</button>
+      </div>
+      <p class="external-note">Le mode express raccourcit uniquement les chronomètres. Les consignes et la succession des étapes restent identiques.</p>
+      <div class="actions"><a class="btn btn-secondary" href="https://www.devenirenseignant.gouv.fr/media/18042/download" target="_blank" rel="noopener">Sujet zéro officiel ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="dossiers">
+  <div class="section-head"><div><span class="eyebrow">Choisir le dossier</span><h2>Quatre entraînements, deux axes.</h2><p>Le premier reproduit le sujet zéro officiel ; les trois autres sont des dossiers d’entraînement créés pour le site.</p></div></div>
+  <div class="dossier-tabs" id="dossierTabs"></div>
+  <div id="dossierView"></div>
+</section>
+
+<section class="section" id="preparation">
+  <div class="section-head"><div><span class="eyebrow">Préparation</span><h2>Construire des notes qui servent vraiment à l’oral.</h2></div></div>
+  <div class="prep-grid">
+    <aside class="timer-box">
+      <div class="timer-label">Chronomètre de préparation</div>
+      <div class="timer-time" id="prepTime">03:00:00</div>
+      <div><button class="btn btn-gold" id="prepStart">Démarrer</button> <button class="btn btn-secondary" id="prepReset">Réinitialiser</button></div>
+      <p style="font-size:.9rem;opacity:.8">En mode réel : 3 heures. Tu peux aussi préparer hors écran puis revenir lancer la simulation.</p>
+    </aside>
+    <div class="notes-box card">
+      <label for="notesAudio">1 · Document audiovisuel — sens, forme, implicite</label>
+      <textarea id="notesAudio" placeholder="Contextualisation, contenu essentiel, choix formels, tension..."></textarea>
+      <label for="notesLinks">2 · Liens précis avec les trois autres documents</label>
+      <textarea id="notesLinks" placeholder="Doc 1 ↔ doc 2 ; doc 1 ↔ doc 3 ; doc 1 ↔ doc 4. Un lien précis n’est pas seulement « ils parlent du même thème »."></textarea>
+      <label for="notesCulture">3 · Partie française — intérêt culturel, interculturel et éducatif</label>
+      <textarea id="notesCulture" placeholder="Quels savoirs et quels regards le dossier permet-il de construire ? Quelle confrontation des perspectives ?"></textarea>
+      <label for="notesRisks">4 · Questions que le jury risque de poser</label>
+      <textarea id="notesRisks" placeholder="Points fragiles, termes à définir, choix à justifier, document insuffisamment exploité..."></textarea>
+      <div class="actions"><button class="btn btn-secondary" id="savePrep">Sauvegarder mes notes sur cet appareil</button><button class="btn btn-primary" id="startExam">Passer à l’oral →</button></div>
+      <div id="prepSaved" class="saved-note" hidden>Notes enregistrées localement.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="exam" hidden>
+  <div class="section-head"><div><span class="eyebrow">Simulation</span><h2>Le jury est en face.</h2></div></div>
+  <div class="exam-console">
+    <div class="console-head"><div><span class="badge badge-green" id="stageBadge">ÉTAPE 1 / 4</span><strong id="stageTitle">Exposé en espagnol</strong></div><div><strong id="examTime">10:00</strong></div></div>
+    <div class="console-stage">
+      <div class="console-prompt" id="stagePrompt"></div>
+      <div id="juryQuestions"></div>
+      <div class="record-box">
+        <div class="record-status" id="recordStatus">🎙️ Enregistrement facultatif — rien n’est envoyé au site.</div>
+        <div class="actions"><button class="btn btn-secondary" id="recordStart">Enregistrer</button><button class="btn btn-secondary" id="recordStop" disabled>Arrêter</button></div>
+        <div id="recordings"></div>
+      </div>
+      <div class="actions"><button class="btn btn-primary" id="stageTimer">Démarrer le chrono</button><button class="btn btn-secondary" id="newJuryQ">Nouvelle question du jury</button><button class="btn btn-primary" id="nextStage">Étape suivante →</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="debrief" hidden>
+  <div class="section-head"><div><span class="eyebrow">Débrief</span><h2>Pas « ça s’est bien passé ». Qu’est-ce qui est réellement solide ?</h2></div></div>
+  <article class="card">
+    <div class="rubric" id="rubric">
+      <label><strong>Espagnol : correction et précision</strong><input type="range" min="0" max="4" value="2" data-rubric="es"><span>2 / 4</span></label>
+      <label><strong>Analyse du document audiovisuel</strong><input type="range" min="0" max="4" value="2" data-rubric="av"><span>2 / 4</span></label>
+      <label><strong>Liens entre les quatre documents</strong><input type="range" min="0" max="4" value="2" data-rubric="links"><span>2 / 4</span></label>
+      <label><strong>Français : correction et précision</strong><input type="range" min="0" max="4" value="2" data-rubric="fr"><span>2 / 4</span></label>
+      <label><strong>Intérêt culturel / interculturel</strong><input type="range" min="0" max="4" value="2" data-rubric="culture"><span>2 / 4</span></label>
+      <label><strong>Interaction avec le jury</strong><input type="range" min="0" max="4" value="2" data-rubric="jury"><span>2 / 4</span></label>
+    </div>
+    <p>Score d’entraînement : <span class="score-big" id="rubricScore">12 / 24</span></p>
+    <label for="debriefText"><strong>Une chose à conserver · une chose à corriger au prochain essai</strong></label>
+    <textarea id="debriefText" style="width:100%;min-height:110px;border:1px solid var(--line);border-radius:14px;padding:.8rem;font:inherit"></textarea>
+    <div class="actions"><button class="btn btn-primary" id="saveDebrief">Enregistrer le bilan</button><a class="btn btn-secondary" href="mes-erreurs.html">Voir Mes erreurs</a><button class="btn btn-secondary" id="restartExam">Refaire une simulation</button></div>
+    <div id="debriefSaved" class="saved-note" hidden>Bilan enregistré dans ce navigateur.</div>
+  </article>
+</section>
+
+<section class="section">
+  <h2>Sources officielles</h2>
+  <div class="grid grid-2">
+    <article class="card"><h3>Règlement de l’épreuve</h3><p>Format, quatre documents, durée des deux parties et objectifs de l’évaluation.</p><a href="https://www.devenirenseignant.gouv.fr/les-epreuves-du-capes-externe-bac3-section-langues-vivantes-etrangeres-1427" target="_blank" rel="noopener">Ministère ↗</a></article>
+    <article class="card"><h3>Sujet zéro espagnol</h3><p>Dossier officiel « Langages » : art de rue en Amérique latine, Octavio Paz, Saner et Gabriela Mistral.</p><a href="https://www.devenirenseignant.gouv.fr/media/18042/download" target="_blank" rel="noopener">PDF officiel ↗</a></article>
+  </div>
+</section>
+</main>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+const dossiers=[
+ {id:"zero",label:"Sujet zéro · Langages",axis:"Langages",official:true,
+  intro:"Sujet zéro officiel du ministère : art latino-américain, identité, création et langages visuels.",
+  docs:[
+   ["Document 1 · audiovisuel","El País, « ARTE callejero en LATINOAMÉRICA » (29/05/2023). Le lien vidéo figure dans le sujet officiel.","https://www.youtube.com/watch?v=fx82Tg71oEY"],
+   ["Document 2 · texte","Octavio Paz, extrait de Los privilegios de la vista : pluralité, identité latino-américaine, conflit entre enracinement et cosmopolitisme.","https://www.devenirenseignant.gouv.fr/media/18042/download"],
+   ["Document 3 · image","Edgar « Saner » Flores, La Conquista del Nuevo Mundo por los conquistadores españoles (2013).","https://www.devenirenseignant.gouv.fr/media/18042/download"],
+   ["Document 4 · texte","Gabriela Mistral, « El grito » (1922) : appel à penser et enseigner une Amérique latino-américaine commune.","https://www.devenirenseignant.gouv.fr/media/18042/download"]
+  ],
+  es:["¿Cuál es la tensión principal del documento audiovisual?","¿Qué elementos formales del vídeo apoyan su interpretación?","¿Qué relación precisa establece entre el documento 1 y el texto de Octavio Paz?","¿Qué aporta el documento iconográfico que el vídeo no permite ver de la misma manera?","¿Cómo evita reducir el dossier a una idea general de « identidad latinoamericana »?"],
+  fr:["Qu’entendez-vous précisément par « portée interculturelle » dans ce dossier ?","Quelle connaissance culturelle faut-il maîtriser pour éviter les généralisations sur l’Amérique latine ?","Quel document vous semble le plus difficile à interpréter pour un apprenant et pourquoi ?","Comment justifiez-vous l’inscription du dossier dans « Langages » plutôt que dans un simple thème sur l’art ?","Quelle tension entre unité et diversité traverse l’ensemble du dossier ?"]
+ },
+ {id:"memoria",label:"Transmission familiale",axis:"Vivre entre générations",official:false,
+  intro:"Dossier d’entraînement créé pour le site : mémoire familiale, héritages politiques et transmission entre générations.",
+  docs:[
+   ["Document 1 · audiovisuel","Reportage radiophonique fictif : trois générations d’une famille espagnole confrontent leurs souvenirs et silences autour de la Transition.",""],
+   ["Document 2 · texte","Témoignage fictif d’une petite-fille qui découvre tardivement l’histoire politique de son grand-père.",""],
+   ["Document 3 · image","Photographie fictive d’un album de famille annoté, montrant plusieurs générations lors d’une manifestation puis d’un repas familial.",""],
+   ["Document 4 · campagne","Affiche associative fictive appelant les jeunes à recueillir la mémoire orale de personnes âgées du quartier.",""]
+  ],
+  es:["¿Cómo organiza el reportaje la oposición entre memoria individual y memoria colectiva?","¿Qué papel desempeñan los silencios en el documento audiovisual?","¿En qué se distingue la transmisión voluntaria de la transmisión involuntaria?","¿Qué relación concreta establece entre el audio y el documento iconográfico?","¿Hasta qué punto puede hablarse de conflicto generacional?"],
+  fr:["Quels risques présente l’idée que les personnes âgées seraient automatiquement « dépositaires de la mémoire » ?","Quelle distinction feriez-vous entre mémoire familiale et histoire ?","Pourquoi ce dossier relève-t-il de « Vivre entre générations » ?","Quelle dimension interculturelle peut naître d’une comparaison des pratiques de transmission ?","Quel document oblige le plus à contextualiser ?"]
+ },
+ {id:"vivienda",label:"Habiter ensemble",axis:"Vivre entre générations",official:false,
+  intro:"Dossier d’entraînement : logement, cohabitation intergénérationnelle, autonomie et solidarité.",
+  docs:[
+   ["Document 1 · audiovisuel","Reportage fictif sur un programme de cohabitation entre étudiants et personnes âgées à Madrid.",""],
+   ["Document 2 · texte","Article fictif donnant la parole à une étudiante qui explique ce que cette cohabitation change dans sa conception de l’autonomie.",""],
+   ["Document 3 · infographie","Données fictives sur solitude, prix du logement et nombre de foyers intergénérationnels.",""],
+   ["Document 4 · photo","Photographie fictive d’un repas partagé dans un logement intergénérationnel.",""]
+  ],
+  es:["¿El reportaje presenta la convivencia como solución social o como relación humana?","¿Qué voces faltan en el documento audiovisual?","¿Cómo se construye la noción de autonomía?","¿Qué límites pondría a la interpretación de los datos del dossier?","¿Qué tensión une los cuatro documentos?"],
+  fr:["En quoi ce dossier évite-t-il une opposition caricaturale « jeunes contre vieux » ?","Quelle portée interculturelle peut avoir la question du logement intergénérationnel ?","Que faut-il distinguer entre solidarité, dépendance et réciprocité ?","Quel document apporte une perspective quantitative et quelles en sont les limites ?","Comment justifier précisément l’axe « Vivre entre générations » ?"]
+ },
+ {id:"redes",label:"Langages numériques",axis:"Langages",official:false,
+  intro:"Dossier d’entraînement : langue, réseaux sociaux, création identitaire et rapports de pouvoir.",
+  docs:[
+   ["Document 1 · audiovisuel","Mini-documentaire fictif sur des créateurs hispanophones qui alternent espagnol, langues régionales, anglais et codes visuels sur les réseaux sociaux.",""],
+   ["Document 2 · texte","Tribune fictive sur l’usage du spanglish et la légitimité des pratiques hybrides.",""],
+   ["Document 3 · image","Capture fictive d’une campagne institutionnelle utilisant mèmes, emojis et codes de TikTok.",""],
+   ["Document 4 · poème","Texte poétique fictif jouant sur plusieurs registres et langues pour mettre en scène une identité mobile.",""]
+  ],
+  es:["¿Cómo muestra el vídeo que elegir una lengua puede ser también una toma de posición?","¿Qué diferencia hay entre alternancia lingüística y simple efecto de moda?","¿Qué relación existe entre código visual y código lingüístico?","¿Qué jerarquías sociales aparecen detrás de la noción de « hablar bien »?","¿En qué sentido el dossier habla de poder además de comunicación?"],
+  fr:["Comment éviter de présenter les pratiques hybrides comme un simple « mélange » ?","Quel enjeu interculturel pose la légitimité des variétés linguistiques ?","Pourquoi la notion de norme doit-elle être contextualisée ?","Que permet la confrontation entre langage institutionnel et langage des réseaux ?","En quoi le dossier relève-t-il de « Langages » au sens large ?"]
+ }
+];
+
+let dossier=0,speed=1,prepInterval=null,prepRemaining=10800,stage=0,stageInterval=null,stageRemaining=600;
+const stageData=[
+ {title:"Exposé en espagnol",badge:"ÉTAPE 1 / 4 · ESPAÑOL",base:600,prompt:"Durante 10 minutos: presente y contextualice el documento audiovisual, restituya su sentido explícito e implícito, analice los aspectos formales más pertinentes y explique de forma concisa su relación con cada uno de los otros tres documentos."},
+ {title:"Échange avec le jury en espagnol",badge:"ÉTAPE 2 / 4 · ESPAÑOL",base:1200,prompt:"El jurado le pide que precise, justifique o matice su análisis. No repita su exposición: responda directamente y apoye cada respuesta en un elemento concreto del dossier."},
+ {title:"Exposé en français",badge:"ÉTAPE 3 / 4 · FRANÇAIS",base:600,prompt:"Pendant 10 minutes : explicitez l’intérêt culturel et la portée interculturelle du dossier. Montrez ce que la confrontation des documents permet de comprendre et justifiez l’inscription dans l’axe du programme."},
+ {title:"Échange avec le jury en français",badge:"ÉTAPE 4 / 4 · FRANÇAIS",base:1200,prompt:"Le jury vous demande de préciser, défendre ou infléchir votre analyse. Répondez précisément, sans transformer cette partie en exposé didactique qui ferait oublier les enjeux culturels et interculturels."}
+];
+function fmt(sec,withHours=false){sec=Math.max(0,Math.round(sec));const h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=sec%60;return (withHours||h>0?String(h).padStart(2,"0")+":":"")+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")}
+function cur(){return dossiers[dossier]}
+function renderTabs(){
+ const box=document.getElementById("dossierTabs");box.innerHTML=dossiers.map((d,i)=>`<button class="dossier-btn ${i===dossier?"active":""}" data-i="${i}">${d.label}</button>`).join("");
+ box.querySelectorAll("button").forEach(b=>b.onclick=()=>{dossier=+b.dataset.i;renderTabs();renderDossier();loadNotes();});
+}
+function renderDossier(){
+ const d=cur(),box=document.getElementById("dossierView");
+ box.innerHTML=`<article class="card" style="margin-top:1rem"><span class="badge ${d.official?"badge-gold":"badge-green"}">${d.official?"SUJET ZÉRO OFFICIEL":"DOSSIER D’ENTRAÎNEMENT"}</span><h2>${d.label}</h2><p>${d.intro}</p><p><strong>Axe :</strong> ${d.axis}</p><div class="dossier-panel">${d.docs.map(x=>`<div class="doc-card"><span class="doc-no">${x[0]}</span><p>${x[1]}</p>${x[2]?`<a href="${x[2]}" target="_blank" rel="noopener">Ouvrir la source ↗</a>`:"<span class='external-note'>Support fictif : travaille la structure de réponse, pas la vérification factuelle du document.</span>"}</div>`).join("")}</div></article>`;
+}
+document.querySelectorAll("#speedModes .mode-btn").forEach(b=>b.onclick=()=>{speed=+b.dataset.speed;document.querySelectorAll("#speedModes .mode-btn").forEach(x=>x.classList.toggle("active",x===b));resetPrep();if(!document.getElementById("exam").hidden) renderStage();});
+function resetPrep(){clearInterval(prepInterval);prepRemaining=Math.round(10800*speed);document.getElementById("prepTime").textContent=fmt(prepRemaining,true);document.getElementById("prepStart").textContent="Démarrer";}
+document.getElementById("prepStart").onclick=()=>{if(prepInterval){clearInterval(prepInterval);prepInterval=null;document.getElementById("prepStart").textContent="Reprendre";return;}document.getElementById("prepStart").textContent="Pause";prepInterval=setInterval(()=>{prepRemaining--;document.getElementById("prepTime").textContent=fmt(prepRemaining,true);if(prepRemaining<=0){clearInterval(prepInterval);prepInterval=null;document.getElementById("prepStart").textContent="Temps écoulé";}},1000)};
+document.getElementById("prepReset").onclick=resetPrep;
+const noteIds=["notesAudio","notesLinks","notesCulture","notesRisks"];
+function noteKey(){return "billete-oral1-prep-"+cur().id}
+function saveNotes(){localStorage.setItem(noteKey(),JSON.stringify(Object.fromEntries(noteIds.map(id=>[id,document.getElementById(id).value]))));document.getElementById("prepSaved").hidden=false;setTimeout(()=>document.getElementById("prepSaved").hidden=true,1500)}
+function loadNotes(){const x=JSON.parse(localStorage.getItem(noteKey())||"{}");noteIds.forEach(id=>document.getElementById(id).value=x[id]||"")}
+document.getElementById("savePrep").onclick=saveNotes;
+
+function renderStage(){
+ clearInterval(stageInterval);stageInterval=null;
+ const s=stageData[stage];stageRemaining=Math.max(1,Math.round(s.base*speed));
+ document.getElementById("stageBadge").textContent=s.badge;document.getElementById("stageTitle").textContent=s.title;document.getElementById("examTime").textContent=fmt(stageRemaining);
+ document.getElementById("stagePrompt").textContent=s.prompt;
+ document.getElementById("stageTimer").textContent="Démarrer le chrono";
+ document.getElementById("juryQuestions").innerHTML="";
+ if(stage===1||stage===3) drawJury();
+ document.getElementById("newJuryQ").style.display=(stage===1||stage===3)?"inline-flex":"none";
+ document.getElementById("nextStage").textContent=stage===3?"Terminer et débriefer →":"Étape suivante →";
+}
+function drawJury(){
+ const arr=stage===1?cur().es:cur().fr;
+ const q=arr[Math.floor(Math.random()*arr.length)];
+ const box=document.getElementById("juryQuestions");
+ box.innerHTML=`<div class="jury-list"><div class="jury-q"><strong>${stage===1?"Jurado":"Jury"} :</strong> ${q}</div></div>`;
+}
+document.getElementById("newJuryQ").onclick=drawJury;
+document.getElementById("stageTimer").onclick=()=>{if(stageInterval){clearInterval(stageInterval);stageInterval=null;document.getElementById("stageTimer").textContent="Reprendre";return;}document.getElementById("stageTimer").textContent="Pause";stageInterval=setInterval(()=>{stageRemaining--;document.getElementById("examTime").textContent=fmt(stageRemaining);if(stageRemaining<=0){clearInterval(stageInterval);stageInterval=null;document.getElementById("stageTimer").textContent="Temps écoulé";}},1000)};
+document.getElementById("nextStage").onclick=()=>{clearInterval(stageInterval);stageInterval=null;if(stage<3){stage++;renderStage();document.getElementById("exam").scrollIntoView({behavior:"smooth"});}else{document.getElementById("debrief").hidden=false;document.getElementById("debrief").scrollIntoView({behavior:"smooth"});}};
+document.getElementById("startExam").onclick=()=>{saveNotes();document.getElementById("exam").hidden=false;stage=0;renderStage();document.getElementById("exam").scrollIntoView({behavior:"smooth"});};
+
+let mediaRecorder=null,chunks=[],stream=null;
+document.getElementById("recordStart").onclick=async()=>{
+ try{
+  stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];mediaRecorder=new MediaRecorder(stream);
+  mediaRecorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+  mediaRecorder.onstop=()=>{const blob=new Blob(chunks,{type:mediaRecorder.mimeType||"audio/webm"}),url=URL.createObjectURL(blob),wrap=document.createElement("div");wrap.innerHTML=`<audio controls src="${url}"></audio><div class="external-note">Enregistrement local de cette étape. Il disparaîtra au rechargement de la page.</div>`;document.getElementById("recordings").prepend(wrap);stream.getTracks().forEach(t=>t.stop());};
+  mediaRecorder.start();document.getElementById("recordStatus").textContent="🔴 Enregistrement en cours…";document.getElementById("recordStart").disabled=true;document.getElementById("recordStop").disabled=false;
+ }catch(e){document.getElementById("recordStatus").textContent="Micro non disponible ou permission refusée. Tu peux continuer sans enregistrement."}
+};
+document.getElementById("recordStop").onclick=()=>{if(mediaRecorder&&mediaRecorder.state!=="inactive")mediaRecorder.stop();document.getElementById("recordStatus").textContent="🎙️ Enregistrement terminé.";document.getElementById("recordStart").disabled=false;document.getElementById("recordStop").disabled=true;};
+
+function updateRubric(){let total=0;document.querySelectorAll("[data-rubric]").forEach(r=>{total+=+r.value;r.nextElementSibling.textContent=r.value+" / 4"});document.getElementById("rubricScore").textContent=total+" / 24"}
+document.querySelectorAll("[data-rubric]").forEach(r=>r.oninput=updateRubric);
+document.getElementById("saveDebrief").onclick=()=>{const vals=Object.fromEntries([...document.querySelectorAll("[data-rubric]")].map(r=>[r.dataset.rubric,+r.value]));const total=Object.values(vals).reduce((a,b)=>a+b,0);const log=JSON.parse(localStorage.getItem("billete-oral1-history")||"[]");log.unshift({date:new Date().toISOString(),dossier:cur().label,score:total,max:24,note:document.getElementById("debriefText").value});localStorage.setItem("billete-oral1-history",JSON.stringify(log.slice(0,30)));document.getElementById("debriefSaved").hidden=false;};
+document.getElementById("restartExam").onclick=()=>{document.getElementById("exam").hidden=true;document.getElementById("debrief").hidden=true;document.getElementById("preparation").scrollIntoView({behavior:"smooth"});};
+
+renderTabs();renderDossier();loadNotes();resetPrep();updateRubric();
+})();
+</script>
+</body></html>
