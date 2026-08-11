@@ -13,6 +13,7 @@ const SITE = {
     ['entrainement.html','Entraînement','Diagnostic, QCM, chronomètre, sujets'],
     ['planning.html','Plan de travail','Planning, missions, révisions'],
     ['ressources.html','Ressources','Sources officielles, bibliographies, programmes'],
+    ['ressources-en-ligne.html','Ressources en ligne','Presse, podcasts, vidéos, données, archives et outils du monde hispanophone'],
     ['progression.html','Ma progression','Sauvegarde, export, import, statistiques']
   ]
 };
@@ -21,7 +22,7 @@ const NAV = [
   ['index.html','Accueil'],['programme.html','Programme'],['epreuves.html','Épreuves'],
   ['litterature.html','Littérature'],['civilisation.html','Civilisation'],
   ['traduction.html','Langue'],['didactique.html','Didactique'],['francais.html','Français'],
-  ['oral.html','Oral'],['jury.html','Jury'],['entrainement.html','S’entraîner']
+  ['oral.html','Oral'],['jury.html','Jury'],['ressources-en-ligne.html','Ressources en ligne'],['entrainement.html','S’entraîner']
 ];
 
 function currentFile(){ return location.pathname.split('/').pop() || 'index.html'; }
