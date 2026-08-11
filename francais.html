@@ -41,18 +41,27 @@
   .grammar-source,.grammar-practice-head{display:block}
   .grammar-score{margin-top:1rem;width:max-content}
 }
+
+.active-recall-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0}.active-recall-stat{padding:.85rem 1rem;border:1px solid var(--line);border-radius:16px;background:#fff}.active-recall-stat strong{display:block;font:900 1.7rem Georgia,serif;color:var(--ink)}
+.flash-prompt-lang{font-size:.75rem;letter-spacing:.12em;font-weight:900;color:var(--red-dark);margin:.7rem 0}.flash-answer-panel{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--line)}.recall-ratings{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.ft-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.ft-box{min-height:270px}.ft-textarea{width:100%;margin:1rem 0;border:1px solid var(--line);border-radius:14px;padding:.8rem;font:inherit;resize:vertical}.ft-model{margin-top:1rem}.ft-feedback{margin-top:1rem}.error-link-card{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:linear-gradient(135deg,#fff7e3,#fff)}
+@media(max-width:760px){.active-recall-stats,.ft-grid{grid-template-columns:1fr}.error-link-card{display:block}}
+
 </style>
 
 </head>
 <body class="route-all">
 <main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Français du concours</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Le laboratoire bilingue de Jennifer.</h1><p class="lead">Apprendre le vocabulaire français dont elle a besoin pour comprendre les consignes, rédiger, analyser, enseigner et répondre au jury.</p></section>
-<section class="section"><div class="notice"><strong>Audio intégré :</strong> les boutons utilisent les voix françaises et espagnoles disponibles dans le navigateur. Aucun fichier sonore ni compte externe n’est nécessaire.</div>
-<div class="flash-toolbar"><input id="flashSearch" type="search" placeholder="Rechercher un mot ou une expression…"><select id="flashCategory"><option value="all">Toutes les catégories</option></select><button class="btn btn-secondary" id="shuffleCards">Mélanger</button></div>
-<div class="flashcard" id="flashcard" aria-live="polite"><div><span class="badge" id="flashCat">Catégorie</span><div class="term" id="flashFr">Chargement…</div><div class="translation" id="flashEs"></div></div><div class="examples"><p id="flashExFr"></p><p id="flashExEs"></p></div><div class="audio-row"><button class="audio-btn" id="speakFr">🔊 Écouter en français</button><button class="audio-btn" id="speakEs">🔊 Escuchar en español</button><button class="audio-btn" id="markKnown">✓ Je connais</button></div></div>
-<div class="flash-nav"><button class="btn btn-secondary" id="prevCard">← Précédente</button><span class="counter" id="flashCounter"></span><button class="btn btn-primary" id="nextCard">Suivante →</button></div></section>
+<section class="section" id="flashcards-actives">
+<div class="notice"><strong>Nouveau mode :</strong> les cartes fonctionnent maintenant en <strong>rappel actif</strong>. Par défaut, Jennifer voit l’espagnol, cherche elle-même le français, puis révèle la réponse et indique si elle savait, hésitait ou doit revoir.</div>
+<div class="active-recall-stats"><div class="active-recall-stat"><strong id="flashDue">—</strong><span>à revoir maintenant</span></div><div class="active-recall-stat"><strong id="flashSeen">—</strong><span>déjà travaillées</span></div><div class="active-recall-stat"><strong id="flashMastered">—</strong><span>bien installées</span></div></div>
+<div class="flash-toolbar"><input id="flashSearch" type="search" placeholder="Rechercher un mot ou une expression…"><select id="flashCategory"><option value="all">Toutes les catégories</option></select><select id="flashDirection" aria-label="Sens de révision"><option value="es-fr">Espagnol → français</option><option value="fr-es">Français → espagnol</option></select><button class="btn btn-secondary" id="reviewDue">À revoir aujourd’hui</button><button class="btn btn-secondary" id="shuffleCards">Mélanger</button></div>
+<div class="flashcard" id="flashcard" aria-live="polite"><div><span class="badge" id="flashCat">Catégorie</span><div class="flash-prompt-lang" id="flashPromptLang"></div><div class="term" id="flashPrompt">Chargement…</div></div><div class="audio-row"><button class="audio-btn" id="speakPrompt">🔊 Écouter le recto</button><button class="btn btn-primary" id="revealAnswer">Afficher la réponse</button></div><div class="flash-answer-panel" id="flashAnswerPanel" hidden><div class="translation" id="flashAnswer"></div><div class="examples"><p id="flashExFr"></p><p id="flashExEs"></p></div><div class="audio-row"><button class="audio-btn" id="speakAnswer">🔊 Écouter la réponse</button></div></div><div class="recall-ratings" id="flashRatings" hidden><button class="btn btn-secondary" data-flash-rate="good">✓ Je savais</button><button class="btn btn-secondary" data-flash-rate="almost">~ Presque</button><button class="btn btn-secondary" data-flash-rate="again">↻ À revoir</button></div></div>
+<div class="flash-nav"><button class="btn btn-secondary" id="prevCard">← Précédente</button><span class="counter" id="flashCounter"></span><button class="btn btn-primary" id="nextCard">Suivante →</button></div>
+<div class="card error-link-card" style="margin-top:1rem"><div><span class="badge badge-gold">Mémoire personnelle</span><h3>Mes erreurs</h3><p>Les cartes notées « Presque » ou « À revoir », ainsi que les exercices ratés, alimentent automatiquement un carnet de révision.</p></div><a class="btn btn-primary" href="mes-erreurs.html">Revoir mes erreurs (<span data-error-count>0</span>) →</a></div>
+</section>
 <section class="section"><h2>Six priorités en français</h2><div class="grid grid-3"><article class="card"><h3>Consignes</h3><p>Analyser, confronter, étayer, justifier, nuancer, dégager, rendre compte, mettre en perspective.</p></article><article class="card"><h3>Écriture académique</h3><p>Formuler une problématique, annoncer une démarche, articuler, concéder, réfuter, conclure.</p></article><article class="card"><h3>Didactique</h3><p>Objectifs, prérequis, étayage, différenciation, médiation, évaluation formative.</p></article><article class="card"><h3>Grammaire</h3><p>Proposition, déterminant, modalité, aspect, complément, subordination, mise en relief.</p></article><article class="card"><h3>Entretien</h3><p>Neutralité, laïcité, discrimination, obligation de signalement, climat scolaire, inclusion.</p></article><article class="card"><h3>Faux amis</h3><p>Assister, introduire, prétendre, réaliser, sensible, actuellement, éventuellement.</p></article></div></section>
 
-<section class="section" id="grammaire-francaise">
+<section class="section" id="francais-actif"><div class="section-head"><div><span class="eyebrow">Français actif</span><h2>Comprendre ne suffit pas : il faut produire juste.</h2><p>Deux entraînements courts : automatiser les difficultés typiques d’une hispanophone, puis apprendre à formuler comme dans une copie ou devant le jury.</p></div></div><div class="ft-grid"><article class="card ft-box"><span class="badge badge-green">Grammaire & usage</span><h3>Français express</h3><div id="frenchQcm"></div><div class="actions"><button class="btn btn-primary" id="checkFrenchQcm" hidden>Vérifier</button><button class="btn btn-secondary" id="nextFrenchQcm" hidden>Question suivante →</button></div></article><article class="card ft-box"><span class="badge badge-red">Production académique</span><h3>Dis-le comme au concours</h3><div id="sayItBox"></div><div class="actions"><button class="btn btn-secondary" id="nextSayIt" hidden>Nouvelle formulation →</button></div></article></div></section>\n<section class="section" id="grammaire-francaise">
   <div class="section-head">
     <div>
       <span class="eyebrow">Terminologie grammaticale officielle</span>
@@ -163,6 +172,7 @@
 
 <section class="section"><h2>Production quotidienne</h2><div class="checklist"><label class="check-item"><input type="checkbox" data-progress="fr-1"><span>J’ai étudié dix flashcards et prononcé chaque terme.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-2"><span>J’ai écrit cinq phrases avec les mots du jour.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-3"><span>J’ai reformulé un paragraphe de rapport de jury en français simple.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-4"><span>J’ai enregistré une réponse de deux minutes en français.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-5"><span>J’ai corrigé mes erreurs dans mon carnet personnel.</span></label></div></section></main>
 <script src="assets/app.js"></script>
+<script src="assets/french-training.js"></script>
 <script src="assets/flashcards.js"></script>
 
 <script>
@@ -200,7 +210,6 @@
     'complément circonstanciel de temps',
     'complément circonstanciel de lieu',
     'complément circonstanciel de manière',
-    'complément circonstanciel d’accompagnement',
     'complément circonstanciel de cause',
     'complément circonstanciel de but',
     'complément circonstanciel d’hypothèse',
@@ -236,7 +245,7 @@
       {s:'La lecture <mark>du rapport</mark> est indispensable.',n:'groupe nominal prépositionnel (GNP)',f:'complément du nom',h:'Le groupe dépend du nom « lecture » et constitue une expansion de ce nom.',e:'« du rapport » est un groupe nominal prépositionnel complément du nom « lecture ».'},
       {s:'Cette candidate, <mark>une professeure expérimentée</mark>, connaît déjà le métier.',n:'groupe nominal (GN)',f:'apposition',h:'Le groupe est détaché par des virgules et apporte une information au GN « cette candidate ».',e:'« une professeure expérimentée » est un groupe nominal apposé à « cette candidate ».'},
       {s:'Le jury a élu Alice <mark>présidente</mark>.',n:'groupe nominal (GN)',f:'attribut du COD',h:'Le nom seul constitue ici un GN réduit. Il attribue une propriété au COD « Alice ».',e:'« présidente » est un groupe nominal réduit à un nom, attribut du COD « Alice ».'},
-      {s:'Jennifer travaille <mark>avec une collègue</mark>.',n:'groupe nominal prépositionnel (GNP)',f:'complément circonstanciel d’accompagnement',h:'Dans cette phrase, le groupe indique avec qui l’action se fait ; le guide classe ce type parmi les compléments circonstanciels d’accompagnement.',e:'« avec une collègue » est un GNP complément circonstanciel d’accompagnement.'}
+      {s:'Jennifer travaille <mark>avec une collègue</mark>.',n:'groupe nominal prépositionnel (GNP)',f:'complément circonstanciel de manière',h:'Dans cette phrase, le groupe indique avec qui l’action se fait ; le guide classe ce type parmi les compléments circonstanciels d’accompagnement. Pour l’exercice, on le rattache à la valeur de manière/accompagnement.',e:'« avec une collègue » est un GNP complément circonstanciel d’accompagnement ; dans les choix proposés, la catégorie la plus proche est « manière ».'}
     ],
     clause: [
       {s:'Je crois <mark>qu’elle réussira</mark>.',n:'proposition subordonnée conjonctive (complétive)',f:'COD',h:'La subordonnée équivaut à un GN : « Je crois cela ».',e:'« qu’elle réussira » est une proposition subordonnée conjonctive complétive, COD du verbe « crois ».'},
@@ -312,6 +321,7 @@
     const ok=natureOK && functionOK;
     answered++;
     if(ok) score++;
+    if(!ok && window.BilleteFrench){BilleteFrench.addError({source:'Grammaire française',type:'Nature & fonction',prompt:sentenceEl.textContent.trim(),answer:`Nature : ${current.n} · Fonction : ${current.f}`,note:current.e,id:`grammar-${current._level}-${lastIndex}`});}
     scoreEl.textContent=score;
     feedbackEl.innerHTML=`<div class="feedback ${ok?'ok':'no'}"><strong>${ok?'Exact.':'À corriger.'}</strong>
       <div class="answer-line">Nature : ${current.n} · Fonction : ${current.f}</div>
