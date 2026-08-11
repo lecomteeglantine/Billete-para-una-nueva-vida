@@ -6,6 +6,43 @@
 <meta name="description" content="Flashcards français espagnol avec prononciation pour le CAFEP-CAPES.">
 <meta name="theme-color" content="#c33b4a">
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+
+<style>
+.grammar-source{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin:1rem 0 1.2rem}
+.grammar-source p{max-width:800px}
+.grammar-cheat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.2rem 0}
+.grammar-cheat{position:relative;padding-top:3.5rem}
+.grammar-step{position:absolute;top:1rem;left:1.2rem;width:2rem;height:2rem;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:white;font-weight:900}
+.grammar-rule{margin:1rem 0;background:linear-gradient(145deg,#fff,#fff9ef)}
+.grammar-rule ol{margin-bottom:0;padding-left:1.4rem}
+.grammar-rule li{margin:.55rem 0}
+.grammar-practice{margin-top:1.5rem}
+.grammar-practice-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;margin-bottom:1rem}
+.grammar-score{min-width:120px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:.7rem 1rem}
+.grammar-score span{display:block;font-family:Georgia,serif;font-size:2.2rem;font-weight:900;color:var(--red-dark);line-height:1}
+.grammar-score small{color:var(--muted);font-weight:800}
+.grammar-modes{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1rem}
+.grammar-mode{border:1px solid var(--line);background:#fff;color:var(--ink);padding:.65rem .85rem;border-radius:999px;font-weight:900}
+.grammar-mode.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grammar-question{border-top:6px solid var(--gold)}
+.grammar-level{font-size:.76rem;letter-spacing:.12em;font-weight:900;color:var(--red-dark);margin-bottom:.6rem}
+.grammar-sentence{font-family:Georgia,serif;font-size:clamp(1.35rem,2.5vw,2rem);line-height:1.5;padding:1.2rem;background:#fff8e8;border-radius:16px;margin:1rem 0}
+.grammar-target{background:linear-gradient(transparent 58%,rgba(232,180,76,.52) 58%);font-weight:800;padding:0 .08em}
+.grammar-answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+.grammar-answer-grid label span{display:block;font-weight:900;margin-bottom:.35rem}
+.grammar-answer-grid select{width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:.72rem}
+.grammar-feedback{margin-top:1rem}
+.grammar-feedback .feedback{margin:0}
+.grammar-feedback .answer-line{margin-top:.55rem;font-weight:800}
+.grammar-feedback .reason{margin-top:.4rem;color:#425b70}
+.grammar-summary{margin-top:1rem}
+@media(max-width:760px){
+  .grammar-cheat-grid,.grammar-answer-grid{grid-template-columns:1fr}
+  .grammar-source,.grammar-practice-head{display:block}
+  .grammar-score{margin-top:1rem;width:max-content}
+}
+</style>
+
 </head>
 <body class="route-all">
 <main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Français du concours</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Le laboratoire bilingue de Jennifer.</h1><p class="lead">Apprendre le vocabulaire français dont elle a besoin pour comprendre les consignes, rédiger, analyser, enseigner et répondre au jury.</p></section>
@@ -14,7 +51,308 @@
 <div class="flashcard" id="flashcard" aria-live="polite"><div><span class="badge" id="flashCat">Catégorie</span><div class="term" id="flashFr">Chargement…</div><div class="translation" id="flashEs"></div></div><div class="examples"><p id="flashExFr"></p><p id="flashExEs"></p></div><div class="audio-row"><button class="audio-btn" id="speakFr">🔊 Écouter en français</button><button class="audio-btn" id="speakEs">🔊 Escuchar en español</button><button class="audio-btn" id="markKnown">✓ Je connais</button></div></div>
 <div class="flash-nav"><button class="btn btn-secondary" id="prevCard">← Précédente</button><span class="counter" id="flashCounter"></span><button class="btn btn-primary" id="nextCard">Suivante →</button></div></section>
 <section class="section"><h2>Six priorités en français</h2><div class="grid grid-3"><article class="card"><h3>Consignes</h3><p>Analyser, confronter, étayer, justifier, nuancer, dégager, rendre compte, mettre en perspective.</p></article><article class="card"><h3>Écriture académique</h3><p>Formuler une problématique, annoncer une démarche, articuler, concéder, réfuter, conclure.</p></article><article class="card"><h3>Didactique</h3><p>Objectifs, prérequis, étayage, différenciation, médiation, évaluation formative.</p></article><article class="card"><h3>Grammaire</h3><p>Proposition, déterminant, modalité, aspect, complément, subordination, mise en relief.</p></article><article class="card"><h3>Entretien</h3><p>Neutralité, laïcité, discrimination, obligation de signalement, climat scolaire, inclusion.</p></article><article class="card"><h3>Faux amis</h3><p>Assister, introduire, prétendre, réaliser, sensible, actuellement, éventuellement.</p></article></div></section>
+
+<section class="section" id="grammaire-francaise">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Terminologie grammaticale officielle</span>
+      <h2>Nature ou fonction ? Il faut pouvoir répondre sans hésiter.</h2>
+      <p>Ce module reprend la terminologie du guide ministériel <em>La grammaire du français — Terminologie grammaticale</em> et l’applique à des phrases proches de celles qu’on peut rencontrer dans une analyse de faits de langue.</p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <strong>Réflexe essentiel :</strong> la <strong>nature</strong> dit ce qu’est un élément ; la <strong>fonction</strong> dit la relation qu’il entretient avec les autres éléments de la phrase ou du groupe. Un même type de groupe peut donc exercer plusieurs fonctions.
+  </div>
+
+  <div class="grammar-source card">
+    <div>
+      <span class="badge badge-gold">Guide de référence</span>
+      <h3>La grammaire du français — Terminologie grammaticale</h3>
+      <p>Le guide distingue notamment l’analyse des fonctions, la phrase et la proposition, puis la nature des mots et des groupes. Le module ci-dessous reprend cette organisation en trois niveaux : <strong>mot isolé → groupe nominal → proposition</strong>.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-secondary" href="docs/guide-grammaire-francais.pdf" target="_blank" rel="noopener">📘 Ouvrir le guide officiel</a>
+    </div>
+  </div>
+
+  <div class="grammar-cheat-grid">
+    <article class="grammar-cheat card">
+      <span class="grammar-step">1</span>
+      <h3>Mot isolé</h3>
+      <p><strong>Natures à reconnaître :</strong> nom, verbe, adjectif, adverbe, déterminant, pronom, préposition, conjonction, interjection.</p>
+      <p><strong>Attention :</strong> déterminants, prépositions et conjonctions n’ont généralement pas de fonction propre : c’est le groupe qu’ils contribuent à former qui exerce une fonction.</p>
+    </article>
+    <article class="grammar-cheat card">
+      <span class="grammar-step">2</span>
+      <h3>Groupe nominal</h3>
+      <p>Repérer d’abord le <strong>noyau nominal</strong>, puis les éventuelles expansions : épithète, complément du nom ; l’apposition est un apport détaché au groupe nominal.</p>
+      <p>Un GN ou un groupe nominal prépositionnel peut notamment être sujet, COD, COI, attribut, complément circonstanciel, complément du nom ou apposition.</p>
+    </article>
+    <article class="grammar-cheat card">
+      <span class="grammar-step">3</span>
+      <h3>Proposition</h3>
+      <p>Identifier d’abord le <strong>type de subordonnée</strong> : complétive, circonstancielle, relative, infinitive, participiale ou interrogative indirecte.</p>
+      <p>Ensuite seulement, chercher sa <strong>fonction</strong> : sujet, COD, attribut, complément du nom, épithète, apposition, complément circonstanciel…</p>
+    </article>
+  </div>
+
+  <div class="grammar-rule card">
+    <h3>La méthode en 4 questions</h3>
+    <ol>
+      <li><strong>Quelle est la limite exacte de l’élément à analyser ?</strong></li>
+      <li><strong>Quelle est sa nature ?</strong> Mot, groupe ou proposition — puis catégorie précise.</li>
+      <li><strong>De quoi dépend-il ?</strong> Du verbe ? d’un nom ? d’un adjectif ? de l’ensemble de la phrase ?</li>
+      <li><strong>Quelle relation entretient-il avec ce noyau ?</strong> C’est sa fonction.</li>
+    </ol>
+  </div>
+
+  <div class="grammar-practice">
+    <div class="grammar-practice-head">
+      <div>
+        <span class="badge badge-green">Entraînement interactif</span>
+        <h3>Repère la nature ET la fonction</h3>
+        <p>Choisis un niveau. Les phrases changent à chaque tour et le feedback explique le raisonnement attendu.</p>
+      </div>
+      <div class="grammar-score" aria-live="polite">
+        <span id="grammarScore">0</span><small>bonnes réponses</small>
+      </div>
+    </div>
+
+    <div class="grammar-modes" role="tablist" aria-label="Type d’exercice grammatical">
+      <button class="grammar-mode active" data-grammar-mode="word" role="tab" aria-selected="true">Mot isolé</button>
+      <button class="grammar-mode" data-grammar-mode="gn" role="tab" aria-selected="false">Groupe nominal</button>
+      <button class="grammar-mode" data-grammar-mode="clause" role="tab" aria-selected="false">Proposition</button>
+      <button class="grammar-mode" data-grammar-mode="mixed" role="tab" aria-selected="false">Mélange concours</button>
+    </div>
+
+    <div class="grammar-question card" id="grammarQuestionBox">
+      <div class="grammar-level" id="grammarLevelLabel">MOT ISOLÉ</div>
+      <p class="grammar-instruction">Dans la phrase suivante, analyse l’élément surligné.</p>
+      <div class="grammar-sentence" id="grammarSentence"></div>
+      <div class="grammar-answer-grid">
+        <label>
+          <span>1 · Nature</span>
+          <select id="grammarNature"></select>
+        </label>
+        <label>
+          <span>2 · Fonction</span>
+          <select id="grammarFunction"></select>
+        </label>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" id="checkGrammar">Vérifier</button>
+        <button class="btn btn-secondary" id="grammarHint">Indice</button>
+        <button class="btn btn-secondary" id="nextGrammar" hidden>Question suivante →</button>
+      </div>
+      <div class="grammar-feedback" id="grammarFeedback" aria-live="polite"></div>
+    </div>
+
+    <div class="grammar-summary card">
+      <h3>Ce que le concours exige ici</h3>
+      <p>Éviter les réponses floues du type « c’est un complément ». Une analyse utile associe les deux informations : <strong>« groupe nominal, COD du verbe… »</strong>, <strong>« proposition subordonnée relative adjective, épithète du nom… »</strong>, etc.</p>
+      <div class="checklist">
+        <label class="check-item"><input type="checkbox" data-progress="fr-gram-1"><span>Je distingue nature et fonction sans les confondre.</span></label>
+        <label class="check-item"><input type="checkbox" data-progress="fr-gram-2"><span>Je sais analyser un mot isolé dans son groupe.</span></label>
+        <label class="check-item"><input type="checkbox" data-progress="fr-gram-3"><span>Je sais donner la nature et la fonction d’un groupe nominal.</span></label>
+        <label class="check-item"><input type="checkbox" data-progress="fr-gram-4"><span>Je sais délimiter et analyser une proposition subordonnée.</span></label>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section"><h2>Production quotidienne</h2><div class="checklist"><label class="check-item"><input type="checkbox" data-progress="fr-1"><span>J’ai étudié dix flashcards et prononcé chaque terme.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-2"><span>J’ai écrit cinq phrases avec les mots du jour.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-3"><span>J’ai reformulé un paragraphe de rapport de jury en français simple.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-4"><span>J’ai enregistré une réponse de deux minutes en français.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-5"><span>J’ai corrigé mes erreurs dans mon carnet personnel.</span></label></div></section></main>
 <script src="assets/app.js"></script>
 <script src="assets/flashcards.js"></script>
+
+<script>
+(function(){
+  const NATURES = [
+    '— Choisir —',
+    'nom commun',
+    'adjectif',
+    'adverbe',
+    'pronom personnel',
+    'pronom indéfini',
+    'pronom relatif',
+    'déterminant (article)',
+    'préposition',
+    'conjonction de subordination',
+    'groupe nominal (GN)',
+    'groupe nominal prépositionnel (GNP)',
+    'proposition subordonnée conjonctive (complétive)',
+    'proposition subordonnée interrogative totale',
+    'proposition subordonnée interrogative partielle',
+    'proposition subordonnée circonstancielle',
+    'proposition subordonnée relative adjective',
+    'proposition subordonnée relative substantive',
+    'proposition subordonnée infinitive',
+    'proposition subordonnée participiale'
+  ];
+
+  const FUNCTIONS = [
+    '— Choisir —',
+    'sujet',
+    'COD',
+    'COI',
+    'attribut du sujet',
+    'attribut du COD',
+    'complément circonstanciel de temps',
+    'complément circonstanciel de lieu',
+    'complément circonstanciel de manière',
+    'complément circonstanciel d’accompagnement',
+    'complément circonstanciel de cause',
+    'complément circonstanciel de but',
+    'complément circonstanciel d’hypothèse',
+    'complément circonstanciel de concession',
+    'épithète',
+    'complément du nom',
+    'apposition',
+    'aucune fonction propre'
+  ];
+
+  const DATA = {
+    word: [
+      {s:'Cette analyse <mark>rigoureuse</mark> convainc le jury.',n:'adjectif',f:'épithète',h:'Le mot appartient au groupe nominal « cette analyse rigoureuse » et caractérise directement le nom.',e:'« rigoureuse » est un adjectif épithète du nom « analyse ».'},
+      {s:'Jennifer répond <mark>clairement</mark> aux questions.',n:'adverbe',f:'complément circonstanciel de manière',h:'Le mot précise la manière dont l’action est réalisée et peut être supprimé.',e:'« clairement » est un adverbe complément circonstanciel de manière.'},
+      {s:'Elle semble <mark>prête</mark> pour l’épreuve.',n:'adjectif',f:'attribut du sujet',h:'Le mot est relié au sujet par un verbe attributif.',e:'« prête » est un adjectif attribut du sujet « elle ».'},
+      {s:'Le jury la trouve <mark>convaincante</mark>.',n:'adjectif',f:'attribut du COD',h:'La propriété est attribuée au COD « la » : le jury trouve qu’elle est convaincante.',e:'« convaincante » est un adjectif attribut du COD « la ».'},
+      {s:'Jennifer <mark>le</mark> relit avant de répondre.',n:'pronom personnel',f:'COD',h:'Le pronom remplace directement ce qui est relu.',e:'« le » est un pronom personnel COD du verbe « relit ».'},
+      {s:'Elle <mark>lui</mark> répond avec précision.',n:'pronom personnel',f:'COI',h:'Le verbe se construit avec « répondre à quelqu’un ».',e:'« lui » est un pronom personnel COI du verbe « répond ».'},
+      {s:'<mark>Aujourd’hui</mark>, Jennifer révise les propositions subordonnées.',n:'adverbe',f:'complément circonstanciel de temps',h:'Le mot situe l’événement dans le temps et peut être déplacé.',e:'« Aujourd’hui » est un adverbe complément circonstanciel de temps.'},
+      {s:'<mark>Chacun</mark> doit justifier son analyse.',n:'pronom indéfini',f:'sujet',h:'Le mot commande l’accord du verbe « doit » et peut être remplacé par « il ».',e:'« Chacun » est un pronom indéfini sujet du verbe « doit ».'},
+      {s:'Sa réponse, <mark>concise</mark>, reste très précise.',n:'adjectif',f:'apposition',h:'Le mot est détaché par des virgules et apporte une information au GN « sa réponse ».',e:'« concise » est un adjectif apposé au groupe nominal « sa réponse ».'},
+      {s:'<mark>Le</mark> candidat présente le document.',n:'déterminant (article)',f:'aucune fonction propre',h:'Le mot introduit le nom « candidat ». Le guide rappelle que le déterminant n’exerce pas une fonction syntaxique autonome.',e:'« Le » est un déterminant, ici un article défini ; il n’a pas de fonction propre.'},
+      {s:'Elle parle <mark>à</mark> la présidente du jury.',n:'préposition',f:'aucune fonction propre',h:'Ce mot introduit un groupe prépositionnel. C’est le groupe « à la présidente du jury » qui a une fonction.',e:'« à » est une préposition sans fonction propre ; le GNP qu’elle introduit est COI de « parle ».'},
+      {s:'Je crois <mark>que</mark> Jennifer est prête.',n:'conjonction de subordination',f:'aucune fonction propre',h:'Dans une complétive, le mot subordonnant est un outil grammatical et n’a pas de fonction dans la subordonnée.',e:'« que » est une conjonction de subordination sans fonction propre.'},
+      {s:'Le dossier <mark>que</mark> Jennifer analyse est complexe.',n:'pronom relatif',f:'COD',h:'Ici « que » a un antécédent (« le dossier ») et remplace cet antécédent à l’intérieur de la relative.',e:'« que » est un pronom relatif COD du verbe « analyse ».'}
+    ],
+    gn: [
+      {s:'<mark>Le candidat</mark> prépare son exposé.',n:'groupe nominal (GN)',f:'sujet',h:'Le groupe commande l’accord du verbe et peut être remplacé par « il ».',e:'« Le candidat » est un groupe nominal sujet du verbe « prépare ».'},
+      {s:'Jennifer prépare <mark>son exposé</mark>.',n:'groupe nominal (GN)',f:'COD',h:'Le groupe complète directement le sens du verbe et peut être pronominalisé par « le ».',e:'« son exposé » est un groupe nominal COD du verbe « prépare ».'},
+      {s:'Jennifer parle <mark>au jury</mark>.',n:'groupe nominal prépositionnel (GNP)',f:'COI',h:'Le verbe « parler » se construit ici avec la préposition « à ».',e:'« au jury » est un groupe nominal prépositionnel COI du verbe « parle ».'},
+      {s:'Jennifer devient <mark>une excellente enseignante</mark>.',n:'groupe nominal (GN)',f:'attribut du sujet',h:'Le groupe est relié au sujet par le verbe attributif « devenir ».',e:'« une excellente enseignante » est un groupe nominal attribut du sujet « Jennifer ».'},
+      {s:'<mark>Chaque matin</mark>, elle révise vingt minutes.',n:'groupe nominal (GN)',f:'complément circonstanciel de temps',h:'Le groupe apporte une indication temporelle facultative et mobile.',e:'« Chaque matin » est un groupe nominal complément circonstanciel de temps.'},
+      {s:'La lecture <mark>du rapport</mark> est indispensable.',n:'groupe nominal prépositionnel (GNP)',f:'complément du nom',h:'Le groupe dépend du nom « lecture » et constitue une expansion de ce nom.',e:'« du rapport » est un groupe nominal prépositionnel complément du nom « lecture ».'},
+      {s:'Cette candidate, <mark>une professeure expérimentée</mark>, connaît déjà le métier.',n:'groupe nominal (GN)',f:'apposition',h:'Le groupe est détaché par des virgules et apporte une information au GN « cette candidate ».',e:'« une professeure expérimentée » est un groupe nominal apposé à « cette candidate ».'},
+      {s:'Le jury a élu Alice <mark>présidente</mark>.',n:'groupe nominal (GN)',f:'attribut du COD',h:'Le nom seul constitue ici un GN réduit. Il attribue une propriété au COD « Alice ».',e:'« présidente » est un groupe nominal réduit à un nom, attribut du COD « Alice ».'},
+      {s:'Jennifer travaille <mark>avec une collègue</mark>.',n:'groupe nominal prépositionnel (GNP)',f:'complément circonstanciel d’accompagnement',h:'Dans cette phrase, le groupe indique avec qui l’action se fait ; le guide classe ce type parmi les compléments circonstanciels d’accompagnement.',e:'« avec une collègue » est un GNP complément circonstanciel d’accompagnement.'}
+    ],
+    clause: [
+      {s:'Je crois <mark>qu’elle réussira</mark>.',n:'proposition subordonnée conjonctive (complétive)',f:'COD',h:'La subordonnée équivaut à un GN : « Je crois cela ».',e:'« qu’elle réussira » est une proposition subordonnée conjonctive complétive, COD du verbe « crois ».'},
+      {s:'<mark>Qu’elle réussisse</mark> me réjouit.',n:'proposition subordonnée conjonctive (complétive)',f:'sujet',h:'La subordonnée peut être remplacée par « cela » devant le verbe.',e:'« Qu’elle réussisse » est une proposition subordonnée conjonctive complétive, sujet de « réjouit ».'},
+      {s:'Mon souhait est <mark>qu’elle réussisse</mark>.',n:'proposition subordonnée conjonctive (complétive)',f:'attribut du sujet',h:'La subordonnée est reliée au sujet par le verbe attributif « être ».',e:'« qu’elle réussisse » est une proposition subordonnée conjonctive complétive, attribut du sujet « mon souhait ».'},
+      {s:'La crainte <mark>qu’elle échoue</mark> disparaît peu à peu.',n:'proposition subordonnée conjonctive (complétive)',f:'complément du nom',h:'La subordonnée dépend du nom « crainte » et équivaut à « la crainte de son échec ».',e:'« qu’elle échoue » est une proposition subordonnée conjonctive complétive, complément du nom « crainte ».'},
+      {s:'<mark>Quand l’épreuve commence</mark>, Jennifer respire profondément.',n:'proposition subordonnée circonstancielle',f:'complément circonstanciel de temps',h:'La conjonction « quand » exprime une relation temporelle avec la principale.',e:'« Quand l’épreuve commence » est une proposition subordonnée circonstancielle de temps, complément circonstanciel.'},
+      {s:'Jennifer reste calme <mark>parce qu’elle a travaillé</mark>.',n:'proposition subordonnée circonstancielle',f:'complément circonstanciel de cause',h:'La conjonction « parce que » indique explicitement la cause.',e:'« parce qu’elle a travaillé » est une proposition subordonnée circonstancielle de cause, complément circonstanciel.'},
+      {s:'La candidate <mark>qui parle maintenant</mark> maîtrise son sujet.',n:'proposition subordonnée relative adjective',f:'épithète',h:'La relative avec antécédent « candidate » sélectionne ici une sous-catégorie de candidates et n’est pas détachée par des virgules.',e:'« qui parle maintenant » est une proposition subordonnée relative adjective, épithète du nom « candidate ».'},
+      {s:'Jennifer, <mark>qui a beaucoup travaillé</mark>, répond avec assurance.',n:'proposition subordonnée relative adjective',f:'apposition',h:'La relative est détachée par des virgules et apporte une information supplémentaire sur Jennifer.',e:'« qui a beaucoup travaillé » est une proposition subordonnée relative adjective, apposée au GN « Jennifer ».'},
+      {s:'<mark>Qui veut progresser</mark> doit s’entraîner régulièrement.',n:'proposition subordonnée relative substantive',f:'sujet',h:'Le pronom relatif n’a pas d’antécédent nominal exprimé et l’ensemble équivaut à « celui qui veut progresser ».',e:'« Qui veut progresser » est une proposition subordonnée relative substantive, sujet de « doit ».'},
+      {s:'J’entends <mark>Jennifer répéter son introduction</mark>.',n:'proposition subordonnée infinitive',f:'COD',h:'Le groupe infinitif possède un sujet propre (« Jennifer »), distinct du sujet de la principale (« je »).',e:'« Jennifer répéter son introduction » est une proposition subordonnée infinitive, COD du verbe « entends ».'},
+      {s:'<mark>Le travail terminé</mark>, Jennifer se repose.',n:'proposition subordonnée participiale',f:'complément circonstanciel de temps',h:'La participiale possède son propre sujet (« le travail ») et équivaut ici à « quand le travail est terminé ».',e:'« Le travail terminé » est une proposition subordonnée participiale, complément circonstanciel de temps.'},
+      {s:'Je me demande <mark>si elle viendra</mark>.',n:'proposition subordonnée interrogative totale',f:'COD',h:'L’interrogation indirecte porte sur l’ensemble de la question et appelle oui/non.',e:'« si elle viendra » est une proposition subordonnée interrogative totale, COD de « demande ».'},
+      {s:'Je me demande <mark>pourquoi elle hésite</mark>.',n:'proposition subordonnée interrogative partielle',f:'COD',h:'L’interrogation indirecte porte sur un constituant, ici la cause exprimée par « pourquoi ».',e:'« pourquoi elle hésite » est une proposition subordonnée interrogative partielle, COD de « demande ».'},
+      {s:'<mark>Pourquoi elle hésite</mark> demeure inexpliqué.',n:'proposition subordonnée interrogative partielle',f:'sujet',h:'Toute la proposition occupe la position du sujet et peut être remplacée par « cela ».',e:'« Pourquoi elle hésite » est une proposition subordonnée interrogative partielle, sujet de « demeure ».'}
+    ]
+  };
+
+  const natureEl = document.getElementById('grammarNature');
+  const functionEl = document.getElementById('grammarFunction');
+  const sentenceEl = document.getElementById('grammarSentence');
+  const feedbackEl = document.getElementById('grammarFeedback');
+  const nextBtn = document.getElementById('nextGrammar');
+  const checkBtn = document.getElementById('checkGrammar');
+  const hintBtn = document.getElementById('grammarHint');
+  const scoreEl = document.getElementById('grammarScore');
+  const levelEl = document.getElementById('grammarLevelLabel');
+  const modeButtons = [...document.querySelectorAll('.grammar-mode')];
+
+  if(!natureEl || !functionEl || !sentenceEl) return;
+
+  natureEl.innerHTML = NATURES.map(x=>`<option value="${x}">${x}</option>`).join('');
+  functionEl.innerHTML = FUNCTIONS.map(x=>`<option value="${x}">${x}</option>`).join('');
+
+  let mode='word', current=null, score=0, answered=0, lastIndex=-1;
+
+  function pool(){
+    if(mode==='mixed') return [
+      ...DATA.word.map(x=>({...x,_level:'Mot isolé'})),
+      ...DATA.gn.map(x=>({...x,_level:'Groupe nominal'})),
+      ...DATA.clause.map(x=>({...x,_level:'Proposition'}))
+    ];
+    const label = mode==='word'?'Mot isolé':mode==='gn'?'Groupe nominal':'Proposition';
+    return DATA[mode].map(x=>({...x,_level:label}));
+  }
+
+  function draw(){
+    const rows=pool();
+    let index=Math.floor(Math.random()*rows.length);
+    if(rows.length>1 && index===lastIndex) index=(index+1)%rows.length;
+    lastIndex=index;
+    current=rows[index];
+    sentenceEl.innerHTML=current.s.replace('<mark>','<span class="grammar-target">').replace('</mark>','</span>');
+    levelEl.textContent=current._level.toUpperCase();
+    natureEl.value='— Choisir —';
+    functionEl.value='— Choisir —';
+    feedbackEl.innerHTML='';
+    nextBtn.hidden=true;
+    checkBtn.disabled=false;
+    natureEl.disabled=false;
+    functionEl.disabled=false;
+  }
+
+  function check(){
+    if(!current) return;
+    if(natureEl.value==='— Choisir —' || functionEl.value==='— Choisir —'){
+      feedbackEl.innerHTML='<div class="feedback no"><strong>Il manque une réponse.</strong> Choisis la nature et la fonction avant de vérifier.</div>';
+      return;
+    }
+    const natureOK=natureEl.value===current.n;
+    const functionOK=functionEl.value===current.f;
+    const ok=natureOK && functionOK;
+    answered++;
+    if(ok) score++;
+    scoreEl.textContent=score;
+    feedbackEl.innerHTML=`<div class="feedback ${ok?'ok':'no'}"><strong>${ok?'Exact.':'À corriger.'}</strong>
+      <div class="answer-line">Nature : ${current.n} · Fonction : ${current.f}</div>
+      <div class="reason">${current.e}</div>
+      ${!natureOK?'<div class="reason">→ La nature choisie n’est pas la bonne catégorie grammaticale.</div>':''}
+      ${!functionOK?'<div class="reason">→ Repars de l’élément dont dépend le groupe ou le mot pour déterminer sa fonction.</div>':''}
+    </div>`;
+    checkBtn.disabled=true;
+    natureEl.disabled=true;
+    functionEl.disabled=true;
+    nextBtn.hidden=false;
+
+    try{
+      const saved=JSON.parse(localStorage.getItem('billete-grammar-stats')||'{}');
+      saved.answered=(saved.answered||0)+1;
+      saved.correct=(saved.correct||0)+(ok?1:0);
+      saved.lastDate=new Date().toISOString();
+      localStorage.setItem('billete-grammar-stats',JSON.stringify(saved));
+    }catch(e){}
+  }
+
+  function hint(){
+    if(!current) return;
+    feedbackEl.innerHTML=`<div class="feedback ok"><strong>Indice :</strong> ${current.h}</div>`;
+  }
+
+  modeButtons.forEach(btn=>btn.addEventListener('click',()=>{
+    mode=btn.dataset.grammarMode;
+    modeButtons.forEach(b=>{
+      const active=b===btn;
+      b.classList.toggle('active',active);
+      b.setAttribute('aria-selected',active?'true':'false');
+    });
+    draw();
+  }));
+
+  checkBtn.addEventListener('click',check);
+  hintBtn.addEventListener('click',hint);
+  nextBtn.addEventListener('click',draw);
+  draw();
+})();
+</script>
+
 </body></html>
