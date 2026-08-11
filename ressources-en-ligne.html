@@ -79,6 +79,15 @@
 @media(max-width:1000px){.online-resources .or-hero{grid-template-columns:1fr}.online-resources .fresh-grid{grid-template-columns:repeat(2,1fr)}.online-resources .format-grid{grid-template-columns:repeat(2,1fr)}.online-resources .library-layout{grid-template-columns:1fr}.online-resources .filters{position:static}}
 @media(max-width:680px){.online-resources .fresh-grid,.online-resources .resource-grid,.online-resources .format-grid{grid-template-columns:1fr}.online-resources .or-metrics{grid-template-columns:repeat(2,1fr)}.online-resources .or-section-head{display:block}.online-resources .or-update{text-align:left;margin-top:.6rem}}
 @media(prefers-reduced-motion:reduce){.online-resources *{transition:none!important;scroll-behavior:auto!important}}
+
+.online-resources .exam-shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin-top:1.1rem}
+.online-resources .exam-shortcut{background:#fff;border:1px solid var(--or-line);border-radius:16px;padding:1rem;text-decoration:none;color:var(--or-ink);min-height:135px}
+.online-resources .exam-shortcut:hover{box-shadow:var(--or-shadow);transform:translateY(-2px)}
+.online-resources .exam-shortcut strong{display:block;font-size:1.05rem;margin:.35rem 0}
+.online-resources .exam-shortcut span{font-size:.88rem;color:var(--or-muted)}
+@media(max-width:950px){.online-resources .exam-shortcuts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.online-resources .exam-shortcuts{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body class="route-all">
@@ -98,6 +107,21 @@
       <div class="or-metric"><strong id="metricCountries">0</strong><span>pays & régions</span></div>
       <div class="or-metric"><strong>8</strong><span>formats de ressources</span></div>
       <div class="or-metric"><strong>★</strong><span>favoris enregistrés localement</span></div>
+    </div>
+  </section>
+
+
+  <section class="or-band cream" id="concours-direct">
+    <div class="or-section-head"><div><div class="or-kicker">Accès concours</div><h2>Je révise quoi ?</h2><p>Avant de parcourir 133 ressources, pars de l’élément du programme que tu veux travailler.</p></div></div>
+    <div class="exam-shortcuts">
+      <a class="exam-shortcut" href="litterature.html"><span>📚 Écrit 1</span><strong>Rafael Chirbes</strong><span>Roman, personnages, focalisation et vrai sujet 2026.</span></a>
+      <a class="exam-shortcut" href="civilisation.html"><span>🏛️ Écrit 1</span><strong>Transition démocratique</strong><span>Chronologie, acteurs, sources primaires et historiographie.</span></a>
+      <a class="exam-shortcut" href="revision-langages.html"><span>🎨 Oral 1</span><strong>Langages</strong><span>Fiche de révision du programme oral bac+3.</span></a>
+      <a class="exam-shortcut" href="revision-vivre-entre-generations.html"><span>👥 Oral 1</span><strong>Vivre entre générations</strong><span>Notions, problématiques et pistes culturelles.</span></a>
+      <a class="exam-shortcut" href="francais.html"><span>🇫🇷 Langue</span><strong>Français du concours</strong><span>Rappel actif, grammaire, vocabulaire et erreurs personnelles.</span></a>
+      <a class="exam-shortcut" href="didactique.html"><span>🏫 Professionnel</span><strong>Didactique</strong><span>CECRL, objectifs, différenciation et évaluation.</span></a>
+      <a class="exam-shortcut" href="simulateur-entretien.html"><span>🎙️ Oral 2</span><strong>Entretien</strong><span>Valeurs de la République, situations et simulation chronométrée.</span></a>
+      <a class="exam-shortcut" href="cafep-prive.html"><span>🎟️ CAFEP</span><strong>Enseignement privé</strong><span>Démarches spécifiques et accord d’établissement.</span></a>
     </div>
   </section>
 

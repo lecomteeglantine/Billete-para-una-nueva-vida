@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ressources · Billete para una nueva vida</title>
+<meta name="description" content="Hub des ressources officielles, sujets, rapports, bibliothèque en ligne et informations CAFEP.">
+<meta name="theme-color" content="#c33b4a">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<style>
+.resource-hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.resource-hub-card{min-height:250px;display:flex;flex-direction:column}
+.resource-hub-card .actions{margin-top:auto}
+.resource-priority{border-top:6px solid #c94455}
+@media(max-width:900px){.resource-hub-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.resource-hub-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="route-all">
+<main id="main">
+<section class="page-hero">
+ <div class="breadcrumbs"><a href="index.html">Accueil</a> › Ressources</div>
+ <span class="eyebrow">OFFICIEL · CONCOURS · MONDE HISPANOPHONE</span>
+ <h1>Une porte d’entrée, pas une décharge de liens.</h1>
+ <p class="lead">Commence par les documents qui ont un impact direct sur le concours, puis utilise la grande bibliothèque pour approfondir.</p>
+</section>
+
+<section class="section">
+ <div class="resource-hub-grid">
+  <article class="card resource-hub-card resource-priority"><span class="badge badge-red">PRIORITÉ 1</span><h2>Sujets officiels</h2><p>Vrais sujets 2026, sujets zéro et attendus des oraux. À travailler avant les sujets inventés.</p><div class="actions"><a class="btn btn-primary" href="sujets-officiels.html">Ouvrir</a></div></article>
+  <article class="card resource-hub-card resource-priority"><span class="badge badge-red">PRIORITÉ 2</span><h2>Rapports de jury</h2><p>Ce qui renforce ou fragilise une prestation, avec distinction entre nouveau bac+3 et ancien format.</p><div class="actions"><a class="btn btn-primary" href="jury.html">Ouvrir</a></div></article>
+  <article class="card resource-hub-card resource-priority"><span class="badge badge-red">PRIORITÉ 3</span><h2>CAFEP & privé</h2><p>Ce qui change réellement dans le recrutement privé sous contrat et les démarches à anticiper.</p><div class="actions"><a class="btn btn-primary" href="cafep-prive.html">Ouvrir</a></div></article>
+  <article class="card resource-hub-card"><span class="badge badge-green">BIBLIOTHÈQUE</span><h2>Ressources en ligne</h2><p>Presse, podcasts, données, archives, dictionnaires et sources du monde hispanophone, désormais précédés de raccourcis concours.</p><div class="actions"><a class="btn btn-secondary" href="ressources-en-ligne.html">Explorer</a></div></article>
+  <article class="card resource-hub-card"><span class="badge badge-green">TEXTES DE RÉFÉRENCE</span><h2>Sources officielles</h2><p>Programmes, textes institutionnels, CECRL et bibliographies déjà réunis dans le site.</p><div class="actions"><a class="btn btn-secondary" href="ressources.html">Ouvrir</a></div></article>
+  <article class="card resource-hub-card"><span class="badge badge-gold">QUOI LIRE ?</span><h2>Pas de lecture au hasard</h2><p>Si tu ne sais pas quelle ressource consulter aujourd’hui, laisse le tableau de bord choisir une mission en fonction de tes priorités.</p><div class="actions"><a class="btn btn-secondary" href="aujourdhui.html">Voir aujourd’hui</a></div></article>
+ </div>
+</section>
+</main>
+<script src="assets/app.js"></script>
+</body></html>

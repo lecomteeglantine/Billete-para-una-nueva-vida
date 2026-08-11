@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CAFEP & enseignement privé · Billete para una nueva vida</title>
+<meta name="description" content="Démarches spécifiques au CAFEP-CAPES et à l'enseignement privé sous contrat.">
+<meta name="theme-color" content="#c33b4a">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<style>
+.private-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.private-card{position:relative;padding-left:1.4rem}
+.private-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;border-radius:5px;background:#173a5e}
+.private-card.alert::before{background:#c94455}.private-card.good::before{background:#4f9d69}
+.private-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;counter-reset:step}
+.private-step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem}
+.private-step::before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:#173a5e;color:#fff;font-weight:900;margin-bottom:.7rem}
+.private-note{border-top:6px solid #e4b74e;background:linear-gradient(145deg,#fff,#fff7e8)}
+.private-quiz{display:grid;gap:.8rem}
+.private-q{border:1px solid var(--line);background:#fff;border-radius:16px;padding:1rem}
+.private-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.65rem}
+.private-actions button{border:1px solid #d7dfe7;background:#fff;padding:.6rem .8rem;border-radius:999px;font-weight:900}
+.private-q.good{border-color:#54a26b}.private-q.bad{border-color:#c94455}
+.private-feedback{margin-top:.65rem;padding:.65rem;background:#f5f7f9;border-radius:10px;min-height:1rem}
+@media(max-width:900px){.private-grid,.private-path{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.private-grid,.private-path{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="route-all">
+<main id="main">
+<section class="page-hero">
+  <div class="breadcrumbs"><a href="index.html">Accueil</a> › CAFEP & enseignement privé</div>
+  <span class="eyebrow">CAFEP-CAPES · ENSEIGNEMENT PRIVÉ SOUS CONTRAT</span>
+  <h1>Le concours est le même. Le recrutement après le concours ne l’est pas.</h1>
+  <p class="lead">Jennifer prépare les mêmes épreuves que les candidats du CAPES public, mais elle doit aussi anticiper les démarches propres à l’enseignement privé sous contrat.</p>
+</section>
+
+<section class="section">
+  <div class="private-grid">
+    <article class="card private-card good">
+      <span class="badge badge-green">ÉPREUVES</span>
+      <h2>CAFEP et CAPES : mêmes épreuves.</h2>
+      <p>Le ministère précise que les épreuves du CAFEP-CAPES sont <strong>identiques à celles du concours public correspondant</strong>. Le contenu disciplinaire, les durées et les attendus travaillés sur ce site restent donc valables.</p>
+      <a class="btn btn-secondary" href="epreuves.html">Revoir les épreuves</a>
+    </article>
+    <article class="card private-card alert">
+      <span class="badge badge-red">APRÈS LE CONCOURS</span>
+      <h2>L’accord d’un chef d’établissement est indispensable.</h2>
+      <p>Pour être recruté dans un établissement privé sous contrat, un lauréat doit disposer de l’accord d’un chef d’établissement de l’académie où il a passé le concours. Le ministère demande de prendre contact avec les représentants de l’enseignement privé sous contrat <strong>au plus tard au moment de l’inscription au concours</strong>.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><span class="eyebrow">Démarches</span><h2>Le parcours administratif à ne pas découvrir après l’admission.</h2></div></div>
+  <div class="private-path">
+    <div class="private-step"><strong>Identifier son réseau</strong><p>Établissement privé sous contrat, et le cas échéant réseau catholique : les procédures ne doivent pas être confondues.</p></div>
+    <div class="private-step"><strong>Prendre contact</strong><p>Contacter les représentants compétents de l’enseignement privé de son académie au plus tard lors de l’inscription au concours.</p></div>
+    <div class="private-step"><strong>Passer le CAFEP</strong><p>Préparer exactement les épreuves disciplinaires et orales du CAPES public correspondant.</p></div>
+    <div class="private-step"><strong>Après réussite</strong><p>Être inscrit sur la liste d’aptitude et disposer de l’accord nécessaire pour pouvoir être recruté dans un établissement.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <article class="card private-note">
+    <span class="badge badge-gold">SI JENNIFER VISE L’ENSEIGNEMENT CATHOLIQUE</span>
+    <h2>Pré-accord et accord collégial : une procédure supplémentaire.</h2>
+    <p>Le portail du Secrétariat général de l’enseignement catholique précise que le <strong>pré-accord</strong> et l’<strong>accord collégial</strong> sont les deux étapes permettant d’être nommé dans un établissement de l’Enseignement catholique. Le pré-accord prend la forme d’un entretien avec des chefs d’établissement portant notamment sur la motivation et l’adhésion au projet de l’Enseignement catholique.</p>
+    <p>Pour un candidat qui ne suit pas un master MEEF de l’Enseignement catholique, le SGEC indique qu’il faut prendre contact avec le <strong>SAAR</strong> compétent au moment de l’inscription au concours.</p>
+    <div class="notice"><strong>Attention :</strong> cette procédure concerne l’Enseignement catholique. Elle ne doit pas être présentée comme une formalité universelle de tous les établissements privés sous contrat.</div>
+    <div class="actions"><a class="btn btn-primary" href="https://caacweb.enseignement-catholique.fr/" target="_blank" rel="noopener">Portail Je deviens enseignant ↗</a></div>
+  </article>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><span class="eyebrow">Entretien</span><h2>Ce que le privé change — et ne change pas — dans la préparation orale.</h2></div></div>
+  <div class="private-grid">
+    <article class="card"><h3>Ne change pas</h3><ul><li>les épreuves du concours ;</li><li>les valeurs et principes du service public d’éducation évalués à l’entretien ;</li><li>l’exigence disciplinaire ;</li><li>la qualité du français et de l’espagnol.</li></ul></article>
+    <article class="card"><h3>À préparer en plus</h3><ul><li>être capable d’expliquer pourquoi choisir l’enseignement privé sous contrat ;</li><li>connaître le cadre général de recrutement ;</li><li>si établissement catholique : comprendre le sens du pré-accord et du projet éducatif ;</li><li>ne pas confondre projet d’établissement et règles nationales de l’École.</li></ul></article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><span class="eyebrow">Vérification active</span><h2>CAFEP ou idée reçue ?</h2></div></div>
+  <div class="private-quiz" id="privateQuiz"></div>
+</section>
+
+<section class="section">
+  <h2>Ma check-list CAFEP</h2>
+  <div class="checklist">
+    <label class="check-item"><input type="checkbox" data-progress="cafep-1"><span>Je sais expliquer la différence entre CAPES public et CAFEP sans inventer des épreuves différentes.</span></label>
+    <label class="check-item"><input type="checkbox" data-progress="cafep-2"><span>J’ai identifié les interlocuteurs de l’enseignement privé sous contrat dans mon académie.</span></label>
+    <label class="check-item"><input type="checkbox" data-progress="cafep-3"><span>Je connais la nécessité de l’accord d’un chef d’établissement après le concours.</span></label>
+    <label class="check-item"><input type="checkbox" data-progress="cafep-4"><span>Si je vise l’Enseignement catholique, j’ai vérifié ma situation concernant le pré-accord / accord collégial.</span></label>
+    <label class="check-item"><input type="checkbox" data-progress="cafep-5"><span>Je peux expliquer en deux minutes pourquoi je souhaite enseigner dans le privé sous contrat.</span></label>
+    <label class="check-item"><input type="checkbox" data-progress="cafep-6"><span>J’ai vérifié les informations à jour sur les sites officiels avant l’inscription.</span></label>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid grid-3">
+    <article class="card"><h3>Ministère · devenir enseignant</h3><p>Cadre de l’enseignement privé sous contrat, concours, conditions et recrutement après réussite.</p><a href="https://www.devenirenseignant.gouv.fr/etre-maitre-des-ecoles-et-des-etablissements-d-enseignement-prives-sous-contrat-151" target="_blank" rel="noopener">Source officielle ↗</a></article>
+    <article class="card"><h3>Collège / lycée privé sous contrat</h3><p>Conditions d’inscription au CAFEP-CAPES et informations propres au second degré.</p><a href="https://www.devenirenseignant.gouv.fr/enseigner-dans-un-college-ou-lycee-de-l-enseignement-prive-sous-contrat-1408" target="_blank" rel="noopener">Source officielle ↗</a></article>
+    <article class="card"><h3>Enseignement catholique</h3><p>Pré-accord, accord collégial et portail de candidature lorsque ce réseau est concerné.</p><a href="https://caacweb.enseignement-catholique.fr/" target="_blank" rel="noopener">Portail SGEC ↗</a></article>
+  </div>
+</section>
+</main>
+<script src="assets/app.js"></script>
+<script>
+(function(){
+ const qs=[
+  {t:"Les épreuves du CAFEP-CAPES sont différentes de celles du CAPES public.",a:false,e:"Faux. Le ministère indique qu’elles sont identiques pour le concours correspondant."},
+  {t:"Réussir le concours suffit automatiquement pour être nommé dans n’importe quel établissement privé.",a:false,e:"Faux. Le recrutement dans le privé sous contrat suppose notamment l’accord d’un chef d’établissement."},
+  {t:"Il faut anticiper les contacts avec l’enseignement privé avant même les résultats du concours.",a:true,e:"Vrai. Le ministère recommande de contacter les représentants compétents au plus tard au moment de l’inscription."},
+  {t:"Le pré-accord collégial concerne spécifiquement l’Enseignement catholique.",a:true,e:"Vrai. Il ne faut pas en faire une règle identique pour tous les réseaux privés sous contrat."},
+  {t:"Le choix du privé dispense de connaître les valeurs de la République à l’entretien.",a:false,e:"Faux. Le concours et ses attendus restent ceux du recrutement d’enseignants participant au service public d’éducation."},
+  {t:"Un candidat à l’Enseignement catholique peut être amené à rencontrer des chefs d’établissement dans le cadre du pré-accord.",a:true,e:"Vrai. Le SGEC décrit le pré-accord comme un entretien portant notamment sur la motivation."}
+ ];
+ const root=document.getElementById('privateQuiz'); if(!root)return;
+ root.innerHTML=qs.map((x,i)=>`<div class="private-q" id="pq-${i}"><strong>${i+1}. ${x.t}</strong><div class="private-actions"><button data-i="${i}" data-v="1">Vrai</button><button data-i="${i}" data-v="0">Faux</button></div><div class="private-feedback" id="pf-${i}" aria-live="polite"></div></div>`).join('');
+ root.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+  const i=+b.dataset.i,v=b.dataset.v==='1',ok=v===qs[i].a,box=document.getElementById(`pq-${i}`);
+  box.classList.remove('good','bad');box.classList.add(ok?'good':'bad');
+  document.getElementById(`pf-${i}`).innerHTML=`<strong>${ok?'Exact.':'À corriger.'}</strong> ${qs[i].e}`;
+ }));
+})();
+</script>
+</body></html>

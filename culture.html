@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Culture · Billete para una nueva vida</title>
+<meta name="description" content="Hub littérature et civilisation pour le CAFEP-CAPES externe d'espagnol.">
+<meta name="theme-color" content="#c33b4a">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<style>
+.culture-doors{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.culture-door{min-height:300px;position:relative;overflow:hidden}
+.culture-door .icon{font-size:2.4rem}
+.culture-links{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1rem}
+.culture-focus{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+@media(max-width:800px){.culture-doors,.culture-focus{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.culture-doors,.culture-focus{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="route-all">
+<main id="main">
+<section class="page-hero">
+ <div class="breadcrumbs"><a href="index.html">Accueil</a> › Culture</div>
+ <span class="eyebrow">LITTÉRATURE + CIVILISATION</span>
+ <h1>Deux portes, un même objectif : interpréter.</h1>
+ <p class="lead">La culture du concours n’est pas une accumulation de faits : elle sert à lire précisément les textes, images, discours et moments historiques.</p>
+</section>
+<section class="section">
+ <div class="culture-doors">
+  <article class="card culture-door"><div class="icon">📚</div><span class="badge badge-green">LITTÉRATURE</span><h2>Lire comme au concours</h2><p>Personnages, focalisation, polyphonie, procédés, tensions et construction d’une problématique.</p><div class="culture-links"><a class="btn btn-primary" href="litterature.html">Ouvrir Littérature</a><a class="btn btn-secondary" href="methodologie-composition.html">Méthodologie</a></div></article>
+  <article class="card culture-door"><div class="icon">🏛️</div><span class="badge badge-green">CIVILISATION</span><h2>Contextualiser sans réciter</h2><p>Chronologies raisonnées, acteurs, institutions, sources primaires, débats historiographiques et analyse documentaire.</p><div class="culture-links"><a class="btn btn-primary" href="civilisation.html">Ouvrir Civilisation</a><a class="btn btn-secondary" href="ressources-en-ligne.html">Sources externes</a></div></article>
+ </div>
+</section>
+<section class="section" data-route-view="bac3">
+ <div class="section-head"><div><span class="eyebrow">BAC+3 · 2027</span><h2>Les quatre accès à connaître par cœur.</h2></div></div>
+ <div class="culture-focus">
+  <article class="card"><h3>Rafael Chirbes</h3><p><em>La caída de Madrid</em>, personnages, structure et analyse.</p><a href="litterature.html">Réviser →</a></article>
+  <article class="card"><h3>La Transition</h3><p>Fin du franquisme, démocratisation, PCE, Constitution, mémoires.</p><a href="civilisation.html">Réviser →</a></article>
+  <article class="card"><h3>Langages</h3><p>Fiche de révision de la première épreuve orale.</p><a href="revision-langages.html">Réviser →</a></article>
+  <article class="card"><h3>Vivre entre générations</h3><p>Notions, problématiques et pistes culturelles.</p><a href="revision-vivre-entre-generations.html">Réviser →</a></article>
+ </div>
+</section>
+<section class="section" data-route-view="bac5">
+ <div class="notice"><strong>Parcours bac+5 :</strong> les pages Littérature et Civilisation conservent également les œuvres et contextes du programme bac+5. Le sélecteur de parcours filtre le contenu.</div>
+</section>
+</main>
+<script src="assets/app.js"></script>
+</body></html>
