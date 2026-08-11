@@ -6,12 +6,146 @@
 <meta name="description" content="Diagnostic, QCM, chronomètres et sujets d’entraînement.">
 <meta name="theme-color" content="#c33b4a">
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+
+<style>
+/* Ajouts BAC+3 oral — styles isolés */
+.bac3-oral-zone{scroll-margin-top:120px}
+.exercise-shell{display:grid;gap:1rem}
+.exercise-instruction{background:#fff8e8;border-left:5px solid #e9b949;padding:1rem 1.1rem;border-radius:14px;color:#31485d}
+.exercise-instruction strong{color:#17324d}
+.sort-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.sort-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem}
+.sort-item p{margin:.1rem 0 .75rem;color:#253e56;font-weight:700}
+.sort-actions{display:flex;gap:.55rem;flex-wrap:wrap}
+.sort-choice,.match-select{border:1px solid var(--line);background:#fff;border-radius:11px;padding:.65rem .75rem;font:inherit;color:var(--ink)}
+.sort-choice{cursor:pointer;font-weight:800}
+.sort-choice.selected{outline:3px solid rgba(195,59,74,.18);border-color:var(--red)}
+.item-feedback{margin-top:.7rem;padding:.7rem .8rem;border-radius:10px;font-size:.95rem}
+.item-feedback.ok{background:#e5f4ed;color:#205b49}
+.item-feedback.no{background:#f9e3e5;color:#7e2430}
+.revision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+.revision-point{padding:1rem;border-radius:14px;background:#fff;border:1px solid var(--line)}
+.revision-point strong{display:block;color:var(--red);margin-bottom:.35rem}
+.match-row{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.8fr);gap:1rem;align-items:start;padding:1rem 0;border-bottom:1px solid var(--line)}
+.match-row:last-child{border-bottom:0}
+.match-row blockquote{margin:0;color:#253e56;font-weight:700}
+.match-select{width:100%}
+.exercise-summary{margin-top:1rem;font-weight:800}
+@media(max-width:760px){.sort-grid,.revision-grid,.match-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body class="route-all">
 <main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Entraînement</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Mesurer les lacunes pour décider du prochain travail.</h1><p class="lead">Le diagnostic ne donne pas une étiquette de niveau : il choisit la priorité la plus rentable.</p></section>
 <section class="section"><div class="quiz-card card" id="diagnostic"><span class="badge badge-gold">Diagnostic initial</span><h2 id="quizTitle">Prête ?</h2><p id="quizQuestion">Le test comporte des questions sur le programme, le français, l’analyse, la didactique et l’entretien.</p><div id="quizOptions"></div><div id="quizFeedback"></div><div class="actions"><button class="btn btn-primary" id="startQuiz">Commencer</button><button class="btn btn-secondary" id="nextQuestion" hidden>Question suivante</button></div><p class="counter" id="quizCounter"></p></div></section>
 <section class="section"><h2>Entraînements chronométrés</h2><div class="grid grid-3"><article class="card"><div class="icon">⏱️</div><h3>Introduction en 25 minutes</h3><p>Analyse du sujet, présentation du dossier, tension, problématique et plan.</p><button class="btn btn-secondary timer-btn" data-minutes="25">Lancer 25 min</button></article><article class="card"><div class="icon">🎧</div><h3>Audio en 10 minutes</h3><p>Deux écoutes, prise de notes, restitution structurée et trois enjeux.</p><button class="btn btn-secondary timer-btn" data-minutes="10">Lancer 10 min</button></article><article class="card"><div class="icon">🎙️</div><h3>Motivation en 5 minutes</h3><p>Présentation sans texte intégral, enregistrée et réécoutée.</p><button class="btn btn-secondary timer-btn" data-minutes="5">Lancer 5 min</button></article></div><div class="callout" id="timerBox" hidden><h3 id="timerLabel">Chronomètre</h3><p class="progress-number" id="timerDisplay">00:00</p><button class="btn btn-gold" id="stopTimer">Arrêter</button></div></section>
-<section class="section"><h2>Banque de sujets</h2><div class="grid grid-2"><article class="card"><span class="badge badge-green">Bac+3 · composition</span><h3>Transition et continuités</h3><p>À partir d’un dossier imaginaire réunissant un extrait de <em>La caída de Madrid</em>, une affiche politique de 1976 et un article rétrospectif, analysez la manière dont la rupture démocratique s’accompagne de continuités sociales et mémorielles.</p></article><article class="card"><span class="badge badge-green">Bac+3 · oral</span><h3>Vivre entre générations</h3><p>Un reportage audio sur la mémoire familiale, une photographie, un extrait littéraire et une campagne associative : restituer l’audio, relier les supports et expliquer leur portée interculturelle.</p></article><article class="card"><span class="badge badge-red">Bac+5 · appliquée</span><h3>Identités et échanges</h3><p>Choisir trois supports dans un corpus sur la frontière, construire une séquence de Première et analyser un fait de langue lié à l’expression du déplacement.</p></article><article class="card"><span class="badge badge-red">Bac+5 · leçon</span><h3>Mémoire(s)</h3><p>Analyser un extrait audiovisuel, sélectionner un document complémentaire et proposer une séance avec objectifs, activités, aides et évaluation.</p></article></div></section></main>
+<section class="section"><h2>Banque de sujets</h2><div class="grid grid-2"><article class="card"><span class="badge badge-green">Bac+3 · composition</span><h3>Transition et continuités</h3><p>À partir d’un dossier imaginaire réunissant un extrait de <em>La caída de Madrid</em>, une affiche politique de 1976 et un article rétrospectif, analysez la manière dont la rupture démocratique s’accompagne de continuités sociales et mémorielles.</p></article><article class="card"><span class="badge badge-green">Bac+3 · oral</span><h3>Vivre entre générations</h3><p>Un reportage audio sur la mémoire familiale, une photographie, un extrait littéraire et une campagne associative : restituer l’audio, relier les supports et expliquer leur portée interculturelle.</p></article><article class="card"><span class="badge badge-red">Bac+5 · appliquée</span><h3>Identités et échanges</h3><p>Choisir trois supports dans un corpus sur la frontière, construire une séquence de Première et analyser un fait de langue lié à l’expression du déplacement.</p></article><article class="card"><span class="badge badge-red">Bac+5 · leçon</span><h3>Mémoire(s)</h3><p>Analyser un extrait audiovisuel, sélectionner un document complémentaire et proposer une séance avec objectifs, activités, aides et évaluation.</p></article></div></section>
+<section class="section bac3-oral-zone" data-route-view="bac3" id="bac3-oral-training">
+  <div class="section-head"><div><span class="badge badge-green">BAC+3 · ORAL</span><h2>Vivre entre générations : thématique ou véritable problématique ?</h2><p>Un exercice de catégorisation pour apprendre à distinguer un simple sujet d’un véritable nœud intellectuel.</p></div></div>
+  <div class="exercise-shell card">
+    <div class="exercise-instruction"><strong>Consigne :</strong> <em>Selecciona las problemáticas y las temáticas en relación con el eje del programa « Vivre entre générations ».</em><br><br><strong>Repaso :</strong> <em>Una problemática es un nudo intelectual, una tensión, que permite desarrollar el espíritu crítico del alumno, mientras que una temática se limita a anunciar el tema del eje, suele ser descriptiva o puede acumular dos o tres elementos sin ponerlos en relación ni confrontarlos.</em></div>
+    <div class="sort-grid" id="generationSort"></div>
+    <div class="actions"><button class="btn btn-primary" id="checkGenerationSort">Vérifier mes réponses</button><button class="btn btn-secondary" id="resetGenerationSort">Recommencer</button></div>
+    <p class="exercise-summary" id="generationSummary" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="section bac3-oral-zone" data-route-view="bac3" id="langages-training">
+  <div class="section-head"><div><span class="badge badge-green">BAC+3 · ORAL</span><span class="eyebrow" style="display:block;margin-top:.7rem">Thème culturel du cycle 4</span><h2>Langages</h2><p>Fiche de révisions puis activité d’appariement entre problématiques et thématiques possibles de dossiers.</p></div></div>
+
+  <article class="card">
+    <h3>Fiche de révisions</h3>
+    <p>Pour construire une problématique, cherche la <strong>tension</strong> entre deux conceptions du langage plutôt qu’un simple intitulé de thème.</p>
+    <div class="revision-grid">
+      <div class="revision-point"><strong>1 · Diversité des langues</strong>Richesse culturelle ↔ rupture de l’unité originaria du langage.</div>
+      <div class="revision-point"><strong>2 · Norme et création</strong>Norme collective ↔ liberté individuelle et créativité linguistique.</div>
+      <div class="revision-point"><strong>3 · Langue et pouvoir</strong>Légitimation du langage ↔ hiérarchies sociales et culturelles.</div>
+      <div class="revision-point"><strong>4 · Registres</strong>Diversité des registres ↔ richesse linguistique ou discrimination sociale.</div>
+      <div class="revision-point"><strong>5 · Langage artistique</strong>Rupture avec les conventions ↔ dialogue avec la tradition.</div>
+      <div class="revision-point"><strong>6 · Poésie et métalangage</strong>Représenter le réel ↔ faire du signe linguistique un objet de création et de réflexion.</div>
+    </div>
+  </article>
+
+  <article class="card" style="margin-top:1rem">
+    <h3>Exercice d’appariement</h3>
+    <div class="exercise-instruction"><strong>Consigne :</strong> <em>Relaciona cada problemática con la temática de los posibles dosieres.</em></div>
+    <div id="langagesMatch"></div>
+    <div class="actions"><button class="btn btn-primary" id="checkLangagesMatch">Vérifier mes réponses</button><button class="btn btn-secondary" id="resetLangagesMatch">Recommencer</button></div>
+    <p class="exercise-summary" id="langagesSummary" aria-live="polite"></p>
+  </article>
+</section>
+
+</main>
 <script src="assets/app.js"></script>
 <script src="assets/quizzes.js"></script>
+
+<script>
+(function(){
+  const generationItems = [
+    {text:'Los jóvenes y las personas mayores', type:'theme', feedback:'Simple thématique : le titre annonce le sujet mais ne met aucun enjeu en tension.'},
+    {text:'¿Cómo se reinventan las relaciones entre abuelos, padres y jóvenes?', type:'problem', feedback:'Véritable problématique : la question porte sur une transformation des relations et ouvre plusieurs pistes d’analyse.'},
+    {text:'Los conflictos entre padres e hijos', type:'theme', feedback:'Simple thématique : on nomme un domaine d’étude sans question ni tension intellectuelle.'},
+    {text:'¿Convivir entre generaciones es una fuente de conflictos o una oportunidad?', type:'problem', feedback:'Véritable problématique : elle confronte deux lectures de la convivencia et permet une discussion argumentée.'},
+    {text:'La convivencia entre generaciones', type:'theme', feedback:'Simple thématique : formulation descriptive, sans relation problématisée.'},
+    {text:'De abuelos a nietos: ¿conflicto, transmisión o solidaridad?', type:'problem', feedback:'Problématique recevable : les trois notions sont mises en tension et invitent à analyser les formes de relation intergénérationnelle.'},
+    {text:'¿Por qué los jóvenes tienen dificultades para encontrar trabajo?', type:'theme', feedback:'Question trop descriptive et trop éloignée du cœur de l’axe : elle traite surtout de l’emploi des jeunes sans construire une relation entre générations.'},
+    {text:'Jóvenes y mayores: ¿dos mundos incompatibles?', type:'theme', feedback:'Question fermée ou trop évidente : elle enferme l’analyse dans une opposition binaire à nuancer.'},
+    {text:'¿Es bueno vivir con los padres?', type:'theme', feedback:'Question fermée ou trop évidente : elle appelle facilement oui/non et reste peu analytique.'},
+    {text:'¿Cómo reflejan los medios de comunicación los conflictos y la solidaridad entre generaciones?', type:'problem', feedback:'Véritable problématique : elle interroge la représentation médiatique et articule conflit et solidarité.'},
+    {text:'¿Cómo ha cambiado la familia?', type:'theme', feedback:'Tentative de problématique mais trop générale : la question est vaste et essentiellement descriptive.'}
+  ];
+  const generationBox=document.getElementById('generationSort');
+  if(generationBox){
+    generationBox.innerHTML=generationItems.map((item,i)=>`<div class="sort-item" data-i="${i}"><p>« ${item.text} »</p><div class="sort-actions"><button class="sort-choice" data-choice="problem">Problématique</button><button class="sort-choice" data-choice="theme">Thématique</button></div><div class="item-feedback" hidden></div></div>`).join('');
+    generationBox.querySelectorAll('.sort-choice').forEach(btn=>btn.addEventListener('click',()=>{
+      const item=btn.closest('.sort-item'); item.dataset.answer=btn.dataset.choice; item.querySelectorAll('.sort-choice').forEach(b=>b.classList.toggle('selected',b===btn)); item.querySelector('.item-feedback').hidden=true;
+    }));
+    document.getElementById('checkGenerationSort').addEventListener('click',()=>{
+      let score=0;
+      generationBox.querySelectorAll('.sort-item').forEach((el,i)=>{
+        const chosen=el.dataset.answer; const ok=chosen===generationItems[i].type; if(ok) score++;
+        const fb=el.querySelector('.item-feedback'); fb.hidden=false; fb.className='item-feedback '+(ok?'ok':'no');
+        fb.innerHTML=`<strong>${ok?'Correct.':'À revoir.'}</strong> ${generationItems[i].feedback}`;
+      });
+      document.getElementById('generationSummary').textContent=`Résultat : ${score} / ${generationItems.length}.`;
+    });
+    document.getElementById('resetGenerationSort').addEventListener('click',()=>{
+      generationBox.querySelectorAll('.sort-item').forEach(el=>{delete el.dataset.answer;el.querySelectorAll('.sort-choice').forEach(b=>b.classList.remove('selected'));el.querySelector('.item-feedback').hidden=true;});
+      document.getElementById('generationSummary').textContent='';
+    });
+  }
+
+  const themes=[
+    'El lenguaje como don divino / castigo de la pluralidad de los idiomas',
+    'Lengua como totalidad (idioma-comunidad) / discurso individual y principio de creatividad',
+    'Idiomas oficiales y reivindicaciones regionalistas o poscoloniales',
+    'Lenguaje sagrado o elevado / habla estándar y coloquial',
+    'Lenguaje artístico peculiar y corrientes anteriores',
+    'Lenguaje, poesía, metalenguaje y signo lingüístico'
+  ];
+  const problems=[
+    '¿La diversidad de las lenguas constituye una riqueza cultural o la consecuencia de una ruptura de la unidad originaria del lenguaje?',
+    '¿En qué medida la tensión entre norma colectiva y libertad individual constituye el fundamento mismo de la creatividad lingüística?',
+    '¿Qué revelan las distintas formas de legitimación del lenguaje sobre las jerarquías sociales y culturales que estructuran una comunidad?',
+    '¿Hasta qué punto la diversidad de registros constituye una riqueza lingüística o un factor de discriminación social?',
+    '¿Cómo puede un lenguaje artístico romper con las convenciones heredadas y, al mismo tiempo, dialogar con la tradición que pretende superar?',
+    '¿Cómo cuestiona la poesía la capacidad del lenguaje para representar la realidad al convertir el propio signo lingüístico en objeto de creación y reflexión?'
+  ];
+  const match=document.getElementById('langagesMatch');
+  if(match){
+    match.innerHTML=problems.map((p,i)=>`<div class="match-row" data-i="${i}"><blockquote>${i+1}. « ${p} »</blockquote><div><select class="match-select" aria-label="Thématique pour la problématique ${i+1}"><option value="">Choisir une thématique…</option>${themes.map((t,j)=>`<option value="${j}">${t}</option>`).join('')}</select><div class="item-feedback" hidden></div></div></div>`).join('');
+    document.getElementById('checkLangagesMatch').addEventListener('click',()=>{
+      let score=0;
+      match.querySelectorAll('.match-row').forEach((row,i)=>{
+        const val=Number(row.querySelector('select').value); const selected=row.querySelector('select').value!==''; const ok=selected && val===i; if(ok) score++;
+        const fb=row.querySelector('.item-feedback'); fb.hidden=false; fb.className='item-feedback '+(ok?'ok':'no');
+        fb.innerHTML=ok?'<strong>Correct.</strong> Le lien problématique / thématique est cohérent.':`<strong>À revoir.</strong> La thématique attendue est : ${themes[i]}.`;
+      });
+      document.getElementById('langagesSummary').textContent=`Résultat : ${score} / ${problems.length}.`;
+    });
+    document.getElementById('resetLangagesMatch').addEventListener('click',()=>{
+      match.querySelectorAll('select').forEach(s=>s.value=''); match.querySelectorAll('.item-feedback').forEach(f=>f.hidden=true); document.getElementById('langagesSummary').textContent='';
+    });
+  }
+})();
+</script>
 </body></html>
