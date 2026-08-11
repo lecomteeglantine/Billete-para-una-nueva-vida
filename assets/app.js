@@ -3,6 +3,7 @@ const SITE = {
     ['index.html','Accueil','Commencer, diagnostic, parcours, routine'],
     ['programme.html','Programme 2027','Bac+3, bac+5, œuvres, axes, calendrier'],
     ['epreuves.html','Épreuves','Composition, traduction, leçon, entretien'],
+    ['methodologie-composition.html','Méthodologie de la composition','Dossier, problématique, plan, confrontation, citations, conclusion'],
     ['litterature.html','Littérature','La caída de Madrid, Capmany, Usigli, analyse'],
     ['civilisation.html','Civilisation','Franquismo, Transition, Cuba, Mexique, Espagne'],
     ['traduction.html','Langue & traduction','Thème, version, faits de langue, grammaire'],
@@ -126,5 +127,20 @@ function updateProgressDisplays(){
 function toast(message){const t=document.getElementById('toast');if(!t)return;t.textContent=message;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),2200)}
 function speak(text,lang){ if(!('speechSynthesis' in window)){toast('La synthèse vocale n’est pas disponible dans ce navigateur.');return;} speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=.86;speechSynthesis.speak(u); }
 window.speak=speak; window.toast=toast;
-function initPWA(){ if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+async function initPWA(){
+  // Phase de construction : désactive le service worker pour éviter que GitHub Pages
+  // continue d'afficher d'anciennes versions des pages après une mise à jour.
+  if('serviceWorker' in navigator){
+    try{
+      const registrations=await navigator.serviceWorker.getRegistrations();
+      await Promise.all(registrations.map(reg=>reg.unregister()));
+    }catch(e){}
+  }
+  if('caches' in window){
+    try{
+      const keys=await caches.keys();
+      await Promise.all(keys.filter(key=>key.startsWith('billete-')).map(key=>caches.delete(key)));
+    }catch(e){}
+  }
+}
 document.addEventListener('DOMContentLoaded',initShell);
