@@ -14,6 +14,7 @@ const SITE = {
     ['simulateur-oral1.html','Simulateur oral 1 bac+3','Dossier quatre documents, espagnol, français, jury, chronomètre, enregistrement'],
     ['simulateur-entretien.html','Simulateur entretien bac+3','Motivation, parcours, valeurs de la République, question générale, question contextualisée'],
     ['jury.html','Rapports de jury','Attentes, erreurs fréquentes, critères de réussite'],
+    ['sujets-officiels.html','Sujets officiels','Sujets réels 2026, sujets zéro, attendus officiels, rapport de jury'],
     ['entrainement.html','Entraînement','Diagnostic, QCM, chronomètre, sujets'],
     ['planning.html','Plan de travail','Planning, missions, révisions'],
     ['ressources.html','Ressources','Sources officielles, bibliographies, programmes'],
@@ -58,7 +59,7 @@ function footerHTML(){
     <div class="footer-grid">
       <div><h3>Billete para una nueva vida</h3><p>Préparer le CAFEP-CAPES externe d’espagnol avec une méthode claire, bilingue et progressive.</p></div>
       <div><h3>Parcours</h3><div class="footer-links"><a href="programme.html">Programme</a><a href="planning.html">Plan de travail</a><a href="progression.html">Progression</a></div></div>
-      <div><h3>Travail utile</h3><div class="footer-links"><a href="francais.html">Français</a><a href="mes-erreurs.html">Mes erreurs</a><a href="entrainement.html">Entraînement</a><a href="ressources.html">Sources</a></div></div>
+      <div><h3>Travail utile</h3><div class="footer-links"><a href="francais.html">Français</a><a href="mes-erreurs.html">Mes erreurs</a><a href="entrainement.html">Entraînement</a><a href="sujets-officiels.html">Sujets officiels</a><a href="ressources.html">Sources</a></div></div>
     </div>
     <p class="legal">🔒 Vie privée : aucune donnée de progression n’est envoyée à un serveur. Les résultats restent dans ce navigateur et peuvent être exportés. Ce site est un outil de préparation indépendant : les textes officiels accessibles dans l’onglet Ressources restent la référence. Conception : Eglantine Lecomte.</p>
   </div></footer>`;
