@@ -1,27 +1,6 @@
-const SITE = {
-  pages: [
-    ['index.html','Accueil','Commencer, diagnostic, parcours, routine'],
-    ['programme.html','Programme 2027','Bac+3, bac+5, œuvres, axes, calendrier'],
-    ['epreuves.html','Épreuves','Composition, traduction, leçon, entretien'],
-    ['methodologie-composition.html','Méthodologie de la composition','Dossier, problématique, plan, confrontation, citations, conclusion'],
-    ['litterature.html','Littérature','La caída de Madrid, Capmany, Usigli, analyse'],
-    ['civilisation.html','Civilisation','Franquismo, Transition, Cuba, Mexique, Espagne'],
-    ['traduction.html','Langue & traduction','Thème, version, faits de langue, grammaire'],
-    ['didactique.html','Didactique','Séquence, séance, CECRL, activités langagières'],
-    ['francais.html','Français du concours','Vocabulaire français espagnol, rappel actif, grammaire, prononciation'],
-    ['mes-erreurs.html','Mes erreurs','Révision personnalisée, flashcards difficiles, grammaire, traduction'],
-    ['oral.html','Oral & entretien','Leçon, motivation, valeurs de la République, mise en situation'],
-    ['simulateur-oral1.html','Simulateur oral 1 bac+3','Dossier quatre documents, espagnol, français, jury, chronomètre, enregistrement'],
-    ['simulateur-entretien.html','Simulateur entretien bac+3','Motivation, parcours, valeurs de la République, question générale, question contextualisée'],
-    ['jury.html','Rapports de jury','Attentes, erreurs fréquentes, critères de réussite'],
-    ['sujets-officiels.html','Sujets officiels','Sujets réels 2026, sujets zéro, attendus officiels, rapport de jury'],
-    ['entrainement.html','Entraînement','Diagnostic, QCM, chronomètre, sujets'],
-    ['planning.html','Plan de travail','Planning, missions, révisions'],
-    ['ressources.html','Ressources','Sources officielles, bibliographies, programmes'],
-    ['ressources-en-ligne.html','Ressources en ligne','Presse, podcasts, vidéos, données, archives et outils du monde hispanophone'],
-    ['progression.html','Ma progression','Sauvegarde, export, import, statistiques']
-  ]
-};
+const SITE = {pages: [["index.html", "Accueil", "Commencer, diagnostic, parcours, routine"], ["aujourdhui.html", "Aujourd’hui", "Missions personnalisées, priorités, session du jour"], ["programme.html", "Programme 2027", "Bac+3, bac+5, œuvres, axes, calendrier"], ["epreuves.html", "Épreuves", "Composition, traduction, leçon, entretien"], ["methodologie-composition.html", "Méthodologie de la composition", "Dossier, problématique, plan, confrontation, citations, conclusion"], ["litterature.html", "Littérature", "La caída de Madrid, Chirbes, personnages, Lucas, focalisation, polyphonie, analyse"], ["civilisation.html", "Civilisation", "Franquismo, Transition, PCE, pacto del olvido, amnistía, Constitución, 23-F, España"], ["traduction.html", "Langue & traduction", "Thème, version, faits de langue, grammaire, traitement de l’allocutaire"], ["didactique.html", "Didactique", "Séquence, séance, CECRL, objectifs, étayage, différenciation, évaluation"], ["francais.html", "Français du concours", "Vocabulaire français espagnol, rappel actif, nature, fonction, COD, COI, grammaire, prononciation"], ["mes-erreurs.html", "Mes erreurs", "Révision personnalisée, flashcards difficiles, grammaire, traduction"], ["oral.html", "Oral & entretien", "Motivation, valeurs de la République, laïcité, neutralité, discrimination, mise en situation"], ["simulateur-oral1.html", "Simulateur oral 1 bac+3", "Dossier quatre documents, espagnol, français, jury, chronomètre, enregistrement"], ["simulateur-entretien.html", "Simulateur entretien bac+3", "Motivation, parcours, valeurs de la République, question générale, question contextualisée"], ["jury.html", "Rapports de jury", "Attentes, erreurs fréquentes, critères de réussite, paraphrase, relecture"], ["sujets-officiels.html", "Sujets officiels", "Sujets réels 2026, sujets zéro, attendus officiels, rapport de jury"], ["entrainement.html", "Entraînement", "Diagnostic, QCM, chronomètre, sujets, oral"], ["planning.html", "Plan de travail", "Planning adaptatif, missions, révisions, douze semaines"], ["ressources.html", "Ressources", "Sources officielles, bibliographies, programmes"], ["ressources-en-ligne.html", "Ressources en ligne", "Presse, podcasts, vidéos, données, archives et outils du monde hispanophone"], ["progression.html", "Ma progression", "Progression réelle, compétences, sauvegarde, export, import, statistiques"]] };
+const PROGRESS_FALLBACK = [{"key": "official-2026-e1", "label": "Sujet réel 2026 · Épreuve 1 Lecture + plan + simulation complète", "page": "sujets-officiels.html", "pageLabel": "Sujets officiels", "category": "Sujets officiels", "route": "bac3"}, {"key": "official-2026-e2", "label": "Sujet réel 2026 · Épreuve 2 Thème + version + faits de langue", "page": "sujets-officiels.html", "pageLabel": "Sujets officiels", "category": "Sujets officiels", "route": "bac3"}, {"key": "official-zero-e1", "label": "Sujet zéro · Écrit 1 Comparaison avec le vrai sujet", "page": "sujets-officiels.html", "pageLabel": "Sujets officiels", "category": "Sujets officiels", "route": "bac3"}, {"key": "official-zero-e2", "label": "Sujet zéro · Écrit 2 Deuxième entraînement linguistique", "page": "sujets-officiels.html", "pageLabel": "Sujets officiels", "category": "Sujets officiels", "route": "bac3"}, {"key": "official-zero-o1", "label": "Sujet zéro · Oral 1 Simulation complète avec chronomètre", "page": "sujets-officiels.html", "pageLabel": "Sujets officiels", "category": "Sujets officiels", "route": "bac3"}, {"key": "official-o2", "label": "Entretien Au moins trois simulations avec questions aléatoires", "page": "sujets-officiels.html", "pageLabel": "Sujets officiels", "category": "Sujets officiels", "route": "bac3"}, {"key": "lang-1", "label": "Une version littéraire corrigée.", "page": "traduction.html", "pageLabel": "Langue & traduction", "category": "Traduction", "route": "all"}, {"key": "lang-2", "label": "Un thème avec relevé des erreurs récurrentes.", "page": "traduction.html", "pageLabel": "Langue & traduction", "category": "Traduction", "route": "all"}, {"key": "lang-3", "label": "Deux faits de langue entièrement rédigés en français.", "page": "traduction.html", "pageLabel": "Langue & traduction", "category": "Traduction", "route": "all"}, {"key": "lang-4", "label": "Dix phrases de thème grammatical ciblées.", "page": "traduction.html", "pageLabel": "Langue & traduction", "category": "Traduction", "route": "all"}, {"key": "lang-5", "label": "Une page de français relue en trois passages : syntaxe, accords, ponctuation.", "page": "traduction.html", "pageLabel": "Langue & traduction", "category": "Traduction", "route": "all"}, {"key": "lang-6", "label": "Mise à jour du carnet personnel de faux amis.", "page": "traduction.html", "pageLabel": "Langue & traduction", "category": "Traduction", "route": "all"}, {"key": "jury5-1", "label": "Je sais exactement ce que la consigne me demande de produire.", "page": "jury.html", "pageLabel": "Jury", "category": "Jury", "route": "all"}, {"key": "jury5-2", "label": "Je distingue description, analyse et interprétation.", "page": "jury.html", "pageLabel": "Jury", "category": "Jury", "route": "all"}, {"key": "jury5-3", "label": "Chaque connaissance extérieure éclaire un élément précis du dossier.", "page": "jury.html", "pageLabel": "Jury", "category": "Jury", "route": "all"}, {"key": "jury5-4", "label": "Chaque citation ou détail relevé est commenté.", "page": "jury.html", "pageLabel": "Jury", "category": "Jury", "route": "all"}, {"key": "jury5-5", "label": "Je garde du temps pour une vraie relecture.", "page": "jury.html", "pageLabel": "Jury", "category": "Jury", "route": "all"}, {"key": "jury5-6", "label": "À l’oral, je réponds à la relance au lieu de défendre mécaniquement ma première idée.", "page": "jury.html", "pageLabel": "Jury", "category": "Jury", "route": "all"}, {"key": "jury5-7", "label": "Mon français reste professionnel : pas de « ça marche », « OK », « j’avoue ».", "page": "jury.html", "pageLabel": "Jury", "category": "Jury", "route": "all"}, {"key": "jury5-8", "label": "Pour l’entretien contextualisé, j’analyse les enjeux : je ne récite pas un plan d’action.", "page": "jury.html", "pageLabel": "Jury", "category": "Jury", "route": "all"}, {"key": "lit-1", "label": "Je peux expliquer en 60 secondes pourquoi le 19 novembre 1975 est un choix narratif décisif.", "page": "litterature.html", "pageLabel": "Littérature", "category": "Littérature", "route": "bac3"}, {"key": "lit-2", "label": "Je sais associer au moins six personnages à une position sociale et à une tension du roman.", "page": "litterature.html", "pageLabel": "Littérature", "category": "Littérature", "route": "bac3"}, {"key": "lit-3", "label": "Je distingue clairement narrateur, focalisation et jugement du personnage.", "page": "litterature.html", "pageLabel": "Littérature", "category": "Littérature", "route": "bac3"}, {"key": "lit-4", "label": "Je sais passer d’un détail matériel à une interprétation littéraire argumentée.", "page": "litterature.html", "pageLabel": "Littérature", "category": "Littérature", "route": "bac3"}, {"key": "lit-5", "label": "J’ai sélectionné dans mon exemplaire 8 à 10 citations courtes et exactes.", "page": "litterature.html", "pageLabel": "Littérature", "category": "Littérature", "route": "bac3"}, {"key": "lit-6", "label": "Je peux proposer trois problématiques différentes sur le roman sans raconter l’intrigue.", "page": "litterature.html", "pageLabel": "Littérature", "category": "Littérature", "route": "bac3"}, {"key": "lit-7", "label": "J’ai travaillé le vrai sujet 2026 en temps limité.", "page": "litterature.html", "pageLabel": "Littérature", "category": "Littérature", "route": "bac3"}, {"key": "lit-8", "label": "Je peux relier le roman à la Transition sans le réduire à un document historique.", "page": "litterature.html", "pageLabel": "Littérature", "category": "Littérature", "route": "bac3"}, {"key": "fr-gram-1", "label": "Je distingue nature et fonction sans les confondre.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "fr-gram-2", "label": "Je sais analyser un mot isolé dans son groupe.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "fr-gram-3", "label": "Je sais donner la nature et la fonction d’un groupe nominal.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "fr-gram-4", "label": "Je sais délimiter et analyser une proposition subordonnée.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "fr-1", "label": "J’ai étudié dix flashcards et prononcé chaque terme.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "fr-2", "label": "J’ai écrit cinq phrases avec les mots du jour.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "fr-3", "label": "J’ai reformulé un paragraphe de rapport de jury en français simple.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "fr-4", "label": "J’ai enregistré une réponse de deux minutes en français.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "fr-5", "label": "J’ai corrigé mes erreurs dans mon carnet personnel.", "page": "francais.html", "pageLabel": "Français", "category": "Français", "route": "all"}, {"key": "oral-b3-1", "label": "Pourquoi enseigner l’espagnol contribue-t-il à l’éducation à la citoyenneté ?", "page": "oral.html", "pageLabel": "Oral", "category": "Oral & entretien", "route": "bac3"}, {"key": "oral-b3-2", "label": "Comment l’enseignement de l’espagnol peut-il contribuer à la lutte contre les discriminations ?", "page": "oral.html", "pageLabel": "Oral", "category": "Oral & entretien", "route": "bac3"}, {"key": "oral-b3-3", "label": "Pourquoi l’École doit-elle s’intéresser au bien-être des élèves ?", "page": "oral.html", "pageLabel": "Oral", "category": "Oral & entretien", "route": "bac3"}, {"key": "oral-b3-4", "label": "Comment l’enseignement des langues peut-il contribuer à la transition écologique ?", "page": "oral.html", "pageLabel": "Oral", "category": "Oral & entretien", "route": "bac3"}, {"key": "oral-b3-5", "label": "Que signifie la neutralité pour un enseignant ?", "page": "oral.html", "pageLabel": "Oral", "category": "Oral & entretien", "route": "bac3"}, {"key": "oral-b3-6", "label": "Comment l’École contribue-t-elle à l’égalité entre les filles et les garçons ?", "page": "oral.html", "pageLabel": "Oral", "category": "Oral & entretien", "route": "bac3"}, {"key": "civ-1", "label": "Je peux raconter 1969–1982 en 3 minutes sans transformer la chronologie en liste de dates.", "page": "civilisation.html", "pageLabel": "Civilisation", "category": "Civilisation", "route": "bac3"}, {"key": "civ-2", "label": "Je sais expliquer « reforma / ruptura » avec un exemple précis.", "page": "civilisation.html", "pageLabel": "Civilisation", "category": "Civilisation", "route": "bac3"}, {"key": "civ-3", "label": "Je sais expliquer pourquoi « pacto del olvido » doit être employé avec prudence.", "page": "civilisation.html", "pageLabel": "Civilisation", "category": "Civilisation", "route": "bac3"}, {"key": "civ-4", "label": "Je peux contextualiser la légalisation du PCE et expliquer ses enjeux.", "page": "civilisation.html", "pageLabel": "Civilisation", "category": "Civilisation", "route": "bac3"}, {"key": "civ-5", "label": "Je peux analyser un article de la Constitution sans réciter tout le texte constitutionnel.", "page": "civilisation.html", "pageLabel": "Civilisation", "category": "Civilisation", "route": "bac3"}, {"key": "civ-6", "label": "Je peux citer au moins trois formes de violence politique de la période en les distinguant.", "page": "civilisation.html", "pageLabel": "Civilisation", "category": "Civilisation", "route": "bac3"}, {"key": "civ-7", "label": "J’ai travaillé les documents 2 et 3 du sujet réel 2026.", "page": "civilisation.html", "pageLabel": "Civilisation", "category": "Civilisation", "route": "bac3"}, {"key": "civ-8", "label": "Je sais relier un fait historique à une tension du roman de Chirbes.", "page": "civilisation.html", "pageLabel": "Civilisation", "category": "Civilisation", "route": "bac3"}, {"key": "meth-comp-1", "label": "J’ai répondu à chaque verbe de la consigne et à chaque partie demandée.", "page": "methodologie-composition.html", "pageLabel": "Méthodologie", "category": "Méthodologie", "route": "all"}, {"key": "meth-comp-2", "label": "Mon analyse littéraire possède une problématique, un plan et une conclusion.", "page": "methodologie-composition.html", "pageLabel": "Méthodologie", "category": "Méthodologie", "route": "all"}, {"key": "meth-comp-3", "label": "Je relie les procédés au sens au lieu de les énumérer.", "page": "methodologie-composition.html", "pageLabel": "Méthodologie", "category": "Méthodologie", "route": "all"}, {"key": "meth-comp-4", "label": "Dans le commentaire de civilisation, les documents sont mis en relation.", "page": "methodologie-composition.html", "pageLabel": "Méthodologie", "category": "Méthodologie", "route": "all"}, {"key": "meth-comp-5", "label": "Mes connaissances servent à interpréter les documents et ne remplacent pas leur analyse.", "page": "methodologie-composition.html", "pageLabel": "Méthodologie", "category": "Méthodologie", "route": "all"}, {"key": "meth-comp-6", "label": "Chaque citation ou référence est expliquée.", "page": "methodologie-composition.html", "pageLabel": "Méthodologie", "category": "Méthodologie", "route": "all"}, {"key": "meth-comp-7", "label": "J’ai relu l’espagnol : syntaxe, conjugaisons, accords, accents, vocabulaire.", "page": "methodologie-composition.html", "pageLabel": "Méthodologie", "category": "Méthodologie", "route": "all"}, {"key": "did-1", "label": "Je sais situer une séquence : classe, axe, niveau CECRL, prérequis et contraintes.", "page": "didactique.html", "pageLabel": "Didactique", "category": "Didactique", "route": "all"}, {"key": "did-2", "label": "Je sais formuler une problématique culturelle qui organise réellement les documents.", "page": "didactique.html", "pageLabel": "Didactique", "category": "Didactique", "route": "all"}, {"key": "did-3", "label": "Je sais formuler des objectifs observables et expliquer comment je vérifierai qu’ils sont atteints.", "page": "didactique.html", "pageLabel": "Didactique", "category": "Didactique", "route": "all"}, {"key": "did-4", "label": "Je sais justifier la fonction de chaque document dans la progression plutôt que simplement le décrire.", "page": "didactique.html", "pageLabel": "Didactique", "category": "Didactique", "route": "all"}, {"key": "did-5", "label": "Je sais décrire précisément ce que les élèves font, disent, écrivent et apprennent pendant une activité.", "page": "didactique.html", "pageLabel": "Didactique", "category": "Didactique", "route": "all"}, {"key": "did-6", "label": "Je sais relier entraînement, tâche finale, critères et évaluation sans ajouter une activité décorative.", "page": "didactique.html", "pageLabel": "Didactique", "category": "Didactique", "route": "all"}, {"key": "prog-1", "label": "Je peux expliquer en deux minutes la différence entre programme bac+3 et programme bac+5.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "prog-2", "label": "Je connais la structure et les personnages principaux de La caída de Madrid.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "prog-3", "label": "Je peux raconter les étapes essentielles de 1975 à 1982 sans réciter une liste.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "prog-4", "label": "Je sais relier une scène de Chirbes à un enjeu historique précis.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "prog-5", "label": "Je peux définir chaque axe culturel en français clair.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "prog-6", "label": "Je peux proposer trois documents hispaniques pertinents pour Langages.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "prog-7", "label": "Je peux proposer trois documents pour Vivre entre générations.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "prog-8", "label": "Je sais présenter chaque œuvre bac+5 en une minute et formuler ses enjeux.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "bac5"}, {"key": "prog-9", "label": "Je possède un répertoire de citations courtes vérifiées.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "prog-10", "label": "Je sais distinguer contexte de production, contexte représenté et contexte de réception.", "page": "programme.html", "pageLabel": "Programme", "category": "Programme", "route": "all"}, {"key": "exam-1", "label": "Deux compositions complètes en temps limité.", "page": "epreuves.html", "pageLabel": "Épreuves", "category": "Simulations", "route": "all"}, {"key": "exam-2", "label": "Quatre introductions rédigées et corrigées.", "page": "epreuves.html", "pageLabel": "Épreuves", "category": "Simulations", "route": "all"}, {"key": "exam-3", "label": "Quatre versions et quatre thèmes chronométrés.", "page": "epreuves.html", "pageLabel": "Épreuves", "category": "Simulations", "route": "all"}, {"key": "exam-4", "label": "Six analyses de faits de langue en français.", "page": "epreuves.html", "pageLabel": "Épreuves", "category": "Simulations", "route": "all"}, {"key": "exam-5", "label": "Deux simulations complètes de l’épreuve appliquée ou de l’oral disciplinaire selon le parcours.", "page": "epreuves.html", "pageLabel": "Épreuves", "category": "Simulations", "route": "all"}, {"key": "exam-6", "label": "Dix analyses de documents audio ou vidéo sans transcription.", "page": "epreuves.html", "pageLabel": "Épreuves", "category": "Simulations", "route": "all"}, {"key": "exam-7", "label": "Trois présentations de motivation filmées en cinq minutes.", "page": "epreuves.html", "pageLabel": "Épreuves", "category": "Simulations", "route": "all"}, {"key": "exam-8", "label": "Dix mises en situation professionnelle préparées à l’oral.", "page": "epreuves.html", "pageLabel": "Épreuves", "category": "Simulations", "route": "all"}];
+const CATALOG_VERSION = 'phase6-20260811';
 
 const NAV = [
   ['index.html','Accueil'],['programme.html','Programme'],['epreuves.html','Épreuves'],
@@ -30,121 +9,112 @@ const NAV = [
   ['oral.html','Oral'],['jury.html','Jury'],['ressources-en-ligne.html','Ressources en ligne'],['entrainement.html','S’entraîner']
 ];
 
-function currentFile(){ return location.pathname.split('/').pop() || 'index.html'; }
+function currentFile(){return location.pathname.split('/').pop() || 'index.html';}
+function norm(s){return (s||'').toString().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9ñüáéíóúàèùçœæ]+/g,' ').trim();}
+function escapeHTML(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
 function headerHTML(){
-  const current = currentFile();
+  const current=currentFile();
   return `<a class="skip-link" href="#main">Aller au contenu</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Billete para una nueva vida, accueil">
-        <span class="ticket-mark" aria-hidden="true">🎟️</span>
-        <span><strong>Billete para una nueva vida</strong><small>CAFEP-CAPES externe d’espagnol · Jennifer</small></span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
-      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
-        ${NAV.map(([href,label])=>`<a href="${href}" ${current===href?'aria-current="page"':''}>${label}</a>`).join('')}
-      </nav>
-      <div class="header-tools">
-        <select class="route-select" id="routeSelect" aria-label="Choisir le parcours">
-          <option value="all">Deux parcours</option><option value="bac3">Bac+3</option><option value="bac5">Bac+5</option>
-        </select>
-        <button class="tool-btn" id="searchOpen" aria-label="Rechercher"><span aria-hidden="true">⌕</span><span class="label"> Recherche</span></button>
-        <button class="tool-btn" id="accessOpen" aria-label="Options d’accessibilité"><span aria-hidden="true">◐</span><span class="label"> Accessibilité</span></button>
-      </div>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Billete para una nueva vida, accueil"><span class="ticket-mark" aria-hidden="true">🎟️</span><span><strong>Billete para una nueva vida</strong><small>CAFEP-CAPES externe d’espagnol · Jennifer</small></span></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
+    <nav class="main-nav" id="mainNav" aria-label="Navigation principale">${NAV.map(([href,label])=>`<a href="${href}" ${current===href?'aria-current="page"':''}>${label}</a>`).join('')}</nav>
+    <div class="header-tools">
+      <select class="route-select" id="routeSelect" aria-label="Choisir le parcours"><option value="all">Deux parcours</option><option value="bac3">Bac+3</option><option value="bac5">Bac+5</option></select>
+      <button class="tool-btn" id="searchOpen" aria-label="Rechercher"><span aria-hidden="true">⌕</span><span class="label"> Recherche</span></button>
+      <button class="tool-btn" id="accessOpen" aria-label="Options d’accessibilité"><span aria-hidden="true">◐</span><span class="label"> Accessibilité</span></button>
     </div>
-  </header>`;
+  </div></header>`;
 }
-function footerHTML(){
-  return `<footer class="site-footer"><div class="footer-inner">
-    <div class="footer-grid">
-      <div><h3>Billete para una nueva vida</h3><p>Préparer le CAFEP-CAPES externe d’espagnol avec une méthode claire, bilingue et progressive.</p></div>
-      <div><h3>Parcours</h3><div class="footer-links"><a href="programme.html">Programme</a><a href="planning.html">Plan de travail</a><a href="progression.html">Progression</a></div></div>
-      <div><h3>Travail utile</h3><div class="footer-links"><a href="francais.html">Français</a><a href="mes-erreurs.html">Mes erreurs</a><a href="entrainement.html">Entraînement</a><a href="sujets-officiels.html">Sujets officiels</a><a href="ressources.html">Sources</a></div></div>
-    </div>
-    <p class="legal">🔒 Vie privée : aucune donnée de progression n’est envoyée à un serveur. Les résultats restent dans ce navigateur et peuvent être exportés. Ce site est un outil de préparation indépendant : les textes officiels accessibles dans l’onglet Ressources restent la référence. Conception : Eglantine Lecomte.</p>
-  </div></footer>`;
-}
-function overlaysHTML(){
- return `<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
-  <div class="dialog"><div class="dialog-head"><h2 id="searchTitle">Rechercher dans le site</h2><button class="close-btn" data-close="searchOverlay">✕</button></div>
-  <input class="search-box" id="siteSearch" type="search" placeholder="Ex. problématique, laïcité, transition, thème…" autocomplete="off"><div id="searchResults"></div></div></div>
-  <div class="access-overlay" id="accessOverlay" role="dialog" aria-modal="true" aria-labelledby="accessTitle"><div class="dialog">
-   <div class="dialog-head"><h2 id="accessTitle">Accessibilité</h2><button class="close-btn" data-close="accessOverlay">✕</button></div>
-   <div class="setting-row"><span>Taille du texte</span><span><button class="tool-btn" data-size="1">A</button> <button class="tool-btn" data-size="1.12">A+</button> <button class="tool-btn" data-size="1.25">A++</button></span></div>
-   <div class="setting-row"><label for="contrast">Contraste renforcé</label><input id="contrast" type="checkbox"></div>
-   <div class="setting-row"><label for="readingFont">Police de lecture simple</label><input id="readingFont" type="checkbox"></div>
-   <div class="setting-row"><label for="reduceMotion">Réduire les animations</label><input id="reduceMotion" type="checkbox"></div>
-   <div class="setting-row"><label for="focusMode">Mode concentration</label><input id="focusMode" type="checkbox"></div>
-  </div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>`;
-}
+function footerHTML(){return `<footer class="site-footer"><div class="footer-inner"><div class="footer-grid">
+  <div><h3>Billete para una nueva vida</h3><p>Préparer le CAFEP-CAPES externe d’espagnol avec une méthode claire, bilingue et progressive.</p></div>
+  <div><h3>Pilotage</h3><div class="footer-links"><a href="aujourdhui.html">Aujourd’hui</a><a href="planning.html">Plan de travail</a><a href="progression.html">Progression</a></div></div>
+  <div><h3>Travail utile</h3><div class="footer-links"><a href="francais.html">Français</a><a href="mes-erreurs.html">Mes erreurs</a><a href="entrainement.html">Entraînement</a><a href="sujets-officiels.html">Sujets officiels</a><a href="ressources.html">Sources</a></div></div>
+  </div><p class="legal">🔒 Vie privée : aucune donnée de progression n’est envoyée à un serveur. Les résultats restent dans ce navigateur et peuvent être exportés. Ce site est un outil de préparation indépendant : les textes officiels accessibles dans l’onglet Ressources restent la référence. Conception : Eglantine Lecomte.</p></div></footer>`;}
+function overlaysHTML(){return `<style>.search-result-meta{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.3rem}.search-result-meta span{font-size:.76rem;background:#f1f4f7;padding:.2rem .45rem;border-radius:999px;color:#5a6d7d}.search-focus{outline:4px solid rgba(226,174,58,.65);outline-offset:8px;border-radius:10px;scroll-margin-top:150px;animation:billeteFocus 1.8s ease}@keyframes billeteFocus{0%,100%{outline-color:rgba(226,174,58,.25)}50%{outline-color:rgba(207,66,83,.75)}}</style>
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-labelledby="searchTitle"><div class="dialog"><div class="dialog-head"><h2 id="searchTitle">Rechercher dans tout le site</h2><button class="close-btn" data-close="searchOverlay">✕</button></div><input class="search-box" id="siteSearch" type="search" placeholder="Ex. pacto del olvido, Lucas, COD, laïcité…" autocomplete="off"><div id="searchResults"><p>Commence à taper : la recherche parcourt désormais le contenu des pages, pas seulement leur titre.</p></div></div></div>
+<div class="access-overlay" id="accessOverlay" role="dialog" aria-modal="true" aria-labelledby="accessTitle"><div class="dialog"><div class="dialog-head"><h2 id="accessTitle">Accessibilité</h2><button class="close-btn" data-close="accessOverlay">✕</button></div><div class="setting-row"><span>Taille du texte</span><span><button class="tool-btn" data-size="1">A</button> <button class="tool-btn" data-size="1.12">A+</button> <button class="tool-btn" data-size="1.25">A++</button></span></div><div class="setting-row"><label for="contrast">Contraste renforcé</label><input id="contrast" type="checkbox"></div><div class="setting-row"><label for="readingFont">Police de lecture simple</label><input id="readingFont" type="checkbox"></div><div class="setting-row"><label for="reduceMotion">Réduire les animations</label><input id="reduceMotion" type="checkbox"></div><div class="setting-row"><label for="focusMode">Mode concentration</label><input id="focusMode" type="checkbox"></div></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>`;}
 
 function initShell(){
-  document.body.insertAdjacentHTML('afterbegin',headerHTML());
-  document.body.insertAdjacentHTML('beforeend',footerHTML()+overlaysHTML());
-  document.getElementById('navToggle')?.addEventListener('click',e=>{
-    const nav=document.getElementById('mainNav'); nav.classList.toggle('open'); e.currentTarget.setAttribute('aria-expanded',nav.classList.contains('open'));
-  });
-  const route = localStorage.getItem('billete-route') || 'all';
-  const select=document.getElementById('routeSelect'); select.value=route; setRoute(route);
-  select.addEventListener('change',e=>{localStorage.setItem('billete-route',e.target.value);setRoute(e.target.value);toast('Parcours enregistré.');});
-  initOverlays(); initAccessibility(); initTabs(); initProgress(); initRouteButtons(); initPWA();
+ document.body.insertAdjacentHTML('afterbegin',headerHTML());document.body.insertAdjacentHTML('beforeend',footerHTML()+overlaysHTML());
+ document.getElementById('navToggle')?.addEventListener('click',e=>{const nav=document.getElementById('mainNav');nav.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',nav.classList.contains('open'));});
+ const route=localStorage.getItem('billete-route')||'all';const select=document.getElementById('routeSelect');select.value=route;setRoute(route);
+ select.addEventListener('change',e=>{localStorage.setItem('billete-route',e.target.value);setRoute(e.target.value);toast('Parcours enregistré.');updateProgressDisplays();});
+ initOverlays();initAccessibility();initTabs();initProgress();initRouteButtons();initPWA();setTimeout(focusSearchTarget,80);
 }
-function setRoute(route){ document.body.classList.remove('route-all','route-bac3','route-bac5'); document.body.classList.add(`route-${route}`); }
-function initRouteButtons(){ document.querySelectorAll('[data-set-route]').forEach(btn=>btn.addEventListener('click',()=>{const r=btn.dataset.setRoute;localStorage.setItem('billete-route',r);setRoute(r);document.getElementById('routeSelect').value=r;toast(r==='bac3'?'Parcours bac+3 sélectionné.':'Parcours bac+5 sélectionné.');})); }
+function setRoute(route){document.body.classList.remove('route-all','route-bac3','route-bac5');document.body.classList.add(`route-${route}`);}
+function initRouteButtons(){document.querySelectorAll('[data-set-route]').forEach(btn=>btn.addEventListener('click',()=>{const r=btn.dataset.setRoute;localStorage.setItem('billete-route',r);setRoute(r);document.getElementById('routeSelect').value=r;toast(r==='bac3'?'Parcours bac+3 sélectionné.':'Parcours bac+5 sélectionné.');updateProgressDisplays();}));}
+
+let DEEP_INDEX=null,deepIndexPromise=null;
+async function buildDeepIndex(){
+ if(DEEP_INDEX)return DEEP_INDEX;if(deepIndexPromise)return deepIndexPromise;
+ deepIndexPromise=(async()=>{
+   const records=[];
+   await Promise.all(SITE.pages.map(async p=>{
+     try{
+       const res=await fetch(new URL(p[0],document.baseURI),{cache:'no-store'});if(!res.ok)throw new Error();const html=await res.text();const doc=new DOMParser().parseFromString(html,'text/html');
+       doc.querySelectorAll('script,style,noscript').forEach(x=>x.remove());
+       records.push({page:p[0],pageLabel:p[1],title:p[1],snippet:p[2],text:`${p[1]} ${p[2]} ${doc.body?.innerText||''}`.slice(0,30000),focus:p[1],kind:'Page'});
+       const heads=[...doc.querySelectorAll('h1,h2,h3')];
+       heads.forEach(h=>{});
+       heads.forEach(h=>{
+         const title=(h.textContent||'').replace(/\s+/g,' ').trim();if(!title)return;
+         const container=h.closest('article,section')||h.parentElement;const text=(container?.innerText||h.parentElement?.innerText||title).replace(/\s+/g,' ').trim();
+         records.push({page:p[0],pageLabel:p[1],title,snippet:text.slice(0,260),text:text.slice(0,5000),focus:title,kind:h.tagName==='H1'?'Page':'Section'});
+       });
+     }catch(e){records.push({page:p[0],pageLabel:p[1],title:p[1],snippet:p[2],text:`${p[1]} ${p[2]}`,focus:p[1],kind:'Page'});}
+   }));
+   const seen=new Set();DEEP_INDEX=records.filter(r=>{const k=`${r.page}|${r.title}`;if(seen.has(k))return false;seen.add(k);return true;});return DEEP_INDEX;
+ })();return deepIndexPromise;
+}
+function searchScore(rec,q){
+ const nq=norm(q),tokens=nq.split(/\s+/).filter(Boolean),title=norm(rec.title),text=norm(rec.text),page=norm(rec.pageLabel);if(!tokens.length)return 0;
+ let score=0;if(title===nq)score+=80;if(title.includes(nq))score+=45;if(page.includes(nq))score+=18;if(text.includes(nq))score+=28;
+ for(const t of tokens){if(title.includes(t))score+=12;if(text.includes(t))score+=4;else return 0;}return score;
+}
+async function renderSearch(q){
+ const box=document.getElementById('searchResults');if(!box)return;const needle=q.trim();
+ if(needle.length<2){box.innerHTML='<p>Tape au moins deux lettres. Exemples : <strong>Lucas</strong>, <strong>PCE</strong>, <strong>COD</strong>, <strong>laïcité</strong>, <strong>problématique</strong>.</p>';return;}
+ box.innerHTML='<p>Recherche dans les cours et exercices…</p>';const index=await buildDeepIndex();
+ const rows=index.map(r=>({...r,score:searchScore(r,needle)})).filter(r=>r.score>0).sort((a,b)=>b.score-a.score).slice(0,12);
+ box.innerHTML=rows.length?rows.map(r=>{const href=`${r.page}?search=${encodeURIComponent(needle)}&focus=${encodeURIComponent(r.focus)}`;return `<a class="search-result" href="${href}"><strong>${escapeHTML(r.title)}</strong><br><small>${escapeHTML(r.snippet)}</small><div class="search-result-meta"><span>${escapeHTML(r.pageLabel)}</span><span>${r.kind}</span></div></a>`;}).join(''):'<p>Aucun résultat précis. Essaie un mot plus court ou un synonyme.</p>';
+}
 function initOverlays(){
-  const open=(id)=>{document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'};
-  const close=(id)=>{document.getElementById(id).classList.remove('open');document.body.style.overflow=''};
-  document.getElementById('searchOpen').onclick=()=>{open('searchOverlay');setTimeout(()=>document.getElementById('siteSearch').focus(),50)};
-  document.getElementById('accessOpen').onclick=()=>open('accessOverlay');
-  document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>close(b.dataset.close));
-  document.querySelectorAll('.search-overlay,.access-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)close(o.id)}));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){close('searchOverlay');close('accessOverlay')}});
-  const input=document.getElementById('siteSearch'); input.addEventListener('input',()=>renderSearch(input.value)); renderSearch('');
+ const open=id=>{document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';};const close=id=>{document.getElementById(id).classList.remove('open');document.body.style.overflow='';};
+ document.getElementById('searchOpen').onclick=()=>{open('searchOverlay');buildDeepIndex();setTimeout(()=>document.getElementById('siteSearch').focus(),50);};document.getElementById('accessOpen').onclick=()=>open('accessOverlay');
+ document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>close(b.dataset.close));document.querySelectorAll('.search-overlay,.access-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)close(o.id);}));document.addEventListener('keydown',e=>{if(e.key==='Escape'){close('searchOverlay');close('accessOverlay');}});
+ const input=document.getElementById('siteSearch');let timer;input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>renderSearch(input.value),120);});
 }
-function renderSearch(q){
-  const box=document.getElementById('searchResults'); const needle=q.trim().toLowerCase();
-  const rows=SITE.pages.filter(p=>!needle || `${p[1]} ${p[2]}`.toLowerCase().includes(needle));
-  box.innerHTML=rows.length?rows.map(p=>`<a class="search-result" href="${p[0]}"><strong>${p[1]}</strong><br><small>${p[2]}</small></a>`).join(''):'<p>Aucun résultat. Essaie un terme plus général.</p>';
+function focusSearchTarget(){
+ const u=new URL(location.href),q=u.searchParams.get('search'),focus=u.searchParams.get('focus');if(!q&&!focus)return;const nf=norm(focus||q),nq=norm(q||focus);
+ const candidates=[...document.querySelectorAll('main h1,main h2,main h3,main p,main li,main td,main th,main strong')];
+ let target=candidates.find(x=>focus&&norm(x.textContent).includes(nf))||candidates.find(x=>norm(x.textContent).includes(nq));
+ if(target){target.classList.add('search-focus');target.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(()=>target.classList.remove('search-focus'),4200);}
 }
-function initAccessibility(){
-  const settings=JSON.parse(localStorage.getItem('billete-access')||'{}');
-  document.documentElement.style.setProperty('--text',(settings.size||1)+'rem');
-  [['contrast','high-contrast'],['readingFont','reading-font'],['reduceMotion','reduce-motion'],['focusMode','focus-mode']].forEach(([id,cls])=>{const el=document.getElementById(id);el.checked=!!settings[id];document.body.classList.toggle(cls,!!settings[id]);el.addEventListener('change',()=>{settings[id]=el.checked;document.body.classList.toggle(cls,el.checked);save();});});
-  document.querySelectorAll('[data-size]').forEach(b=>b.onclick=()=>{settings.size=Number(b.dataset.size);document.documentElement.style.setProperty('--text',settings.size+'rem');save();});
-  function save(){localStorage.setItem('billete-access',JSON.stringify(settings));}
+
+function initAccessibility(){const settings=JSON.parse(localStorage.getItem('billete-access')||'{}');document.documentElement.style.setProperty('--text',(settings.size||1)+'rem');[['contrast','high-contrast'],['readingFont','reading-font'],['reduceMotion','reduce-motion'],['focusMode','focus-mode']].forEach(([id,cls])=>{const el=document.getElementById(id);el.checked=!!settings[id];document.body.classList.toggle(cls,!!settings[id]);el.addEventListener('change',()=>{settings[id]=el.checked;document.body.classList.toggle(cls,el.checked);save();});});document.querySelectorAll('[data-size]').forEach(b=>b.onclick=()=>{settings.size=Number(b.dataset.size);document.documentElement.style.setProperty('--text',settings.size+'rem');save();});function save(){localStorage.setItem('billete-access',JSON.stringify(settings));}}
+function initTabs(){document.querySelectorAll('[data-tabs]').forEach(group=>{const buttons=group.querySelectorAll('.tab-btn'),panels=group.querySelectorAll('.tab-panel');buttons.forEach((b,i)=>b.addEventListener('click',()=>{buttons.forEach(x=>x.setAttribute('aria-selected','false'));panels.forEach(p=>p.hidden=true);b.setAttribute('aria-selected','true');panels[i].hidden=false;}));});}
+
+function categoryForKey(key,page){if(key.startsWith('prog-'))return'Programme';if(key.startsWith('exam-'))return'Simulations';if(key.startsWith('meth-comp-'))return'Méthodologie';if(key.startsWith('lit-'))return'Littérature';if(key.startsWith('civ-'))return'Civilisation';if(key.startsWith('fr-'))return'Français';if(key.startsWith('lang-'))return'Traduction';if(key.startsWith('did-'))return'Didactique';if(key.startsWith('oral-b3-'))return'Oral & entretien';if(key.startsWith('jury5-'))return'Jury';if(key.startsWith('official-'))return'Sujets officiels';return SITE.pages.find(p=>p[0]===page)?.[1]||'Autres';}
+function routeForKey(key,detected='all'){if(key==='prog-8')return'bac5';if(/^(lit-|civ-|oral-b3-|official-)/.test(key))return'bac3';return detected||'all';}
+let catalogPromise=null;
+async function getProgressCatalog(){
+ if(catalogPromise)return catalogPromise;
+ catalogPromise=(async()=>{
+   const map=new Map(PROGRESS_FALLBACK.map(x=>[x.key,x]));
+   await Promise.all(SITE.pages.map(async p=>{try{const r=await fetch(new URL(p[0],document.baseURI),{cache:'no-store'});if(!r.ok)return;const doc=new DOMParser().parseFromString(await r.text(),'text/html');doc.querySelectorAll('[data-progress]').forEach(el=>{const key=el.dataset.progress;if(!key)return;const label=(el.closest('label')?.innerText||el.parentElement?.innerText||key).replace(/\s+/g,' ').trim();const rv=el.closest('[data-route-view]')?.dataset.routeView||'all';map.set(key,{key,label,page:p[0],pageLabel:p[1],category:categoryForKey(key,p[0]),route:routeForKey(key,rv)});});}catch(e){}}));
+   return [...map.values()];
+ })();return catalogPromise;
 }
-function initTabs(){
-  document.querySelectorAll('[data-tabs]').forEach(group=>{const buttons=group.querySelectorAll('.tab-btn');const panels=group.querySelectorAll('.tab-panel');buttons.forEach((b,i)=>b.addEventListener('click',()=>{buttons.forEach(x=>x.setAttribute('aria-selected','false'));panels.forEach(p=>p.hidden=true);b.setAttribute('aria-selected','true');panels[i].hidden=false;}));});
-}
-function progressKey(el){return el.dataset.progress || el.id;}
-function initProgress(){
-  const data=JSON.parse(localStorage.getItem('billete-progress')||'{}');
-  document.querySelectorAll('[data-progress]').forEach(el=>{const key=progressKey(el);el.checked=!!data[key];el.closest('.check-item')?.classList.toggle('done',el.checked);el.addEventListener('change',()=>{data[key]=el.checked;localStorage.setItem('billete-progress',JSON.stringify(data));el.closest('.check-item')?.classList.toggle('done',el.checked);updateProgressDisplays();});});
-  updateProgressDisplays();
-}
-function updateProgressDisplays(){
- const data=JSON.parse(localStorage.getItem('billete-progress')||'{}'); const done=Object.values(data).filter(Boolean).length; const total=Math.max(1,document.querySelectorAll('[data-progress]').length || Number(localStorage.getItem('billete-total-checks')) || 80); localStorage.setItem('billete-total-checks',Math.max(total,80));
- document.querySelectorAll('[data-progress-count]').forEach(e=>e.textContent=done);
- document.querySelectorAll('[data-progress-percent]').forEach(e=>e.textContent=Math.min(100,Math.round(done/80*100))+'%');
- document.querySelectorAll('.progress-bar > span').forEach(e=>e.style.width=Math.min(100,Math.round(done/80*100))+'%');
-}
-function toast(message){const t=document.getElementById('toast');if(!t)return;t.textContent=message;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),2200)}
-function speak(text,lang){ if(!('speechSynthesis' in window)){toast('La synthèse vocale n’est pas disponible dans ce navigateur.');return;} speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=.86;speechSynthesis.speak(u); }
-window.speak=speak; window.toast=toast;
-async function initPWA(){
-  // Phase de construction : désactive le service worker pour éviter que GitHub Pages
-  // continue d'afficher d'anciennes versions des pages après une mise à jour.
-  if('serviceWorker' in navigator){
-    try{
-      const registrations=await navigator.serviceWorker.getRegistrations();
-      await Promise.all(registrations.map(reg=>reg.unregister()));
-    }catch(e){}
-  }
-  if('caches' in window){
-    try{
-      const keys=await caches.keys();
-      await Promise.all(keys.filter(key=>key.startsWith('billete-')).map(key=>caches.delete(key)));
-    }catch(e){}
-  }
-}
+function filterCatalogForRoute(catalog,route){if(route==='all')return catalog;return catalog.filter(x=>x.route==='all'||x.route===route);}
+function progressKey(el){return el.dataset.progress||el.id;}
+function initProgress(){const data=JSON.parse(localStorage.getItem('billete-progress')||'{}');document.querySelectorAll('[data-progress]').forEach(el=>{const key=progressKey(el);el.checked=!!data[key];el.closest('.check-item')?.classList.toggle('done',el.checked);el.addEventListener('change',()=>{data[key]=el.checked;localStorage.setItem('billete-progress',JSON.stringify(data));el.closest('.check-item')?.classList.toggle('done',el.checked);updateProgressDisplays();document.dispatchEvent(new CustomEvent('billete:progress'));});});updateProgressDisplays();}
+async function updateProgressDisplays(){const data=JSON.parse(localStorage.getItem('billete-progress')||'{}'),route=localStorage.getItem('billete-route')||'all',catalog=filterCatalogForRoute(await getProgressCatalog(),route),total=Math.max(1,catalog.length),done=catalog.filter(x=>!!data[x.key]).length,pct=Math.round(done/total*100);document.querySelectorAll('[data-progress-count]').forEach(e=>e.textContent=done);document.querySelectorAll('[data-progress-total]').forEach(e=>e.textContent=total);document.querySelectorAll('[data-progress-percent]').forEach(e=>e.textContent=pct+'%');document.querySelectorAll('.progress-bar > span').forEach(e=>e.style.width=pct+'%');}
+
+function toast(message){const t=document.getElementById('toast');if(!t)return;t.textContent=message;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),2200);}
+function speak(text,lang){if(!('speechSynthesis'in window)){toast('La synthèse vocale n’est pas disponible dans ce navigateur.');return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang;u.rate=.86;speechSynthesis.speak(u);}
+async function initPWA(){if('serviceWorker'in navigator){try{const registrations=await navigator.serviceWorker.getRegistrations();await Promise.all(registrations.map(reg=>reg.unregister()));}catch(e){}}if('caches'in window){try{const keys=await caches.keys();await Promise.all(keys.filter(key=>key.startsWith('billete-')).map(key=>caches.delete(key)));}catch(e){}}}
+
+window.speak=speak;window.toast=toast;window.Billete={SITE,getProgressCatalog,filterCatalogForRoute,categoryForKey,norm,updateProgressDisplays};
 document.addEventListener('DOMContentLoaded',initShell);
