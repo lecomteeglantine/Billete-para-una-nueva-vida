@@ -1162,21 +1162,55 @@ const FLASHCARDS = [
 ];
 
 (function(){
-  let filtered=[...FLASHCARDS], index=0;
+  const STATE_KEY='billete-flash-srs-v2', DAY=24*60*60*1000;
+  let filtered=[...FLASHCARDS], index=0, revealed=false, direction='es-fr';
   const $=id=>document.getElementById(id);
-  function known(){return JSON.parse(localStorage.getItem('billete-known-cards')||'[]')}
-  function render(){
-    if(!filtered.length){$('flashFr').textContent='Aucune carte';$('flashEs').textContent='Modifie la recherche.';$('flashCounter').textContent='0 / 0';return;}
-    index=(index+filtered.length)%filtered.length; const c=filtered[index];
-    $('flashCat').textContent=c.category;$('flashFr').textContent=c.fr;$('flashEs').textContent=c.es;$('flashExFr').innerHTML='<strong>FR :</strong> '+c.exampleFr;$('flashExEs').innerHTML='<strong>ES :</strong> '+c.exampleEs;$('flashCounter').textContent=(index+1)+' / '+filtered.length;
-    $('markKnown').textContent=known().includes(c.id)?'✓ Carte connue':'✓ Je connais';
+  function state(){try{return JSON.parse(localStorage.getItem(STATE_KEY)||'{}')}catch(e){return {}}}
+  function save(s){localStorage.setItem(STATE_KEY,JSON.stringify(s));updateStats();}
+  function cardState(id){return state()[id]||{level:0,due:0,seen:0,good:0,hard:0};}
+  function updateStats(){
+    const s=state(), now=Date.now();
+    const due=FLASHCARDS.filter(c=>!s[c.id]||(s[c.id].due||0)<=now).length;
+    const mastered=FLASHCARDS.filter(c=>(s[c.id]?.level||0)>=4).length;
+    const seen=FLASHCARDS.filter(c=>(s[c.id]?.seen||0)>0).length;
+    if($('flashDue'))$('flashDue').textContent=due;if($('flashSeen'))$('flashSeen').textContent=seen;if($('flashMastered'))$('flashMastered').textContent=mastered;
   }
-  function apply(){const q=$('flashSearch').value.trim().toLowerCase(),cat=$('flashCategory').value;filtered=FLASHCARDS.filter(c=>(cat==='all'||c.category===cat)&&(!q||Object.values(c).join(' ').toLowerCase().includes(q)));index=0;render()}
+  function current(){return filtered[index]}
+  function render(){
+    if(!filtered.length){$('flashPrompt').textContent='Aucune carte';$('flashAnswer').textContent='Modifie la recherche.';$('flashCounter').textContent='0 / 0';return;}
+    index=(index+filtered.length)%filtered.length;const c=current();revealed=false;
+    $('flashCat').textContent=c.category;
+    $('flashPromptLang').textContent=direction==='es-fr'?'ESPAÑOL → FRANÇAIS':'FRANÇAIS → ESPAÑOL';
+    $('flashPrompt').textContent=direction==='es-fr'?c.es:c.fr;
+    $('flashAnswer').textContent=direction==='es-fr'?c.fr:c.es;
+    $('flashExFr').innerHTML='<strong>FR :</strong> '+c.exampleFr;
+    $('flashExEs').innerHTML='<strong>ES :</strong> '+c.exampleEs;
+    $('flashAnswerPanel').hidden=true;$('flashRatings').hidden=true;$('revealAnswer').hidden=false;
+    $('flashCounter').textContent=(index+1)+' / '+filtered.length;
+  }
+  function apply(){
+    const q=$('flashSearch').value.trim().toLowerCase(),cat=$('flashCategory').value;
+    filtered=FLASHCARDS.filter(c=>(cat==='all'||c.category===cat)&&(!q||Object.values(c).join(' ').toLowerCase().includes(q)));index=0;render();
+  }
+  function dueOnly(){
+    const s=state(),now=Date.now();filtered=FLASHCARDS.filter(c=>!s[c.id]||(s[c.id].due||0)<=now);index=0;render();if(window.toast)toast(`${filtered.length} carte(s) à revoir maintenant.`)
+  }
+  function rate(kind){
+    const c=current();if(!c)return;const s=state(),x=s[c.id]||{level:0,due:0,seen:0,good:0,hard:0};x.seen++;
+    if(kind==='good'){x.level=Math.min(5,(x.level||0)+1);x.good++;const days=[1,3,7,14,30,60][x.level]||60;x.due=Date.now()+days*DAY;}
+    if(kind==='almost'){x.level=Math.max(1,x.level||0);x.hard++;x.due=Date.now()+DAY;if(window.BilleteFrench)BilleteFrench.addError({id:`flash-${c.id}`,source:'Flashcards',type:'Presque',prompt:c.es,answer:c.fr,note:c.exampleFr});}
+    if(kind==='again'){x.level=0;x.hard++;x.due=Date.now();if(window.BilleteFrench)BilleteFrench.addError({id:`flash-${c.id}`,source:'Flashcards',type:'À revoir',prompt:c.es,answer:c.fr,note:c.exampleFr});}
+    s[c.id]=x;save(s);index++;render();
+  }
   document.addEventListener('DOMContentLoaded',()=>{
     const cats=[...new Set(FLASHCARDS.map(c=>c.category))];cats.forEach(c=>$('flashCategory').insertAdjacentHTML('beforeend',`<option value="${c}">${c}</option>`));
     $('nextCard').onclick=()=>{index++;render()};$('prevCard').onclick=()=>{index--;render()};$('flashSearch').oninput=apply;$('flashCategory').onchange=apply;
     $('shuffleCards').onclick=()=>{filtered.sort(()=>Math.random()-.5);index=0;render();toast('Cartes mélangées.')};
-    $('speakFr').onclick=()=>speak(filtered[index]?.fr||'','fr-FR');$('speakEs').onclick=()=>speak(filtered[index]?.es||'','es-ES');
-    $('markKnown').onclick=()=>{const c=filtered[index];if(!c)return;let k=known();k=k.includes(c.id)?k.filter(x=>x!==c.id):[...k,c.id];localStorage.setItem('billete-known-cards',JSON.stringify(k));render();};render();
+    $('flashDirection').onchange=e=>{direction=e.target.value;render()};$('reviewDue').onclick=dueOnly;
+    $('revealAnswer').onclick=()=>{$('flashAnswerPanel').hidden=false;$('flashRatings').hidden=false;$('revealAnswer').hidden=true;revealed=true};
+    $('speakPrompt').onclick=()=>{const c=current();if(c)speak(direction==='es-fr'?c.es:c.fr,direction==='es-fr'?'es-ES':'fr-FR')};
+    $('speakAnswer').onclick=()=>{const c=current();if(c)speak(direction==='es-fr'?c.fr:c.es,direction==='es-fr'?'fr-FR':'es-ES')};
+    document.querySelectorAll('[data-flash-rate]').forEach(b=>b.onclick=()=>rate(b.dataset.flashRate));
+    updateStats();render();
   });
 })();
