@@ -11,6 +11,8 @@ const SITE = {
     ['francais.html','Français du concours','Vocabulaire français espagnol, rappel actif, grammaire, prononciation'],
     ['mes-erreurs.html','Mes erreurs','Révision personnalisée, flashcards difficiles, grammaire, traduction'],
     ['oral.html','Oral & entretien','Leçon, motivation, valeurs de la République, mise en situation'],
+    ['simulateur-oral1.html','Simulateur oral 1 bac+3','Dossier quatre documents, espagnol, français, jury, chronomètre, enregistrement'],
+    ['simulateur-entretien.html','Simulateur entretien bac+3','Motivation, parcours, valeurs de la République, question générale, question contextualisée'],
     ['jury.html','Rapports de jury','Attentes, erreurs fréquentes, critères de réussite'],
     ['entrainement.html','Entraînement','Diagnostic, QCM, chronomètre, sujets'],
     ['planning.html','Plan de travail','Planning, missions, révisions'],
