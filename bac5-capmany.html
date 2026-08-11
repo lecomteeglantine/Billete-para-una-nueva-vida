@@ -16,6 +16,22 @@
 .trainer-feedback{margin-top:.65rem;background:#f5f7f9;border-radius:10px;padding:.65rem;min-height:1rem}
 .trainer-item.good{border-color:#55a36b}.trainer-item.bad{border-color:#c84455}
 @media(max-width:800px){.work-hero-grid,.analysis-grid{grid-template-columns:1fr}}
+
+.capmany-source-details{margin-top:1rem;border-top:1px solid #ead9b2;padding-top:.9rem}
+.capmany-source-details summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;border:1px solid #d8c69f;background:#fff;padding:.72rem .9rem;border-radius:999px;font-weight:900;color:#173a5e}
+.capmany-source-details summary::-webkit-details-marker{display:none}
+.capmany-source-details summary::after{content:"＋";font-size:1.05rem}
+.capmany-source-details[open] summary::after{content:"−"}
+.capmany-source-content{margin-top:1rem;display:grid;gap:1rem}
+.capmany-source-content .source-intro{background:#fff;border:1px solid #eadfca;border-radius:15px;padding:1rem}
+.capmany-source-content .source-section{background:#fff;border:1px solid #e7e0d5;border-radius:15px;padding:1rem}
+.capmany-source-content .source-section h4{margin:.1rem 0 .55rem;color:#173a5e;font-size:1.08rem}
+.capmany-source-content .source-section p{margin:.5rem 0}
+.capmany-source-content .source-conclusion{background:#fff7f0;border-left:5px solid #c84455}
+.capmany-source-ref{font-size:.9rem;color:#657581;margin:.6rem 0}
+.work-hero-grid:has(.source-primary .capmany-source-details[open]) > article:first-child{grid-column:1/-1}
+.work-hero-grid:has(.source-primary .capmany-source-details[open]) > .source-primary{grid-column:1/-1}
+
 </style>
 </head>
 <body class="route-bac5">
@@ -39,6 +55,73 @@
    <h3>Édition Françoise Étienvre</h3>
    <p>Le programme 2027 retient l’édition du Centro de Estudios Políticos y Constitucionales. La BNE conserve plusieurs éditions de 1808.</p>
    <div class="actions"><a class="btn btn-secondary" href="https://www.cepc.gob.es/publicaciones/monografias/centinela-contra-franceses-7" target="_blank" rel="noopener">CEPC ↗</a><a class="btn btn-secondary" href="https://datos.bne.es/edicion/bima0000026870" target="_blank" rel="noopener">BNE ↗</a></div>
+
+   <details class="capmany-source-details">
+    <summary>Lire la synthèse de l’introduction de Françoise Étienvre</summary>
+    <div class="capmany-source-content">
+      <div class="source-intro">
+        <span class="badge badge-green">CENTINELA CONTRA LOS FRANCESES</span>
+        <h3>Introduction : Antonio de Capmany et son époque</h3>
+        <p class="capmany-source-ref"><strong>Source principale :</strong> Françoise Étienvre, « Introduction biographique et critique », dans <em>Centinela contra franceses</em>.</p>
+        <p>L’introduction de Françoise Étienvre présente à la fois la vie d’Antonio de Capmany et le contexte historique, politique et littéraire dans lequel son œuvre a été écrite. Elle ne prétend pas proposer une biographie définitive : plusieurs aspects de la vie de Capmany demeurent incertains. Son objectif est surtout de retracer les étapes qui permettent de comprendre l’homme qui écrit <em>Centinela contra franceses</em> en 1808.</p>
+      </div>
+
+      <section class="source-section">
+        <h4>I · La formation et les premières expériences de Capmany</h4>
+        <p>Antonio de Capmany Surís y de Montpalau naît à Barcelone le 24 novembre 1742 dans une famille noble mais économiquement déclinante. Sa famille possède une ancienne tradition de résistance aux Français : son grand-père avait notamment participé à la défense de Gérone contre les troupes françaises. Cette mémoire familiale contribue à éclairer l’importance que Capmany accordera plus tard à la lutte contre la France napoléonienne.</p>
+        <p>Après des études humanistes à Barcelone, il choisit d’abord la carrière militaire et participe à l’expédition espagnole contre le Portugal en 1762. Son goût pour les livres lui vaut le surnom d’« Alférez de los libros ». En 1770, il quitte l’armée pour une carrière intellectuelle et administrative.</p>
+        <p>À Séville, il entre en contact avec le milieu réformateur de Pablo de Olavide, adhère aux idées des Lumières et souhaite voir l’Espagne participer au mouvement européen de rénovation. En 1773, il contribue à un projet visant à introduire dans les nouvelles populations de Sierra Morena des techniques agricoles utilisées en Catalogne et devient ensuite « Director de la Agricultura » dans les Nuevas Poblaciones.</p>
+      </section>
+
+      <section class="source-section">
+        <h4>II · La carrière madrilène : historien, écrivain et académicien</h4>
+        <p>En 1775, Capmany quitte La Carolina pour Madrid. Il travaille à la Contaduría General de Correos, tout en développant une intense activité intellectuelle. Il devient membre de la Real Academia de la Historia, puis secrétaire et enfin secrétaire perpétuel en 1790, fonction qu’il conserve jusqu’en 1802.</p>
+        <p>Entre 1776 et 1794, il publie neuf œuvres consacrées notamment à la langue, à l’éloquence, à l’histoire, au commerce et aux institutions. Parmi elles figurent <em>Arte de traducir el idioma francés al castellano</em>, <em>Filosofía de la Eloquencia</em>, <em>Memorias históricas sobre la Marina, Comercio y Artes de la antigua ciudad de Barcelona</em>, <em>Teatro Histórico-Crítico de la Eloquencia Española</em> et <em>Código de las costumbres marítimas de Barcelona</em>.</p>
+        <p>Deux orientations dominent : l’étude de la langue et de l’éloquence d’une part, la recherche historique d’autre part. Ses <em>Memorias históricas</em>, fondées sur un important travail d’archives, montrent l’importance de la recherche documentaire dans sa formation. Malgré des problèmes financiers et la lourdeur de ses fonctions administratives, il poursuit ses travaux et, après 1802, dispose de davantage de temps pour ses recherches personnelles.</p>
+      </section>
+
+      <section class="source-section">
+        <h4>III · Capmany face à la crise politique et à l’invasion française</h4>
+        <p>À la fin du XVIII<sup>e</sup> siècle, Capmany s’intéresse de plus en plus à la situation politique espagnole et critique certains responsables, notamment Godoy. En 1808, cette inquiétude devient un engagement patriotique direct.</p>
+        <p>Après la capitulation de Madrid devant les forces napoléoniennes, il quitte la capitale pour Séville. Cet épisode est essentiel pour comprendre <em>Centinela contra franceses</em>, qui doit être replacé dans la guerre d’Indépendance espagnole et la résistance à Napoléon.</p>
+        <p>À Séville, Capmany met son expérience au service de la Junta Central, participe à la rédaction de la <em>Gaceta del Gobierno</em> et aux travaux préparatoires aux Cortes. En 1810, il se rend à Cadix comme député de Catalogne. Il intervient notamment sur la liberté de la presse, les corporations et l’Inquisition. Il meurt à Cadix le 14 novembre 1813.</p>
+      </section>
+
+      <section class="source-section">
+        <h4>IV · Le contexte de <em>Centinela contra franceses</em> : la guerre et la propagande</h4>
+        <p>La partie « Sátira e historia » replace l’œuvre dans l’explosion de la production imprimée de 1808. Après les événements de Bayonne et de Madrid, les juntes provinciales diffusent proclamations, manifestes et décrets pour justifier et encourager la résistance.</p>
+        <p>À ces textes officiels s’ajoutent brochures, chansons, poèmes, journaux, sermons, estampes, pamphlets et satires. Cette littérature sert à combattre la propagande française, soutenir l’opinion publique et maintenir l’ardeur patriotique. La Junta de Sevilla encourage d’ailleurs les personnes instruites à publier de courts discours contre les mensonges de la propagande impériale.</p>
+        <p>La satire devient ainsi une arme politique : elle dénonce l’ennemi, ridiculise ses représentants et recherche une réaction émotionnelle immédiate. <em>Centinela contra franceses</em> appartient à cette vaste production antinapoléonienne ; son intérêt tient moins à l’originalité absolue de ses thèmes qu’à l’efficacité rhétorique de leur traitement.</p>
+      </section>
+
+      <section class="source-section">
+        <h4>V · Le rôle de la « plume » dans la défense de la patrie</h4>
+        <p>L’idée centrale apparaît dès le début de l’œuvre : ceux qui ne peuvent combattre avec une arme doivent combattre avec leur plume. La liberté et la patrie étant menacées, chacun doit participer à leur défense. Capmany établit ainsi une équivalence symbolique entre l’épée du combattant et la plume de l’écrivain.</p>
+        <p>Le titre correspond à cette fonction : Capmany se présente comme une « sentinelle » chargée de surveiller et de signaler les dangers menaçant la nation. Napoléon est l’ennemi principal, mais le texte attaque également les responsables espagnols jugés coupables, notamment Godoy, ainsi que les Espagnols soumis à l’influence française.</p>
+        <p>Le mot « centinela », relativement nouveau dans ce contexte éditorial, sera ensuite repris dans plusieurs publications entre 1810 et 1814.</p>
+      </section>
+
+      <section class="source-section">
+        <h4>VI · Une satire fondée sur l’ironie, la parodie et l’invective</h4>
+        <p>Capmany utilise constamment les procédés satiriques. L’ironie lui permet de feindre l’éloge de Napoléon ou des Français pour mieux les condamner : les Français deviennent ironiquement « nos chers voisins », tandis que l’empereur peut être présenté comme un grand politique ou un homme généreux alors que le contexte affirme l’inverse.</p>
+        <p>La parodie détourne les titres grandioses de Napoléon — « Pacificador del Continente », « Árbitro de la Europa » — et retourne contre l’ennemi son propre vocabulaire politique, notamment le terme « regenerar ».</p>
+        <p>L’ironie peut devenir invective. Apostrophes, répétitions, anaphores, rythmes ternaires, hyperboles et comparaisons dégradantes expriment la colère et cherchent à provoquer le lecteur. Napoléon est rapproché de figures associées à la tyrannie et à la cruauté comme Néron, Caligula, Tamerlan ou Attila ; il est également animalisé sous les traits du renard, du loup ou du tigre.</p>
+      </section>
+
+      <section class="source-section">
+        <h4>VII · Une œuvre de propagande patriotique</h4>
+        <p>Cette violence satirique n’a pas pour simple fonction de divertir. Elle vise à mobiliser les Espagnols et à empêcher qu’ils sous-estiment le danger napoléonien. La satire devient donc une arme patriotique.</p>
+        <p>Étienvre souligne toutefois que la littérature antinapoléonienne doit être replacée dans les conditions exceptionnelles de 1808 : les textes sont rédigés très rapidement, dans un climat d’exaltation nationale. Cette urgence explique la répétition des procédés, insultes et comparaisons, ainsi qu’une agressivité parfois extrême.</p>
+        <p><em>Centinela contra franceses</em> se distingue néanmoins par la combinaison de l’expérience historique, de l’engagement politique et du talent rhétorique de Capmany, qui n’est pas seulement pamphlétaire mais aussi historien, écrivain et acteur des débats politiques de son temps.</p>
+      </section>
+
+      <section class="source-section source-conclusion">
+        <h4>Conclusion · Une véritable « arme de la plume »</h4>
+        <p>L’introduction d’Étienvre invite à comprendre l’œuvre selon deux dimensions complémentaires : le parcours militaire, intellectuel, historique et politique de Capmany explique son engagement patriotique de 1808 ; parallèlement, <em>Centinela contra franceses</em> appartient à l’explosion de la littérature antinapoléonienne née de la guerre d’Indépendance.</p>
+        <p>Satire, ironie, parodie, invective, hyperbole et métaphores servent à dénoncer Napoléon, les Français et certains responsables espagnols, mais surtout à pousser les lecteurs à défendre leur liberté et leur patrie. Dans l’Espagne de 1808, <strong>écrire contre Napoléon devient une manière de combattre pour la nation</strong>.</p>
+      </section>
+    </div>
+   </details>
   </article>
  </div>
 </section>
