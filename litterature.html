@@ -68,6 +68,22 @@
 .chirbes-external-status{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.chirbes-compact-note{font-size:.9rem;color:#687985}
 @media(max-width:950px){.chirbes-path-grid,.chirbes-level-cards,.chirbes-summary-grid,.chirbes-external-status{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.chirbes-path-grid,.chirbes-level-cards,.chirbes-summary-grid,.chirbes-external-status{grid-template-columns:1fr}.chirbes-level-banner{display:block}}
+
+.chirbes-path [hidden]{display:none!important}
+.chirbes-level-card.recommended{position:relative}
+.chirbes-level-card.recommended::after{
+  content:"→ Commence ici";
+  display:inline-block;
+  margin-top:.75rem;
+  padding:.28rem .5rem;
+  border-radius:999px;
+  background:#c94355;
+  color:#fff;
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.02em
+}
+
 </style>
 </head>
 <body class="route-all">
