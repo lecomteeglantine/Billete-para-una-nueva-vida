@@ -1,12 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Français du concours · Billete para una nueva vida</title>
-<meta name="description" content="Flashcards français espagnol avec prononciation pour le CAFEP-CAPES.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
-
+<meta content="Flashcards français espagnol avec prononciation pour le CAFEP-CAPES." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .grammar-source{display:flex;justify-content:space-between;gap:1rem;align-items:center;margin:1rem 0 1.2rem}
 .grammar-source p{max-width:800px}
@@ -46,135 +46,183 @@
 .flash-prompt-lang{font-size:.75rem;letter-spacing:.12em;font-weight:900;color:var(--red-dark);margin:.7rem 0}.flash-answer-panel{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--line)}.recall-ratings{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.ft-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.ft-box{min-height:270px}.ft-textarea{width:100%;margin:1rem 0;border:1px solid var(--line);border-radius:14px;padding:.8rem;font:inherit;resize:vertical}.ft-model{margin-top:1rem}.ft-feedback{margin-top:1rem}.error-link-card{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:linear-gradient(135deg,#fff7e3,#fff)}
 @media(max-width:760px){.active-recall-stats,.ft-grid{grid-template-columns:1fr}.error-link-card{display:block}}
 
-</style>
 
+.fr-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.fr-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.fr-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.fr-path [hidden]{display:none!important}
+.fr-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.fr-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:178px}
+.fr-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.fr-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.fr-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.fr-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.fr-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.fr-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.fr-diag.hidden{display:none}
+.fr-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.fr-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.fr-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.fr-diag-options{display:grid;gap:.55rem}.fr-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.fr-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.fr-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.fr-level-panel{display:none}.fr-level-panel.active{display:block}
+.fr-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.fr-level-banner h2{color:#fff;margin:.1rem 0}.fr-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.fr-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.fr-validation.complete{border-color:#64a979;background:#eef8f1}
+.fr-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.fr-summary-card{border-left:5px solid #c94355}
+.fr-tool-section .card{height:100%}
+.fr-priority-pill{display:inline-block;margin-top:.45rem;padding:.3rem .55rem;border-radius:999px;background:#fff1cf;color:#6b4b00;font-size:.82rem;font-weight:800}
+.fr-route-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem}
+.fr-compact-note{font-size:.9rem;color:#687985}
+@media(max-width:950px){.fr-path-grid,.fr-level-cards,.fr-summary-grid,.fr-route-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.fr-path-grid,.fr-level-cards,.fr-summary-grid,.fr-route-grid{grid-template-columns:1fr}.fr-level-banner{display:block}}
+</style>
 </head>
 <body class="route-all">
-<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Français du concours</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Le laboratoire bilingue de Jennifer.</h1><p class="lead">Apprendre le vocabulaire français dont elle a besoin pour comprendre les consignes, rédiger, analyser, enseigner et répondre au jury.</p></section>
-<section class="section" id="flashcards-actives">
+<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Français du concours</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Le laboratoire bilingue de Jennifer.</h1><p class="lead">Apprendre le vocabulaire français dont elle a besoin pour comprendre les consignes, rédiger, analyser, enseigner et répondre au jury.</p></section><section class="section" id="francais-parcours">
+<article class="card fr-path">
+<div class="fr-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · FRANÇAIS DU CONCOURS</span>
+<h2>Français — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il cherche surtout à repérer <strong>ce qui te pénalise vraiment</strong> : compréhension des consignes, formulation académique, grammaire, usage ou expression professionnelle.</p>
+<div class="actions">
+<button class="btn btn-primary" id="frDiagStart" type="button">Faire le mini-diagnostic · 5 min</button>
+<button class="btn btn-secondary" hidden="" id="frDiagReset" type="button">Refaire le diagnostic</button>
+</div>
+</div>
+<div class="fr-path-status" id="frPathStatus">
+<span class="eyebrow">POINT DE DÉPART</span>
+<h3>Pas encore déterminé</h3>
+<p>Après 10 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir.</p>
+</div>
+</div>
+<div class="fr-diag hidden" id="frDiag">
+<div class="fr-compact-note" id="frDiagCount"></div>
+<div class="fr-diag-progress"><span id="frDiagBar"></span></div>
+<div class="fr-diag-q" id="frDiagQuestion"></div>
+<div class="fr-diag-options" id="frDiagOptions"></div>
+<div class="fr-diag-nav">
+<button class="btn btn-secondary" id="frDiagPrev" type="button">← Précédent</button>
+<button class="btn btn-primary" disabled="" id="frDiagNext" type="button">Suivant →</button>
+</div>
+</div>
+<div class="fr-level-cards">
+<button class="fr-level-card" data-fr-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>Consignes · vocabulaire · faux amis · rappel actif · phrases simples et justes.</span></button>
+<button class="fr-level-card" data-fr-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>Usage · grammaire · nature/fonction · automatismes · correction des erreurs.</span></button>
+<button class="fr-level-card" data-fr-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Formulation académique · faits de langue · oral professionnel · production.</span></button>
+<button class="fr-level-card" data-fr-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Guide officiel · terminologie complète · autonomie et précision métalinguistique.</span></button>
+</div>
+</article>
+</section><div class="fr-level-panel" data-fr-panel="1"><div class="fr-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je comprends les consignes et je construis un vocabulaire français réellement disponible, pas seulement reconnu.</p></div><button class="btn btn-secondary" data-fr-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Le socle</span><h2>Quatre réflexes avant de chercher à « faire compliqué ».</h2></div></div>
+<div class="fr-summary-grid">
+<article class="card fr-summary-card"><h3>Comprendre exactement la consigne</h3><p>Analyser, confronter, étayer, justifier, nuancer ou mettre en perspective n’attendent pas le même geste intellectuel.</p></article>
+<article class="card fr-summary-card"><h3>Privilégier une phrase correcte</h3><p>Au concours, une formulation claire, structurée et précise est plus utile qu’une phrase ambitieuse dont la syntaxe devient fragile.</p></article>
+<article class="card fr-summary-card"><h3>Nommer ce que l’on analyse</h3><p>Pour la grammaire, distinguer la nature d’un élément de sa fonction évite une grande partie des réponses floues.</p></article>
+<article class="card fr-summary-card"><h3>Réutiliser activement</h3><p>Un mot ou une tournure devient vraiment disponible quand on peut le produire soi-même, à l’écrit ou à l’oral, sans attendre de le reconnaître dans une liste.</p></article>
+</div>
+</section><section class="section"><h2>Six priorités en français</h2><div class="grid grid-3"><article class="card"><h3>Consignes</h3><p>Analyser, confronter, étayer, justifier, nuancer, dégager, rendre compte, mettre en perspective.</p></article><article class="card"><h3>Écriture académique</h3><p>Formuler une problématique, annoncer une démarche, articuler, concéder, réfuter, conclure.</p></article><article class="card"><h3>Didactique</h3><p>Objectifs, prérequis, étayage, différenciation, médiation, évaluation formative.</p></article><article class="card"><h3>Grammaire</h3><p>Proposition, déterminant, modalité, aspect, complément, subordination, mise en relief.</p></article><article class="card"><h3>Entretien</h3><p>Neutralité, laïcité, discrimination, obligation de signalement, climat scolaire, inclusion.</p></article><article class="card"><h3>Faux amis</h3><p>Assister, introduire, prétendre, réaliser, sensible, actuellement, éventuellement.</p></article></div></section><section class="section" id="flashcards-actives">
 <div class="notice"><strong>Nouveau mode :</strong> les cartes fonctionnent maintenant en <strong>rappel actif</strong>. Par défaut, Jennifer voit l’espagnol, cherche elle-même le français, puis révèle la réponse et indique si elle savait, hésitait ou doit revoir.</div>
 <div class="active-recall-stats"><div class="active-recall-stat"><strong id="flashDue">—</strong><span>à revoir maintenant</span></div><div class="active-recall-stat"><strong id="flashSeen">—</strong><span>déjà travaillées</span></div><div class="active-recall-stat"><strong id="flashMastered">—</strong><span>bien installées</span></div></div>
-<div class="flash-toolbar"><input id="flashSearch" type="search" placeholder="Rechercher un mot ou une expression…"><select id="flashCategory"><option value="all">Toutes les catégories</option></select><select id="flashDirection" aria-label="Sens de révision"><option value="es-fr">Espagnol → français</option><option value="fr-es">Français → espagnol</option></select><button class="btn btn-secondary" id="reviewDue">À revoir aujourd’hui</button><button class="btn btn-secondary" id="shuffleCards">Mélanger</button></div>
-<div class="flashcard" id="flashcard" aria-live="polite"><div><span class="badge" id="flashCat">Catégorie</span><div class="flash-prompt-lang" id="flashPromptLang"></div><div class="term" id="flashPrompt">Chargement…</div></div><div class="audio-row"><button class="audio-btn" id="speakPrompt">🔊 Écouter le recto</button><button class="btn btn-primary" id="revealAnswer">Afficher la réponse</button></div><div class="flash-answer-panel" id="flashAnswerPanel" hidden><div class="translation" id="flashAnswer"></div><div class="examples"><p id="flashExFr"></p><p id="flashExEs"></p></div><div class="audio-row"><button class="audio-btn" id="speakAnswer">🔊 Écouter la réponse</button></div></div><div class="recall-ratings" id="flashRatings" hidden><button class="btn btn-secondary" data-flash-rate="good">✓ Je savais</button><button class="btn btn-secondary" data-flash-rate="almost">~ Presque</button><button class="btn btn-secondary" data-flash-rate="again">↻ À revoir</button></div></div>
+<div class="flash-toolbar"><input id="flashSearch" placeholder="Rechercher un mot ou une expression…" type="search"/><select id="flashCategory"><option value="all">Toutes les catégories</option></select><select aria-label="Sens de révision" id="flashDirection"><option value="es-fr">Espagnol → français</option><option value="fr-es">Français → espagnol</option></select><button class="btn btn-secondary" id="reviewDue">À revoir aujourd’hui</button><button class="btn btn-secondary" id="shuffleCards">Mélanger</button></div>
+<div aria-live="polite" class="flashcard" id="flashcard"><div><span class="badge" id="flashCat">Catégorie</span><div class="flash-prompt-lang" id="flashPromptLang"></div><div class="term" id="flashPrompt">Chargement…</div></div><div class="audio-row"><button class="audio-btn" id="speakPrompt">🔊 Écouter le recto</button><button class="btn btn-primary" id="revealAnswer">Afficher la réponse</button></div><div class="flash-answer-panel" hidden="" id="flashAnswerPanel"><div class="translation" id="flashAnswer"></div><div class="examples"><p id="flashExFr"></p><p id="flashExEs"></p></div><div class="audio-row"><button class="audio-btn" id="speakAnswer">🔊 Écouter la réponse</button></div></div><div class="recall-ratings" hidden="" id="flashRatings"><button class="btn btn-secondary" data-flash-rate="good">✓ Je savais</button><button class="btn btn-secondary" data-flash-rate="almost">~ Presque</button><button class="btn btn-secondary" data-flash-rate="again">↻ À revoir</button></div></div>
 <div class="flash-nav"><button class="btn btn-secondary" id="prevCard">← Précédente</button><span class="counter" id="flashCounter"></span><button class="btn btn-primary" id="nextCard">Suivante →</button></div>
-<div class="card error-link-card" style="margin-top:1rem"><div><span class="badge badge-gold">Mémoire personnelle</span><h3>Mes erreurs</h3><p>Les cartes notées « Presque » ou « À revoir », ainsi que les exercices ratés, alimentent automatiquement un carnet de révision.</p></div><a class="btn btn-primary" href="mes-erreurs.html">Revoir mes erreurs (<span data-error-count>0</span>) →</a></div>
-</section>
-<section class="section"><h2>Six priorités en français</h2><div class="grid grid-3"><article class="card"><h3>Consignes</h3><p>Analyser, confronter, étayer, justifier, nuancer, dégager, rendre compte, mettre en perspective.</p></article><article class="card"><h3>Écriture académique</h3><p>Formuler une problématique, annoncer une démarche, articuler, concéder, réfuter, conclure.</p></article><article class="card"><h3>Didactique</h3><p>Objectifs, prérequis, étayage, différenciation, médiation, évaluation formative.</p></article><article class="card"><h3>Grammaire</h3><p>Proposition, déterminant, modalité, aspect, complément, subordination, mise en relief.</p></article><article class="card"><h3>Entretien</h3><p>Neutralité, laïcité, discrimination, obligation de signalement, climat scolaire, inclusion.</p></article><article class="card"><h3>Faux amis</h3><p>Assister, introduire, prétendre, réaliser, sensible, actuellement, éventuellement.</p></article></div></section>
+<div class="card error-link-card" style="margin-top:1rem"><div><span class="badge badge-gold">Mémoire personnelle</span><h3>Mes erreurs</h3><p>Les cartes notées « Presque » ou « À revoir », ainsi que les exercices ratés, alimentent automatiquement un carnet de révision.</p></div><a class="btn btn-primary" href="mes-erreurs.html">Revoir mes erreurs (<span data-error-count="">0</span>) →</a></div>
+</section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Quand le vocabulaire de base devient disponible activement et que tu peux l’utiliser dans tes propres phrases, passe au niveau 2.</p><div class="checklist"><label class="check-item"><input data-progress="fr-1" type="checkbox"/><span>J’ai étudié dix flashcards et prononcé chaque terme.</span></label><label class="check-item"><input data-progress="fr-2" type="checkbox"/><span>J’ai écrit cinq phrases avec les mots du jour.</span></label></div><div class="fr-validation" data-fr-validation="1"></div></article></section></div><div class="fr-level-panel" data-fr-panel="2"><div class="fr-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je corrige les interférences, j’automatise l’usage et j’installe les bases de l’analyse grammaticale.</p></div><button class="btn btn-secondary" data-fr-top="" type="button">Retour au parcours</button></div><section class="section fr-tool-section"><div class="section-head"><div><span class="eyebrow">Grammaire &amp; usage</span><h2>Automatiser les difficultés qui reviennent.</h2><p>Le module « Français express » garde une trace des erreurs pour les remettre dans le carnet personnel.</p></div></div><article class="card ft-box"><span class="badge badge-green">Grammaire &amp; usage</span><h3>Français express</h3><div id="frenchQcm"></div><div class="actions"><button class="btn btn-primary" hidden="" id="checkFrenchQcm">Vérifier</button><button class="btn btn-secondary" hidden="" id="nextFrenchQcm">Question suivante →</button></div></article></section><section class="section"><div class="section-head"><div><span class="eyebrow">Terminologie grammaticale</span><h2>Nature ou fonction ? Le réflexe de base.</h2><p>Commence par identifier ce qu’est l’élément, puis la relation qu’il entretient avec le reste de la phrase.</p></div></div><div class="notice">
+<strong>Réflexe essentiel :</strong> la <strong>nature</strong> dit ce qu’est un élément ; la <strong>fonction</strong> dit la relation qu’il entretient avec les autres éléments de la phrase ou du groupe. Un même type de groupe peut donc exercer plusieurs fonctions.
+  </div><div class="grammar-cheat-grid">
+<article class="grammar-cheat card">
+<span class="grammar-step">1</span>
+<h3>Mot isolé</h3>
+<p><strong>Natures à reconnaître :</strong> nom, verbe, adjectif, adverbe, déterminant, pronom, préposition, conjonction, interjection.</p>
+<p><strong>Attention :</strong> déterminants, prépositions et conjonctions n’ont généralement pas de fonction propre : c’est le groupe qu’ils contribuent à former qui exerce une fonction.</p>
+</article>
+<article class="grammar-cheat card">
+<span class="grammar-step">2</span>
+<h3>Groupe nominal</h3>
+<p>Repérer d’abord le <strong>noyau nominal</strong>, puis les éventuelles expansions : épithète, complément du nom ; l’apposition est un apport détaché au groupe nominal.</p>
+<p>Un GN ou un groupe nominal prépositionnel peut notamment être sujet, COD, COI, attribut, complément circonstanciel, complément du nom ou apposition.</p>
+</article>
+<article class="grammar-cheat card">
+<span class="grammar-step">3</span>
+<h3>Proposition</h3>
+<p>Identifier d’abord le <strong>type de subordonnée</strong> : complétive, circonstancielle, relative, infinitive, participiale ou interrogative indirecte.</p>
+<p>Ensuite seulement, chercher sa <strong>fonction</strong> : sujet, COD, attribut, complément du nom, épithète, apposition, complément circonstanciel…</p>
+</article>
+</div><div class="grammar-rule card">
+<h3>La méthode en 4 questions</h3>
+<ol>
+<li><strong>Quelle est la limite exacte de l’élément à analyser ?</strong></li>
+<li><strong>Quelle est sa nature ?</strong> Mot, groupe ou proposition — puis catégorie précise.</li>
+<li><strong>De quoi dépend-il ?</strong> Du verbe ? d’un nom ? d’un adjectif ? de l’ensemble de la phrase ?</li>
+<li><strong>Quelle relation entretient-il avec ce noyau ?</strong> C’est sa fonction.</li>
+</ol>
+</div></section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand tu distingues nature et fonction, sais analyser un mot et corriges tes erreurs récurrentes, passe au travail de concours.</p><div class="checklist"><label class="check-item"><input data-progress="fr-gram-1" type="checkbox"/><span>Je distingue nature et fonction sans les confondre.</span></label><label class="check-item"><input data-progress="fr-gram-2" type="checkbox"/><span>Je sais analyser un mot isolé dans son groupe.</span></label><label class="check-item"><input data-progress="fr-5" type="checkbox"/><span>J’ai corrigé mes erreurs dans mon carnet personnel.</span></label></div><div class="fr-validation" data-fr-validation="2"></div></article></section></div><div class="fr-level-panel" data-fr-panel="3"><div class="fr-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je produis un français académique et professionnel et je sais analyser précisément un fait de langue.</p></div><button class="btn btn-secondary" data-fr-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="fr-route-grid">
+<article class="card" data-route-view="bac3"><span class="badge badge-green">BAC+3</span><h3>Faits de langue</h3><p>La précision terminologique est directement utile pour rédiger en français une analyse de faits de langue : nature, fonction, dépendance et justification.</p></article>
+<article class="card" data-route-view="bac5"><span class="badge badge-red">BAC+5</span><h3>Français académique et professionnel</h3><p>Le même travail améliore la précision des explications, la reformulation et la qualité de la langue dans les épreuves écrites et orales.</p></article>
+</div>
+</section><section class="section fr-tool-section"><div class="section-head"><div><span class="eyebrow">Production académique</span><h2>Passer du français correct au français du concours.</h2><p>Le but est de produire une formulation défendable dans une copie ou devant le jury, sans calque ni registre trop oral.</p></div></div><article class="card ft-box"><span class="badge badge-red">Production académique</span><h3>Dis-le comme au concours</h3><div id="sayItBox"></div><div class="actions"><button class="btn btn-secondary" hidden="" id="nextSayIt">Nouvelle formulation →</button></div></article></section><section class="section"><div class="section-head"><div><span class="eyebrow">Entraînement concours</span><h2>Analyser un mot, un groupe ou une proposition.</h2><p>Le module existant est conservé avec ses quatre modes : mot isolé, groupe nominal, proposition et mélange concours.</p></div></div><div class="grammar-practice">
+<div class="grammar-practice-head">
+<div>
+<span class="badge badge-green">Entraînement interactif</span>
+<h3>Repère la nature ET la fonction</h3>
+<p>Choisis un niveau. Les phrases changent à chaque tour et le feedback explique le raisonnement attendu.</p>
+</div>
+<div aria-live="polite" class="grammar-score">
+<span id="grammarScore">0</span><small>bonnes réponses</small>
+</div>
+</div>
+<div aria-label="Type d’exercice grammatical" class="grammar-modes" role="tablist">
+<button aria-selected="true" class="grammar-mode active" data-grammar-mode="word" role="tab">Mot isolé</button>
+<button aria-selected="false" class="grammar-mode" data-grammar-mode="gn" role="tab">Groupe nominal</button>
+<button aria-selected="false" class="grammar-mode" data-grammar-mode="clause" role="tab">Proposition</button>
+<button aria-selected="false" class="grammar-mode" data-grammar-mode="mixed" role="tab">Mélange concours</button>
+</div>
+<div class="grammar-question card" id="grammarQuestionBox">
+<div class="grammar-level" id="grammarLevelLabel">MOT ISOLÉ</div>
+<p class="grammar-instruction">Dans la phrase suivante, analyse l’élément surligné.</p>
+<div class="grammar-sentence" id="grammarSentence"></div>
+<div class="grammar-answer-grid">
+<label>
+<span>1 · Nature</span>
+<select id="grammarNature"></select>
+</label>
+<label>
+<span>2 · Fonction</span>
+<select id="grammarFunction"></select>
+</label>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="checkGrammar">Vérifier</button>
+<button class="btn btn-secondary" id="grammarHint">Indice</button>
+<button class="btn btn-secondary" hidden="" id="nextGrammar">Question suivante →</button>
+</div>
+<div aria-live="polite" class="grammar-feedback" id="grammarFeedback"></div>
+</div>
 
-<section class="section" id="francais-actif"><div class="section-head"><div><span class="eyebrow">Français actif</span><h2>Comprendre ne suffit pas : il faut produire juste.</h2><p>Deux entraînements courts : automatiser les difficultés typiques d’une hispanophone, puis apprendre à formuler comme dans une copie ou devant le jury.</p></div></div><div class="ft-grid"><article class="card ft-box"><span class="badge badge-green">Grammaire & usage</span><h3>Français express</h3><div id="frenchQcm"></div><div class="actions"><button class="btn btn-primary" id="checkFrenchQcm" hidden>Vérifier</button><button class="btn btn-secondary" id="nextFrenchQcm" hidden>Question suivante →</button></div></article><article class="card ft-box"><span class="badge badge-red">Production académique</span><h3>Dis-le comme au concours</h3><div id="sayItBox"></div><div class="actions"><button class="btn btn-secondary" id="nextSayIt" hidden>Nouvelle formulation →</button></div></article></div></section>\n<section class="section" id="grammaire-francaise">
-  <div class="section-head">
-    <div>
-      <span class="eyebrow">Terminologie grammaticale officielle</span>
-      <h2>Nature ou fonction ? Il faut pouvoir répondre sans hésiter.</h2>
-      <p>Ce module reprend la terminologie du guide ministériel <em>La grammaire du français — Terminologie grammaticale</em> et l’applique à des phrases proches de celles qu’on peut rencontrer dans une analyse de faits de langue.</p>
-    </div>
-  </div>
+</div></section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Ce niveau est suffisamment solide quand tu sais analyser groupes et propositions et produire du français académique à l’écrit comme à l’oral.</p><div class="checklist"><label class="check-item"><input data-progress="fr-gram-3" type="checkbox"/><span>Je sais donner la nature et la fonction d’un groupe nominal.</span></label><label class="check-item"><input data-progress="fr-gram-4" type="checkbox"/><span>Je sais délimiter et analyser une proposition subordonnée.</span></label><label class="check-item"><input data-progress="fr-3" type="checkbox"/><span>J’ai reformulé un paragraphe de rapport de jury en français simple.</span></label><label class="check-item"><input data-progress="fr-4" type="checkbox"/><span>J’ai enregistré une réponse de deux minutes en français.</span></label></div><div class="fr-validation" data-fr-validation="3"></div></article></section></div><div class="fr-level-panel" data-fr-panel="4"><div class="fr-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>Je consulte la terminologie officielle pour résoudre les points encore fragiles et gagner en précision.</p></div><button class="btn btn-secondary" data-fr-top="" type="button">Retour au parcours</button></div><section class="section"><div class="section-head"><div><span class="eyebrow">Approfondissement</span><h2>Aller à la source quand une notion reste fragile.</h2><p>Le guide officiel sert de référence pour vérifier la terminologie et consolider les catégories les moins sûres.</p></div></div><div class="grammar-source card">
+<div>
+<span class="badge badge-gold">Guide de référence</span>
+<h3>La grammaire du français — Terminologie grammaticale</h3>
+<p>Le guide distingue notamment l’analyse des fonctions, la phrase et la proposition, puis la nature des mots et des groupes. Le module ci-dessous reprend cette organisation en trois niveaux : <strong>mot isolé → groupe nominal → proposition</strong>.</p>
+</div>
+<div class="actions">
+<a class="btn btn-secondary" href="docs/guide-grammaire-francais.pdf" rel="noopener" target="_blank">📘 Ouvrir le guide officiel</a>
+</div>
+</div></section><section class="section"><article class="card">
+<h3>Ce niveau n’est pas une liste à mémoriser.</h3>
+<p>Utilise le guide comme outil de vérification : pars d’une erreur réelle, retrouve la notion concernée, puis reviens à un exemple ou à une phrase de concours. L’objectif reste la précision, pas l’accumulation de définitions.</p>
+<div class="actions"><a class="btn btn-secondary" href="mes-erreurs.html">Ouvrir mon carnet d’erreurs →</a></div>
+</article></section></div>
 
-  <div class="notice">
-    <strong>Réflexe essentiel :</strong> la <strong>nature</strong> dit ce qu’est un élément ; la <strong>fonction</strong> dit la relation qu’il entretient avec les autres éléments de la phrase ou du groupe. Un même type de groupe peut donc exercer plusieurs fonctions.
-  </div>
 
-  <div class="grammar-source card">
-    <div>
-      <span class="badge badge-gold">Guide de référence</span>
-      <h3>La grammaire du français — Terminologie grammaticale</h3>
-      <p>Le guide distingue notamment l’analyse des fonctions, la phrase et la proposition, puis la nature des mots et des groupes. Le module ci-dessous reprend cette organisation en trois niveaux : <strong>mot isolé → groupe nominal → proposition</strong>.</p>
-    </div>
-    <div class="actions">
-      <a class="btn btn-secondary" href="docs/guide-grammaire-francais.pdf" target="_blank" rel="noopener">📘 Ouvrir le guide officiel</a>
-    </div>
-  </div>
-
-  <div class="grammar-cheat-grid">
-    <article class="grammar-cheat card">
-      <span class="grammar-step">1</span>
-      <h3>Mot isolé</h3>
-      <p><strong>Natures à reconnaître :</strong> nom, verbe, adjectif, adverbe, déterminant, pronom, préposition, conjonction, interjection.</p>
-      <p><strong>Attention :</strong> déterminants, prépositions et conjonctions n’ont généralement pas de fonction propre : c’est le groupe qu’ils contribuent à former qui exerce une fonction.</p>
-    </article>
-    <article class="grammar-cheat card">
-      <span class="grammar-step">2</span>
-      <h3>Groupe nominal</h3>
-      <p>Repérer d’abord le <strong>noyau nominal</strong>, puis les éventuelles expansions : épithète, complément du nom ; l’apposition est un apport détaché au groupe nominal.</p>
-      <p>Un GN ou un groupe nominal prépositionnel peut notamment être sujet, COD, COI, attribut, complément circonstanciel, complément du nom ou apposition.</p>
-    </article>
-    <article class="grammar-cheat card">
-      <span class="grammar-step">3</span>
-      <h3>Proposition</h3>
-      <p>Identifier d’abord le <strong>type de subordonnée</strong> : complétive, circonstancielle, relative, infinitive, participiale ou interrogative indirecte.</p>
-      <p>Ensuite seulement, chercher sa <strong>fonction</strong> : sujet, COD, attribut, complément du nom, épithète, apposition, complément circonstanciel…</p>
-    </article>
-  </div>
-
-  <div class="grammar-rule card">
-    <h3>La méthode en 4 questions</h3>
-    <ol>
-      <li><strong>Quelle est la limite exacte de l’élément à analyser ?</strong></li>
-      <li><strong>Quelle est sa nature ?</strong> Mot, groupe ou proposition — puis catégorie précise.</li>
-      <li><strong>De quoi dépend-il ?</strong> Du verbe ? d’un nom ? d’un adjectif ? de l’ensemble de la phrase ?</li>
-      <li><strong>Quelle relation entretient-il avec ce noyau ?</strong> C’est sa fonction.</li>
-    </ol>
-  </div>
-
-  <div class="grammar-practice">
-    <div class="grammar-practice-head">
-      <div>
-        <span class="badge badge-green">Entraînement interactif</span>
-        <h3>Repère la nature ET la fonction</h3>
-        <p>Choisis un niveau. Les phrases changent à chaque tour et le feedback explique le raisonnement attendu.</p>
-      </div>
-      <div class="grammar-score" aria-live="polite">
-        <span id="grammarScore">0</span><small>bonnes réponses</small>
-      </div>
-    </div>
-
-    <div class="grammar-modes" role="tablist" aria-label="Type d’exercice grammatical">
-      <button class="grammar-mode active" data-grammar-mode="word" role="tab" aria-selected="true">Mot isolé</button>
-      <button class="grammar-mode" data-grammar-mode="gn" role="tab" aria-selected="false">Groupe nominal</button>
-      <button class="grammar-mode" data-grammar-mode="clause" role="tab" aria-selected="false">Proposition</button>
-      <button class="grammar-mode" data-grammar-mode="mixed" role="tab" aria-selected="false">Mélange concours</button>
-    </div>
-
-    <div class="grammar-question card" id="grammarQuestionBox">
-      <div class="grammar-level" id="grammarLevelLabel">MOT ISOLÉ</div>
-      <p class="grammar-instruction">Dans la phrase suivante, analyse l’élément surligné.</p>
-      <div class="grammar-sentence" id="grammarSentence"></div>
-      <div class="grammar-answer-grid">
-        <label>
-          <span>1 · Nature</span>
-          <select id="grammarNature"></select>
-        </label>
-        <label>
-          <span>2 · Fonction</span>
-          <select id="grammarFunction"></select>
-        </label>
-      </div>
-      <div class="actions">
-        <button class="btn btn-primary" id="checkGrammar">Vérifier</button>
-        <button class="btn btn-secondary" id="grammarHint">Indice</button>
-        <button class="btn btn-secondary" id="nextGrammar" hidden>Question suivante →</button>
-      </div>
-      <div class="grammar-feedback" id="grammarFeedback" aria-live="polite"></div>
-    </div>
-
-    <div class="grammar-summary card">
-      <h3>Ce que le concours exige ici</h3>
-      <p>Éviter les réponses floues du type « c’est un complément ». Une analyse utile associe les deux informations : <strong>« groupe nominal, COD du verbe… »</strong>, <strong>« proposition subordonnée relative adjective, épithète du nom… »</strong>, etc.</p>
-      <div class="checklist">
-        <label class="check-item"><input type="checkbox" data-progress="fr-gram-1"><span>Je distingue nature et fonction sans les confondre.</span></label>
-        <label class="check-item"><input type="checkbox" data-progress="fr-gram-2"><span>Je sais analyser un mot isolé dans son groupe.</span></label>
-        <label class="check-item"><input type="checkbox" data-progress="fr-gram-3"><span>Je sais donner la nature et la fonction d’un groupe nominal.</span></label>
-        <label class="check-item"><input type="checkbox" data-progress="fr-gram-4"><span>Je sais délimiter et analyser une proposition subordonnée.</span></label>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section"><h2>Production quotidienne</h2><div class="checklist"><label class="check-item"><input type="checkbox" data-progress="fr-1"><span>J’ai étudié dix flashcards et prononcé chaque terme.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-2"><span>J’ai écrit cinq phrases avec les mots du jour.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-3"><span>J’ai reformulé un paragraphe de rapport de jury en français simple.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-4"><span>J’ai enregistré une réponse de deux minutes en français.</span></label><label class="check-item"><input type="checkbox" data-progress="fr-5"><span>J’ai corrigé mes erreurs dans mon carnet personnel.</span></label></div></section></main>
-<script src="assets/app.js"></script>
+\n
+</main>
+<script src="assets/app.js"></script><script src="assets/francais-path.js"></script>
 <script src="assets/french-training.js"></script>
 <script src="assets/flashcards.js"></script>
-
 <script>
 (function(){
   const NATURES = [
@@ -364,5 +412,4 @@
   draw();
 })();
 </script>
-
 </body></html>
