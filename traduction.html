@@ -1,21 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Langue et traduction · Billete para una nueva vida</title>
-<meta name="description" content="Méthode de thème, version et analyse de faits de langue.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<meta content="Méthode de thème, version et analyse de faits de langue." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .translation-modes{display:flex;flex-wrap:wrap;gap:.55rem;margin:1rem 0}.translation-mode{border:1px solid var(--line);background:#fff;color:var(--ink);padding:.65rem .85rem;border-radius:999px;font-weight:900}.translation-mode.active{background:var(--ink);color:#fff}.translation-trainer{min-height:300px}.ft-textarea{width:100%;margin:1rem 0;border:1px solid var(--line);border-radius:14px;padding:.8rem;font:inherit;resize:vertical}.recall-ratings{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.ft-feedback{margin-top:1rem}.error-link-card{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:linear-gradient(135deg,#fff7e3,#fff)}@media(max-width:760px){.error-link-card{display:block}}
+
+.tr-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.tr-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.tr-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.tr-path [hidden]{display:none!important}
+.tr-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.tr-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:180px}
+.tr-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.tr-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.tr-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.tr-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.tr-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.tr-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.tr-diag.hidden{display:none}
+.tr-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.tr-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.tr-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.tr-diag-options{display:grid;gap:.55rem}.tr-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.tr-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.tr-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.tr-level-panel{display:none}.tr-level-panel.active{display:block}
+.tr-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.tr-level-banner h2{color:#fff;margin:.1rem 0}.tr-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.tr-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.tr-validation.complete{border-color:#64a979;background:#eef8f1}
+.tr-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.tr-summary-card{border-left:5px solid #c94355}
+.tr-route-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.tr-contrast-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.tr-priority-pill{display:inline-block;margin-top:.45rem;padding:.3rem .55rem;border-radius:999px;background:#fff1cf;color:#6b4b00;font-size:.82rem;font-weight:800}
+.tr-compact-note{font-size:.9rem;color:#687985}
+.trainer-wrap{display:grid;gap:1rem}
+@media(max-width:950px){.tr-path-grid,.tr-level-cards,.tr-summary-grid,.tr-route-grid,.tr-contrast-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.tr-path-grid,.tr-level-cards,.tr-summary-grid,.tr-route-grid,.tr-contrast-grid{grid-template-columns:1fr}.tr-level-banner{display:block}}
 </style>\n</head>
 <body class="route-all">
-<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Langue et traduction</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Passer d’une intuition bilingue à une justification rigoureuse.</h1><p class="lead">La traduction du concours exige de comprendre le sens, le système grammatical et le registre dans les deux langues.</p></section>
-<section class="section"><h2>Méthode de traduction en six passages</h2><div class="grid grid-3"><article class="card"><span class="metric">1</span><h3>Comprendre la scène</h3><p>Identifier locuteur, temps, lieu, point de vue, ton et fonction du passage avant de traduire.</p></article><article class="card"><span class="metric">2</span><h3>Repérer les difficultés</h3><p>Temps verbaux, pronoms, subordination, polysémie, expressions figées, niveau de langue.</p></article><article class="card"><span class="metric">3</span><h3>Segmenter</h3><p>Construire des unités de sens, pas une traduction mot à mot.</p></article><article class="card"><span class="metric">4</span><h3>Choisir</h3><p>Produire une solution idiomatique qui respecte le sens, la voix et le registre.</p></article><article class="card"><span class="metric">5</span><h3>Contrôler</h3><p>Vérifier omissions, ajouts, contresens, cohérence des temps, accords et ponctuation.</p></article><article class="card"><span class="metric">6</span><h3>Relire comme un monolingue</h3><p>Le texte d’arrivée doit fonctionner naturellement sans conserver la syntaxe de départ.</p></article></div></section>
-<section class="section"><h2>Erreurs typiques d’une hispanophone en français</h2><div class="table-wrap"><table><thead><tr><th>Zone</th><th>Risque</th><th>Réflexe</th></tr></thead><tbody><tr><td>Prépositions</td><td><em>dépendre de</em>, <em>participer à</em>, <em>permettre de</em>.</td><td>Apprendre le verbe avec sa construction.</td></tr><tr><td>Genre</td><td>Le problème, la méthode, le système, l’analyse.</td><td>Apprendre chaque nom avec son article.</td></tr><tr><td>Accords</td><td>Participes, adjectifs, sujet éloigné.</td><td>Surligner le noyau du groupe nominal.</td></tr><tr><td>Faux amis</td><td><em>assister</em>, <em>introduire</em>, <em>réaliser</em>, <em>éventuellement</em>.</td><td>Vérifier le sens exact en contexte.</td></tr><tr><td>Registre</td><td>Formules trop familières ou mots abstraits mal maîtrisés.</td><td>Préférer une formulation claire et sûre.</td></tr><tr><td>Ponctuation</td><td>Virgules calquées sur l’espagnol.</td><td>Relire la structure syntaxique française.</td></tr></tbody></table></div></section>
-<section class="section"><h2>Analyser un fait de langue</h2><div class="callout"><h3>Formule en quatre étapes</h3><p><strong>1. Identifier</strong> la forme et sa catégorie. <strong>2. Décrire</strong> sa construction dans le contexte. <strong>3. Interpréter</strong> sa valeur. <strong>4. Comparer</strong> avec les solutions possibles dans l’autre langue et justifier la traduction.</p></div>
-<div class="grid grid-2"><article class="card"><h3>Exemple de démarche</h3><p><em>Cuando llegó, ya habían salido.</em></p><p><strong>Identification :</strong> plus-que-parfait espagnol. <strong>Construction :</strong> auxiliaire <em>haber</em> à l’imparfait + participe passé. <strong>Valeur :</strong> antériorité par rapport à un repère passé. <strong>Traduction :</strong> « Quand il est arrivé, ils étaient déjà partis. »</p></article><article class="card"><h3>Terminologie à savoir en français</h3><p>Proposition principale, subordonnée circonstancielle, antécédent, pronom relatif, aspect accompli, modalité, valeur temporelle, déterminant, complément du nom, mise en relief.</p><a class="btn btn-secondary" href="francais.html">Flashcards audio</a></article></div></section>
-<section class="section" id="traduction-active"><div class="section-head"><div><span class="eyebrow">Entraînement actif</span><h2>Traduire, repérer, justifier.</h2><p><strong>Version = espagnol → français</strong> ; <strong>thème = français → espagnol</strong>. Les productions sont d’abord faites sans correction, puis autoévaluées. Les difficultés sont envoyées au carnet « Mes erreurs ».</p></div></div><div class="translation-modes"><button class="translation-mode active" data-translation-mode="version">Micro-version</button><button class="translation-mode" data-translation-mode="theme">Micro-thème</button><button class="translation-mode" data-translation-mode="rep">Repérage des difficultés</button><button class="translation-mode" data-translation-mode="facts">Faits de langue</button></div><article class="card translation-trainer" id="translationTrainer"></article><div class="actions"><button class="btn btn-secondary" id="nextTranslation" hidden>Exercice suivant →</button><a class="btn btn-secondary" href="francais.html#grammaire-francaise">Revoir nature & fonction</a></div><div class="card error-link-card" style="margin-top:1rem"><div><span class="badge badge-gold">Carnet personnel</span><h3>Une difficulté revient ? Elle ne disparaît plus dans la correction.</h3><p>Les exercices notés « Presque » ou « À revoir », ainsi que les mauvaises réponses, sont enregistrés localement.</p></div><a class="btn btn-primary" href="mes-erreurs.html">Mes erreurs (<span data-error-count>0</span>) →</a></div></section>\n<section class="section"><h2>Routine hebdomadaire</h2><div class="checklist"><label class="check-item"><input type="checkbox" data-progress="lang-1"><span>Une version littéraire corrigée.</span></label><label class="check-item"><input type="checkbox" data-progress="lang-2"><span>Un thème avec relevé des erreurs récurrentes.</span></label><label class="check-item"><input type="checkbox" data-progress="lang-3"><span>Deux faits de langue entièrement rédigés en français.</span></label><label class="check-item"><input type="checkbox" data-progress="lang-4"><span>Dix phrases de thème grammatical ciblées.</span></label><label class="check-item"><input type="checkbox" data-progress="lang-5"><span>Une page de français relue en trois passages : syntaxe, accords, ponctuation.</span></label><label class="check-item"><input type="checkbox" data-progress="lang-6"><span>Mise à jour du carnet personnel de faux amis.</span></label></div></section></main>
-<script src="assets/app.js"></script>
+<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Langue et traduction</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Passer d’une intuition bilingue à une justification rigoureuse.</h1><p class="lead">La traduction du concours exige de comprendre le sens, le système grammatical et le registre dans les deux langues.</p></section><section class="section" id="traduction-parcours">
+<article class="card tr-path">
+<div class="tr-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · TRADUCTION</span>
+<h2>Traduction — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il distingue quatre besoins : <strong>version</strong>, <strong>thème</strong>, <strong>faits de langue</strong> et <strong>justification en français</strong>.</p>
+<div class="actions">
+<button class="btn btn-primary" id="trDiagStart" type="button">Faire le mini-diagnostic · 5 min</button>
+<button class="btn btn-secondary" hidden="" id="trDiagReset" type="button">Refaire le diagnostic</button>
+</div>
+</div>
+<div class="tr-path-status" id="trPathStatus">
+<span class="eyebrow">POINT DE DÉPART</span>
+<h3>Pas encore déterminé</h3>
+<p>Après 12 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir et indiquera le domaine à travailler en priorité.</p>
+</div>
+</div>
+<div class="tr-diag hidden" id="trDiag">
+<div class="tr-compact-note" id="trDiagCount"></div>
+<div class="tr-diag-progress"><span id="trDiagBar"></span></div>
+<div class="tr-diag-q" id="trDiagQuestion"></div>
+<div class="tr-diag-options" id="trDiagOptions"></div>
+<div class="tr-diag-nav">
+<button class="btn btn-secondary" id="trDiagPrev" type="button">← Précédent</button>
+<button class="btn btn-primary" disabled="" id="trDiagNext" type="button">Suivant →</button>
+</div>
+</div>
+<div class="tr-level-cards">
+<button class="tr-level-card" data-tr-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>Sens · scène · unités de sens · faux amis · contrôle du français.</span></button>
+<button class="tr-level-card" data-tr-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>Interférences · temps · pronoms · prépositions · registre · repérage.</span></button>
+<button class="tr-level-card" data-tr-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Version · thème · faits de langue · justification · entraînement actif.</span></button>
+<button class="tr-level-card" data-tr-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Carnet d’erreurs · analyse contrastive · autonomie · correction ciblée.</span></button>
+</div>
+</article>
+</section><div class="tr-level-panel" data-tr-panel="1"><div class="tr-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je comprends la scène, je segmente en unités de sens et je produis une langue d’arrivée correcte avant de chercher l’élégance.</p></div><button class="btn btn-secondary" data-tr-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Le socle</span><h2>Quatre réflexes avant de traduire.</h2></div></div>
+<div class="tr-summary-grid">
+<article class="card tr-summary-card"><h3>Comprendre avant de reformuler</h3><p>Identifie qui parle, à qui, quand, dans quel registre et avec quelle intention. Une bonne traduction commence avant le premier mot traduit.</p></article>
+<article class="card tr-summary-card"><h3>Traduire des unités de sens</h3><p>Ne colle pas à l’ordre des mots si la langue d’arrivée exige une autre structure. Le sens, la voix et le registre doivent rester cohérents.</p></article>
+<article class="card tr-summary-card"><h3>Repérer le risque</h3><p>Temps verbaux, pronoms, prépositions, polysémie, expressions figées et faux amis méritent une décision consciente plutôt qu’un automatisme.</p></article>
+<article class="card tr-summary-card"><h3>Relire comme un monolingue</h3><p>À la fin, oublie momentanément le texte source : la phrase d’arrivée doit être grammaticalement correcte, idiomatique et ponctuée naturellement.</p></article>
+</div>
+</section><section class="section"><h2>Méthode de traduction en six passages</h2><div class="grid grid-3"><article class="card"><span class="metric">1</span><h3>Comprendre la scène</h3><p>Identifier locuteur, temps, lieu, point de vue, ton et fonction du passage avant de traduire.</p></article><article class="card"><span class="metric">2</span><h3>Repérer les difficultés</h3><p>Temps verbaux, pronoms, subordination, polysémie, expressions figées, niveau de langue.</p></article><article class="card"><span class="metric">3</span><h3>Segmenter</h3><p>Construire des unités de sens, pas une traduction mot à mot.</p></article><article class="card"><span class="metric">4</span><h3>Choisir</h3><p>Produire une solution idiomatique qui respecte le sens, la voix et le registre.</p></article><article class="card"><span class="metric">5</span><h3>Contrôler</h3><p>Vérifier omissions, ajouts, contresens, cohérence des temps, accords et ponctuation.</p></article><article class="card"><span class="metric">6</span><h3>Relire comme un monolingue</h3><p>Le texte d’arrivée doit fonctionner naturellement sans conserver la syntaxe de départ.</p></article></div></section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Le socle commence à être solide quand les faux amis et interférences repérés ne disparaissent plus après la correction.</p><div class="checklist"><label class="check-item"><input data-progress="lang-6" type="checkbox"/><span>Mise à jour du carnet personnel de faux amis.</span></label></div><div class="tr-validation" data-tr-validation="1"></div></article></section></div><div class="tr-level-panel" data-tr-panel="2"><div class="tr-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je repère les interférences et les zones à risque avant qu’elles ne deviennent des contresens, des calques ou des fautes de français.</p></div><button class="btn btn-secondary" data-tr-top="" type="button">Retour au parcours</button></div><section class="section"><h2>Erreurs typiques d’une hispanophone en français</h2><div class="table-wrap"><table><thead><tr><th>Zone</th><th>Risque</th><th>Réflexe</th></tr></thead><tbody><tr><td>Prépositions</td><td><em>dépendre de</em>, <em>participer à</em>, <em>permettre de</em>.</td><td>Apprendre le verbe avec sa construction.</td></tr><tr><td>Genre</td><td>Le problème, la méthode, le système, l’analyse.</td><td>Apprendre chaque nom avec son article.</td></tr><tr><td>Accords</td><td>Participes, adjectifs, sujet éloigné.</td><td>Surligner le noyau du groupe nominal.</td></tr><tr><td>Faux amis</td><td><em>assister</em>, <em>introduire</em>, <em>réaliser</em>, <em>éventuellement</em>.</td><td>Vérifier le sens exact en contexte.</td></tr><tr><td>Registre</td><td>Formules trop familières ou mots abstraits mal maîtrisés.</td><td>Préférer une formulation claire et sûre.</td></tr><tr><td>Ponctuation</td><td>Virgules calquées sur l’espagnol.</td><td>Relire la structure syntaxique française.</td></tr></tbody></table></div></section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Analyse contrastive</span><h2>Repérer ce qui demande une décision.</h2><p>Le but n’est pas de réciter des « pièges », mais de savoir pourquoi une traduction littérale risque de déformer le sens ou la langue d’arrivée.</p></div></div>
+<div class="tr-contrast-grid">
+<article class="card"><h3>Temps et aspect</h3><p>Demande-toi quel repère temporel organise la scène et si la langue d’arrivée exprime l’antériorité, la durée ou l’accompli de la même manière.</p></article>
+<article class="card"><h3>Pronoms et déterminants</h3><p>Vérifie les référents, les reprises et les déterminants nécessaires. Une structure acceptable en espagnol peut exiger une explicitation différente en français — et inversement.</p></article>
+<article class="card"><h3>Prépositions et constructions</h3><p>Apprends le verbe avec sa construction : traduire le verbe sans sa préposition produit très vite un calque.</p></article>
+<article class="card"><h3>Polysémie</h3><p>Choisis le sens que le contexte active. Un mot proche graphiquement n’est pas automatiquement un équivalent.</p></article>
+<article class="card"><h3>Registre</h3><p>Conserve le degré de formalité, l’ironie, l’oralité ou la distance du passage sans surécrire le texte.</p></article>
+<article class="card"><h3>Ponctuation et syntaxe</h3><p>La ponctuation fait partie de la syntaxe : ne conserve pas mécaniquement les virgules ou l’ordre des propositions de la langue source.</p></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand tu travailles régulièrement des phrases ciblées et relis le français de façon méthodique, passe aux tâches complètes.</p><div class="checklist"><label class="check-item"><input data-progress="lang-4" type="checkbox"/><span>Dix phrases de thème grammatical ciblées.</span></label><label class="check-item"><input data-progress="lang-5" type="checkbox"/><span>Une page de français relue en trois passages : syntaxe, accords, ponctuation.</span></label></div><div class="tr-validation" data-tr-validation="2"></div></article></section></div><div class="tr-level-panel" data-tr-panel="3"><div class="tr-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je traduis, je repère, je justifie : version, thème et faits de langue deviennent trois gestes complémentaires.</p></div><button class="btn btn-secondary" data-tr-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="tr-route-grid">
+<article class="card" data-route-view="bac3">
+<span class="badge badge-green">BAC+3</span>
+<h3>Épreuve de traduction et faits de langue</h3>
+<p>Le travail doit articuler thème, version et analyse de faits de langue rédigée en français. La justification grammaticale n’est donc pas un supplément : elle fait partie de la préparation de l’épreuve.</p>
+</article>
+<article class="card" data-route-view="bac5">
+<span class="badge badge-red">BAC+5</span>
+<h3>Deux usages de la langue</h3>
+<p>L’épreuve disciplinaire associe la composition à un thème et/ou une version ; l’épreuve disciplinaire appliquée demande aussi une analyse de faits de langue en français. Il faut donc travailler traduction et explicitation grammaticale.</p>
+</article>
+</div>
+</section><section class="section"><h2>Analyser un fait de langue</h2><div class="callout"><h3>Formule en quatre étapes</h3><p><strong>1. Identifier</strong> la forme et sa catégorie. <strong>2. Décrire</strong> sa construction dans le contexte. <strong>3. Interpréter</strong> sa valeur. <strong>4. Comparer</strong> avec les solutions possibles dans l’autre langue et justifier la traduction.</p></div>
+<div class="grid grid-2"><article class="card"><h3>Exemple de démarche</h3><p><em>Cuando llegó, ya habían salido.</em></p><p><strong>Identification :</strong> plus-que-parfait espagnol. <strong>Construction :</strong> auxiliaire <em>haber</em> à l’imparfait + participe passé. <strong>Valeur :</strong> antériorité par rapport à un repère passé. <strong>Traduction :</strong> « Quand il est arrivé, ils étaient déjà partis. »</p></article><article class="card"><h3>Terminologie à savoir en français</h3><p>Proposition principale, subordonnée circonstancielle, antécédent, pronom relatif, aspect accompli, modalité, valeur temporelle, déterminant, complément du nom, mise en relief.</p><a class="btn btn-secondary" href="francais.html">Flashcards audio</a></article></div></section><section class="section" id="traduction-active"><div class="trainer-wrap"><div class="section-head"><div><span class="eyebrow">Entraînement actif</span><h2>Traduire, repérer, justifier.</h2><p><strong>Version = espagnol → français</strong> ; <strong>thème = français → espagnol</strong>. Les productions sont d’abord faites sans correction, puis autoévaluées. Les difficultés sont envoyées au carnet « Mes erreurs ».</p></div></div><div class="translation-modes"><button class="translation-mode active" data-translation-mode="version">Micro-version</button><button class="translation-mode" data-translation-mode="theme">Micro-thème</button><button class="translation-mode" data-translation-mode="rep">Repérage des difficultés</button><button class="translation-mode" data-translation-mode="facts">Faits de langue</button></div><article class="card translation-trainer" id="translationTrainer"></article><div class="actions"><button class="btn btn-secondary" hidden="" id="nextTranslation">Exercice suivant →</button><a class="btn btn-secondary" href="francais.html#francais-parcours">Revoir nature &amp; fonction</a></div></div></section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Le socle de traduction du concours est suffisamment solide quand version, thème et faits de langue sont tous travaillés de manière autonome.</p><div class="checklist"><label class="check-item"><input data-progress="lang-1" type="checkbox"/><span>Une version littéraire corrigée.</span></label><label class="check-item"><input data-progress="lang-2" type="checkbox"/><span>Un thème avec relevé des erreurs récurrentes.</span></label><label class="check-item"><input data-progress="lang-3" type="checkbox"/><span>Deux faits de langue entièrement rédigés en français.</span></label></div><div class="tr-validation" data-tr-validation="3"></div></article></section></div><div class="tr-level-panel" data-tr-panel="4"><div class="tr-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>J’utilise mes erreurs réelles pour construire une analyse contrastive personnelle et gagner en autonomie.</p></div><button class="btn btn-secondary" data-tr-top="" type="button">Retour au parcours</button></div><section class="section"><div class="section-head"><div><span class="eyebrow">Carnet personnel</span><h2>Transformer les erreurs en programme de révision.</h2><p>Les mauvaises réponses et les productions notées « Presque » ou « À revoir » restent enregistrées localement pour revenir au bon moment.</p></div></div><div class="card error-link-card" style="margin-top:1rem"><div><span class="badge badge-gold">Carnet personnel</span><h3>Une difficulté revient ? Elle ne disparaît plus dans la correction.</h3><p>Les exercices notés « Presque » ou « À revoir », ainsi que les mauvaises réponses, sont enregistrés localement.</p></div><a class="btn btn-primary" href="mes-erreurs.html">Mes erreurs (<span data-error-count="">0</span>) →</a></div></section><section class="section">
+<article class="card">
+<span class="badge badge-gold">APPROFONDIR</span>
+<h3>Faire une fiche d’erreur, pas une collection de fautes.</h3>
+<p>Pour chaque difficulté récurrente, note quatre choses : <strong>le fragment source</strong>, <strong>ta première solution</strong>, <strong>la correction</strong> et <strong>la raison linguistique</strong>. Puis crée une phrase nouvelle qui réutilise le même phénomène.</p>
+<p>Cette étape devient utile une fois que thème, version et faits de langue sont déjà régulièrement travaillés en conditions proches du concours.</p>
+</article>
+</section></div>
+
+
+
+\n</main>
+<script src="assets/app.js"></script><script src="assets/traduction-path.js"></script>
 <script src="assets/french-training.js"></script>
 </body></html>
