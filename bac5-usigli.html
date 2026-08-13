@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Usigli · El gesticulador · Billete</title>
-<meta name="description" content="Dossier bac+5 sur El gesticulador de Rodolfo Usigli.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<meta content="Dossier bac+5 sur El gesticulador de Rodolfo Usigli." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .u-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
 .u-char{border-left:5px solid #173a5e}
@@ -24,115 +25,164 @@
 .usigli-deepening .deep-tags span{padding:.33rem .56rem;border-radius:999px;background:#eef4f8;color:#173a5e;font-size:.84rem;font-weight:850}
 @media(max-width:700px){.usigli-deepening{grid-template-columns:1fr}.usigli-deepening .deep-icon{text-align:left}}
 
+
+.usigli-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.usigli-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.usigli-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.usigli-path [hidden]{display:none!important}
+.usigli-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.usigli-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:175px}
+.usigli-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.usigli-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.usigli-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.usigli-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.usigli-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.usigli-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.usigli-diag.hidden{display:none}
+.usigli-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.usigli-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.usigli-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.usigli-diag-options{display:grid;gap:.55rem}.usigli-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.usigli-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.usigli-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.usigli-level-panel{display:none}.usigli-level-panel.active{display:block}
+.usigli-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.usigli-level-banner h2{color:#fff;margin:.1rem 0}.usigli-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.usigli-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.usigli-validation.complete{border-color:#64a979;background:#eef8f1}
+.usigli-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.usigli-summary-card{border-left:5px solid #c94355}
+.usigli-compact-note{font-size:.9rem;color:#687985}
+@media(max-width:950px){.usigli-path-grid,.usigli-level-cards,.usigli-summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.usigli-path-grid,.usigli-level-cards,.usigli-summary-grid{grid-template-columns:1fr}.usigli-level-banner{display:block}}
 </style>
 </head>
 <body class="route-bac5">
 <main id="main">
 <section class="page-hero">
- <div class="breadcrumbs"><a href="index.html">Accueil</a> › <a href="bac5.html">Bac+5</a> › Usigli</div>
- <span class="eyebrow">BAC+5 · RODOLFO USIGLI · THÉÂTRE</span>
- <h1><em>El gesticulador</em> : quand le mensonge devient une forme de vérité politique.</h1>
- <p class="lead">Imposture, famille, mémoire de la Révolution, mise en scène du pouvoir et fabrication de la légitimité : le théâtre rend visible ce que la politique dissimule.</p>
-</section>
+<div class="breadcrumbs"><a href="index.html">Accueil</a> › <a href="bac5.html">Bac+5</a> › Usigli</div>
+<span class="eyebrow">BAC+5 · RODOLFO USIGLI · THÉÂTRE</span>
+<h1><em>El gesticulador</em> : quand le mensonge devient une forme de vérité politique.</h1>
+<p class="lead">Imposture, famille, mémoire de la Révolution, mise en scène du pouvoir et fabrication de la légitimité : le théâtre rend visible ce que la politique dissimule.</p>
+</section><section class="section" id="usigli-parcours">
+<article class="card usigli-path">
+<div class="usigli-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · BAC+5 · USIGLI</span>
+<h2>Usigli — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il vérifie si tu sais passer du <strong>mécanisme de l’imposture</strong> à l’analyse de la <strong>vérité, du pouvoir et de la représentation théâtrale</strong>.</p>
+<div class="actions"><button class="btn btn-primary" id="usigliDiagStart" type="button">Faire le mini-diagnostic · 5 min</button><button class="btn btn-secondary" hidden="" id="usigliDiagReset" type="button">Refaire le diagnostic</button></div>
+</div>
+<div class="usigli-path-status" id="usigliPathStatus"><span class="eyebrow">POINT DE DÉPART</span><h3>Pas encore déterminé</h3><p>Après 10 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir.</p></div>
+</div>
+<div class="usigli-diag hidden" id="usigliDiag">
+<div class="usigli-compact-note" id="usigliDiagCount"></div>
+<div class="usigli-diag-progress"><span id="usigliDiagBar"></span></div>
+<div class="usigli-diag-q" id="usigliDiagQuestion"></div>
+<div class="usigli-diag-options" id="usigliDiagOptions"></div>
+<div class="usigli-diag-nav"><button class="btn btn-secondary" id="usigliDiagPrev" type="button">← Précédent</button><button class="btn btn-primary" disabled="" id="usigliDiagNext" type="button">Suivant →</button></div>
+</div>
+<div class="usigli-level-cards">
+<button class="usigli-level-card" data-usigli-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>César · famille · Bolton · Navarro · imposture · trois actes.</span></button>
+<button class="usigli-level-card" data-usigli-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>Vérité · vraisemblance · mythe · masque · génération · pouvoir.</span></button>
+<button class="usigli-level-card" data-usigli-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Axes · micro-citations · analyse · problématisation.</span></button>
+<button class="usigli-level-card" data-usigli-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>5 articles critiques · pouvoir · Brecht · histoire · censure · théâtre impolitique.</span></button>
+</div>
+</article>
+</section><div class="usigli-level-panel" data-usigli-panel="1"><div class="usigli-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je comprends le mécanisme de l’imposture, le mouvement dramatique et le rôle des personnages principaux.</p></div><button class="btn btn-secondary" data-usigli-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Résumé essentiel</span><h2>Quatre repères pour entrer dans <em>El gesticulador</em>.</h2></div></div>
+<div class="usigli-summary-grid">
+<article class="card usigli-summary-card"><h3>Une identité qui se fabrique</h3><p>César Rubio, professeur d’histoire frustré, profite d’une confusion avec un général révolutionnaire disparu. À mesure que les autres le reconnaissent comme ce héros, l’identité jouée acquiert une efficacité sociale et politique.</p></article>
+<article class="card usigli-summary-card"><h3>Une famille qui juge</h3><p>Miguel, Elena et Julia ne sont pas un simple décor domestique : la transformation de César bouleverse les rapports familiaux et rend visibles les conséquences humaines de l’imposture.</p></article>
+<article class="card usigli-summary-card"><h3>Une Révolution devenue récit</h3><p>Bolton, l’histoire savante, les souvenirs et le mythe révolutionnaire montrent que le passé n’existe jamais seulement comme fait : il est raconté, authentifié, utilisé et transformé en source de légitimité.</p></article>
+<article class="card usigli-summary-card"><h3>Le théâtre rend le pouvoir visible</h3><p>Masque, rôle, geste et mise en scène donnent une forme concrète à la fabrication de l’identité publique. La « gesticulation » dépasse le mensonge individuel et devient une logique politique.</p></article>
+</div>
+</section><section class="section">
+<div class="grid grid-2">
+<article class="card">
+<span class="badge badge-red">POINT DE DÉPART</span><h2>César Rubio, professeur d’histoire.</h2>
+<p>Après avoir quitté la capitale avec sa famille, César Rubio revient dans son village natal. L’arrivée d’Oliver Bolton, universitaire américain à la recherche d’un général révolutionnaire disparu qui porte le même nom, ouvre la possibilité d’une imposture.</p>
+<p>À mesure que César accepte puis habite cette identité, le mensonge individuel devient un phénomène politique : il produit de la croyance, de la popularité et une nouvelle légitimité.</p>
+</article>
+<article class="card u-source">
+<span class="badge badge-gold">RESSOURCE AUDIO</span><h3>Radio UNAM : adaptation intégrale</h3>
+<p>Radio UNAM conserve une adaptation radiophonique produite par Max Aub. C’est une excellente ressource pour travailler rythme dramatique, voix et rapports de force.</p>
+<div class="actions"><a class="btn btn-secondary" href="https://www.radio.unam.mx/gesticulador-adaptacion-la-obra-rodolfo-usigli/" rel="noopener" target="_blank">Radio UNAM ↗</a><a class="btn btn-secondary" href="https://revistas-filologicas.unam.mx/literatura-mexicana/index.php/lm/article/view/689" rel="noopener" target="_blank">Article UNAM ↗</a></div>
+</article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Mouvement dramatique</span><h2>Trois étapes à retenir.</h2></div></div>
+<div class="u-plot">
+<article class="u-step"><h3>1 · Frustration</h3><p>Échec social, retour provincial, regard critique de la famille — surtout de Miguel — sur César.</p></article>
+<article class="u-step"><h3>2 · Usurpation</h3><p>La confusion avec le général révolutionnaire devient une occasion de recomposer une identité et d’entrer dans le jeu politique.</p></article>
+<article class="u-step"><h3>3 · Pouvoir</h3><p>L’identité fabriquée acquiert une efficacité collective ; César doit affronter le général Navarro et les mécanismes du pouvoir réel.</p></article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Personnages</span><h2>Qui met quoi en crise ?</h2></div></div>
+<div class="u-grid">
+<article class="card u-char"><h3>César Rubio</h3><p>Historien frustré, imposteur puis figure politique. Il cristallise le paradoxe d’une identité fausse qui peut produire des effets considérés comme vrais.</p></article>
+<article class="card u-char"><h3>Miguel</h3><p>Le fils met son père face à sa médiocrité et à son mensonge. La relation père-fils rend l’imposture politique immédiatement familiale et générationnelle.</p></article>
+<article class="card u-char"><h3>Elena</h3><p>Épouse lucide, elle connaît la fragilité du récit fabriqué et tente d’en mesurer les conséquences humaines.</p></article>
+<article class="card u-char"><h3>Julia</h3><p>La fille participe au cadre familial sur lequel se projette la transformation de César et le changement de statut de la famille.</p></article>
+<article class="card u-char"><h3>Oliver Bolton</h3><p>Le chercheur américain agit comme déclencheur de la confusion. Son regard extérieur sur la Révolution mexicaine permet aussi d’interroger qui produit et authentifie l’histoire.</p></article>
+<article class="card u-char"><h3>General Navarro</h3><p>Adversaire politique et incarnation d’un pouvoir moins idéalisé. La confrontation oppose mythe révolutionnaire, violence et contrôle concret du champ politique.</p></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Quand tu sais raconter le mécanisme de l’imposture et expliquer la fonction des personnages, passe au niveau 2.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-usi-1" type="checkbox"/><span>Je sais raconter le mécanisme de l’imposture en moins de deux minutes.</span></label><label class="check-item"><input data-progress="bac5-usi-2" type="checkbox"/><span>Je peux expliquer le rôle de Miguel, Elena, Bolton et Navarro sans faire une fiche de personnages descriptive.</span></label></div><div class="usigli-validation" data-usigli-validation="1"></div></article></section></div><div class="usigli-level-panel" data-usigli-panel="2"><div class="usigli-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je sais transformer l’intrigue en analyse : vérité, vraisemblance, histoire, mythe, masque, génération et pouvoir.</p></div><button class="btn btn-secondary" data-usigli-top="" type="button">Retour au parcours</button></div><section class="section">
+<h2>Six tensions à exploiter</h2>
+<div class="grid grid-3">
+<article class="card"><h3>Vérité ↔ vraisemblance</h3><p>Ce qui compte politiquement n’est pas toujours ce qui est historiquement vrai, mais ce qu’une communauté accepte comme crédible.</p></article>
+<article class="card"><h3>Personne ↔ personnage</h3><p>César devient le rôle qu’il joue. Le théâtre met matériellement en scène la fabrication de l’identité publique.</p></article>
+<article class="card"><h3>Histoire ↔ mythe</h3><p>La Révolution mexicaine est un passé historique mais aussi une réserve de récits de légitimation.</p></article>
+<article class="card"><h3>Père ↔ fils</h3><p>La crise politique se double d’un jugement générationnel : quelle vérité un fils peut-il accepter de son père ?</p></article>
+<article class="card"><h3>Idéal ↔ système</h3><p>Le désir de transformer la politique rencontre des appareils de pouvoir, des intérêts et la violence.</p></article>
+<article class="card"><h3>Masque ↔ pouvoir</h3><p>La « gesticulation » ne relève pas seulement du mensonge personnel : elle devient une grammaire de la vie publique.</p></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand tu distingues vérité, vraisemblance, légitimité, masque et pouvoir, passe au travail de concours.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-usi-3" type="checkbox"/><span>Je sais analyser vérité, vraisemblance et légitimité politique comme trois notions différentes.</span></label><label class="check-item"><input data-progress="bac5-usi-4" type="checkbox"/><span>Je sais relier la forme théâtrale à la question du masque et du pouvoir.</span></label></div><div class="usigli-validation" data-usigli-validation="2"></div></article></section></div><div class="usigli-level-panel" data-usigli-panel="3"><div class="usigli-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je relie une observation précise à une problématique, aux axes du programme et à des micro-citations exactes.</p></div><button class="btn btn-secondary" data-usigli-top="" type="button">Retour au parcours</button></div><section class="section">
+<h2>Résonances possibles avec les axes</h2>
+<div class="grid grid-2">
+<article class="card"><h3>Rencontres avec d’autres cultures</h3><p>Bolton, chercheur américain, introduit un regard extérieur sur l’histoire mexicaine et pose la question de l’autorité savante sur le passé national.</p></article>
+<article class="card"><h3>Identités et échanges</h3><p>L’identité de César est mobile, performée et validée par les autres. L’échange d’informations historiques produit littéralement une nouvelle identité.</p></article>
+<article class="card"><h3>Vivre entre générations</h3><p>La relation César–Miguel est l’une des résonances les plus fortes : jugement du père, héritage moral, rupture et déception.</p></article>
+<article class="card"><h3>Mémoire(s)</h3><p>La pièce interroge la façon dont la Révolution est racontée, mythifiée et utilisée dans le présent.</p></article>
+<article class="card"><h3>Dominations et insoumissions</h3><p>Élections, appareil partisan, violence et concurrence pour le pouvoir permettent d’étudier domination, opposition et coût de la dissidence.</p></article>
+</div>
+</section><section class="section">
+<article class="card">
+<span class="badge badge-gold">À RELEVER DANS L’ÉDITION CÁTEDRA</span>
+<h2>8 micro-citations utiles.</h2>
+<p>Choisis toi-même des fragments très courts sur : <strong>vérité · mensonge · Révolution · père/fils · pouvoir · identité · histoire · masque</strong>. Pour chaque citation, note qui parle, à qui, dans quelle scène et quel conflit elle révèle.</p>
+</article>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Entraînement</span><h2>Quel niveau d’analyse ?</h2></div></div>
+<div class="u-game" id="uGame"></div>
+</section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Les micro-citations doivent rester exactes, courtes et toujours reliées à un conflit ou à un procédé.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-usi-5" type="checkbox"/><span>J’ai préparé des micro-citations exactes dans l’édition au programme.</span></label></div><div class="usigli-validation" data-usigli-validation="3"></div></article></section></div><div class="usigli-level-panel" data-usigli-panel="4"><div class="usigli-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>J’enrichis une maîtrise déjà solide avec cinq lectures universitaires réellement différentes.</p></div><button class="btn btn-secondary" data-usigli-top="" type="button">Retour au parcours</button></div><section class="section">
+<article class="card usigli-deepening">
+<div>
+<span class="badge badge-gold">CRITIQUE UNIVERSITAIRE · BAC+5</span>
+<h2>Approfondir ses connaissances sur <em>El gesticulador</em></h2>
+<p>Cinq lectures critiques complémentaires : <strong>histoire et légitimation du pouvoir, lecture brechtienne, fictionnalité du récit historique, réception et censure, théâtre « impolitique »</strong>.</p>
+<div class="deep-tags"><span>Moraña</span><span>Sosa-Velasco</span><span>Cruz-Grunerth</span><span>Ortiz Bullé Goyri</span><span>Perromat</span></div>
+<div class="actions"><a class="btn btn-primary" href="usigli-approfondir.html">Lire les 5 articles critiques</a></div>
+</div>
+<div aria-hidden="true" class="deep-icon">🔎🎭</div>
+</article>
+</section><section class="section">
+<article class="card">
+<span class="badge badge-gold">5 LECTURES CRITIQUES</span>
+<h3>Choisir la lecture qui sert vraiment l’analyse.</h3>
+<p><strong>Moraña</strong> : histoire et légitimation du pouvoir · <strong>Sosa-Velasco</strong> : Brecht, distanciation et identité · <strong>Cruz-Grunerth</strong> : histoire, image et spirale politique · <strong>Ortiz Bullé Goyri</strong> : représentation, réception et censure · <strong>Perromat</strong> : place de l’œuvre dans le théâtre « impolitique » d’Usigli.</p>
+<p>Ce niveau sert à enrichir une copie déjà structurée. Une référence critique bien reliée au passage vaut mieux qu’une accumulation de noms.</p>
+<div class="usigli-validation" id="usigliCritStatus"><strong>Articles critiques</strong><span>Progression à calculer…</span></div>
+</article>
+</section></div>
 
-<section class="section">
- <div class="grid grid-2">
-  <article class="card">
-   <span class="badge badge-red">POINT DE DÉPART</span><h2>César Rubio, professeur d’histoire.</h2>
-   <p>Après avoir quitté la capitale avec sa famille, César Rubio revient dans son village natal. L’arrivée d’Oliver Bolton, universitaire américain à la recherche d’un général révolutionnaire disparu qui porte le même nom, ouvre la possibilité d’une imposture.</p>
-   <p>À mesure que César accepte puis habite cette identité, le mensonge individuel devient un phénomène politique : il produit de la croyance, de la popularité et une nouvelle légitimité.</p>
-  </article>
-  <article class="card u-source">
-   <span class="badge badge-gold">RESSOURCE AUDIO</span><h3>Radio UNAM : adaptation intégrale</h3>
-   <p>Radio UNAM conserve une adaptation radiophonique produite par Max Aub. C’est une excellente ressource pour travailler rythme dramatique, voix et rapports de force.</p>
-   <div class="actions"><a class="btn btn-secondary" href="https://www.radio.unam.mx/gesticulador-adaptacion-la-obra-rodolfo-usigli/" target="_blank" rel="noopener">Radio UNAM ↗</a><a class="btn btn-secondary" href="https://revistas-filologicas.unam.mx/literatura-mexicana/index.php/lm/article/view/689" target="_blank" rel="noopener">Article UNAM ↗</a></div>
-  </article>
- </div>
-</section>
-
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Mouvement dramatique</span><h2>Trois étapes à retenir.</h2></div></div>
- <div class="u-plot">
-  <article class="u-step"><h3>1 · Frustration</h3><p>Échec social, retour provincial, regard critique de la famille — surtout de Miguel — sur César.</p></article>
-  <article class="u-step"><h3>2 · Usurpation</h3><p>La confusion avec le général révolutionnaire devient une occasion de recomposer une identité et d’entrer dans le jeu politique.</p></article>
-  <article class="u-step"><h3>3 · Pouvoir</h3><p>L’identité fabriquée acquiert une efficacité collective ; César doit affronter le général Navarro et les mécanismes du pouvoir réel.</p></article>
- </div>
-</section>
-
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Personnages</span><h2>Qui met quoi en crise ?</h2></div></div>
- <div class="u-grid">
-  <article class="card u-char"><h3>César Rubio</h3><p>Historien frustré, imposteur puis figure politique. Il cristallise le paradoxe d’une identité fausse qui peut produire des effets considérés comme vrais.</p></article>
-  <article class="card u-char"><h3>Miguel</h3><p>Le fils met son père face à sa médiocrité et à son mensonge. La relation père-fils rend l’imposture politique immédiatement familiale et générationnelle.</p></article>
-  <article class="card u-char"><h3>Elena</h3><p>Épouse lucide, elle connaît la fragilité du récit fabriqué et tente d’en mesurer les conséquences humaines.</p></article>
-  <article class="card u-char"><h3>Julia</h3><p>La fille participe au cadre familial sur lequel se projette la transformation de César et le changement de statut de la famille.</p></article>
-  <article class="card u-char"><h3>Oliver Bolton</h3><p>Le chercheur américain agit comme déclencheur de la confusion. Son regard extérieur sur la Révolution mexicaine permet aussi d’interroger qui produit et authentifie l’histoire.</p></article>
-  <article class="card u-char"><h3>General Navarro</h3><p>Adversaire politique et incarnation d’un pouvoir moins idéalisé. La confrontation oppose mythe révolutionnaire, violence et contrôle concret du champ politique.</p></article>
- </div>
-</section>
-
-<section class="section">
- <h2>Six tensions à exploiter</h2>
- <div class="grid grid-3">
-  <article class="card"><h3>Vérité ↔ vraisemblance</h3><p>Ce qui compte politiquement n’est pas toujours ce qui est historiquement vrai, mais ce qu’une communauté accepte comme crédible.</p></article>
-  <article class="card"><h3>Personne ↔ personnage</h3><p>César devient le rôle qu’il joue. Le théâtre met matériellement en scène la fabrication de l’identité publique.</p></article>
-  <article class="card"><h3>Histoire ↔ mythe</h3><p>La Révolution mexicaine est un passé historique mais aussi une réserve de récits de légitimation.</p></article>
-  <article class="card"><h3>Père ↔ fils</h3><p>La crise politique se double d’un jugement générationnel : quelle vérité un fils peut-il accepter de son père ?</p></article>
-  <article class="card"><h3>Idéal ↔ système</h3><p>Le désir de transformer la politique rencontre des appareils de pouvoir, des intérêts et la violence.</p></article>
-  <article class="card"><h3>Masque ↔ pouvoir</h3><p>La « gesticulation » ne relève pas seulement du mensonge personnel : elle devient une grammaire de la vie publique.</p></article>
- </div>
-</section>
 
 
-<section class="section">
- <article class="card usigli-deepening">
-  <div>
-   <span class="badge badge-gold">CRITIQUE UNIVERSITAIRE · BAC+5</span>
-   <h2>Approfondir ses connaissances sur <em>El gesticulador</em></h2>
-   <p>Cinq lectures critiques complémentaires : <strong>histoire et légitimation du pouvoir, lecture brechtienne, fictionnalité du récit historique, réception et censure, théâtre « impolitique »</strong>.</p>
-   <div class="deep-tags"><span>Moraña</span><span>Sosa-Velasco</span><span>Cruz-Grunerth</span><span>Ortiz Bullé Goyri</span><span>Perromat</span></div>
-   <div class="actions"><a class="btn btn-primary" href="usigli-approfondir.html">Lire les 5 articles critiques</a></div>
-  </div>
-  <div class="deep-icon" aria-hidden="true">🔎🎭</div>
- </article>
-</section>
 
-<section class="section">
- <h2>Résonances possibles avec les axes</h2>
- <div class="grid grid-2">
-  <article class="card"><h3>Rencontres avec d’autres cultures</h3><p>Bolton, chercheur américain, introduit un regard extérieur sur l’histoire mexicaine et pose la question de l’autorité savante sur le passé national.</p></article>
-  <article class="card"><h3>Identités et échanges</h3><p>L’identité de César est mobile, performée et validée par les autres. L’échange d’informations historiques produit littéralement une nouvelle identité.</p></article>
-  <article class="card"><h3>Vivre entre générations</h3><p>La relation César–Miguel est l’une des résonances les plus fortes : jugement du père, héritage moral, rupture et déception.</p></article>
-  <article class="card"><h3>Mémoire(s)</h3><p>La pièce interroge la façon dont la Révolution est racontée, mythifiée et utilisée dans le présent.</p></article>
-  <article class="card"><h3>Dominations et insoumissions</h3><p>Élections, appareil partisan, violence et concurrence pour le pouvoir permettent d’étudier domination, opposition et coût de la dissidence.</p></article>
- </div>
-</section>
 
-<section class="section">
- <article class="card">
-  <span class="badge badge-gold">À RELEVER DANS L’ÉDITION CÁTEDRA</span>
-  <h2>8 micro-citations utiles.</h2>
-  <p>Choisis toi-même des fragments très courts sur : <strong>vérité · mensonge · Révolution · père/fils · pouvoir · identité · histoire · masque</strong>. Pour chaque citation, note qui parle, à qui, dans quelle scène et quel conflit elle révèle.</p>
- </article>
-</section>
 
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Entraînement</span><h2>Quel niveau d’analyse ?</h2></div></div>
- <div class="u-game" id="uGame"></div>
-</section>
 
-<section class="section">
- <h2>Maîtrise Usigli</h2>
- <div class="checklist">
-  <label class="check-item"><input type="checkbox" data-progress="bac5-usi-1"><span>Je sais raconter le mécanisme de l’imposture en moins de deux minutes.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-usi-2"><span>Je peux expliquer le rôle de Miguel, Elena, Bolton et Navarro sans faire une fiche de personnages descriptive.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-usi-3"><span>Je sais analyser vérité, vraisemblance et légitimité politique comme trois notions différentes.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-usi-4"><span>Je sais relier la forme théâtrale à la question du masque et du pouvoir.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-usi-5"><span>J’ai préparé des micro-citations exactes dans l’édition au programme.</span></label>
- </div>
-</section>
+
+
 </main>
-<script src="assets/app.js"></script>
+<script src="assets/app.js"></script><script src="assets/usigli-path.js"></script>
 <script>
 (function(){
  const qs=[
