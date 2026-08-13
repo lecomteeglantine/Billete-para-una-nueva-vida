@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Civilisation · Billete para una nueva vida</title>
-<meta name="description" content="Dossier concours sur la fin du franquisme et la Transition démocratique espagnole.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<meta content="Dossier concours sur la fin du franquisme et la Transition démocratique espagnole." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .civ-hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:1rem}
 .civ-route{background:linear-gradient(145deg,#fff,#fff7e8)}
@@ -35,161 +36,195 @@
 .feedback-box{margin-top:.7rem;padding:.75rem;border-radius:12px;background:#f6f8fa;min-height:1.2rem}
 @media(max-width:1000px){.civ-concepts,.primary-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.civ-hero-grid,.civ-concepts,.primary-grid,.bridge-grid{grid-template-columns:1fr}}
+
+.transition-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.transition-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.transition-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.transition-path [hidden]{display:none!important}
+.transition-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.transition-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:175px}
+.transition-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.transition-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.transition-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.transition-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.transition-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.transition-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.transition-diag.hidden{display:none}
+.transition-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.transition-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.transition-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.transition-diag-options{display:grid;gap:.55rem}.transition-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.transition-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.transition-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.transition-level-panel{display:none}.transition-level-panel.active{display:block}
+.transition-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.transition-level-banner h2{color:#fff;margin:.1rem 0}.transition-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.transition-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.transition-validation.complete{border-color:#64a979;background:#eef8f1}
+.transition-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.transition-summary-card{border-left:5px solid #c94355}
+.transition-compact-note{font-size:.9rem;color:#687985}
+@media(max-width:950px){.transition-path-grid,.transition-level-cards,.transition-summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.transition-path-grid,.transition-level-cards,.transition-summary-grid{grid-template-columns:1fr}.transition-level-banner{display:block}}
 </style>
 </head>
 <body class="route-all">
 <main id="main">
 <section class="page-hero">
-  <div class="breadcrumbs"><a href="index.html">Accueil</a> › Civilisation</div>
-  <span class="eyebrow">BAC+3 · ÉPREUVE 1 · SESSION 2027</span>
-  <h1>De la fin du franquisme à la Transition : savoir dater, surtout savoir problématiser.</h1>
-  <p class="lead">Chronologie, acteurs, institutions, conflits, violences, autonomies et mémoires : les repères doivent permettre d’interpréter un document, pas de réciter une frise.</p>
+<div class="breadcrumbs"><a href="index.html">Accueil</a> › Civilisation</div>
+<span class="eyebrow">BAC+3 · ÉPREUVE 1 · SESSION 2027</span>
+<h1>De la fin du franquisme à la Transition : savoir dater, surtout savoir problématiser.</h1>
+<p class="lead">Chronologie, acteurs, institutions, conflits, violences, autonomies et mémoires : les repères doivent permettre d’interpréter un document, pas de réciter une frise.</p>
+</section><section class="section" id="transition-parcours">
+<article class="card transition-path">
+<div class="transition-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · TRANSITION ESPAGNOLE</span>
+<h2>Transition — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il vérifie surtout ta capacité à <strong>interpréter et contextualiser</strong> les événements, pas seulement à retenir des dates.</p>
+<div class="actions"><button class="btn btn-primary" id="transitionDiagStart" type="button">Faire le mini-diagnostic · 5 min</button><button class="btn btn-secondary" hidden="" id="transitionDiagReset" type="button">Refaire le diagnostic</button></div>
+</div>
+<div class="transition-path-status" id="transitionPathStatus"><span class="eyebrow">POINT DE DÉPART</span><h3>Pas encore déterminé</h3><p>Après 10 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir.</p></div>
+</div>
+<div class="transition-diag hidden" id="transitionDiag">
+<div class="transition-compact-note" id="transitionDiagCount"></div>
+<div class="transition-diag-progress"><span id="transitionDiagBar"></span></div>
+<div class="transition-diag-q" id="transitionDiagQuestion"></div>
+<div class="transition-diag-options" id="transitionDiagOptions"></div>
+<div class="transition-diag-nav"><button class="btn btn-secondary" id="transitionDiagPrev" type="button">← Précédent</button><button class="btn btn-primary" disabled="" id="transitionDiagNext" type="button">Suivant →</button></div>
+</div>
+<div class="transition-level-cards">
+<button class="transition-level-card" data-transition-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>Repères · acteurs · chronologie · vocabulaire de base.</span></button>
+<button class="transition-level-card" data-transition-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>PCE · amnistie · violence · continuités · armée · mémoire.</span></button>
+<button class="transition-level-card" data-transition-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Documents · contextualisation · mise en relation · vrai sujet 2026.</span></button>
+<button class="transition-level-card" data-transition-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Historiographie · débats mémoriels · lectures critiques.</span></button>
+</div>
+</article>
+</section><div class="transition-level-panel" data-transition-panel="1"><div class="transition-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je situe les acteurs, les dates-charnières et les étapes institutionnelles sans transformer la Transition en simple chronologie.</p></div><button class="btn btn-secondary" data-transition-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Résumé essentiel</span><h2>Quatre idées pour ne pas réduire la Transition à une frise.</h2></div></div>
+<div class="transition-summary-grid">
+<article class="card transition-summary-card"><h3>Une démocratisation réelle</h3><p>Après la mort de Franco, l’Espagne connaît une transformation institutionnelle majeure : gouvernement Suárez, légalisation des partis, élections de 1977, Constitution de 1978.</p></article>
+<article class="card transition-summary-card"><h3>Pas une rupture totale</h3><p>Des institutions, personnels, intérêts sociaux et rapports de force hérités du franquisme continuent d’influencer le processus.</p></article>
+<article class="card transition-summary-card"><h3>Un processus conflictuel</h3><p>Violences politiques, terrorisme, tensions sociales, inquiétudes militaires et conflits autour de l’ordre public empêchent de présenter la Transition comme simplement pacifique.</p></article>
+<article class="card transition-summary-card"><h3>Une mémoire disputée</h3><p>La manière de traiter le passé franquiste, l’amnistie, les victimes et les silences publics fait l’objet de débats historiographiques : il faut éviter de transformer le « pacto del olvido » en accord officiel unique.</p></article>
+</div>
+</section><section class="section">
+<div class="civ-hero-grid">
+<article class="card">
+<span class="badge badge-green">Question au programme</span>
+<h2>Une démocratisation ni instantanée, ni linéaire.</h2>
+<p>La Transition combine une transformation institutionnelle menée en partie depuis les institutions héritées du franquisme, une forte mobilisation sociale, des négociations entre adversaires politiques, des conflits territoriaux, une crise économique et des violences politiques.</p>
+<p>Le piège est de raconter une marche mécanique de Franco vers la Constitution. Le concours attend une lecture des <strong>tensions</strong> : réforme / rupture, inclusion / exclusion, consensus / conflit, changement / continuités, mémoire / silence.</p>
+</article>
+<article class="card civ-route">
+<span class="badge badge-gold">Fil rouge</span>
+<h3>La question à toujours garder en tête</h3>
+<p><strong>Comment démocratiser l’État sans disposer d’un terrain institutionnel neutre, tout en gérant des rapports de force hérités de la dictature ?</strong></p>
+<div class="actions"><a class="btn btn-secondary" href="litterature.html">Relier à Chirbes</a><a class="btn btn-secondary" href="methodologie-composition.html">Méthode écrit 1</a></div>
+</article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Chronologie raisonnée</span><h2>1969–1982 : chaque date doit servir une idée.</h2><p>Filtre la frise par période pour réviser.</p></div></div>
+<div class="timeline-nav">
+<button class="timeline-filter active" data-period="all">Tout</button>
+<button class="timeline-filter" data-period="before">Avant 1975</button>
+<button class="timeline-filter" data-period="7677">1976–1977</button>
+<button class="timeline-filter" data-period="78">1978</button>
+<button class="timeline-filter" data-period="7982">1979–1982</button>
+</div>
+<div class="timeline">
+<div class="timeline-item" data-period="before"><time>1969</time><h3>Juan Carlos désigné successeur</h3><p>Le principe monarchique de succession est organisé à l’intérieur du cadre franquiste. C’est essentiel pour comprendre que la démocratisation procède ensuite en partie depuis la légalité existante.</p></div>
+<div class="timeline-item" data-period="before"><time>20 décembre 1973</time><h3>Assassinat de Carrero Blanco</h3><p>L’ETA tue le président du Gouvernement. La disparition de celui qui incarnait une forte continuité du régime accentue les incertitudes de la fin du franquisme.</p></div>
+<div class="timeline-item" data-period="before"><time>25 avril 1974</time><h3>Révolution des Œillets au Portugal</h3><p>La chute de la dictature portugaise nourrit à la fois les espoirs de l’opposition espagnole et les craintes d’une rupture incontrôlée chez les défenseurs de l’ordre.</p></div>
+<div class="timeline-item" data-period="before"><time>20 novembre 1975</time><h3>Mort de Franco</h3><p>La disparition du dictateur ne détruit pas automatiquement les institutions, les administrations, les intérêts sociaux ni les appareils de pouvoir hérités du régime.</p></div>
+<div class="timeline-item" data-period="before"><time>22 novembre 1975</time><h3>Juan Carlos Ier proclamé roi</h3><p>La monarchie succède à Franco dans le cadre juridique existant. La question devient : continuité du régime ou usage de la monarchie pour ouvrir un processus de réforme ?</p></div>
+<div class="timeline-item" data-period="7677"><time>3 juillet 1976</time><h3>Adolfo Suárez nommé président du Gouvernement</h3><p>Son gouvernement choisit une stratégie de transformation légale visant des élections démocratiques, tout en négociant avec des acteurs issus de l’opposition.</p></div>
+<div class="timeline-item" data-period="7677"><time>15 décembre 1976</time><h3>Référendum sur la Loi pour la réforme politique</h3><p>Le projet est largement approuvé. La loi établit notamment souveraineté populaire, Cortes bicamérales et élections au suffrage universel : la réforme utilise la légalité franquiste pour la dépasser.</p></div>
+<div class="timeline-item" data-period="7677"><time>24 janvier 1977</time><h3>Massacre d’Atocha</h3><p>L’assassinat d’avocats travaillistes par l’extrême droite rappelle que la démocratisation se déroule dans un contexte de violence et de forte polarisation.</p></div>
+<div class="timeline-item" data-period="7677"><time>9 avril 1977</time><h3>Légalisation du PCE</h3><p>Étape décisive de l’inclusion politique. Elle suppose négociation et compromis, mais provoque aussi de fortes oppositions, notamment dans certains secteurs militaires.</p></div>
+<div class="timeline-item" data-period="7677"><time>15 juin 1977</time><h3>Premières élections générales démocratiques</h3><p>Les Cortes issues de ces élections deviennent constituantes. La compétition électorale ne met pas fin aux négociations : elle les déplace dans un nouvel espace institutionnel.</p></div>
+<div class="timeline-item" data-period="7677"><time>15 octobre 1977</time><h3>Loi d’amnistie</h3><p>Mesure centrale pour la libération et l’effacement de responsabilités liées à des actes politiques antérieurs. Son sens historique et ses effets sur les crimes du franquisme sont aujourd’hui au cœur de débats mémoriels et juridiques.</p></div>
+<div class="timeline-item" data-period="7677"><time>25 octobre 1977</time><h3>Pactes de la Moncloa</h3><p>Accords politiques et économiques dans un contexte de forte inflation, de chômage et de crise. Ils incarnent le recours au compromis, mais aussi les coûts sociaux de la stabilisation.</p></div>
+<div class="timeline-item" data-period="78"><time>1978</time><h3>Processus constituant</h3><p>Les Cortes élaborent une Constitution fondée sur l’État social et démocratique de droit, la souveraineté populaire, le pluralisme politique et la monarchie parlementaire, tout en ouvrant la voie à l’autonomie des nationalités et régions.</p></div>
+<div class="timeline-item" data-period="78"><time>6 décembre 1978</time><h3>Référendum constitutionnel</h3><p>Le projet constitutionnel est soumis au vote populaire. La date deviendra un puissant lieu de mémoire du récit démocratique espagnol.</p></div>
+<div class="timeline-item" data-period="78"><time>29 décembre 1978</time><h3>Entrée en vigueur de la Constitution</h3><p>La publication au BOE consacre le nouveau cadre constitutionnel et abroge explicitement plusieurs lois fondamentales de l’ordre franquiste.</p></div>
+<div class="timeline-item" data-period="7982"><time>1979</time><h3>Élections, municipalités et premiers grands développements autonomiques</h3><p>La démocratisation descend vers le niveau local et territorial. La question des autonomies devient l’un des grands chantiers de construction du nouvel État.</p></div>
+<div class="timeline-item" data-period="7982"><time>29 janvier 1981</time><h3>Démission d’Adolfo Suárez</h3><p>Elle intervient dans un contexte de crise de l’UCD, de tensions économiques, politiques et territoriales et de pression militaire.</p></div>
+<div class="timeline-item" data-period="7982"><time>23 février 1981</time><h3>Tentative de coup d’État</h3><p>L’irruption armée au Congrès pendant l’investiture de Calvo-Sotelo montre que la démocratie reste vulnérable. L’échec du coup devient ensuite un épisode central du récit de consolidation.</p></div>
+<div class="timeline-item" data-period="7982"><time>28 octobre 1982</time><h3>Victoire électorale du PSOE</h3><p>L’alternance massive est souvent utilisée comme borne de consolidation de la Transition. Ce choix de borne reste une convention historiographique, pas une frontière naturelle.</p></div>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Quand ces objectifs sont validés, tu peux passer aux nuances et mécanismes du niveau 2.</p><div class="checklist"><label class="check-item"><input data-progress="civ-1" type="checkbox"/><span>Je peux raconter 1969–1982 en 3 minutes sans transformer la chronologie en liste de dates.</span></label><label class="check-item"><input data-progress="civ-2" type="checkbox"/><span>Je sais expliquer « reforma / ruptura » avec un exemple précis.</span></label><label class="check-item"><input data-progress="civ-3" type="checkbox"/><span>Je sais expliquer pourquoi « pacto del olvido » doit être employé avec prudence.</span></label></div><div class="transition-validation" data-transition-validation="1"></div></article></section></div><div class="transition-level-panel" data-transition-panel="2"><div class="transition-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je comprends les compromis, résistances, violences, continuités et débats mémoriels qui rendent le processus complexe.</p></div><button class="btn btn-secondary" data-transition-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Notions indispensables</span><h2>Les mots qu’il faut employer avec nuance.</h2></div></div>
+<div class="civ-concepts">
+<article class="card civ-concept"><h3>Reforma / ruptura</h3><p>Deux horizons du changement : transformer progressivement l’ordre existant ou rompre plus radicalement avec ses institutions et sa légitimité.</p><div class="nuance"><strong>Nuance :</strong> la Transition réelle ne se laisse pas réduire parfaitement à l’un ou l’autre modèle.</div></article>
+<article class="card civ-concept"><h3>Consenso</h3><p>Recherche d’accords entre forces qui avaient des projets concurrents : Constitution, politiques économiques, règles du jeu.</p><div class="nuance"><strong>Nuance :</strong> consensus ne signifie ni unanimité sociale ni disparition du conflit.</div></article>
+<article class="card civ-concept"><h3>Pacto del olvido</h3><p>Expression utilisée pour désigner une forme de faible traitement institutionnel du passé répressif et des responsabilités franquistes.</p><div class="nuance"><strong>Important :</strong> ce n’est pas le nom d’un accord juridique unique. Les recherches récentes montrent aussi l’existence d’initiatives mémorielles locales dès la Transition.</div></article>
+<article class="card civ-concept"><h3>Amnistía</h3><p>La loi du 15 octobre 1977 amnistie une série d’actes politiques antérieurs. Elle répond à une revendication majeure de l’opposition antifranquiste.</p><div class="nuance"><strong>Débat :</strong> son interprétation ultérieure est liée aux questions d’impunité et de justice transitionnelle.</div></article>
+<article class="card civ-concept"><h3>Violencia política</h3><p>ETA, extrême droite, violences policières et tentative de coup d’État : la démocratisation n’est pas un processus simplement pacifique.</p><div class="nuance"><strong>À faire :</strong> nommer les acteurs et les situations au lieu d’utiliser « violence » comme bloc indistinct.</div></article>
+<article class="card civ-concept"><h3>Estado de las autonomías</h3><p>La Constitution reconnaît le droit à l’autonomie des nationalités et régions et met en place un processus territorial progressif.</p><div class="nuance"><strong>À analyser :</strong> compromis constitutionnel, demandes historiques, asymétries et conflits de souveraineté.</div></article>
+<article class="card civ-concept"><h3>Legalización del PCE</h3><p>La légalisation du Parti communiste rend possible une compétition démocratique plus inclusive et oblige différents acteurs à redéfinir leurs positions.</p><div class="nuance"><strong>Très utile :</strong> pour travailler ensemble négociation, symboles, monarchie, armée et limites du compromis.</div></article>
+<article class="card civ-concept"><h3>Monarquía parlamentaria</h3><p>La monarchie, issue du mécanisme de succession franquiste, devient dans la Constitution la forme politique d’un État démocratique.</p><div class="nuance"><strong>Tension :</strong> continuité dynastique et institutionnelle / changement de régime politique.</div></article>
+<article class="card civ-concept"><h3>Memoria democrática</h3><p>Ensemble de politiques, débats et mobilisations concernant victimes, symboles, fosses, reconnaissance et récit public de la guerre civile et du franquisme.</p><div class="nuance"><strong>Ne pas confondre :</strong> mémoire, histoire savante, politique publique et justice.</div></article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Anti-pièges</span><h2>Nuancé ou trop simpliste ?</h2><p>Clique sur la bonne étiquette.</p></div></div>
+<div class="claim-game" id="claimGame"></div>
+</section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand ces objectifs sont validés, passe à l’analyse de documents et au vrai dossier.</p><div class="checklist"><label class="check-item"><input data-progress="civ-4" type="checkbox"/><span>Je peux contextualiser la légalisation du PCE et expliquer ses enjeux.</span></label><label class="check-item"><input data-progress="civ-5" type="checkbox"/><span>Je peux analyser un article de la Constitution sans réciter tout le texte constitutionnel.</span></label><label class="check-item"><input data-progress="civ-6" type="checkbox"/><span>Je peux citer au moins trois formes de violence politique de la période en les distinguant.</span></label></div><div class="transition-validation" data-transition-validation="2"></div></article></section></div><div class="transition-level-panel" data-transition-panel="3"><div class="transition-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je contextualise précisément, je mets les documents en relation et je construis une analyse problématisée.</p></div><button class="btn btn-secondary" data-transition-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Sources primaires</span><h2>Apprendre l’histoire en lisant les documents qui l’ont faite.</h2></div></div>
+<div class="primary-grid">
+<article class="card primary-card"><span class="badge">1976–1977</span><h3>Loi pour la réforme politique</h3><p>À observer : souveraineté, représentation, suffrage, stratégie de réforme « depuis » la légalité antérieure.</p><div class="actions"><a class="btn btn-secondary" href="https://constitucion.congreso.es/constitucion-1978/elaboracion/cortesconstituyentes" rel="noopener" target="_blank">Congreso ↗</a></div></article>
+<article class="card primary-card"><span class="badge">1977</span><h3>Loi d’amnistie</h3><p>À observer : catégories d’actes amnistiés, chronologie couverte et contexte politique.</p><div class="actions"><a class="btn btn-secondary" href="https://www.boe.es/buscar/doc.php?id=BOE-A-1977-24937" rel="noopener" target="_blank">BOE ↗</a></div></article>
+<article class="card primary-card"><span class="badge">1978</span><h3>Constitution</h3><p>À observer : État social et démocratique de droit, souveraineté, pluralisme, monarchie parlementaire et autonomies.</p><div class="actions"><a class="btn btn-secondary" href="https://constitucion.congreso.es/constitucion-1978/texto-de-la-constitucion" rel="noopener" target="_blank">Congreso ↗</a></div></article>
+<article class="card primary-card"><span class="badge">1981</span><h3>23-F</h3><p>À observer : la vulnérabilité du système et la façon dont l’épisode est ensuite intégré au récit de consolidation démocratique.</p><div class="actions"><a class="btn btn-secondary" href="https://www.congreso.es/es/cem/sesiones-de-investidura" rel="noopener" target="_blank">Archives du Congreso ↗</a></div></article>
+</div>
+</section><section class="section">
+<article class="card dossier-2026">
+<span class="badge badge-green">VRAI SUJET CAPES / CAFEP BAC+3 · 2026</span>
+<h2>Laboratoire : commenter la démocratisation à partir de deux documents.</h2>
+<p>Le sujet réel associait un récit rétrospectif d’Adolfo Suárez sur la <strong>légalisation du PCE</strong> et une photographie de <strong>Suárez avec Dolores Ibárruri</strong> avant l’ouverture des Cortes démocratiques en juillet 1977. La consigne demandait d’expliquer comment les deux documents permettent de saisir certains enjeux politiques et sociaux du processus de démocratisation.</p>
+<div class="bridge-grid">
+<div class="bridge-card"><h3>Document textuel : ce qu’il faut chercher</h3><ul><li>négociation entre adversaires ;</li><li>conditions posées à la légalisation ;</li><li>acceptation de symboles et du cadre monarchique ;</li><li>réactions militaires et limites du changement ;</li><li>récit rétrospectif de Suárez : source à contextualiser, pas vérité brute.</li></ul></div>
+<div class="bridge-card"><h3>Photographie : ce qu’il faut chercher</h3><ul><li>force symbolique de la coprésence ;</li><li>deux trajectoires politiques historiquement antagonistes ;</li><li>mise en scène d’une nouvelle légitimité parlementaire ;</li><li>inclusion politique et normalisation ;</li><li>ce que l’image ne montre pas : conflits, violence et résistances.</li></ul></div>
+</div>
+<div class="notice"><strong>Problématique possible :</strong> comment l’intégration d’adversaires politiques longtemps exclus contribue-t-elle à rendre la démocratie possible tout en révélant les compromis et les limites du processus de Transition ?</div>
+<div class="actions"><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19696/download" rel="noopener" target="_blank">Ouvrir le sujet 2026 ↗</a><a class="btn btn-secondary" href="entrainement.html">Aller à S’entraîner</a></div>
+</article>
+</section><section class="section civ-quiz" id="quiz-transition">
+<div class="section-head"><div><span class="eyebrow">Quiz actif</span><h2>12 repères à sortir sans hésiter.</h2></div></div>
+<div id="civQuiz"></div>
+<div class="actions"><button class="btn btn-secondary" id="resetCivQuiz">Recommencer</button></div>
+</section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Ce niveau valide le passage des connaissances à leur mobilisation dans une épreuve.</p><div class="checklist"><label class="check-item"><input data-progress="civ-7" type="checkbox"/><span>J’ai travaillé les documents 2 et 3 du sujet réel 2026.</span></label><label class="check-item"><input data-progress="civ-8" type="checkbox"/><span>Je sais relier un fait historique à une tension du roman de Chirbes.</span></label></div><div class="transition-validation" data-transition-validation="3"></div></article></section></div><div class="transition-level-panel" data-transition-panel="4"><div class="transition-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>J’utilise l’historiographie et les sources pour nuancer une analyse déjà solide.</p></div><button class="btn btn-secondary" data-transition-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Historiographie</span><h2>Sortir du récit scolaire trop lisse.</h2></div></div>
+<div class="grid grid-3">
+<article class="card"><h3>Le récit du succès</h3><p>La Constitution, les élections, l’alternance et l’échec du 23-F ont nourri un récit de la Transition comme réussite de la modération, de la négociation et de la consolidation institutionnelle.</p><p><strong>À faire au concours :</strong> comprendre ce récit sans le répéter comme une évidence naturelle.</p></article>
+<article class="card"><h3>Violence et rapports de force</h3><p>Les recherches sur la période insistent sur le fait que terrorisme, extrême droite, violences policières et menace militaire accompagnent la démocratisation.</p><p><strong>Conséquence :</strong> remplacer « Transition pacifique » par une formulation plus précise.</p></article>
+<article class="card"><h3>Mémoire : silence ou pluralité ?</h3><p>La notion de « pacte de l’oubli » est discutée. Des travaux ont montré que des initiatives d’exhumation et de mémoire existaient dès la Transition, souvent localement, sans soutien important des directions nationales.</p><p><strong>Conséquence :</strong> éviter les formules absolues.</p></article>
+</div>
+</section><section class="section">
+<h2>Sources solides pour réviser</h2>
+<div class="grid grid-3">
+<article class="card"><h3>Congreso de los Diputados</h3><p>Élaboration de la Constitution, élections constituantes, texte constitutionnel et archives parlementaires.</p><a href="https://constitucion.congreso.es/constitucion-1978/elaboracion/cortesconstituyentes" rel="noopener" target="_blank">Explorer ↗</a></article>
+<article class="card"><h3>BOE</h3><p>Textes juridiques originaux : loi d’amnistie, référendum, Constitution.</p><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-1977-24937" rel="noopener" target="_blank">Loi d’amnistie ↗</a></article>
+<article class="card"><h3>CEPC / Historia y Política</h3><p>Pour nuancer les débats sur mémoire, silence, exhumations et « pacte de l’oubli ».</p><a href="https://www.cepc.gob.es/publicaciones/revistas/historia-y-politica/numero-47-enerojunio-2022/los-origenes-de-la-memoria-historica-en-espana-los-costes-del-emprendimiento-memorialista-en-la" rel="noopener" target="_blank">Lire le résumé ↗</a></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 4 · Approfondissement</h3><p>Ce niveau enrichit une maîtrise déjà solide. Il n’est pas nécessaire pour considérer les repères fondamentaux, les concepts et la méthode de concours comme acquis.</p></article></section></div><section class="section" data-route-view="bac5">
+<h2>Contextes des autres œuvres</h2>
+<div class="grid grid-3">
+<article class="card"><h3>Espagne, 1808</h3><p>Invasion napoléonienne, crise de la monarchie, guerre, mobilisation populaire, Cortes de Cadix et redéfinition de la nation.</p></article>
+<article class="card"><h3>Mexique postrévolutionnaire</h3><p>Institutionnalisation du régime révolutionnaire, fabrication des héros, légitimité politique et critique de la corruption.</p></article>
+<article class="card"><h3>Cuba et l’affaire Padilla</h3><p>Arrestation du poète en 1971, autocritique publique, rupture d’une partie des intellectuels avec la Révolution cubaine.</p></article>
+</div>
 </section>
 
-<section class="section">
-  <div class="civ-hero-grid">
-    <article class="card">
-      <span class="badge badge-green">Question au programme</span>
-      <h2>Une démocratisation ni instantanée, ni linéaire.</h2>
-      <p>La Transition combine une transformation institutionnelle menée en partie depuis les institutions héritées du franquisme, une forte mobilisation sociale, des négociations entre adversaires politiques, des conflits territoriaux, une crise économique et des violences politiques.</p>
-      <p>Le piège est de raconter une marche mécanique de Franco vers la Constitution. Le concours attend une lecture des <strong>tensions</strong> : réforme / rupture, inclusion / exclusion, consensus / conflit, changement / continuités, mémoire / silence.</p>
-    </article>
-    <article class="card civ-route">
-      <span class="badge badge-gold">Fil rouge</span>
-      <h3>La question à toujours garder en tête</h3>
-      <p><strong>Comment démocratiser l’État sans disposer d’un terrain institutionnel neutre, tout en gérant des rapports de force hérités de la dictature ?</strong></p>
-      <div class="actions"><a class="btn btn-secondary" href="litterature.html">Relier à Chirbes</a><a class="btn btn-secondary" href="methodologie-composition.html">Méthode écrit 1</a></div>
-    </article>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Chronologie raisonnée</span><h2>1969–1982 : chaque date doit servir une idée.</h2><p>Filtre la frise par période pour réviser.</p></div></div>
-  <div class="timeline-nav">
-    <button class="timeline-filter active" data-period="all">Tout</button>
-    <button class="timeline-filter" data-period="before">Avant 1975</button>
-    <button class="timeline-filter" data-period="7677">1976–1977</button>
-    <button class="timeline-filter" data-period="78">1978</button>
-    <button class="timeline-filter" data-period="7982">1979–1982</button>
-  </div>
-  <div class="timeline">
-    <div class="timeline-item" data-period="before"><time>1969</time><h3>Juan Carlos désigné successeur</h3><p>Le principe monarchique de succession est organisé à l’intérieur du cadre franquiste. C’est essentiel pour comprendre que la démocratisation procède ensuite en partie depuis la légalité existante.</p></div>
-    <div class="timeline-item" data-period="before"><time>20 décembre 1973</time><h3>Assassinat de Carrero Blanco</h3><p>L’ETA tue le président du Gouvernement. La disparition de celui qui incarnait une forte continuité du régime accentue les incertitudes de la fin du franquisme.</p></div>
-    <div class="timeline-item" data-period="before"><time>25 avril 1974</time><h3>Révolution des Œillets au Portugal</h3><p>La chute de la dictature portugaise nourrit à la fois les espoirs de l’opposition espagnole et les craintes d’une rupture incontrôlée chez les défenseurs de l’ordre.</p></div>
-    <div class="timeline-item" data-period="before"><time>20 novembre 1975</time><h3>Mort de Franco</h3><p>La disparition du dictateur ne détruit pas automatiquement les institutions, les administrations, les intérêts sociaux ni les appareils de pouvoir hérités du régime.</p></div>
-    <div class="timeline-item" data-period="before"><time>22 novembre 1975</time><h3>Juan Carlos Ier proclamé roi</h3><p>La monarchie succède à Franco dans le cadre juridique existant. La question devient : continuité du régime ou usage de la monarchie pour ouvrir un processus de réforme ?</p></div>
 
-    <div class="timeline-item" data-period="7677"><time>3 juillet 1976</time><h3>Adolfo Suárez nommé président du Gouvernement</h3><p>Son gouvernement choisit une stratégie de transformation légale visant des élections démocratiques, tout en négociant avec des acteurs issus de l’opposition.</p></div>
-    <div class="timeline-item" data-period="7677"><time>15 décembre 1976</time><h3>Référendum sur la Loi pour la réforme politique</h3><p>Le projet est largement approuvé. La loi établit notamment souveraineté populaire, Cortes bicamérales et élections au suffrage universel : la réforme utilise la légalité franquiste pour la dépasser.</p></div>
-    <div class="timeline-item" data-period="7677"><time>24 janvier 1977</time><h3>Massacre d’Atocha</h3><p>L’assassinat d’avocats travaillistes par l’extrême droite rappelle que la démocratisation se déroule dans un contexte de violence et de forte polarisation.</p></div>
-    <div class="timeline-item" data-period="7677"><time>9 avril 1977</time><h3>Légalisation du PCE</h3><p>Étape décisive de l’inclusion politique. Elle suppose négociation et compromis, mais provoque aussi de fortes oppositions, notamment dans certains secteurs militaires.</p></div>
-    <div class="timeline-item" data-period="7677"><time>15 juin 1977</time><h3>Premières élections générales démocratiques</h3><p>Les Cortes issues de ces élections deviennent constituantes. La compétition électorale ne met pas fin aux négociations : elle les déplace dans un nouvel espace institutionnel.</p></div>
-    <div class="timeline-item" data-period="7677"><time>15 octobre 1977</time><h3>Loi d’amnistie</h3><p>Mesure centrale pour la libération et l’effacement de responsabilités liées à des actes politiques antérieurs. Son sens historique et ses effets sur les crimes du franquisme sont aujourd’hui au cœur de débats mémoriels et juridiques.</p></div>
-    <div class="timeline-item" data-period="7677"><time>25 octobre 1977</time><h3>Pactes de la Moncloa</h3><p>Accords politiques et économiques dans un contexte de forte inflation, de chômage et de crise. Ils incarnent le recours au compromis, mais aussi les coûts sociaux de la stabilisation.</p></div>
 
-    <div class="timeline-item" data-period="78"><time>1978</time><h3>Processus constituant</h3><p>Les Cortes élaborent une Constitution fondée sur l’État social et démocratique de droit, la souveraineté populaire, le pluralisme politique et la monarchie parlementaire, tout en ouvrant la voie à l’autonomie des nationalités et régions.</p></div>
-    <div class="timeline-item" data-period="78"><time>6 décembre 1978</time><h3>Référendum constitutionnel</h3><p>Le projet constitutionnel est soumis au vote populaire. La date deviendra un puissant lieu de mémoire du récit démocratique espagnol.</p></div>
-    <div class="timeline-item" data-period="78"><time>29 décembre 1978</time><h3>Entrée en vigueur de la Constitution</h3><p>La publication au BOE consacre le nouveau cadre constitutionnel et abroge explicitement plusieurs lois fondamentales de l’ordre franquiste.</p></div>
 
-    <div class="timeline-item" data-period="7982"><time>1979</time><h3>Élections, municipalités et premiers grands développements autonomiques</h3><p>La démocratisation descend vers le niveau local et territorial. La question des autonomies devient l’un des grands chantiers de construction du nouvel État.</p></div>
-    <div class="timeline-item" data-period="7982"><time>29 janvier 1981</time><h3>Démission d’Adolfo Suárez</h3><p>Elle intervient dans un contexte de crise de l’UCD, de tensions économiques, politiques et territoriales et de pression militaire.</p></div>
-    <div class="timeline-item" data-period="7982"><time>23 février 1981</time><h3>Tentative de coup d’État</h3><p>L’irruption armée au Congrès pendant l’investiture de Calvo-Sotelo montre que la démocratie reste vulnérable. L’échec du coup devient ensuite un épisode central du récit de consolidation.</p></div>
-    <div class="timeline-item" data-period="7982"><time>28 octobre 1982</time><h3>Victoire électorale du PSOE</h3><p>L’alternance massive est souvent utilisée comme borne de consolidation de la Transition. Ce choix de borne reste une convention historiographique, pas une frontière naturelle.</p></div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Notions indispensables</span><h2>Les mots qu’il faut employer avec nuance.</h2></div></div>
-  <div class="civ-concepts">
-    <article class="card civ-concept"><h3>Reforma / ruptura</h3><p>Deux horizons du changement : transformer progressivement l’ordre existant ou rompre plus radicalement avec ses institutions et sa légitimité.</p><div class="nuance"><strong>Nuance :</strong> la Transition réelle ne se laisse pas réduire parfaitement à l’un ou l’autre modèle.</div></article>
-    <article class="card civ-concept"><h3>Consenso</h3><p>Recherche d’accords entre forces qui avaient des projets concurrents : Constitution, politiques économiques, règles du jeu.</p><div class="nuance"><strong>Nuance :</strong> consensus ne signifie ni unanimité sociale ni disparition du conflit.</div></article>
-    <article class="card civ-concept"><h3>Pacto del olvido</h3><p>Expression utilisée pour désigner une forme de faible traitement institutionnel du passé répressif et des responsabilités franquistes.</p><div class="nuance"><strong>Important :</strong> ce n’est pas le nom d’un accord juridique unique. Les recherches récentes montrent aussi l’existence d’initiatives mémorielles locales dès la Transition.</div></article>
-    <article class="card civ-concept"><h3>Amnistía</h3><p>La loi du 15 octobre 1977 amnistie une série d’actes politiques antérieurs. Elle répond à une revendication majeure de l’opposition antifranquiste.</p><div class="nuance"><strong>Débat :</strong> son interprétation ultérieure est liée aux questions d’impunité et de justice transitionnelle.</div></article>
-    <article class="card civ-concept"><h3>Violencia política</h3><p>ETA, extrême droite, violences policières et tentative de coup d’État : la démocratisation n’est pas un processus simplement pacifique.</p><div class="nuance"><strong>À faire :</strong> nommer les acteurs et les situations au lieu d’utiliser « violence » comme bloc indistinct.</div></article>
-    <article class="card civ-concept"><h3>Estado de las autonomías</h3><p>La Constitution reconnaît le droit à l’autonomie des nationalités et régions et met en place un processus territorial progressif.</p><div class="nuance"><strong>À analyser :</strong> compromis constitutionnel, demandes historiques, asymétries et conflits de souveraineté.</div></article>
-    <article class="card civ-concept"><h3>Legalización del PCE</h3><p>La légalisation du Parti communiste rend possible une compétition démocratique plus inclusive et oblige différents acteurs à redéfinir leurs positions.</p><div class="nuance"><strong>Très utile :</strong> pour travailler ensemble négociation, symboles, monarchie, armée et limites du compromis.</div></article>
-    <article class="card civ-concept"><h3>Monarquía parlamentaria</h3><p>La monarchie, issue du mécanisme de succession franquiste, devient dans la Constitution la forme politique d’un État démocratique.</p><div class="nuance"><strong>Tension :</strong> continuité dynastique et institutionnelle / changement de régime politique.</div></article>
-    <article class="card civ-concept"><h3>Memoria democrática</h3><p>Ensemble de politiques, débats et mobilisations concernant victimes, symboles, fosses, reconnaissance et récit public de la guerre civile et du franquisme.</p><div class="nuance"><strong>Ne pas confondre :</strong> mémoire, histoire savante, politique publique et justice.</div></article>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Sources primaires</span><h2>Apprendre l’histoire en lisant les documents qui l’ont faite.</h2></div></div>
-  <div class="primary-grid">
-    <article class="card primary-card"><span class="badge">1976–1977</span><h3>Loi pour la réforme politique</h3><p>À observer : souveraineté, représentation, suffrage, stratégie de réforme « depuis » la légalité antérieure.</p><div class="actions"><a class="btn btn-secondary" href="https://constitucion.congreso.es/constitucion-1978/elaboracion/cortesconstituyentes" target="_blank" rel="noopener">Congreso ↗</a></div></article>
-    <article class="card primary-card"><span class="badge">1977</span><h3>Loi d’amnistie</h3><p>À observer : catégories d’actes amnistiés, chronologie couverte et contexte politique.</p><div class="actions"><a class="btn btn-secondary" href="https://www.boe.es/buscar/doc.php?id=BOE-A-1977-24937" target="_blank" rel="noopener">BOE ↗</a></div></article>
-    <article class="card primary-card"><span class="badge">1978</span><h3>Constitution</h3><p>À observer : État social et démocratique de droit, souveraineté, pluralisme, monarchie parlementaire et autonomies.</p><div class="actions"><a class="btn btn-secondary" href="https://constitucion.congreso.es/constitucion-1978/texto-de-la-constitucion" target="_blank" rel="noopener">Congreso ↗</a></div></article>
-    <article class="card primary-card"><span class="badge">1981</span><h3>23-F</h3><p>À observer : la vulnérabilité du système et la façon dont l’épisode est ensuite intégré au récit de consolidation démocratique.</p><div class="actions"><a class="btn btn-secondary" href="https://www.congreso.es/es/cem/sesiones-de-investidura" target="_blank" rel="noopener">Archives du Congreso ↗</a></div></article>
-  </div>
-</section>
 
-<section class="section">
-  <article class="card dossier-2026">
-    <span class="badge badge-green">VRAI SUJET CAPES / CAFEP BAC+3 · 2026</span>
-    <h2>Laboratoire : commenter la démocratisation à partir de deux documents.</h2>
-    <p>Le sujet réel associait un récit rétrospectif d’Adolfo Suárez sur la <strong>légalisation du PCE</strong> et une photographie de <strong>Suárez avec Dolores Ibárruri</strong> avant l’ouverture des Cortes démocratiques en juillet 1977. La consigne demandait d’expliquer comment les deux documents permettent de saisir certains enjeux politiques et sociaux du processus de démocratisation.</p>
-    <div class="bridge-grid">
-      <div class="bridge-card"><h3>Document textuel : ce qu’il faut chercher</h3><ul><li>négociation entre adversaires ;</li><li>conditions posées à la légalisation ;</li><li>acceptation de symboles et du cadre monarchique ;</li><li>réactions militaires et limites du changement ;</li><li>récit rétrospectif de Suárez : source à contextualiser, pas vérité brute.</li></ul></div>
-      <div class="bridge-card"><h3>Photographie : ce qu’il faut chercher</h3><ul><li>force symbolique de la coprésence ;</li><li>deux trajectoires politiques historiquement antagonistes ;</li><li>mise en scène d’une nouvelle légitimité parlementaire ;</li><li>inclusion politique et normalisation ;</li><li>ce que l’image ne montre pas : conflits, violence et résistances.</li></ul></div>
-    </div>
-    <div class="notice"><strong>Problématique possible :</strong> comment l’intégration d’adversaires politiques longtemps exclus contribue-t-elle à rendre la démocratie possible tout en révélant les compromis et les limites du processus de Transition ?</div>
-    <div class="actions"><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19696/download" target="_blank" rel="noopener">Ouvrir le sujet 2026 ↗</a><a class="btn btn-secondary" href="entrainement.html">Aller à S’entraîner</a></div>
-  </article>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Historiographie</span><h2>Sortir du récit scolaire trop lisse.</h2></div></div>
-  <div class="grid grid-3">
-    <article class="card"><h3>Le récit du succès</h3><p>La Constitution, les élections, l’alternance et l’échec du 23-F ont nourri un récit de la Transition comme réussite de la modération, de la négociation et de la consolidation institutionnelle.</p><p><strong>À faire au concours :</strong> comprendre ce récit sans le répéter comme une évidence naturelle.</p></article>
-    <article class="card"><h3>Violence et rapports de force</h3><p>Les recherches sur la période insistent sur le fait que terrorisme, extrême droite, violences policières et menace militaire accompagnent la démocratisation.</p><p><strong>Conséquence :</strong> remplacer « Transition pacifique » par une formulation plus précise.</p></article>
-    <article class="card"><h3>Mémoire : silence ou pluralité ?</h3><p>La notion de « pacte de l’oubli » est discutée. Des travaux ont montré que des initiatives d’exhumation et de mémoire existaient dès la Transition, souvent localement, sans soutien important des directions nationales.</p><p><strong>Conséquence :</strong> éviter les formules absolues.</p></article>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Anti-pièges</span><h2>Nuancé ou trop simpliste ?</h2><p>Clique sur la bonne étiquette.</p></div></div>
-  <div class="claim-game" id="claimGame"></div>
-</section>
 
-<section class="section civ-quiz" id="quiz-transition">
-  <div class="section-head"><div><span class="eyebrow">Quiz actif</span><h2>12 repères à sortir sans hésiter.</h2></div></div>
-  <div id="civQuiz"></div>
-  <div class="actions"><button class="btn btn-secondary" id="resetCivQuiz">Recommencer</button></div>
-</section>
-
-<section class="section" data-route-view="bac5">
-  <h2>Contextes des autres œuvres</h2>
-  <div class="grid grid-3">
-    <article class="card"><h3>Espagne, 1808</h3><p>Invasion napoléonienne, crise de la monarchie, guerre, mobilisation populaire, Cortes de Cadix et redéfinition de la nation.</p></article>
-    <article class="card"><h3>Mexique postrévolutionnaire</h3><p>Institutionnalisation du régime révolutionnaire, fabrication des héros, légitimité politique et critique de la corruption.</p></article>
-    <article class="card"><h3>Cuba et l’affaire Padilla</h3><p>Arrestation du poète en 1971, autocritique publique, rupture d’une partie des intellectuels avec la Révolution cubaine.</p></article>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Sources solides pour réviser</h2>
-  <div class="grid grid-3">
-    <article class="card"><h3>Congreso de los Diputados</h3><p>Élaboration de la Constitution, élections constituantes, texte constitutionnel et archives parlementaires.</p><a href="https://constitucion.congreso.es/constitucion-1978/elaboracion/cortesconstituyentes" target="_blank" rel="noopener">Explorer ↗</a></article>
-    <article class="card"><h3>BOE</h3><p>Textes juridiques originaux : loi d’amnistie, référendum, Constitution.</p><a href="https://www.boe.es/buscar/doc.php?id=BOE-A-1977-24937" target="_blank" rel="noopener">Loi d’amnistie ↗</a></article>
-    <article class="card"><h3>CEPC / Historia y Política</h3><p>Pour nuancer les débats sur mémoire, silence, exhumations et « pacte de l’oubli ».</p><a href="https://www.cepc.gob.es/publicaciones/revistas/historia-y-politica/numero-47-enerojunio-2022/los-origenes-de-la-memoria-historica-en-espana-los-costes-del-emprendimiento-memorialista-en-la" target="_blank" rel="noopener">Lire le résumé ↗</a></article>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Travail actif</h2>
-  <div class="checklist">
-    <label class="check-item"><input type="checkbox" data-progress="civ-1"><span>Je peux raconter 1969–1982 en 3 minutes sans transformer la chronologie en liste de dates.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="civ-2"><span>Je sais expliquer « reforma / ruptura » avec un exemple précis.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="civ-3"><span>Je sais expliquer pourquoi « pacto del olvido » doit être employé avec prudence.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="civ-4"><span>Je peux contextualiser la légalisation du PCE et expliquer ses enjeux.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="civ-5"><span>Je peux analyser un article de la Constitution sans réciter tout le texte constitutionnel.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="civ-6"><span>Je peux citer au moins trois formes de violence politique de la période en les distinguant.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="civ-7"><span>J’ai travaillé les documents 2 et 3 du sujet réel 2026.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="civ-8"><span>Je sais relier un fait historique à une tension du roman de Chirbes.</span></label>
-  </div>
-</section>
 </main>
-<script src="assets/app.js"></script>
+<script src="assets/app.js"></script><script src="assets/transition-path.js"></script>
 <script>
 (function(){
  document.querySelectorAll(".timeline-filter").forEach(btn=>btn.addEventListener("click",()=>{
