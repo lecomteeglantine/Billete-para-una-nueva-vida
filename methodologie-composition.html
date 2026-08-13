@@ -1,41 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Méthodologie de l’épreuve 1 · Billete para una nueva vida</title>
-<meta name="description" content="Méthode pour la première épreuve écrite bac+3 du CAFEP-CAPES externe d'espagnol : analyse littéraire, commentaire de documents, problématique, plan et relecture.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<meta content="Méthode pour la première épreuve écrite bac+3 du CAFEP-CAPES externe d'espagnol : analyse littéraire, commentaire de documents, problématique, plan et relecture." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .method-road{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.55rem;margin:1rem 0}.road-step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:.8rem;text-align:center}.road-step b{display:grid;place-items:center;width:32px;height:32px;margin:0 auto .45rem;border-radius:50%;background:#f9e4e6;color:var(--red-dark)}.road-step span{font-weight:800;font-size:.9rem}.formula{font-family:Georgia,serif;font-size:1.15rem;padding:1rem;border-left:5px solid var(--gold);background:#fff8e8;border-radius:12px}.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.do-dont .bad{border-top:6px solid var(--red)}.do-dont .good{border-top:6px solid var(--green)}.timeplan{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}.timeplan div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem}.timeplan strong{display:block;color:var(--red-dark)}.subject-layout{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.subject-part{background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.1rem;border-top:6px solid var(--green)}.source-note{font-size:.9rem;color:var(--muted)}
 @media(max-width:980px){.method-road{grid-template-columns:repeat(3,1fr)}.timeplan{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.method-road,.timeplan,.do-dont,.subject-layout{grid-template-columns:1fr}}
+
+.meth-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.meth-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.meth-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.meth-path [hidden]{display:none!important}
+.meth-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.meth-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:182px}
+.meth-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.meth-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.meth-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.meth-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.meth-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.meth-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.meth-diag.hidden{display:none}
+.meth-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.meth-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.meth-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.meth-diag-options{display:grid;gap:.55rem}.meth-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.meth-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.meth-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.meth-level-panel{display:none}.meth-level-panel.active{display:block}
+.meth-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.meth-level-banner h2{color:#fff;margin:.1rem 0}.meth-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.meth-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.meth-validation.complete{border-color:#64a979;background:#eef8f1}
+.meth-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.meth-summary-card{border-left:5px solid #c94355}
+.meth-priority-pill{display:inline-block;margin-top:.45rem;padding:.3rem .55rem;border-radius:999px;background:#fff1cf;color:#6b4b00;font-size:.82rem;font-weight:800}
+.meth-route-note{border-left:5px solid #e5bd66}
+.meth-lab{border-top:5px solid #173a5e}
+.meth-lab-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.meth-lab-card{border:1px solid #e3ded5;border-radius:16px;padding:1rem;background:#fff}
+.meth-lab-q{font-family:Georgia,serif;font-size:1.12rem;margin:.55rem 0}
+.meth-lab-options{display:grid;gap:.5rem}
+.meth-lab-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.68rem .8rem;text-align:left;cursor:pointer}
+.meth-lab-option.correct{border-color:#64a979;background:#eef8f1}
+.meth-lab-option.wrong{border-color:#c94355;background:#fff1f2}
+.meth-lab-feedback{margin-top:.6rem;padding:.7rem .8rem;border-radius:12px;background:#f6f8fa}
+.meth-model{border-left:5px solid #e5bd66;background:#fffaf0}
+.meth-model ol{margin-bottom:0}
+.meth-compact-note{font-size:.9rem;color:#687985}
+@media(max-width:950px){.meth-path-grid,.meth-level-cards,.meth-summary-grid,.meth-lab-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.meth-path-grid,.meth-level-cards,.meth-summary-grid,.meth-lab-grid{grid-template-columns:1fr}.meth-level-banner{display:block}}
 </style>
 </head>
 <body class="route-all">
 <main id="main">
-<section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Méthodologie › Épreuve 1</div><span class="eyebrow">Bac+3 · première épreuve écrite</span><h1>Lire la consigne avant d’appliquer une méthode.</h1><p class="lead">Le premier vrai sujet bac+3 d’espagnol, tombé en 2026, montre qu’une « composition à partir d’un dossier » peut être organisée en plusieurs tâches distinctes. La méthode doit donc partir de la consigne exacte, pas d’un moule appris par cœur.</p></section>
+<section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Méthodologie › Épreuve 1</div><span class="eyebrow">Bac+3 · première épreuve écrite</span><h1>Lire la consigne avant d’appliquer une méthode.</h1><p class="lead">Le premier vrai sujet bac+3 d’espagnol, tombé en 2026, montre qu’une « composition à partir d’un dossier » peut être organisée en plusieurs tâches distinctes. La méthode doit donc partir de la consigne exacte, pas d’un moule appris par cœur.</p></section><section class="section" id="methodologie-parcours">
+<article class="card meth-path">
+<div class="meth-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · MÉTHODOLOGIE / COMPOSITION</span>
+<h2>Composition — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il repère six domaines : <strong>consigne</strong>, <strong>contextualisation</strong>, <strong>problématique</strong>, <strong>plan</strong>, <strong>analyse</strong> et <strong>rédaction / relecture</strong>.</p>
+<div class="actions">
+<button class="btn btn-primary" id="methDiagStart" type="button">Faire le mini-diagnostic · 5 min</button>
+<button class="btn btn-secondary" hidden="" id="methDiagReset" type="button">Refaire le diagnostic</button>
+</div>
+</div>
+<div class="meth-path-status" id="methPathStatus">
+<span class="eyebrow">POINT DE DÉPART</span>
+<h3>Pas encore déterminé</h3>
+<p>Après 12 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir et indiquera la priorité à travailler.</p>
+</div>
+</div>
+<div class="meth-diag hidden" id="methDiag">
+<div class="meth-compact-note" id="methDiagCount"></div>
+<div class="meth-diag-progress"><span id="methDiagBar"></span></div>
+<div class="meth-diag-q" id="methDiagQuestion"></div>
+<div class="meth-diag-options" id="methDiagOptions"></div>
+<div class="meth-diag-nav">
+<button class="btn btn-secondary" id="methDiagPrev" type="button">← Précédent</button>
+<button class="btn btn-primary" disabled="" id="methDiagNext" type="button">Suivant →</button>
+</div>
+</div>
+<div class="meth-level-cards">
+<button class="meth-level-card" data-meth-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>Consigne · dossier · contextualisation · tâche exacte.</span></button>
+<button class="meth-level-card" data-meth-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>Problématique · plan · confrontation · connaissances utiles.</span></button>
+<button class="meth-level-card" data-meth-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Analyse littéraire · civilisation · paragraphes · vrai sujet 2026.</span></button>
+<button class="meth-level-card" data-meth-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Conseils du jury · minutage · relecture · correction fine.</span></button>
+</div>
+</article>
+</section><div class="meth-level-panel" data-meth-panel="1"><div class="meth-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je sais exactement ce que le sujet me demande et je contextualise les documents sans réciter le cours.</p></div><button class="btn btn-secondary" data-meth-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Le socle</span><h2>Quatre réflexes qui évitent les copies « hors sujet sans le vouloir ».</h2></div></div>
+<div class="meth-summary-grid">
+<article class="card meth-summary-card"><h3>Lire les verbes de consigne</h3><p>« Analyser », « commenter », « montrer comment » ou « mettre en relation » définissent le travail à produire. On ne plaque pas une dissertation universelle sur n’importe quel dossier.</p></article>
+<article class="card meth-summary-card"><h3>Contextualiser utilement</h3><p>Le contexte doit éclairer le document précis : moment historique, place de l’extrait, nature de la source ou position de l’auteur. Pas de cours récité avant de commencer.</p></article>
+<article class="card meth-summary-card"><h3>Construire une question, pas un thème</h3><p>La problématique fait apparaître une tension ou un mécanisme à expliquer. Elle n’est ni le titre du chapitre ni une reformulation décorative du sujet.</p></article>
+<article class="card meth-summary-card"><h3>Faire progresser la réponse</h3><p>Un plan n’est pas « pour / contre ». Chaque partie doit faire avancer la démonstration et répondre à une étape identifiable du problème posé.</p></article>
+</div>
+</section><section class="section">
+<article class="card meth-route-note">
+<span class="badge badge-green">FORMAT DE RÉFÉRENCE · BAC+3</span>
+<h3>Le vrai sujet 2026 sert ici de laboratoire méthodologique.</h3>
+<p>Les compétences de lecture, problématisation, confrontation et rédaction sont largement transférables. En revanche, le <strong>découpage exact en deux parties présenté dans cette page correspond au sujet bac+3 2026</strong> : il ne faut pas le transformer en modèle universel pour tous les sujets ou tous les parcours.</p>
+<div class="actions"><a class="btn btn-secondary" href="epreuves.html">Vérifier le format de mon parcours →</a></div>
+</article>
+</section><section class="section" data-route-view="bac3"><span class="badge badge-green">CADRE OFFICIEL BAC+3</span><h2>5 heures · coefficient 3 · en espagnol</h2><p>L’épreuve vérifie les connaissances disciplinaires, la maîtrise de la langue et la connaissance des cultures de l’aire hispanique. Elle s’appuie sur un dossier de documents de nature variée lié à une question au programme.</p><div class="notice"><strong>Règle n°1 :</strong> suivre exactement ce que demande le sujet. Ne pas forcer tous les documents dans une seule dissertation si la consigne sépare plusieurs travaux.</div></section><section class="section"><h2>Le parcours de travail</h2><div class="method-road"><div class="road-step"><b>1</b><span>Découper la consigne</span></div><div class="road-step"><b>2</b><span>Identifier la tâche de chaque partie</span></div><div class="road-step"><b>3</b><span>Analyser les documents concernés</span></div><div class="road-step"><b>4</b><span>Problématiser si demandé</span></div><div class="road-step"><b>5</b><span>Construire le raisonnement</span></div><div class="road-step"><b>6</b><span>Rédiger et relire</span></div></div></section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Le niveau 1 est suffisamment solide quand tu commences chaque sujet par la consigne et non par un plan appris d’avance.</p><div class="checklist"><label class="check-item"><input data-progress="meth-comp-1" type="checkbox"/><span>J’ai répondu à chaque verbe de la consigne et à chaque partie demandée.</span></label></div><div class="meth-validation" data-meth-validation="1"></div></article></section></div><div class="meth-level-panel" data-meth-panel="2"><div class="meth-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je transforme le dossier en problème intellectuel et je construis une progression de raisonnement qui confronte réellement les documents.</p></div><button class="btn btn-secondary" data-meth-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Problématiser</span><h2>La problématique doit révéler ce qu’il faut expliquer.</h2></div></div>
+<div class="grid grid-2">
+<article class="card meth-model">
+<h3>À éviter</h3>
+<ul>
+<li>une question qui reprend seulement le thème du dossier ;</li>
+<li>une problématique automatique du type « ¿En qué medida…? » qui n’ajoute aucune tension ;</li>
+<li>une question à laquelle on peut répondre par oui / non ;</li>
+<li>une question si large qu’elle pourrait convenir à dix dossiers différents.</li>
+</ul>
+</article>
+<article class="card meth-model">
+<h3>Le bon test</h3>
+<p>Si ta problématique est utile, elle permet de prévoir <strong>pourquoi les documents ont été réunis</strong> et <strong>ce que ton raisonnement doit progressivement démontrer</strong>.</p>
+<p><strong>Formule mentale :</strong> quel phénomène le dossier rend-il visible, par quels mécanismes, et avec quelles tensions ou limites ?</p>
+</article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Construire le plan</span><h2>Une progression de raisonnement, pas trois tiroirs.</h2></div></div>
+<div class="grid grid-3">
+<article class="card"><h3>1 · Établir</h3><p>Faire apparaître le phénomène ou la tension centrale à partir des documents.</p></article>
+<article class="card"><h3>2 · Expliquer</h3><p>Analyser les mécanismes, stratégies, contradictions ou rapports de force qui le construisent.</p></article>
+<article class="card"><h3>3 · Interpréter</h3><p>Montrer la portée, les limites, les ambiguïtés ou le déplacement produit par l’ensemble du dossier.</p></article>
+</div>
+<div class="notice"><strong>Ce n’est pas un plan à recopier.</strong> C’est un test de cohérence : chaque partie doit répondre à une étape différente de la problématique et mobiliser les documents de façon croisée.</div>
+</section><section class="section"><h2>Les connaissances : ni récitation, ni décoration</h2><div class="do-dont"><article class="card bad"><h3>✗ Le cours plaqué</h3><p>Une longue page sur la Transition ou sur Chirbes qui pourrait être recopiée quel que soit l’extrait.</p></article><article class="card good"><h3>✓ La connaissance qui éclaire</h3><p>Un élément historique, littéraire ou culturel précis qui permet d’expliquer un détail du document, un choix d’écriture, une contradiction ou un enjeu.</p></article></div></section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand problématique, plan, confrontation des documents et connaissances utiles forment un même raisonnement, passe au niveau concours.</p><div class="checklist"><label class="check-item"><input data-progress="meth-comp-2" type="checkbox"/><span>Mon analyse littéraire possède une problématique, un plan et une conclusion.</span></label><label class="check-item"><input data-progress="meth-comp-4" type="checkbox"/><span>Dans le commentaire de civilisation, les documents sont mis en relation.</span></label><label class="check-item"><input data-progress="meth-comp-5" type="checkbox"/><span>Mes connaissances servent à interpréter les documents et ne remplacent pas leur analyse.</span></label></div><div class="meth-validation" data-meth-validation="2"></div></article></section></div><div class="meth-level-panel" data-meth-panel="3"><div class="meth-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je passe de la méthode à la production : analyse littéraire, commentaire de civilisation, paragraphes argumentés et vrai sujet.</p></div><button class="btn btn-secondary" data-meth-top="" type="button">Retour au parcours</button></div><section class="section"><h2>Partie A · Réussir une analyse littéraire</h2><div class="grid grid-2"><article class="card"><h3>Avant de rédiger</h3><ul><li>situer précisément l’extrait dans l’œuvre ;</li><li>identifier la situation, le point de vue et la progression du passage ;</li><li>repérer les réseaux lexicaux, images, oppositions, tonalités et procédés réellement structurants ;</li><li>relier forme et sens ;</li><li>faire émerger une tension interprétative.</li></ul></article><article class="card"><h3>L’introduction</h3><ol><li>contextualisation utile ;</li><li>présentation précise de l’extrait ;</li><li>enjeu du passage ;</li><li>problématique ;</li><li>annonce d’un plan qui répond à cette problématique.</li></ol></article></div><p class="formula"><strong>Un procédé n’est jamais une fin en soi.</strong> « Il y a une métaphore » ne suffit pas : il faut montrer comment ce choix d’écriture construit la représentation du monde, du personnage ou du conflit étudié.</p><div class="do-dont"><article class="card bad"><h3>✗ Catalogue de procédés</h3><p>Lexique, métaphore, anaphore, focalisation… alignés sans démonstration.</p></article><article class="card good"><h3>✓ Analyse</h3><p>Un procédé précis → son effet dans le passage → ce qu’il révèle du personnage / de la société / de la tension historique → lien avec la problématique.</p></article></div></section><section class="section"><h2>Partie B · Commenter plusieurs documents de civilisation</h2><div class="grid grid-3"><article class="card"><h3>1 · Caractériser</h3><p>Nature, auteur ou source, date, destinataire éventuel, contexte et point de vue.</p></article><article class="card"><h3>2 · Confronter</h3><p>Ce que les documents confirment, nuancent ou mettent en tension. Ne pas faire deux mini-résumés indépendants.</p></article><article class="card"><h3>3 · Interpréter</h3><p>Mobiliser des connaissances historiques précises uniquement lorsqu’elles permettent de comprendre ce que montrent les documents.</p></article></div><div class="notice"><strong>Pour la Transition :</strong> les personnages, institutions, compromis, résistances et enjeux sociaux doivent être connus assez précisément pour éviter les généralités du type « l’Espagne devient démocratique après Franco ».</div></section><section class="section">
+<article class="card meth-model">
+<span class="eyebrow">LE PARAGRAPHE ANALYTIQUE</span>
+<h2>Observation → preuve → fonctionnement → interprétation → retour au problème.</h2>
+<ol>
+<li><strong>Idée :</strong> formuler ce que le paragraphe démontre.</li>
+<li><strong>Preuve :</strong> relever un détail, une citation courte ou un élément visuel précis.</li>
+<li><strong>Fonctionnement :</strong> expliquer le procédé, le point de vue, le contraste ou la relation entre documents.</li>
+<li><strong>Interprétation :</strong> dire ce que cela révèle du texte, de la société ou de la tension étudiée.</li>
+<li><strong>Lien :</strong> raccrocher explicitement cette démonstration à la problématique.</li>
+</ol>
+</article>
+</section><section class="section">
+<article class="card meth-lab">
+<span class="badge badge-gold">LABORATOIRE MÉTHODOLOGIQUE</span>
+<h2>Quatre décisions qui changent une copie.</h2>
+<p>Pour chaque situation, choisis la réponse la plus analytique. La correction explique le réflexe attendu.</p>
+<div class="meth-lab-grid">
+<div class="meth-lab-card" data-meth-lab="consigne"><span class="eyebrow">CONSIGNE</span><div class="meth-lab-q"></div><div class="meth-lab-options"></div><div class="meth-lab-feedback" hidden=""></div></div>
+<div class="meth-lab-card" data-meth-lab="problematique"><span class="eyebrow">PROBLÉMATIQUE</span><div class="meth-lab-q"></div><div class="meth-lab-options"></div><div class="meth-lab-feedback" hidden=""></div></div>
+<div class="meth-lab-card" data-meth-lab="plan"><span class="eyebrow">PLAN</span><div class="meth-lab-q"></div><div class="meth-lab-options"></div><div class="meth-lab-feedback" hidden=""></div></div>
+<div class="meth-lab-card" data-meth-lab="analyse"><span class="eyebrow">ANALYSE</span><div class="meth-lab-q"></div><div class="meth-lab-options"></div><div class="meth-lab-feedback" hidden=""></div></div>
+</div>
+</article>
+</section><section class="section" data-route-view="bac3"><span class="eyebrow">Le précédent le plus utile</span><h2>Ce que le vrai sujet 2026 demandait</h2><p>Le dossier réunissait un extrait de <em>La caída de Madrid</em>, un texte de Victoria Prego sur la légalisation du PCE et une photographie de Suárez avec Dolores Ibárruri. Mais la consigne séparait nettement le travail en deux parties.</p><div class="subject-layout"><article class="subject-part"><span class="badge badge-green">PARTIE A</span><h3>Analyse littéraire du document 1</h3><p>Une analyse en espagnol de l’extrait de Chirbes avec <strong>introduction problématisée, développement structuré et conclusion</strong>.</p><p>Ici, le texte littéraire est le centre du travail. Les connaissances servent son interprétation.</p></article><article class="subject-part"><span class="badge badge-green">PARTIE B</span><h3>Commentaire des documents 2 et 3</h3><p>Un commentaire en espagnol expliquant comment ces documents permettent de saisir certains <strong>enjeux politiques et sociaux</strong> du processus de démocratisation pendant la Transition.</p><p>Ici, il faut mettre les deux documents en relation et mobiliser le contexte historique avec précision.</p></article></div><div class="actions"><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19696/download" rel="noopener noreferrer" target="_blank">Ouvrir le vrai sujet 2026 ↗</a></div></section><section class="section"><div class="actions"><a class="btn btn-primary" href="entrainement.html#sujets-officiels">Passer aux sujets officiels</a><a class="btn btn-secondary" href="litterature.html">Réviser Chirbes</a><a class="btn btn-secondary" href="civilisation.html">Réviser la Transition</a></div></section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Le niveau concours est suffisamment solide quand chaque preuve est analysée et que les procédés ne sont jamais simplement énumérés.</p><div class="checklist"><label class="check-item"><input data-progress="meth-comp-3" type="checkbox"/><span>Je relie les procédés au sens au lieu de les énumérer.</span></label><label class="check-item"><input data-progress="meth-comp-6" type="checkbox"/><span>Chaque citation ou référence est expliquée.</span></label></div><div class="meth-validation" data-meth-validation="3"></div></article></section></div><div class="meth-level-panel" data-meth-panel="4"><div class="meth-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>Je gagne en efficacité : lecture plus fine, citations mieux exploitées, gestion du temps et relecture discriminante.</p></div><button class="btn btn-secondary" data-meth-top="" type="button">Retour au parcours</button></div><section class="section"><h2>Ce que le rapport du jury 2025 reste très utile pour apprendre</h2><p class="source-note">Le rapport 2025 concerne l’ancien format bac+5. Les conseils ci-dessous sont retenus parce qu’ils portent sur des compétences de composition toujours pertinentes ; on ne transpose pas son ancien minutage ni son ancien nombre de documents.</p><div class="grid grid-2"><article class="card"><h3>Lire au-delà du paratexte</h3><p>Présenter un document ne consiste pas à recopier auteur, titre et date. Il faut expliquer ce que ces informations permettent de comprendre du texte, de sa nature et de son contexte.</p></article><article class="card"><h3>Éviter la lecture superficielle</h3><p>Le jury signalait les contresens, la méconnaissance du contexte et l’absence de vision d’ensemble comme des faiblesses récurrentes.</p></article><article class="card"><h3>Analyser les citations</h3><p>Une citation ou une référence doit être commentée : elle sert une idée et ne remplace jamais l’analyse.</p></article><article class="card"><h3>Soigner l’espagnol</h3><p>Conjugaisons, syntaxe, accentuation, précision lexicale et terminologie d’analyse sont discriminantes dans l’évaluation.</p></article></div></section><section class="section"><h2>Un minutage d’entraînement sur 5 heures</h2><p class="source-note">Proposition de travail, non imposée par le ministère. Elle doit être adaptée au découpage exact du sujet.</p><div class="timeplan"><div><strong>0–30 min</strong>Lire la totalité du sujet, découper les tâches, annoter le dossier.</div><div><strong>30–75 min</strong>Construire l’analyse et le plan de la partie A.</div><div><strong>75–225 min</strong>Rédiger la partie A sans sacrifier la conclusion.</div><div><strong>225–270 min</strong>Construire puis rédiger la partie B.</div><div><strong>270–300 min</strong>Relecture ciblée : langue, accents, accords, noms propres, transitions, consignes.</div></div></section><section class="section"><h2>Sources</h2><div class="source-list"><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/les-epreuves-du-capes-externe-bac3-section-langues-vivantes-etrangeres-1427" rel="noopener noreferrer" target="_blank">Ministère · Format officiel de l’épreuve 1 bac+3 ↗</a></div><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/media/19696/download" rel="noopener noreferrer" target="_blank">Sujet officiel 2026 · Épreuve 1 espagnol bac+3 ↗</a></div><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/media/17914/download" rel="noopener noreferrer" target="_blank">Rapport du jury 2025 · CAPES/CAFEP-CAPES externe espagnol ↗</a></div></div></section><section class="section"><article class="card"><h3>Niveau 4 · Validation</h3><p>Une composition n’est terminée qu’après une relecture ciblée de la langue.</p><div class="checklist"><label class="check-item"><input data-progress="meth-comp-7" type="checkbox"/><span>J’ai relu l’espagnol : syntaxe, conjugaisons, accords, accents, vocabulaire.</span></label></div><div class="meth-validation" data-meth-validation="4"></div></article></section></div>
 
-<section class="section" data-route-view="bac3"><span class="badge badge-green">CADRE OFFICIEL BAC+3</span><h2>5 heures · coefficient 3 · en espagnol</h2><p>L’épreuve vérifie les connaissances disciplinaires, la maîtrise de la langue et la connaissance des cultures de l’aire hispanique. Elle s’appuie sur un dossier de documents de nature variée lié à une question au programme.</p><div class="notice"><strong>Règle n°1 :</strong> suivre exactement ce que demande le sujet. Ne pas forcer tous les documents dans une seule dissertation si la consigne sépare plusieurs travaux.</div></section>
 
-<section class="section" data-route-view="bac3"><span class="eyebrow">Le précédent le plus utile</span><h2>Ce que le vrai sujet 2026 demandait</h2><p>Le dossier réunissait un extrait de <em>La caída de Madrid</em>, un texte de Victoria Prego sur la légalisation du PCE et une photographie de Suárez avec Dolores Ibárruri. Mais la consigne séparait nettement le travail en deux parties.</p><div class="subject-layout"><article class="subject-part"><span class="badge badge-green">PARTIE A</span><h3>Analyse littéraire du document 1</h3><p>Une analyse en espagnol de l’extrait de Chirbes avec <strong>introduction problématisée, développement structuré et conclusion</strong>.</p><p>Ici, le texte littéraire est le centre du travail. Les connaissances servent son interprétation.</p></article><article class="subject-part"><span class="badge badge-green">PARTIE B</span><h3>Commentaire des documents 2 et 3</h3><p>Un commentaire en espagnol expliquant comment ces documents permettent de saisir certains <strong>enjeux politiques et sociaux</strong> du processus de démocratisation pendant la Transition.</p><p>Ici, il faut mettre les deux documents en relation et mobiliser le contexte historique avec précision.</p></article></div><div class="actions"><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19696/download" target="_blank" rel="noopener noreferrer">Ouvrir le vrai sujet 2026 ↗</a></div></section>
 
-<section class="section"><h2>Le parcours de travail</h2><div class="method-road"><div class="road-step"><b>1</b><span>Découper la consigne</span></div><div class="road-step"><b>2</b><span>Identifier la tâche de chaque partie</span></div><div class="road-step"><b>3</b><span>Analyser les documents concernés</span></div><div class="road-step"><b>4</b><span>Problématiser si demandé</span></div><div class="road-step"><b>5</b><span>Construire le raisonnement</span></div><div class="road-step"><b>6</b><span>Rédiger et relire</span></div></div></section>
 
-<section class="section"><h2>Partie A · Réussir une analyse littéraire</h2><div class="grid grid-2"><article class="card"><h3>Avant de rédiger</h3><ul><li>situer précisément l’extrait dans l’œuvre ;</li><li>identifier la situation, le point de vue et la progression du passage ;</li><li>repérer les réseaux lexicaux, images, oppositions, tonalités et procédés réellement structurants ;</li><li>relier forme et sens ;</li><li>faire émerger une tension interprétative.</li></ul></article><article class="card"><h3>L’introduction</h3><ol><li>contextualisation utile ;</li><li>présentation précise de l’extrait ;</li><li>enjeu du passage ;</li><li>problématique ;</li><li>annonce d’un plan qui répond à cette problématique.</li></ol></article></div><p class="formula"><strong>Un procédé n’est jamais une fin en soi.</strong> « Il y a une métaphore » ne suffit pas : il faut montrer comment ce choix d’écriture construit la représentation du monde, du personnage ou du conflit étudié.</p><div class="do-dont"><article class="card bad"><h3>✗ Catalogue de procédés</h3><p>Lexique, métaphore, anaphore, focalisation… alignés sans démonstration.</p></article><article class="card good"><h3>✓ Analyse</h3><p>Un procédé précis → son effet dans le passage → ce qu’il révèle du personnage / de la société / de la tension historique → lien avec la problématique.</p></article></div></section>
 
-<section class="section"><h2>Partie B · Commenter plusieurs documents de civilisation</h2><div class="grid grid-3"><article class="card"><h3>1 · Caractériser</h3><p>Nature, auteur ou source, date, destinataire éventuel, contexte et point de vue.</p></article><article class="card"><h3>2 · Confronter</h3><p>Ce que les documents confirment, nuancent ou mettent en tension. Ne pas faire deux mini-résumés indépendants.</p></article><article class="card"><h3>3 · Interpréter</h3><p>Mobiliser des connaissances historiques précises uniquement lorsqu’elles permettent de comprendre ce que montrent les documents.</p></article></div><div class="notice"><strong>Pour la Transition :</strong> les personnages, institutions, compromis, résistances et enjeux sociaux doivent être connus assez précisément pour éviter les généralités du type « l’Espagne devient démocratique après Franco ».</div></section>
 
-<section class="section"><h2>Ce que le rapport du jury 2025 reste très utile pour apprendre</h2><p class="source-note">Le rapport 2025 concerne l’ancien format bac+5. Les conseils ci-dessous sont retenus parce qu’ils portent sur des compétences de composition toujours pertinentes ; on ne transpose pas son ancien minutage ni son ancien nombre de documents.</p><div class="grid grid-2"><article class="card"><h3>Lire au-delà du paratexte</h3><p>Présenter un document ne consiste pas à recopier auteur, titre et date. Il faut expliquer ce que ces informations permettent de comprendre du texte, de sa nature et de son contexte.</p></article><article class="card"><h3>Éviter la lecture superficielle</h3><p>Le jury signalait les contresens, la méconnaissance du contexte et l’absence de vision d’ensemble comme des faiblesses récurrentes.</p></article><article class="card"><h3>Analyser les citations</h3><p>Une citation ou une référence doit être commentée : elle sert une idée et ne remplace jamais l’analyse.</p></article><article class="card"><h3>Soigner l’espagnol</h3><p>Conjugaisons, syntaxe, accentuation, précision lexicale et terminologie d’analyse sont discriminantes dans l’évaluation.</p></article></div></section>
 
-<section class="section"><h2>Les connaissances : ni récitation, ni décoration</h2><div class="do-dont"><article class="card bad"><h3>✗ Le cours plaqué</h3><p>Une longue page sur la Transition ou sur Chirbes qui pourrait être recopiée quel que soit l’extrait.</p></article><article class="card good"><h3>✓ La connaissance qui éclaire</h3><p>Un élément historique, littéraire ou culturel précis qui permet d’expliquer un détail du document, un choix d’écriture, une contradiction ou un enjeu.</p></article></div></section>
 
-<section class="section"><h2>Un minutage d’entraînement sur 5 heures</h2><p class="source-note">Proposition de travail, non imposée par le ministère. Elle doit être adaptée au découpage exact du sujet.</p><div class="timeplan"><div><strong>0–30 min</strong>Lire la totalité du sujet, découper les tâches, annoter le dossier.</div><div><strong>30–75 min</strong>Construire l’analyse et le plan de la partie A.</div><div><strong>75–225 min</strong>Rédiger la partie A sans sacrifier la conclusion.</div><div><strong>225–270 min</strong>Construire puis rédiger la partie B.</div><div><strong>270–300 min</strong>Relecture ciblée : langue, accents, accords, noms propres, transitions, consignes.</div></div></section>
 
-<section class="section"><h2>Check-list avant de rendre</h2><div class="checklist"><label class="check-item"><input type="checkbox" data-progress="meth-comp-1"><span>J’ai répondu à chaque verbe de la consigne et à chaque partie demandée.</span></label><label class="check-item"><input type="checkbox" data-progress="meth-comp-2"><span>Mon analyse littéraire possède une problématique, un plan et une conclusion.</span></label><label class="check-item"><input type="checkbox" data-progress="meth-comp-3"><span>Je relie les procédés au sens au lieu de les énumérer.</span></label><label class="check-item"><input type="checkbox" data-progress="meth-comp-4"><span>Dans le commentaire de civilisation, les documents sont mis en relation.</span></label><label class="check-item"><input type="checkbox" data-progress="meth-comp-5"><span>Mes connaissances servent à interpréter les documents et ne remplacent pas leur analyse.</span></label><label class="check-item"><input type="checkbox" data-progress="meth-comp-6"><span>Chaque citation ou référence est expliquée.</span></label><label class="check-item"><input type="checkbox" data-progress="meth-comp-7"><span>J’ai relu l’espagnol : syntaxe, conjugaisons, accords, accents, vocabulaire.</span></label></div></section>
 
-<section class="section"><div class="actions"><a class="btn btn-primary" href="entrainement.html#sujets-officiels">Passer aux sujets officiels</a><a class="btn btn-secondary" href="litterature.html">Réviser Chirbes</a><a class="btn btn-secondary" href="civilisation.html">Réviser la Transition</a></div></section>
 
-<section class="section"><h2>Sources</h2><div class="source-list"><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/les-epreuves-du-capes-externe-bac3-section-langues-vivantes-etrangeres-1427" target="_blank" rel="noopener noreferrer">Ministère · Format officiel de l’épreuve 1 bac+3 ↗</a></div><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/media/19696/download" target="_blank" rel="noopener noreferrer">Sujet officiel 2026 · Épreuve 1 espagnol bac+3 ↗</a></div><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/media/17914/download" target="_blank" rel="noopener noreferrer">Rapport du jury 2025 · CAPES/CAFEP-CAPES externe espagnol ↗</a></div></div></section>
 </main>
-<script src="assets/app.js?v=20260811-phase1"></script>
+<script src="assets/app.js?v=20260811-phase1"></script><script src="assets/methodologie-path.js"></script>
 </body></html>
