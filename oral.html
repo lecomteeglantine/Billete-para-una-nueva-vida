@@ -1,121 +1,235 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Oral et entretien · Billete para una nueva vida</title>
-<meta name="description" content="Préparation précise des oraux bac+3 et bac+5 du CAFEP-CAPES externe d'espagnol : oral disciplinaire, leçon et entretien.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<meta content="Préparation précise des oraux bac+3 et bac+5 du CAFEP-CAPES externe d'espagnol : oral disciplinaire, leçon et entretien." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .oral-format{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.7rem;margin:1rem 0}.oral-step{padding:1rem;border:1px solid var(--line);border-radius:16px;background:#fff}.oral-step strong{display:block;color:var(--red-dark);font-size:1.05rem}.oral-step span{display:block;color:var(--muted);font-size:.9rem;margin-top:.3rem}.method-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}.method-step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1rem}.method-step b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#f9e4e6;color:var(--red-dark);margin-bottom:.7rem}.warning-box{border:2px solid #e8b44c;background:#fff8e8;border-radius:18px;padding:1.1rem;margin:1rem 0}.warning-box h3{color:var(--red-dark);margin-bottom:.45rem}.simulator{background:linear-gradient(145deg,#fff,#fff8ec);border:2px solid #ead6af;border-radius:26px;padding:1.3rem;box-shadow:var(--shadow)}.simulator .prompt{font-family:Georgia,serif;font-size:1.45rem;line-height:1.35;margin:1rem 0}.sim-meta{display:flex;gap:.5rem;flex-wrap:wrap}.answer-key{margin-top:1rem;padding:1rem;background:#edf6f2;border-radius:16px;border:1px solid #c8e2d8}.answer-key[hidden]{display:none}.mini-rubric{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.mini-rubric div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.8rem}.source-note{font-size:.9rem;color:var(--muted)}
 @media(max-width:900px){.oral-format,.method-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.oral-format,.method-grid,.mini-rubric{grid-template-columns:1fr}}
+
+.oral-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.oral-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.oral-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.oral-path [hidden]{display:none!important}
+.oral-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.oral-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:182px}
+.oral-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.oral-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.oral-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.oral-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.oral-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.oral-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.oral-diag.hidden{display:none}
+.oral-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.oral-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.oral-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.oral-diag-options{display:grid;gap:.55rem}.oral-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.oral-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.oral-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.oral-level-panel{display:none}.oral-level-panel.active{display:block}
+.oral-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.oral-level-banner h2{color:#fff;margin:.1rem 0}.oral-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.oral-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.oral-validation.complete{border-color:#64a979;background:#eef8f1}
+.oral-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.oral-summary-card{border-left:5px solid #c94355}
+.oral-route-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.oral-priority-pill{display:inline-block;margin-top:.45rem;padding:.3rem .55rem;border-radius:999px;background:#fff1cf;color:#6b4b00;font-size:.82rem;font-weight:800}
+.oral-compact-note{font-size:.9rem;color:#687985}
+.oral-speech-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.oral-speech-card{border-left:5px solid #e5bd66}
+.oral-method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.oral-method-card{border-left:5px solid #173a5e}
+.oral-drill{border-top:5px solid #173a5e}
+.oral-drill-q{font-family:Georgia,serif;font-size:1.15rem;margin:.6rem 0}
+.oral-drill-options{display:grid;gap:.5rem}
+.oral-drill-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.7rem .8rem;text-align:left;cursor:pointer}
+.oral-drill-option.correct{border-color:#64a979;background:#eef8f1}
+.oral-drill-option.wrong{border-color:#c94355;background:#fff1f2}
+.oral-drill-feedback{margin-top:.65rem;padding:.7rem .8rem;border-radius:12px;background:#f6f8fa}
+@media(max-width:950px){.oral-path-grid,.oral-level-cards,.oral-summary-grid,.oral-route-grid,.oral-speech-grid,.oral-method-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.oral-path-grid,.oral-level-cards,.oral-summary-grid,.oral-route-grid,.oral-speech-grid,.oral-method-grid{grid-template-columns:1fr}.oral-level-banner{display:block}}
 </style>
 </head>
 <body class="route-all">
 <main id="main">
-<section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Oral et entretien</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>À l’oral, savoir exactement ce que le jury attend.</h1><p class="lead">Les parcours bac+3 et bac+5 n’évaluent pas la même chose. Cette page les sépare clairement et entraîne Jennifer aux formats réels.</p></section>
+<section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Oral et entretien</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>À l’oral, savoir exactement ce que le jury attend.</h1><p class="lead">Les parcours bac+3 et bac+5 n’évaluent pas la même chose. Cette page les sépare clairement et entraîne Jennifer aux formats réels.</p></section><section class="section" id="oral-parcours">
+<article class="card oral-path">
+<div class="oral-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · ORAL &amp; ENTRETIEN</span>
+<h2>Oral — où en es-tu ?</h2>
+<p>Le mini-diagnostic s’adapte au parcours choisi. Il repère six domaines : <strong>structure de l’épreuve</strong>, <strong>analyse</strong>, <strong>français oral</strong>, <strong>motivation</strong>, <strong>entretien professionnel</strong> et <strong>valeurs / mises en situation</strong>.</p>
+<div class="actions">
+<button class="btn btn-primary" id="oralDiagStart" type="button">Faire le mini-diagnostic · 5 min</button>
+<button class="btn btn-secondary" hidden="" id="oralDiagReset" type="button">Refaire le diagnostic</button>
+</div>
+</div>
+<div class="oral-path-status" id="oralPathStatus">
+<span class="eyebrow">POINT DE DÉPART</span>
+<h3>Choisis ton parcours</h3>
+<p>Le diagnostic utilise le parcours bac+3 ou bac+5 sélectionné dans le menu du site.</p>
+</div>
+</div>
+<div class="oral-diag hidden" id="oralDiag">
+<div class="oral-compact-note" id="oralDiagCount"></div>
+<div class="oral-diag-progress"><span id="oralDiagBar"></span></div>
+<div class="oral-diag-q" id="oralDiagQuestion"></div>
+<div class="oral-diag-options" id="oralDiagOptions"></div>
+<div class="oral-diag-nav">
+<button class="btn btn-secondary" id="oralDiagPrev" type="button">← Précédent</button>
+<button class="btn btn-primary" disabled="" id="oralDiagNext" type="button">Suivant →</button>
+</div>
+</div>
+<div class="oral-level-cards">
+<button class="oral-level-card" data-oral-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>Format · chronologie · consigne · présentation de motivation.</span></button>
+<button class="oral-level-card" data-oral-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>Analyse · mise en relation · français oral · interaction.</span></button>
+<button class="oral-level-card" data-oral-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Simulateurs · entretien · valeurs · mises en situation.</span></button>
+<button class="oral-level-card" data-oral-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Relances difficiles · récupération · précision · autoévaluation.</span></button>
+</div>
+</article>
+</section><div class="oral-level-panel" data-oral-panel="1"><div class="oral-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je connais le format exact de mon parcours et je peux présenter ma motivation avec une structure claire et crédible.</p></div><button class="btn btn-secondary" data-oral-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Le socle</span><h2>Quatre réflexes avant de chercher à impressionner le jury.</h2></div></div>
+<div class="oral-summary-grid">
+<article class="card oral-summary-card"><h3>Savoir où l’on est</h3><p>À chaque minute, savoir quelle partie de l’épreuve est en cours, dans quelle langue et quel geste est attendu.</p></article>
+<article class="card oral-summary-card"><h3>Répondre à la consigne exacte</h3><p>Analyser, commenter, expliciter, justifier ou prendre position ne demandent pas le même type de réponse.</p></article>
+<article class="card oral-summary-card"><h3>Faire entendre une structure</h3><p>Une réponse orale doit être hiérarchisée : idée directrice, deux ou trois points, exemples précis, conclusion courte.</p></article>
+<article class="card oral-summary-card"><h3>Accepter l’interaction</h3><p>Une relance du jury sert à préciser, corriger, nuancer ou approfondir le raisonnement.</p></article>
+</div>
+</section><section class="section">
+<div class="oral-route-grid">
+<article class="card" data-route-view="bac3">
+<span class="badge badge-green">BAC+3</span><h3>Deux oraux, deux gestes différents</h3>
+<p><strong>Oral 1 :</strong> analyse en espagnol puis intérêt culturel et portée interculturelle en français. <strong>Entretien :</strong> motivation, échange puis questionnements professionnels et valeurs de la République.</p>
+</article>
+<article class="card" data-route-view="bac5">
+<span class="badge badge-red">BAC+5</span><h3>Leçon + entretien</h3>
+<p><strong>Leçon :</strong> analyse en langue étrangère puis conception d’une séance en français. <strong>Entretien :</strong> motivation puis deux mises en situation professionnelles, l’une d’enseignement et l’autre de vie scolaire.</p>
+</article>
+</div>
+</section><section class="section" data-route-view="bac3">
+<span class="badge badge-green">BAC+3 · PREMIÈRE ÉPREUVE D’ADMISSION</span>
+<h2>Oral disciplinaire bilingue · 1 heure</h2>
+<p>Après <strong>3 heures de préparation</strong>, le dossier comporte quatre documents en espagnol : un audio ou une vidéo de cinq minutes maximum, un ou deux textes et un ou deux documents iconographiques. L’oral comporte deux parties de trente minutes.</p>
+<div class="oral-format">
+<div class="oral-step"><strong>10 min · espagnol</strong><span>Restituer, analyser et commenter l’audio/vidéo, puis montrer ses liens avec les autres documents.</span></div>
+<div class="oral-step"><strong>20 min · espagnol</strong><span>Échange avec le jury : précision, approfondissement, justification et interaction.</span></div>
+<div class="oral-step"><strong>10 min · français</strong><span>Expliciter l’intérêt culturel et la portée interculturelle du dossier.</span></div>
+<div class="oral-step"><strong>20 min · français</strong><span>Échange avec le jury pour préciser ou approfondir les enjeux présentés.</span></div>
+</div>
+<div class="grid grid-2">
+<article class="card"><h3>Ce que le jury évalue vraiment</h3><ul><li>qualité de l’espagnol <strong>et</strong> du français ;</li><li>propos structuré et hiérarchisé ;</li><li>analyse des documents, pas leur simple résumé ;</li><li>mise en relation des quatre supports ;</li><li>capacité à identifier des enjeux de sens ;</li><li>réactivité pendant les échanges.</li></ul></article>
+<article class="card"><h3>Réflexe de préparation</h3><ol><li>Identifier la tension commune du dossier.</li><li>Faire de l’audio/vidéo le point de départ de la première partie.</li><li>Préparer des liens précis avec chaque autre document.</li><li>En français, passer de « ce que montrent les documents » à « ce que ce dossier permet de comprendre culturellement et interculturellement ».</li></ol></article>
+</div>
+<div class="actions"><a class="btn btn-secondary" href="revision-langages.html">Réviser « Langages »</a><a class="btn btn-secondary" href="revision-vivre-entre-generations.html">Réviser « Vivre entre générations »</a><a class="btn btn-primary" href="entrainement.html#bac3-oral-training">S’entraîner</a></div>
 
-<section class="section" data-route-view="bac3">
-  <span class="badge badge-green">BAC+3 · PREMIÈRE ÉPREUVE D’ADMISSION</span>
-  <h2>Oral disciplinaire bilingue · 1 heure</h2>
-  <p>Après <strong>3 heures de préparation</strong>, le dossier comporte quatre documents en espagnol : un audio ou une vidéo de cinq minutes maximum, un ou deux textes et un ou deux documents iconographiques. L’oral comporte deux parties de trente minutes.</p>
-  <div class="oral-format">
-    <div class="oral-step"><strong>10 min · espagnol</strong><span>Restituer, analyser et commenter l’audio/vidéo, puis montrer ses liens avec les autres documents.</span></div>
-    <div class="oral-step"><strong>20 min · espagnol</strong><span>Échange avec le jury : précision, approfondissement, justification et interaction.</span></div>
-    <div class="oral-step"><strong>10 min · français</strong><span>Expliciter l’intérêt culturel et la portée interculturelle du dossier.</span></div>
-    <div class="oral-step"><strong>20 min · français</strong><span>Échange avec le jury pour préciser ou approfondir les enjeux présentés.</span></div>
-  </div>
-  <div class="grid grid-2">
-    <article class="card"><h3>Ce que le jury évalue vraiment</h3><ul><li>qualité de l’espagnol <strong>et</strong> du français ;</li><li>propos structuré et hiérarchisé ;</li><li>analyse des documents, pas leur simple résumé ;</li><li>mise en relation des quatre supports ;</li><li>capacité à identifier des enjeux de sens ;</li><li>réactivité pendant les échanges.</li></ul></article>
-    <article class="card"><h3>Réflexe de préparation</h3><ol><li>Identifier la tension commune du dossier.</li><li>Faire de l’audio/vidéo le point de départ de la première partie.</li><li>Préparer des liens précis avec chaque autre document.</li><li>En français, passer de « ce que montrent les documents » à « ce que ce dossier permet de comprendre culturellement et interculturellement ».</li></ol></article>
-  </div>
-  <div class="actions"><a class="btn btn-secondary" href="revision-langages.html">Réviser « Langages »</a><a class="btn btn-secondary" href="revision-vivre-entre-generations.html">Réviser « Vivre entre générations »</a><a class="btn btn-primary" href="entrainement.html#bac3-oral-training">S’entraîner</a></div>
+</section><section class="section" data-route-view="bac5">
+<span class="badge badge-red">BAC+5 · ÉPREUVE DE LEÇON</span>
+<h2>Leçon · 3 h de préparation · 1 h maximum</h2>
+<p>Le bac+5 demande explicitement une <strong>conception de séance</strong>. Ici, contrairement au premier oral bac+3, la dimension didactique et pédagogique est centrale.</p>
+<div class="oral-format"><div class="oral-step"><strong>15 min max · espagnol</strong><span>Restituer, analyser et commenter l’audio/vidéo, présenter les documents retenus et justifier les choix pour la classe.</span></div><div class="oral-step"><strong>15 min max · espagnol</strong><span>Entretien avec le jury.</span></div><div class="oral-step"><strong>20 min max · français</strong><span>Présenter les objectifs et la mise en œuvre d’une séance avec activités concrètes.</span></div><div class="oral-step"><strong>10 min max · français</strong><span>Justifier et préciser les choix pédagogiques et didactiques.</span></div></div>
+<div class="actions"><a class="btn btn-primary" href="didactique.html">Travailler la didactique</a></div>
+</section><section class="section">
+<h2>Présentation de motivation · cinq minutes</h2>
+<div class="grid grid-2"><article class="card"><h3>Structure efficace</h3><ol><li><strong>Point de départ :</strong> parcours et situation actuelle.</li><li><strong>Éléments probants :</strong> expériences, apprentissages et responsabilités.</li><li><strong>Compréhension du métier :</strong> élèves, équipe, institution, progression.</li><li><strong>Projection :</strong> ce que Jennifer veut construire et continuer à apprendre.</li></ol></article><article class="card"><h3>Ce qu’il faut éviter</h3><ul><li>un CV récité chronologiquement ;</li><li>des motivations vagues sans exemples ;</li><li>des textes officiels cités mécaniquement ;</li><li>une présentation apprise mot à mot ;</li><li>des formulations familières ou défensives ;</li><li>faire de la tentative précédente le centre du discours.</li></ul></article></div>
+<article class="card"><h3>Présenter la première tentative sans s’y enfermer</h3><p>Une formulation utile consiste à montrer ce qu’elle a permis d’identifier, ce qui a changé depuis et comment la préparation est désormais plus structurée. L’objectif n’est ni de s’excuser ni de transformer l’entretien en récit d’échec.</p></article>
+</section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Quand le format n’est plus une source d’hésitation et que la présentation de motivation est stable, passe au niveau 2.</p><div class="checklist"><label class="check-item"><input data-progress="oral-core-1" type="checkbox"/><span>Je connais l’ordre, la durée, la langue et la consigne de chaque partie de mon oral.</span></label><label class="check-item"><input data-progress="oral-core-2" type="checkbox"/><span>Ma présentation de motivation tient en cinq minutes et s’appuie sur des expériences précises.</span></label></div><div class="oral-validation" data-oral-validation="1"></div></article></section></div><div class="oral-level-panel" data-oral-panel="2"><div class="oral-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je transforme mes connaissances en parole structurée : analyser, relier, expliquer, justifier et répondre aux relances.</p></div><button class="btn btn-secondary" data-oral-top="" type="button">Retour au parcours</button></div><section class="section" data-route-view="bac3">
+<div class="section-head"><div><span class="eyebrow">BAC+3 · Oral disciplinaire</span><h2>Deux mini-démonstrations, pas deux listes.</h2></div></div>
+<div class="oral-method-grid">
+<article class="card oral-method-card"><h3>10 min en espagnol</h3><ol><li>Identifier l’enjeu central de l’audio/vidéo.</li><li>Analyser quelques éléments précis.</li><li>Relier chaque autre document à cet enjeu.</li><li>Conclure sur ce que l’ensemble fait comprendre.</li></ol></article>
+<article class="card oral-method-card"><h3>10 min en français</h3><ol><li>Formuler l’intérêt culturel du dossier.</li><li>Montrer les représentations en tension.</li><li>Expliciter la portée interculturelle.</li><li>Ne pas dériver vers une séquence pédagogique.</li></ol></article>
+</div>
+</section><section class="section" data-route-view="bac5">
+<div class="section-head"><div><span class="eyebrow">BAC+5 · Leçon</span><h2>Discipline d’abord, mise en œuvre ensuite.</h2></div></div>
+<div class="oral-method-grid">
+<article class="card oral-method-card"><h3>15 min en langue étrangère</h3><ol><li>Restituer et analyser l’audio/vidéo.</li><li>Présenter les documents retenus.</li><li>Justifier ces choix en vue de la classe.</li><li>Faire apparaître leur intérêt linguistique et culturel.</li></ol></article>
+<article class="card oral-method-card"><h3>20 min en français</h3><ol><li>Annoncer les objectifs de séance.</li><li>Construire un déroulement cohérent.</li><li>Donner des exemples concrets d’activités.</li><li>Préparer la justification de chaque choix.</li></ol><div class="actions"><a class="btn btn-secondary" href="didactique.html">Revoir la didactique →</a></div></article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Français oral</span><h2>Parler de façon professionnelle sans réciter.</h2></div></div>
+<div class="oral-speech-grid">
+<article class="card oral-speech-card"><h3>Ouvrir</h3><p>« Le point central me semble être… » · « Cette situation met en tension… » · « Je distinguerais d’abord… »</p></article>
+<article class="card oral-speech-card"><h3>Nuancer</h3><p>« Cette lecture est pertinente, mais elle doit être nuancée par… » · « Je corrigerais mon premier point sur… »</p></article>
+<article class="card oral-speech-card"><h3>Répondre à une relance</h3><p>« Oui, cela m’amène à préciser… » · « Je n’avais pas suffisamment distingué… » · « Dans ce cas, je reformulerais ainsi… »</p></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand tu sais analyser, structurer et interagir dans le format exact de ton parcours, passe aux simulations complètes.</p><div class="checklist"><label class="check-item" data-route-view="bac3"><input data-progress="oral-b3-7" type="checkbox"/><span>Je peux analyser un audio/vidéo puis le relier précisément aux trois autres documents.</span></label><label class="check-item" data-route-view="bac3"><input data-progress="oral-b3-8" type="checkbox"/><span>Je sais expliciter l’intérêt culturel et la portée interculturelle sans proposer une séquence.</span></label><label class="check-item" data-route-view="bac5"><input data-progress="oral-b5-1" type="checkbox"/><span>Je sais analyser l’audio/vidéo et justifier les documents retenus pour une exploitation en classe.</span></label><label class="check-item" data-route-view="bac5"><input data-progress="oral-b5-2" type="checkbox"/><span>Je sais présenter en français les objectifs et le déroulement cohérent d’une séance.</span></label><label class="check-item"><input data-progress="oral-core-3" type="checkbox"/><span>Je sais répondre à une relance en précisant ou corrigeant mon propos sans me braquer.</span></label></div><div class="oral-validation" data-oral-validation="2"></div></article></section></div><div class="oral-level-panel" data-oral-panel="3"><div class="oral-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je travaille en conditions proches du réel : simulateurs, entretien, valeurs et mises en situation.</p></div><button class="btn btn-secondary" data-oral-top="" type="button">Retour au parcours</button></div><section class="section" data-route-view="bac3"><article class="card" style="margin-top:1rem;border:2px solid #e8b44c;background:linear-gradient(145deg,#fff,#fff8e8)">
+<span class="badge badge-gold">NOUVEAU · PHASE 4</span>
+<h3>🎧 Simulateur complet de la première épreuve orale</h3>
+<p>Enchaîner le format réel : préparation du dossier, <strong>10 min en espagnol + 20 min d’échange</strong>, puis <strong>10 min en français + 20 min d’échange</strong>. Chronomètre, questions de jury aléatoires, enregistrement micro et grille d’autoévaluation.</p>
+<div class="actions"><a class="btn btn-primary" href="simulateur-oral1.html">Lancer le simulateur complet →</a></div>
+</article></section><section class="section" data-route-view="bac3" id="entretien-bac3">
+<span class="badge badge-green">BAC+3 · SECONDE ÉPREUVE D’ADMISSION</span>
+<h2>Entretien professionnel · 35 minutes · sans préparation</h2>
+<div class="oral-format">
+<div class="oral-step"><strong>5 min</strong><span>Présentation : motivation, parcours et expériences utiles.</span></div>
+<div class="oral-step"><strong>10 min</strong><span>Échange du jury à partir de la présentation.</span></div>
+<div class="oral-step"><strong>20 min</strong><span>Deux questions : une générale et une contextualisée.</span></div>
+<div class="oral-step"><strong>À savoir</strong><span>L’une des deux questions porte sur les valeurs de la République.</span></div>
+</div>
+<div class="warning-box">
+<h3>⚠️ Correction méthodologique importante</h3>
+<p><strong>Pour le bac+3, la question contextualisée n’appelle pas un plan d’action pratique.</strong> Le ministère demande d’identifier et de comprendre les enjeux de la situation, puis de formuler une analyse et un jugement raisonnable. Il ne faut donc pas réciter automatiquement « j’interviens, j’alerte, je transmets, je fais un suivi » comme si la consigne était « Que faites-vous ? ».</p>
+</div>
+<h3>La bonne méthode pour « Qu’en pensez-vous ? »</h3>
+<div class="method-grid">
+<div class="method-step"><b>1</b><strong>Identifier</strong><p>Quel est le vrai problème ? Quels faits sont certains ? Quelle tension la situation révèle-t-elle ?</p></div>
+<div class="method-step"><b>2</b><strong>Nommer les enjeux</strong><p>Valeurs de la République, neutralité, égalité, discrimination, service public, transition écologique ou épanouissement de l’élève.</p></div>
+<div class="method-step"><b>3</b><strong>Raisonner</strong><p>Expliquer pourquoi la situation est problématique, ce qui peut entrer en tension et ce que l’École doit garantir.</p></div>
+<div class="method-step"><b>4</b><strong>Prendre position</strong><p>Formuler un jugement professionnel nuancé et crédible. On peut mentionner le cadre institutionnel utile, sans dérouler un protocole d’intervention.</p></div>
+</div>
+<article class="card" style="margin-top:1rem"><h3>Exemple de différence</h3><div class="grid grid-2"><div><span class="badge badge-red">À éviter</span><p>« Je fais cesser la situation, je convoque l’élève, j’appelle la famille, j’informe le CPE et je mets en place un suivi. »</p><p><strong>Pourquoi :</strong> réponse essentiellement procédurale alors que la question demande d’abord une analyse.</p></div><div><span class="badge badge-green">Mieux</span><p>« Cette situation pose d’abord la question de l’égalité de traitement et du refus des discriminations. Elle oblige à distinguer ce qui relève d’une préférence personnelle de ce qui remet en cause un principe que l’École doit garantir. Le rôle de l’enseignant est donc de comprendre l’enjeu éducatif et institutionnel avant de raisonner sur la situation. »</p></div></div></article>
+<article class="card" style="margin-top:1rem;border:2px solid #e8b44c;background:linear-gradient(145deg,#fff,#fff8e8)">
+<span class="badge badge-gold">NOUVEAU · PHASE 4</span>
+<h3>🎙️ Simulateur complet de l’entretien de 35 minutes</h3>
+<p>Présentation de motivation, relances du jury, puis tirage d’une question générale et d’une question contextualisée. Le simulateur impose la logique officielle : <strong>analyser les enjeux, pas réciter un plan d’action</strong>.</p>
+<div class="actions"><a class="btn btn-primary" href="simulateur-entretien.html">Lancer l’entretien complet →</a></div>
+</article>
+</section><section class="section" data-route-view="bac5">
+<span class="badge badge-red">BAC+5 · ENTRETIEN</span>
+<h2>Entretien · 35 minutes</h2>
+<p>Le bac+5 conserve son format propre : quinze minutes autour du parcours et de la motivation, puis vingt minutes consacrées à <strong>deux mises en situation professionnelles</strong>, l’une d’enseignement et l’autre de vie scolaire.</p>
+<div class="grid grid-2"><article class="card"><h3>Première partie</h3><p>5 minutes maximum de présentation du parcours, puis échange avec le jury dans un ensemble de 15 minutes.</p></article><article class="card"><h3>Deuxième partie</h3><p>Deux mises en situation permettant d’apprécier l’appropriation des valeurs de la République, de la laïcité et des exigences du service public.</p></article></div>
+</section><section class="section" data-route-view="bac3">
+<h2>Les quatre domaines à maîtriser</h2>
+<div class="grid grid-4"><article class="card"><h3>République</h3><p>Laïcité, liberté de conscience, égalité, lutte contre les discriminations, transmission des valeurs communes.</p></article><article class="card"><h3>Service public</h3><p>Neutralité, obligations professionnelles, posture d’agent public, égalité de traitement et déontologie.</p></article><article class="card"><h3>Transition écologique</h3><p>Comprendre comment l’École et les disciplines peuvent contribuer à former des élèves capables de raisonner sur les enjeux environnementaux.</p></article><article class="card"><h3>Épanouissement</h3><p>Bien-être, inclusion, santé, besoins fondamentaux, compétences psychosociales, climat scolaire et possibilité d’apprendre.</p></article></div>
+</section><section class="section" data-route-view="bac3" id="simulateur-entretien">
+<div class="section-head"><div><span class="eyebrow">Entraînement actif</span><h2>Simulateur « Qu’en pensez-vous ? »</h2><p>Tire une situation au hasard, réponds à voix haute pendant 2 à 3 minutes, puis affiche les enjeux attendus.</p></div></div>
+<div class="simulator">
+<div class="sim-meta"><span class="badge badge-green" id="simCat">Valeurs de la République</span><span class="badge">Bac+3 · entretien</span></div>
+<div class="prompt" id="simPrompt">Clique sur « Tirer une situation ».</div>
+<div class="actions"><button class="btn btn-primary" id="drawPrompt" type="button">🎲 Tirer une situation</button><button class="btn btn-secondary" disabled="" id="showKey" type="button">Afficher les enjeux</button></div>
+<div class="answer-key" hidden="" id="simKey"><h3>Pistes pour t’autoévaluer</h3><div id="simKeyText"></div></div>
+</div>
+<div class="mini-rubric" style="margin-top:1rem"><div><strong>✓ J’ai identifié le problème</strong><br/><small>Je ne me suis pas jetée sur une solution.</small></div><div><strong>✓ J’ai nommé le principe pertinent</strong><br/><small>Sans réciter un catalogue de textes.</small></div><div><strong>✓ J’ai expliqué la tension</strong><br/><small>Pourquoi cette situation mérite réflexion.</small></div><div><strong>✓ J’ai formulé un jugement raisonnable</strong><br/><small>Nuancé, professionnel, compréhensible.</small></div></div>
+</section><section class="section" data-route-view="bac3"><h2>Questions générales à travailler à voix haute</h2></section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Le socle concours est suffisamment solide quand tu as travaillé à voix haute les enjeux professionnels et plusieurs situations complètes.</p><div class="checklist"><label class="check-item"><input data-progress="oral-b3-1" type="checkbox"/><span>Pourquoi enseigner l’espagnol contribue-t-il à l’éducation à la citoyenneté ?</span></label><label class="check-item"><input data-progress="oral-b3-2" type="checkbox"/><span>Comment l’enseignement de l’espagnol peut-il contribuer à la lutte contre les discriminations ?</span></label><label class="check-item"><input data-progress="oral-b3-3" type="checkbox"/><span>Pourquoi l’École doit-elle s’intéresser au bien-être des élèves ?</span></label><label class="check-item"><input data-progress="oral-b3-4" type="checkbox"/><span>Comment l’enseignement des langues peut-il contribuer à la transition écologique ?</span></label><label class="check-item"><input data-progress="oral-b3-5" type="checkbox"/><span>Que signifie la neutralité pour un enseignant ?</span></label><label class="check-item"><input data-progress="oral-b3-6" type="checkbox"/><span>Comment l’École contribue-t-elle à l’égalité entre les filles et les garçons ?</span></label><label class="check-item" data-route-view="bac5"><input data-progress="oral-b5-3" type="checkbox"/><span>J’ai préparé au moins six mises en situation : enseignement et vie scolaire.</span></label></div><div class="oral-validation" data-oral-validation="3"></div></article></section></div><div class="oral-level-panel" data-oral-panel="4"><div class="oral-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>Je sais rester professionnelle quand le jury déstabilise, contredit, demande de préciser ou change l’angle de la question.</p></div><button class="btn btn-secondary" data-oral-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Approfondir</span><h2>Travailler ce qui se passe quand la réponse ne se déroule pas comme prévu.</h2></div></div>
+<div class="grid grid-3">
+<article class="card"><h3>Question inconnue</h3><p>Ne pas improviser une fausse certitude. Délimiter ce que l’on sait, expliciter le raisonnement et proposer une réponse prudente.</p></article>
+<article class="card"><h3>Objection du jury</h3><p>Reprendre l’objection, identifier ce qu’elle change et ajuster la réponse au lieu de défendre mécaniquement la première formulation.</p></article>
+<article class="card"><h3>Trou de mémoire</h3><p>Revenir à la consigne, au document ou au principe professionnel certain. Une réponse simple et structurée vaut mieux qu’une fuite en avant.</p></article>
+</div>
+</section><section class="section">
+<article class="card oral-drill">
+<span class="badge badge-gold">RELANCES DU JURY</span>
+<h3>Quelle réaction est la plus professionnelle ?</h3>
+<div class="oral-drill-q" id="oralDrillQuestion"></div>
+<div class="oral-drill-options" id="oralDrillOptions"></div>
+<div class="oral-drill-feedback" hidden="" id="oralDrillFeedback"></div>
+<button class="btn btn-secondary" hidden="" id="oralDrillNext" type="button">Question suivante →</button>
+</article>
+</section><section class="section"><h2>Sources officielles utilisées pour cette page</h2><div class="source-list"><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/les-epreuves-du-capes-externe-bac3-section-langues-vivantes-etrangeres-1427" rel="noopener noreferrer" target="_blank">Ministère · Épreuves du CAPES externe bac+3, langues vivantes étrangères ↗</a></div><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/concours-externes-bac-3-nos-conseils-pour-reussir-la-seconde-epreuve-orale-d-admission-1545" rel="noopener noreferrer" target="_blank">Ministère · Conseils et attendus pour l’entretien bac+3 ↗</a></div><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/les-epreuves-du-capes-externe-bac-5-section-langues-vivantes-etrangeres-532" rel="noopener noreferrer" target="_blank">Ministère · Épreuves du CAPES externe bac+5, langues vivantes étrangères ↗</a></div></div><p class="source-note">Les épreuves du CAFEP sont identiques à celles du CAPES public ; les règles officielles restent la référence en cas d’évolution.</p></section></div>
 
-  <article class="card" style="margin-top:1rem;border:2px solid #e8b44c;background:linear-gradient(145deg,#fff,#fff8e8)">
-    <span class="badge badge-gold">NOUVEAU · PHASE 4</span>
-    <h3>🎧 Simulateur complet de la première épreuve orale</h3>
-    <p>Enchaîner le format réel : préparation du dossier, <strong>10 min en espagnol + 20 min d’échange</strong>, puis <strong>10 min en français + 20 min d’échange</strong>. Chronomètre, questions de jury aléatoires, enregistrement micro et grille d’autoévaluation.</p>
-    <div class="actions"><a class="btn btn-primary" href="simulateur-oral1.html">Lancer le simulateur complet →</a></div>
-  </article>
 
-</section>
 
-<section class="section" data-route-view="bac3" id="entretien-bac3">
-  <span class="badge badge-green">BAC+3 · SECONDE ÉPREUVE D’ADMISSION</span>
-  <h2>Entretien professionnel · 35 minutes · sans préparation</h2>
-  <div class="oral-format">
-    <div class="oral-step"><strong>5 min</strong><span>Présentation : motivation, parcours et expériences utiles.</span></div>
-    <div class="oral-step"><strong>10 min</strong><span>Échange du jury à partir de la présentation.</span></div>
-    <div class="oral-step"><strong>20 min</strong><span>Deux questions : une générale et une contextualisée.</span></div>
-    <div class="oral-step"><strong>À savoir</strong><span>L’une des deux questions porte sur les valeurs de la République.</span></div>
-  </div>
 
-  <div class="warning-box">
-    <h3>⚠️ Correction méthodologique importante</h3>
-    <p><strong>Pour le bac+3, la question contextualisée n’appelle pas un plan d’action pratique.</strong> Le ministère demande d’identifier et de comprendre les enjeux de la situation, puis de formuler une analyse et un jugement raisonnable. Il ne faut donc pas réciter automatiquement « j’interviens, j’alerte, je transmets, je fais un suivi » comme si la consigne était « Que faites-vous ? ».</p>
-  </div>
 
-  <h3>La bonne méthode pour « Qu’en pensez-vous ? »</h3>
-  <div class="method-grid">
-    <div class="method-step"><b>1</b><strong>Identifier</strong><p>Quel est le vrai problème ? Quels faits sont certains ? Quelle tension la situation révèle-t-elle ?</p></div>
-    <div class="method-step"><b>2</b><strong>Nommer les enjeux</strong><p>Valeurs de la République, neutralité, égalité, discrimination, service public, transition écologique ou épanouissement de l’élève.</p></div>
-    <div class="method-step"><b>3</b><strong>Raisonner</strong><p>Expliquer pourquoi la situation est problématique, ce qui peut entrer en tension et ce que l’École doit garantir.</p></div>
-    <div class="method-step"><b>4</b><strong>Prendre position</strong><p>Formuler un jugement professionnel nuancé et crédible. On peut mentionner le cadre institutionnel utile, sans dérouler un protocole d’intervention.</p></div>
-  </div>
 
-  <article class="card" style="margin-top:1rem"><h3>Exemple de différence</h3><div class="grid grid-2"><div><span class="badge badge-red">À éviter</span><p>« Je fais cesser la situation, je convoque l’élève, j’appelle la famille, j’informe le CPE et je mets en place un suivi. »</p><p><strong>Pourquoi :</strong> réponse essentiellement procédurale alors que la question demande d’abord une analyse.</p></div><div><span class="badge badge-green">Mieux</span><p>« Cette situation pose d’abord la question de l’égalité de traitement et du refus des discriminations. Elle oblige à distinguer ce qui relève d’une préférence personnelle de ce qui remet en cause un principe que l’École doit garantir. Le rôle de l’enseignant est donc de comprendre l’enjeu éducatif et institutionnel avant de raisonner sur la situation. »</p></div></div></article>
 
-  <article class="card" style="margin-top:1rem;border:2px solid #e8b44c;background:linear-gradient(145deg,#fff,#fff8e8)">
-    <span class="badge badge-gold">NOUVEAU · PHASE 4</span>
-    <h3>🎙️ Simulateur complet de l’entretien de 35 minutes</h3>
-    <p>Présentation de motivation, relances du jury, puis tirage d’une question générale et d’une question contextualisée. Le simulateur impose la logique officielle : <strong>analyser les enjeux, pas réciter un plan d’action</strong>.</p>
-    <div class="actions"><a class="btn btn-primary" href="simulateur-entretien.html">Lancer l’entretien complet →</a></div>
-  </article>
 
-</section>
 
-<section class="section" data-route-view="bac3">
-  <h2>Présentation de motivation · cinq minutes</h2>
-  <div class="grid grid-2"><article class="card"><h3>Structure efficace</h3><ol><li><strong>Point de départ :</strong> parcours et situation actuelle.</li><li><strong>Éléments probants :</strong> expériences, apprentissages et responsabilités.</li><li><strong>Compréhension du métier :</strong> élèves, équipe, institution, progression.</li><li><strong>Projection :</strong> ce que Jennifer veut construire et continuer à apprendre.</li></ol></article><article class="card"><h3>Ce qu’il faut éviter</h3><ul><li>un CV récité chronologiquement ;</li><li>des motivations vagues sans exemples ;</li><li>des textes officiels cités mécaniquement ;</li><li>une présentation apprise mot à mot ;</li><li>des formulations familières ou défensives ;</li><li>faire de la tentative précédente le centre du discours.</li></ul></article></div>
-  <article class="card"><h3>Présenter la première tentative sans s’y enfermer</h3><p>Une formulation utile consiste à montrer ce qu’elle a permis d’identifier, ce qui a changé depuis et comment la préparation est désormais plus structurée. L’objectif n’est ni de s’excuser ni de transformer l’entretien en récit d’échec.</p></article>
-</section>
-
-<section class="section" data-route-view="bac3">
-  <h2>Les quatre domaines à maîtriser</h2>
-  <div class="grid grid-4"><article class="card"><h3>République</h3><p>Laïcité, liberté de conscience, égalité, lutte contre les discriminations, transmission des valeurs communes.</p></article><article class="card"><h3>Service public</h3><p>Neutralité, obligations professionnelles, posture d’agent public, égalité de traitement et déontologie.</p></article><article class="card"><h3>Transition écologique</h3><p>Comprendre comment l’École et les disciplines peuvent contribuer à former des élèves capables de raisonner sur les enjeux environnementaux.</p></article><article class="card"><h3>Épanouissement</h3><p>Bien-être, inclusion, santé, besoins fondamentaux, compétences psychosociales, climat scolaire et possibilité d’apprendre.</p></article></div>
-</section>
-
-<section class="section" data-route-view="bac3" id="simulateur-entretien">
-  <div class="section-head"><div><span class="eyebrow">Entraînement actif</span><h2>Simulateur « Qu’en pensez-vous ? »</h2><p>Tire une situation au hasard, réponds à voix haute pendant 2 à 3 minutes, puis affiche les enjeux attendus.</p></div></div>
-  <div class="simulator">
-    <div class="sim-meta"><span class="badge badge-green" id="simCat">Valeurs de la République</span><span class="badge">Bac+3 · entretien</span></div>
-    <div class="prompt" id="simPrompt">Clique sur « Tirer une situation ».</div>
-    <div class="actions"><button class="btn btn-primary" type="button" id="drawPrompt">🎲 Tirer une situation</button><button class="btn btn-secondary" type="button" id="showKey" disabled>Afficher les enjeux</button></div>
-    <div class="answer-key" id="simKey" hidden><h3>Pistes pour t’autoévaluer</h3><div id="simKeyText"></div></div>
-  </div>
-  <div class="mini-rubric" style="margin-top:1rem"><div><strong>✓ J’ai identifié le problème</strong><br><small>Je ne me suis pas jetée sur une solution.</small></div><div><strong>✓ J’ai nommé le principe pertinent</strong><br><small>Sans réciter un catalogue de textes.</small></div><div><strong>✓ J’ai expliqué la tension</strong><br><small>Pourquoi cette situation mérite réflexion.</small></div><div><strong>✓ J’ai formulé un jugement raisonnable</strong><br><small>Nuancé, professionnel, compréhensible.</small></div></div>
-</section>
-
-<section class="section" data-route-view="bac3"><h2>Questions générales à travailler à voix haute</h2><div class="checklist"><label class="check-item"><input type="checkbox" data-progress="oral-b3-1"><span>Pourquoi enseigner l’espagnol contribue-t-il à l’éducation à la citoyenneté ?</span></label><label class="check-item"><input type="checkbox" data-progress="oral-b3-2"><span>Comment l’enseignement de l’espagnol peut-il contribuer à la lutte contre les discriminations ?</span></label><label class="check-item"><input type="checkbox" data-progress="oral-b3-3"><span>Pourquoi l’École doit-elle s’intéresser au bien-être des élèves ?</span></label><label class="check-item"><input type="checkbox" data-progress="oral-b3-4"><span>Comment l’enseignement des langues peut-il contribuer à la transition écologique ?</span></label><label class="check-item"><input type="checkbox" data-progress="oral-b3-5"><span>Que signifie la neutralité pour un enseignant ?</span></label><label class="check-item"><input type="checkbox" data-progress="oral-b3-6"><span>Comment l’École contribue-t-elle à l’égalité entre les filles et les garçons ?</span></label></div></section>
-
-<section class="section" data-route-view="bac5">
-  <span class="badge badge-red">BAC+5 · ÉPREUVE DE LEÇON</span>
-  <h2>Leçon · 3 h de préparation · 1 h maximum</h2>
-  <p>Le bac+5 demande explicitement une <strong>conception de séance</strong>. Ici, contrairement au premier oral bac+3, la dimension didactique et pédagogique est centrale.</p>
-  <div class="oral-format"><div class="oral-step"><strong>15 min max · espagnol</strong><span>Restituer, analyser et commenter l’audio/vidéo, présenter les documents retenus et justifier les choix pour la classe.</span></div><div class="oral-step"><strong>15 min max · espagnol</strong><span>Entretien avec le jury.</span></div><div class="oral-step"><strong>20 min max · français</strong><span>Présenter les objectifs et la mise en œuvre d’une séance avec activités concrètes.</span></div><div class="oral-step"><strong>10 min max · français</strong><span>Justifier et préciser les choix pédagogiques et didactiques.</span></div></div>
-  <div class="actions"><a class="btn btn-primary" href="didactique.html">Travailler la didactique</a></div>
-</section>
-
-<section class="section" data-route-view="bac5">
-  <span class="badge badge-red">BAC+5 · ENTRETIEN</span>
-  <h2>Entretien · 35 minutes</h2>
-  <p>Le bac+5 conserve son format propre : quinze minutes autour du parcours et de la motivation, puis vingt minutes consacrées à <strong>deux mises en situation professionnelles</strong>, l’une d’enseignement et l’autre de vie scolaire.</p>
-  <div class="grid grid-2"><article class="card"><h3>Première partie</h3><p>5 minutes maximum de présentation du parcours, puis échange avec le jury dans un ensemble de 15 minutes.</p></article><article class="card"><h3>Deuxième partie</h3><p>Deux mises en situation permettant d’apprécier l’appropriation des valeurs de la République, de la laïcité et des exigences du service public.</p></article></div>
-</section>
-
-<section class="section"><h2>Sources officielles utilisées pour cette page</h2><div class="source-list"><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/les-epreuves-du-capes-externe-bac3-section-langues-vivantes-etrangeres-1427" target="_blank" rel="noopener noreferrer">Ministère · Épreuves du CAPES externe bac+3, langues vivantes étrangères ↗</a></div><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/concours-externes-bac-3-nos-conseils-pour-reussir-la-seconde-epreuve-orale-d-admission-1545" target="_blank" rel="noopener noreferrer">Ministère · Conseils et attendus pour l’entretien bac+3 ↗</a></div><div class="source-item"><a href="https://www.devenirenseignant.gouv.fr/les-epreuves-du-capes-externe-bac-5-section-langues-vivantes-etrangeres-532" target="_blank" rel="noopener noreferrer">Ministère · Épreuves du CAPES externe bac+5, langues vivantes étrangères ↗</a></div></div><p class="source-note">Les épreuves du CAFEP sont identiques à celles du CAPES public ; les règles officielles restent la référence en cas d’évolution.</p></section>
 </main>
-<script src="assets/app.js?v=20260811-phase1"></script>
+<script src="assets/app.js?v=20260811-phase1"></script><script src="assets/oral-path.js"></script>
 <script>
 (function(){
   const prompts=[
