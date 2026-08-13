@@ -1,30 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Didactique · Billete para una nueva vida</title>
-<meta name="description" content="Didactique des langues, construction de séquence et préparation de la leçon.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
-</head>
+<meta content="Didactique des langues, construction de séquence et préparation de la leçon." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
+<style>
+.did-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.did-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.did-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.did-path [hidden]{display:none!important}
+.did-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.did-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:180px}
+.did-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.did-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.did-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.did-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.did-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.did-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.did-diag.hidden{display:none}
+.did-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.did-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.did-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.did-diag-options{display:grid;gap:.55rem}.did-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.did-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.did-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.did-level-panel{display:none}.did-level-panel.active{display:block}
+.did-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.did-level-banner h2{color:#fff;margin:.1rem 0}.did-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.did-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.did-validation.complete{border-color:#64a979;background:#eef8f1}
+.did-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.did-summary-card{border-left:5px solid #c94355}
+.did-route-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.did-priority-pill{display:inline-block;margin-top:.45rem;padding:.3rem .55rem;border-radius:999px;background:#fff1cf;color:#6b4b00;font-size:.82rem;font-weight:800}
+.did-compact-note{font-size:.9rem;color:#687985}
+.did-builder{border-top:5px solid #173a5e}
+.did-builder-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.did-jury-card{border-left:5px solid #e5bd66}
+.did-jury-card h4{margin:.2rem 0}
+.did-qbox{margin-top:1rem;padding-top:1rem;border-top:1px solid #e5ded4}
+.did-qtitle{font-family:Georgia,serif;font-size:1.15rem;margin:.6rem 0}
+.did-qoptions{display:grid;gap:.5rem}
+.did-qoption{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.7rem .8rem;text-align:left;cursor:pointer}
+.did-qoption.correct{border-color:#64a979;background:#eef8f1}
+.did-qoption.wrong{border-color:#c94355;background:#fff1f2}
+.did-qfeedback{margin-top:.65rem;padding:.7rem .8rem;border-radius:12px;background:#f6f8fa}
+@media(max-width:950px){.did-path-grid,.did-level-cards,.did-summary-grid,.did-route-grid,.did-builder-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.did-path-grid,.did-level-cards,.did-summary-grid,.did-route-grid,.did-builder-grid{grid-template-columns:1fr}.did-level-banner{display:block}}
+</style></head>
 <body class="route-all">
-<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Didactique</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Concevoir une séquence que des élèves pourraient réellement suivre.</h1><p class="lead">Le jury n’attend ni une liste d’activités décoratives ni un cours théorique : il faut des choix cohérents, précis et justifiés.</p></section>
-<section class="section"><h2>La chaîne de conception</h2><div class="grid grid-4"><article class="card"><span class="metric">1</span><h3>Contexte</h3><p>Niveau, classe, programme, axe, prérequis, besoins et contraintes.</p></article><article class="card"><span class="metric">2</span><h3>Problématique</h3><p>Question culturelle accessible qui organise la séquence et donne du sens aux documents.</p></article><article class="card"><span class="metric">3</span><h3>Objectifs</h3><p>Culturels, linguistiques, pragmatiques, sociolinguistiques, phonologiques et éducatifs.</p></article><article class="card"><span class="metric">4</span><h3>Progression</h3><p>Activités articulées, étayage, entraînement, tâche intermédiaire et tâche finale.</p></article></div></section>
-<section class="section"><h2>Les mots précis du métier</h2><div class="grid grid-3"><article class="card"><h3>Séquence</h3><p>Ensemble cohérent de séances organisé autour d’une problématique et d’objectifs communs.</p></article><article class="card"><h3>Séance</h3><p>Unité de travail située dans la progression, avec objectifs, supports, activités et bilan.</p></article><article class="card"><h3>Tâche</h3><p>Action signifiante à réaliser dans une situation, mobilisant des ressources et des compétences.</p></article><article class="card"><h3>Étayer</h3><p>Fournir une aide temporaire : consigne graduée, modèle, lexique, amorce, outil de repérage.</p></article><article class="card"><h3>Différencier</h3><p>Adapter aides, supports, modalités ou niveaux d’exigence sans renoncer à l’objectif commun.</p></article><article class="card"><h3>Évaluer</h3><p>Recueillir des indices pour situer les acquis, réguler l’apprentissage et valider des compétences.</p></article></div></section>
-<section class="section"><h2>Fiche de séquence défendable</h2><div class="table-wrap"><table><thead><tr><th>Rubrique</th><th>Ce qu’il faut annoncer</th><th>Question du jury à anticiper</th></tr></thead><tbody><tr><td>Ancrage</td><td>Classe, axe, niveau CECRL, volume horaire.</td><td>Pourquoi ce niveau et cet axe ?</td></tr><tr><td>Problématique</td><td>Question culturelle compréhensible et non purement descriptive.</td><td>Comment les élèves pourront-ils y répondre ?</td></tr><tr><td>Documents</td><td>Fonction de chaque support dans la progression.</td><td>Pourquoi ce document et pas un autre ?</td></tr><tr><td>Objectifs</td><td>Acquis visés, formulés de manière observable.</td><td>Comment vérifiez-vous qu’ils sont atteints ?</td></tr><tr><td>Activités</td><td>Consignes exactes, interaction, traces, aides.</td><td>Que font concrètement les élèves ?</td></tr><tr><td>Évaluation</td><td>Critères, indicateurs et lien avec l’entraînement.</td><td>Les élèves ont-ils été préparés à cette tâche ?</td></tr></tbody></table></div></section>
-<section class="section"><h2>Exemple condensé · Vivre entre générations</h2><article class="card"><p><strong>Classe :</strong> Seconde, niveau visé A2+ vers B1. <strong>Problématique :</strong> <em>¿Cómo se transforma una herencia familiar cuando pasa de una generación a otra?</em></p><p><strong>Supports :</strong> photographie de famille, extrait de récit mémoriel, témoignage audio d’un jeune, affiche d’une campagne intergénérationnelle.</p><p><strong>Progression :</strong> décrire et identifier les relations → comprendre un récit de transmission → comparer deux points de vue → préparer une interview → produire un podcast familial fictif.</p><p><strong>Objectifs linguistiques :</strong> temps du passé, expression de l’évolution, connecteurs d’opposition et de cause. <strong>Évaluation :</strong> podcast de deux minutes avec critères communiqués et entraînement préalable.</p></article></section>
-<section class="section"><h2>Les pièges du rapport de jury</h2><div class="grid grid-3"><article class="card"><h3>Analyse superficielle</h3><p>Résumer ou décrire les supports sans étudier point de vue, procédés, implicites et contexte.</p></article><article class="card"><h3>Catalogue d’activités</h3><p>Empiler « compréhension, vocabulaire, débat » sans progression ni objectif vérifiable.</p></article><article class="card"><h3>Élèves invisibles</h3><p>Décrire ce que fait le professeur mais pas ce que les élèves observent, disent, écrivent et apprennent.</p></article></div></section>
-<section class="section" id="didactique-checklist">
-  <div class="section-head"><div><span class="eyebrow">Progression réelle</span><h2>Ce que je dois être capable de défendre.</h2><p>Ces six objectifs alimentent désormais le tableau de progression du site.</p></div></div>
-  <div class="checklist">
-    <label class="check-item"><input type="checkbox" data-progress="did-1"><span>Je sais situer une séquence : classe, axe, niveau CECRL, prérequis et contraintes.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="did-2"><span>Je sais formuler une problématique culturelle qui organise réellement les documents.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="did-3"><span>Je sais formuler des objectifs observables et expliquer comment je vérifierai qu’ils sont atteints.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="did-4"><span>Je sais justifier la fonction de chaque document dans la progression plutôt que simplement le décrire.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="did-5"><span>Je sais décrire précisément ce que les élèves font, disent, écrivent et apprennent pendant une activité.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="did-6"><span>Je sais relier entraînement, tâche finale, critères et évaluation sans ajouter une activité décorative.</span></label>
-  </div>
-</section>
+<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Didactique</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Concevoir une séquence que des élèves pourraient réellement suivre.</h1><p class="lead">Le jury n’attend ni une liste d’activités décoratives ni un cours théorique : il faut des choix cohérents, précis et justifiés.</p></section><section class="section" id="didactique-parcours">
+<article class="card did-path">
+<div class="did-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · DIDACTIQUE</span>
+<h2>Didactique — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il repère six domaines : <strong>problématique culturelle</strong>, <strong>objectifs</strong>, <strong>CECRL</strong>, <strong>documents</strong>, <strong>activités élèves</strong> et <strong>évaluation</strong>.</p>
+<div class="actions">
+<button class="btn btn-primary" id="didDiagStart" type="button">Faire le mini-diagnostic · 5 min</button>
+<button class="btn btn-secondary" hidden="" id="didDiagReset" type="button">Refaire le diagnostic</button>
+</div>
+</div>
+<div class="did-path-status" id="didPathStatus">
+<span class="eyebrow">POINT DE DÉPART</span>
+<h3>Pas encore déterminé</h3>
+<p>Après 12 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir et indiquera la priorité à travailler.</p>
+</div>
+</div>
+<div class="did-diag hidden" id="didDiag">
+<div class="did-compact-note" id="didDiagCount"></div>
+<div class="did-diag-progress"><span id="didDiagBar"></span></div>
+<div class="did-diag-q" id="didDiagQuestion"></div>
+<div class="did-diag-options" id="didDiagOptions"></div>
+<div class="did-diag-nav">
+<button class="btn btn-secondary" id="didDiagPrev" type="button">← Précédent</button>
+<button class="btn btn-primary" disabled="" id="didDiagNext" type="button">Suivant →</button>
+</div>
+</div>
+<div class="did-level-cards">
+<button class="did-level-card" data-did-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>Contexte · problématique · objectifs · vocabulaire du métier.</span></button>
+<button class="did-level-card" data-did-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>CECRL · documents · progression · activités · étayage.</span></button>
+<button class="did-level-card" data-did-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Bac+3 : culturel/interculturel · Bac+5 : séquence et leçon.</span></button>
+<button class="did-level-card" data-did-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Différenciation · évaluation · justification · réponses au jury.</span></button>
+</div>
+</article>
+</section><div class="did-level-panel" data-did-panel="1"><div class="did-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je sais situer le contexte, formuler une problématique culturelle et employer le vocabulaire professionnel avec précision.</p></div><button class="btn btn-secondary" data-did-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="did-route-grid">
+<article class="card" data-route-view="bac3">
+<span class="badge badge-green">BAC+3</span>
+<h3>Attention : pas de séquence à construire à l’oral 1</h3>
+<p>La seconde partie de l’oral demande d’expliciter <strong>l’intérêt culturel et la portée interculturelle</strong> du dossier. La didactique reste utile comme culture professionnelle, mais il ne faut pas transformer cette partie en proposition de séquence ou en plan d’activités.</p>
+</article>
+<article class="card" data-route-view="bac5">
+<span class="badge badge-red">BAC+5</span>
+<h3>La didactique est directement évaluée</h3>
+<p>L’épreuve disciplinaire appliquée demande de sélectionner des supports et de construire une <strong>séquence</strong>. L’épreuve de leçon demande de concevoir et présenter une <strong>séance</strong> avec objectifs, activités et mise en œuvre.</p>
+</article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Le socle</span><h2>Quatre questions avant d’inventer la moindre activité.</h2></div></div>
+<div class="did-summary-grid">
+<article class="card did-summary-card"><h3>Pour qui ?</h3><p>Classe, niveau visé, prérequis, besoins et contraintes. Une proposition pédagogique n’existe jamais hors contexte.</p></article>
+<article class="card did-summary-card"><h3>Pour comprendre quoi ?</h3><p>La problématique culturelle donne une direction aux documents et évite le simple thème descriptif.</p></article>
+<article class="card did-summary-card"><h3>Pour apprendre quoi ?</h3><p>Les objectifs doivent être observables : ce que l’élève saura comprendre, dire, écrire, mobiliser ou interpréter.</p></article>
+<article class="card did-summary-card"><h3>Comment le vérifier ?</h3><p>Activités, entraînement, critères et évaluation doivent former une chaîne cohérente plutôt qu’une succession d’idées séduisantes.</p></article>
+</div>
+</section><section class="section"><h2>La chaîne de conception</h2><div class="grid grid-4"><article class="card"><span class="metric">1</span><h3>Contexte</h3><p>Niveau, classe, programme, axe, prérequis, besoins et contraintes.</p></article><article class="card"><span class="metric">2</span><h3>Problématique</h3><p>Question culturelle accessible qui organise la séquence et donne du sens aux documents.</p></article><article class="card"><span class="metric">3</span><h3>Objectifs</h3><p>Culturels, linguistiques, pragmatiques, sociolinguistiques, phonologiques et éducatifs.</p></article><article class="card"><span class="metric">4</span><h3>Progression</h3><p>Activités articulées, étayage, entraînement, tâche intermédiaire et tâche finale.</p></article></div></section><section class="section"><h2>Les mots précis du métier</h2><div class="grid grid-3"><article class="card"><h3>Séquence</h3><p>Ensemble cohérent de séances organisé autour d’une problématique et d’objectifs communs.</p></article><article class="card"><h3>Séance</h3><p>Unité de travail située dans la progression, avec objectifs, supports, activités et bilan.</p></article><article class="card"><h3>Tâche</h3><p>Action signifiante à réaliser dans une situation, mobilisant des ressources et des compétences.</p></article><article class="card"><h3>Étayer</h3><p>Fournir une aide temporaire : consigne graduée, modèle, lexique, amorce, outil de repérage.</p></article><article class="card"><h3>Différencier</h3><p>Adapter aides, supports, modalités ou niveaux d’exigence sans renoncer à l’objectif commun.</p></article><article class="card"><h3>Évaluer</h3><p>Recueillir des indices pour situer les acquis, réguler l’apprentissage et valider des compétences.</p></article></div></section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Quand tu sais situer le contexte et formuler une vraie problématique culturelle, passe au niveau 2.</p><div class="checklist"><label class="check-item"><input data-progress="did-1" type="checkbox"/><span>Je sais situer une séquence : classe, axe, niveau CECRL, prérequis et contraintes.</span></label><label class="check-item"><input data-progress="did-2" type="checkbox"/><span>Je sais formuler une problématique culturelle qui organise réellement les documents.</span></label></div><div class="did-validation" data-did-validation="1"></div></article></section></div><div class="did-level-panel" data-did-panel="2"><div class="did-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je relie niveau visé, objectifs, documents, activités et progression en gardant les élèves au centre.</p></div><button class="btn btn-secondary" data-did-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Niveau &amp; activités langagières</span><h2>Le CECRL n’est pas une étiquette décorative.</h2><p>Le niveau annoncé doit modifier ce que l’on demande réellement à l’élève.</p></div></div>
+<div class="grid grid-3">
+<article class="card"><h3>Réception</h3><p>Que doit comprendre l’élève dans un texte, un audio, une vidéo ou un document iconographique ? Quels indices peut-il raisonnablement mobiliser au niveau visé ?</p></article>
+<article class="card"><h3>Production</h3><p>Quelle longueur, quelle précision et quelles ressources linguistiques sont réalistes pour produire à ce niveau ?</p></article>
+<article class="card"><h3>Interaction / médiation</h3><p>Que fait l’élève avec les informations comprises : comparer, reformuler, expliquer, négocier, transmettre ou faire circuler un sens ?</p></article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Choix des supports</span><h2>Un document doit avoir une fonction.</h2><p>La question utile n’est pas « ce document est-il intéressant ? », mais « qu’apporte-t-il à la progression que les autres n’apportent pas ? »</p></div></div>
+<div class="grid grid-3">
+<article class="card"><h3>Faire entrer</h3><p>Créer une première représentation, une hypothèse ou une tension culturelle accessible.</p></article>
+<article class="card"><h3>Faire évoluer</h3><p>Apporter un point de vue, un langage, un contexte ou une contradiction qui déplace la compréhension.</p></article>
+<article class="card"><h3>Faire réinvestir</h3><p>Donner à l’élève les ressources nécessaires pour produire, interagir ou répondre à la problématique.</p></article>
+</div>
+</section><section class="section"><h2>Fiche de séquence défendable</h2><div class="table-wrap"><table><thead><tr><th>Rubrique</th><th>Ce qu’il faut annoncer</th><th>Question du jury à anticiper</th></tr></thead><tbody><tr><td>Ancrage</td><td>Classe, axe, niveau CECRL, volume horaire.</td><td>Pourquoi ce niveau et cet axe ?</td></tr><tr><td>Problématique</td><td>Question culturelle compréhensible et non purement descriptive.</td><td>Comment les élèves pourront-ils y répondre ?</td></tr><tr><td>Documents</td><td>Fonction de chaque support dans la progression.</td><td>Pourquoi ce document et pas un autre ?</td></tr><tr><td>Objectifs</td><td>Acquis visés, formulés de manière observable.</td><td>Comment vérifiez-vous qu’ils sont atteints ?</td></tr><tr><td>Activités</td><td>Consignes exactes, interaction, traces, aides.</td><td>Que font concrètement les élèves ?</td></tr><tr><td>Évaluation</td><td>Critères, indicateurs et lien avec l’entraînement.</td><td>Les élèves ont-ils été préparés à cette tâche ?</td></tr></tbody></table></div></section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand objectifs, fonction des documents et activité réelle des élèves sont cohérents, passe au niveau concours.</p><div class="checklist"><label class="check-item"><input data-progress="did-3" type="checkbox"/><span>Je sais formuler des objectifs observables et expliquer comment je vérifierai qu’ils sont atteints.</span></label><label class="check-item"><input data-progress="did-4" type="checkbox"/><span>Je sais justifier la fonction de chaque document dans la progression plutôt que simplement le décrire.</span></label><label class="check-item"><input data-progress="did-5" type="checkbox"/><span>Je sais décrire précisément ce que les élèves font, disent, écrivent et apprennent pendant une activité.</span></label></div><div class="did-validation" data-did-validation="2"></div></article></section></div><div class="did-level-panel" data-did-panel="3"><div class="did-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>J’applique la logique didactique exactement à l’épreuve préparée, sans confondre bac+3 et bac+5.</p></div><button class="btn btn-secondary" data-did-top="" type="button">Retour au parcours</button></div><section class="section" data-route-view="bac3">
+<article class="card did-builder">
+<span class="badge badge-green">BAC+3 · ORAL</span>
+<h2>Passer des documents à l’intérêt culturel et interculturel.</h2>
+<p>Le bon réflexe : ne pas inventer une séance. Il faut montrer <strong>ce que le dossier permet de comprendre d’une société, d’une représentation ou d’un rapport entre cultures</strong>, puis articuler les documents entre eux.</p>
+<div class="did-builder-grid">
+<div class="did-jury-card card"><h4>1 · Identifier la tension culturelle</h4><p>Quel conflit de valeurs, de représentations, de générations, de mémoires ou de points de vue traverse le dossier ?</p></div>
+<div class="did-jury-card card"><h4>2 · Comparer les regards</h4><p>Quels documents confirment, déplacent ou contredisent cette représentation ?</p></div>
+<div class="did-jury-card card"><h4>3 · Expliciter la portée interculturelle</h4><p>Qu’est-ce que le rapprochement des documents permet de questionner au-delà du seul contexte national ?</p></div>
+<div class="did-jury-card card"><h4>4 · Rester dans l’analyse</h4><p>Pas de « je ferais travailler les élèves sur… » : cette partie de l’oral n’est pas une proposition pédagogique.</p></div>
+</div>
+<div class="did-qbox" id="didBac3Drill">
+<span class="eyebrow">RÉFLEXE JURY</span>
+<div class="did-qtitle" id="didBac3Question"></div>
+<div class="did-qoptions" id="didBac3Options"></div>
+<div class="did-qfeedback" hidden="" id="didBac3Feedback"></div>
+<button class="btn btn-secondary" hidden="" id="didBac3Next" type="button">Question suivante →</button>
+</div>
+</article>
+</section><section class="section" data-route-view="bac5">
+<article class="card did-builder">
+<span class="badge badge-red">BAC+5 · CONCOURS</span>
+<h2>Séquence à l’écrit, séance à la leçon : ne pas les confondre.</h2>
+<div class="did-builder-grid">
+<div class="did-jury-card card"><h4>Épreuve appliquée · séquence</h4><p>Sélectionner des supports, les analyser et les mettre en relation, annoncer les objectifs et construire une progression permettant de structurer les apprentissages.</p></div>
+<div class="did-jury-card card"><h4>Leçon · séance</h4><p>À partir du document audio/vidéo et des supports retenus, présenter des objectifs et un déroulement cohérent avec des exemples concrets d’activités.</p></div>
+<div class="did-jury-card card"><h4>À chaque étape</h4><p>Dire ce que les élèves font réellement, quelles ressources ils mobilisent, quelles aides sont prévues et ce que l’activité prépare ensuite.</p></div>
+<div class="did-jury-card card"><h4>Face au jury</h4><p>Chaque choix doit pouvoir répondre à « pourquoi ? » : pourquoi ce document, cette activité, cet ordre, cette aide, ce critère ?</p></div>
+</div>
+<div class="did-qbox" id="didBac5Drill">
+<span class="eyebrow">RÉFLEXE JURY</span>
+<div class="did-qtitle" id="didBac5Question"></div>
+<div class="did-qoptions" id="didBac5Options"></div>
+<div class="did-qfeedback" hidden="" id="didBac5Feedback"></div>
+<button class="btn btn-secondary" hidden="" id="didBac5Next" type="button">Question suivante →</button>
+</div>
+</article>
+</section><section class="section"><h2>Exemple condensé · Vivre entre générations</h2><article class="card"><p><strong>Classe :</strong> Seconde, niveau visé A2+ vers B1. <strong>Problématique :</strong> <em>¿Cómo se transforma una herencia familiar cuando pasa de una generación a otra?</em></p><p><strong>Supports :</strong> photographie de famille, extrait de récit mémoriel, témoignage audio d’un jeune, affiche d’une campagne intergénérationnelle.</p><p><strong>Progression :</strong> décrire et identifier les relations → comprendre un récit de transmission → comparer deux points de vue → préparer une interview → produire un podcast familial fictif.</p><p><strong>Objectifs linguistiques :</strong> temps du passé, expression de l’évolution, connecteurs d’opposition et de cause. <strong>Évaluation :</strong> podcast de deux minutes avec critères communiqués et entraînement préalable.</p></article></section><section class="section"><h2>Les pièges du rapport de jury</h2><div class="grid grid-3"><article class="card"><h3>Analyse superficielle</h3><p>Résumer ou décrire les supports sans étudier point de vue, procédés, implicites et contexte.</p></article><article class="card"><h3>Catalogue d’activités</h3><p>Empiler « compréhension, vocabulaire, débat » sans progression ni objectif vérifiable.</p></article><article class="card"><h3>Élèves invisibles</h3><p>Décrire ce que fait le professeur mais pas ce que les élèves observent, disent, écrivent et apprennent.</p></article></div></section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Le socle est suffisamment solide quand entraînement, critères et évaluation s’enchaînent sans activité décorative.</p><div class="checklist"><label class="check-item"><input data-progress="did-6" type="checkbox"/><span>Je sais relier entraînement, tâche finale, critères et évaluation sans ajouter une activité décorative.</span></label></div><div class="did-validation" data-did-validation="3"></div></article></section></div><div class="did-level-panel" data-did-panel="4"><div class="did-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>Je rends mes choix plus souples, plus justifiables et plus réalistes face aux questions du jury.</p></div><button class="btn btn-secondary" data-did-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Approfondir</span><h2>Rendre la proposition défendable face aux objections.</h2></div></div>
+<div class="grid grid-3">
+<article class="card"><h3>Différenciation</h3><p>Prévoir des aides temporaires ou des modalités différentes sans changer l’objectif culturel ou communicationnel commun.</p></article>
+<article class="card"><h3>Évaluation</h3><p>Annoncer des critères qui correspondent réellement à ce qui a été entraîné. Une tâche finale ne doit pas tester par surprise une compétence jamais travaillée.</p></article>
+<article class="card"><h3>Justification</h3><p>Préparer une raison pédagogique pour chaque choix : le jury évalue aussi la capacité à préciser, modifier et défendre une proposition.</p></article>
+</div>
+</section><section class="section"><article class="card">
+<h3>Le bon niveau d’approfondissement</h3>
+<p>À ce stade, le but n’est plus d’ajouter des activités : il faut être capable de <strong>modifier une proposition sans perdre sa cohérence</strong>, d’expliquer les critères retenus et de répondre à une objection du jury.</p>
+</article></section></div>
+
+
+
+
+
+
 </main>
-<script src="assets/app.js"></script>
+<script src="assets/app.js"></script><script src="assets/didactique-path.js"></script>
 </body></html>
