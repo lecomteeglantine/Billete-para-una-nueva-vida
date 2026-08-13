@@ -1,12 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Entraînement · Billete para una nueva vida</title>
-<meta name="description" content="Diagnostic, QCM, chronomètres et sujets d’entraînement.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
-
+<meta content="Diagnostic, QCM, chronomètres et sujets d’entraînement." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 /* Ajouts BAC+3 oral — styles isolés */
 .bac3-oral-zone{scroll-margin-top:120px}
@@ -32,72 +32,183 @@
 .match-select{width:100%}
 .exercise-summary{margin-top:1rem;font-weight:800}
 @media(max-width:760px){.sort-grid,.revision-grid,.match-row{grid-template-columns:1fr}}
+
+.training-hub{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.training-hub-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:start}
+.training-priority-box{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.training-priority-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.training-priority{border:1px solid #e3ded5;border-radius:15px;padding:.9rem;background:#fff}
+.training-priority strong{display:block;color:#173a5e;margin:.25rem 0}
+.training-priority .reason{font-size:.9rem;color:#687985}
+.training-stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.training-stage-btn{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;text-align:left;cursor:pointer;min-height:170px}
+.training-stage-btn strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.training-stage-btn.active{border:2px solid #173a5e;box-shadow:0 0 0 3px rgba(23,58,94,.08)}
+.training-stage-panel{display:none}.training-stage-panel.active{display:block}
+.training-stage-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .35rem}
+.training-stage-banner h2{color:#fff;margin:.1rem 0}.training-stage-banner p{color:#e8edf2;margin:.3rem 0 0}
+.training-quick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.training-quick-card{border-left:5px solid #c94355}
+.training-reflect{border-top:6px solid #c94355}
+.training-reflect-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:1rem;align-items:start}
+.training-field{display:grid;gap:.35rem;margin:.7rem 0}
+.training-field select{max-width:100%;border:1px solid #ccd6df;border-radius:10px;padding:.65rem;font:inherit;background:#fff}
+.training-result-buttons{display:flex;gap:.55rem;flex-wrap:wrap}
+.training-result-buttons button.selected{outline:3px solid rgba(195,59,74,.18);border-color:#c94355}
+.training-next{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:14px;padding:1rem}
+.training-history{margin-top:.8rem;font-size:.9rem;color:#687985}
+.training-history strong{color:#173a5e}
+.training-old-diagnostic{margin-top:1rem}
+.training-old-diagnostic summary{cursor:pointer;font-weight:900;color:#173a5e}
+.training-note{font-size:.9rem;color:#687985}
+@media(max-width:980px){.training-hub-grid,.training-priority-grid,.training-stages,.training-quick-grid,.training-reflect-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.training-hub-grid,.training-priority-grid,.training-stages,.training-quick-grid,.training-reflect-grid{grid-template-columns:1fr}.training-stage-banner{display:block}}
 </style>
 </head>
 <body class="route-all">
-<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Entraînement</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>Mesurer les lacunes pour décider du prochain travail.</h1><p class="lead">Le diagnostic ne donne pas une étiquette de niveau : il choisit la priorité la plus rentable.</p></section>
-<section class="section"><div class="quiz-card card" id="diagnostic"><span class="badge badge-gold">Diagnostic initial</span><h2 id="quizTitle">Prête ?</h2><p id="quizQuestion">Le test comporte des questions sur le programme, le français, l’analyse, la didactique et l’entretien.</p><div id="quizOptions"></div><div id="quizFeedback"></div><div class="actions"><button class="btn btn-primary" id="startQuiz">Commencer</button><button class="btn btn-secondary" id="nextQuestion" hidden>Question suivante</button></div><p class="counter" id="quizCounter"></p></div></section>
-<section class="section" data-route-view="bac3" id="sujets-officiels"><div class="section-head"><div><span class="eyebrow">Priorité concours</span><h2>Sujets officiels bac+3</h2><p>Commencer par les sujets réellement publiés par le ministère avant de multiplier les sujets inventés.</p></div></div><div class="grid grid-3"><article class="card"><span class="badge badge-green">SESSION 2026 · ÉPREUVE 1</span><h3>Le vrai sujet tombé</h3><p><em>La caída de Madrid</em>, Transition démocratique, analyse littéraire puis commentaire de documents de civilisation.</p><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19696/download" target="_blank" rel="noopener noreferrer">Ouvrir le PDF officiel ↗</a><a class="btn btn-secondary" href="methodologie-composition.html">Voir la méthode</a></article><article class="card"><span class="badge badge-green">SESSION 2026 · ÉPREUVE 2</span><h3>Thème, version et faits de langue</h3><p>Le premier vrai sujet du nouveau concours permet de travailler le traitement de l’allocutaire, le passage français–espagnol et une version contemporaine.</p><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19699/download" target="_blank" rel="noopener noreferrer">Ouvrir le PDF officiel ↗</a><a class="btn btn-secondary" href="traduction.html">Voir la méthode</a></article><article class="card"><span class="badge badge-gold">SUJETS ZÉRO</span><h3>Exemples officiels du nouveau format</h3><p>Le ministère publie aussi les sujets zéro des deux écrits et de la première épreuve orale d’espagnol.</p><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/exemples-de-sujets-des-concours-externes-bac3-de-recrutement-d-enseignants-1405" target="_blank" rel="noopener noreferrer">Accéder aux sujets zéro ↗</a></article></div><div class="notice"><strong>Ordre conseillé :</strong> 1) lire la consigne sans corrigé ; 2) bâtir un plan ou une réponse ; 3) faire l’épreuve en temps limité ; 4) relever les erreurs ; 5) refaire seulement les points faibles quelques jours plus tard.</div></section>
-
-<section class="section" data-route-view="bac3" id="simulateurs-complets">
-  <div class="section-head"><div><span class="eyebrow">Phase 4 · simulations complètes</span><h2>Faire l’oral, pas seulement le réviser.</h2><p>Deux simulateurs reproduisent la succession des temps officiels et enregistrent localement les bilans.</p></div></div>
-  <div class="grid grid-2">
-    <article class="card" style="border:2px solid #e8b44c;background:linear-gradient(145deg,#fff,#fff8e8)">
-      <span class="badge badge-green">BAC+3 · ORAL 1 · COEFF. 5</span>
-      <h3>🎧 Dossier disciplinaire bilingue</h3>
-      <p>4 documents, préparation, exposé espagnol, questions du jury, exposé français puis nouvel échange. Mode réel ou express, questions aléatoires et micro.</p>
-      <div class="actions"><a class="btn btn-primary" href="simulateur-oral1.html">Lancer l’oral 1 →</a></div>
-    </article>
-    <article class="card" style="border:2px solid #e8b44c;background:linear-gradient(145deg,#fff,#fff8e8)">
-      <span class="badge badge-green">BAC+3 · ENTRETIEN · COEFF. 3</span>
-      <h3>🎙️ 35 minutes avec le jury</h3>
-      <p>5 minutes de présentation, 10 minutes de relances, puis une question générale et une question contextualisée avec analyse des enjeux.</p>
-      <div class="actions"><a class="btn btn-primary" href="simulateur-entretien.html">Lancer l’entretien →</a></div>
-    </article>
-  </div>
+<main id="main"><section class="page-hero"><div class="breadcrumbs"><a href="index.html">Accueil</a> › Entraînement</div><span class="eyebrow">Préparation au CAFEP-CAPES externe d’espagnol</span><h1>S’entraîner au bon niveau, puis corriger ce qui bloque.</h1><p class="lead">Le centre d’entraînement utilise les diagnostics et les bilans enregistrés sur cet appareil pour proposer le prochain geste utile.</p></section><section class="section" id="centre-entrainement">
+<article class="card training-hub">
+<div class="training-hub-grid">
+<div>
+<span class="badge badge-gold">CENTRE D’ENTRAÎNEMENT</span>
+<h2>Que travailler maintenant ?</h2>
+<p>Le site commence par les diagnostics déjà réalisés et par tes derniers bilans d’entraînement. Il propose ensuite trois priorités maximum.</p>
+<div class="actions">
+<a class="btn btn-primary" href="aujourdhui.html">Voir ma séance Aujourd’hui →</a>
+<a class="btn btn-secondary" href="diagnostic.html">Revoir mon diagnostic global</a>
+</div>
+</div>
+<div class="training-priority-box">
+<span class="eyebrow">MES 3 PRIORITÉS</span>
+<div id="trainingPrioritySummary"><strong>Calcul en cours…</strong></div>
+</div>
+</div>
+<div class="training-priority-grid" id="trainingPriorities"></div>
+<div class="training-stages">
+<button class="training-stage-btn" data-training-stage="1" type="button"><span class="level-kicker">PALIER 1 · 5–15 MIN</span><strong>Un geste</strong><span>Problématique, accord, micro-version, réponse jury, analyse d’un détail.</span></button>
+<button class="training-stage-btn" data-training-stage="2" type="button"><span class="level-kicker">PALIER 2 · 20–30 MIN</span><strong>Une partie</strong><span>Introduction + plan, mini-commentaire, bloc de traduction ou réponse structurée.</span></button>
+<button class="training-stage-btn" data-training-stage="3" type="button"><span class="level-kicker">PALIER 3 · 60–90 MIN</span><strong>Simulation</strong><span>Un morceau substantiel d’épreuve, chronométré et autoévalué.</span></button>
+<button class="training-stage-btn" data-training-stage="4" type="button"><span class="level-kicker">PALIER 4</span><strong>Conditions concours</strong><span>Sujet officiel ou simulation complète, puis bilan précis.</span></button>
+</div>
+</article>
+</section><div class="training-stage-panel" data-training-panel="1"><div class="training-stage-banner"><div><span class="eyebrow">PALIER 1</span><h2>Un geste</h2><p>5 à 15 minutes : une compétence précise, une production courte, une correction immédiate.</p></div><button class="btn btn-secondary" data-training-top="" type="button">Retour aux paliers</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">5–15 minutes</span><h2>Un seul geste, correctement fait.</h2><p>Choisis une compétence précise. Le but n’est pas de « faire un peu de tout », mais de produire une réponse vérifiable.</p></div></div>
+<div class="training-quick-grid">
+<article class="card training-quick-card"><h3>Problématique</h3><p>Prends un dossier ou une consigne et écris une question qui fait apparaître une tension réelle.</p><a class="btn btn-secondary" href="methodologie-composition.html">Travailler la problématique →</a></article>
+<article class="card training-quick-card"><h3>Micro-version / micro-thème</h3><p>Traduis quelques phrases, puis explique une décision au lieu de simplement comparer avec le corrigé.</p><a class="btn btn-secondary" href="traduction.html">Travailler la traduction →</a></article>
+<article class="card training-quick-card"><h3>Français précis</h3><p>Corrige une faiblesse réelle : accord, nature/fonction, faux ami ou formulation académique.</p><a class="btn btn-secondary" href="francais.html">Travailler le français →</a></article>
+<article class="card training-quick-card"><h3>Réponse jury</h3><p>Réponds deux minutes à une situation, puis reformule ta réponse après une objection imaginaire.</p><a class="btn btn-secondary" href="oral.html">Travailler l’oral →</a></article>
+<article class="card training-quick-card" data-route-view="bac3"><h3>Culture / interculturel</h3><p>À partir de deux documents, formule ce qu’ils permettent de comprendre ensemble — sans proposer une séquence.</p><a class="btn btn-secondary" href="oral.html">Travailler l’oral bac+3 →</a></article>
+<article class="card training-quick-card" data-route-view="bac5"><h3>Choix didactique</h3><p>Choisis un document et justifie en trois phrases sa fonction dans une progression.</p><a class="btn btn-secondary" href="didactique.html">Travailler la didactique →</a></article>
+</div>
+</section><section class="section bac3-oral-zone" data-route-view="bac3" id="bac3-oral-training">
+<div class="section-head"><div><span class="badge badge-green">BAC+3 · ORAL</span><h2>Vivre entre générations : thématique ou véritable problématique ?</h2><p>Un exercice de catégorisation pour apprendre à distinguer un simple sujet d’un véritable nœud intellectuel.</p></div></div>
+<div class="exercise-shell card">
+<div class="exercise-instruction"><strong>Consigne :</strong> <em>Selecciona las problemáticas y las temáticas en relación con el eje del programa « Vivre entre générations ».</em><br/><br/><strong>Repaso :</strong> <em>Una problemática es un nudo intelectual, una tensión, que permite desarrollar el espíritu crítico del alumno, mientras que una temática se limita a anunciar el tema del eje, suele ser descriptiva o puede acumular dos o tres elementos sin ponerlos en relación ni confrontarlos.</em></div>
+<div class="sort-grid" id="generationSort"></div>
+<div class="actions"><button class="btn btn-primary" id="checkGenerationSort">Vérifier mes réponses</button><button class="btn btn-secondary" id="resetGenerationSort">Recommencer</button></div>
+<p aria-live="polite" class="exercise-summary" id="generationSummary"></p>
+</div>
+</section><section class="section bac3-oral-zone" data-route-view="bac3" id="langages-training">
+<div class="section-head"><div><span class="badge badge-green">BAC+3 · ORAL</span><span class="eyebrow" style="display:block;margin-top:.7rem">Thème culturel du cycle 4</span><h2>Langages</h2><p>Fiche de révisions puis activité d’appariement entre problématiques et thématiques possibles de dossiers.</p></div></div>
+<article class="card">
+<h3>Fiche de révisions</h3>
+<p>Pour construire une problématique, cherche la <strong>tension</strong> entre deux conceptions du langage plutôt qu’un simple intitulé de thème.</p>
+<div class="revision-grid">
+<div class="revision-point"><strong>1 · Diversité des langues</strong>Richesse culturelle ↔ rupture de l’unité originaria du langage.</div>
+<div class="revision-point"><strong>2 · Norme et création</strong>Norme collective ↔ liberté individuelle et créativité linguistique.</div>
+<div class="revision-point"><strong>3 · Langue et pouvoir</strong>Légitimation du langage ↔ hiérarchies sociales et culturelles.</div>
+<div class="revision-point"><strong>4 · Registres</strong>Diversité des registres ↔ richesse linguistique ou discrimination sociale.</div>
+<div class="revision-point"><strong>5 · Langage artistique</strong>Rupture avec les conventions ↔ dialogue avec la tradition.</div>
+<div class="revision-point"><strong>6 · Poésie et métalangage</strong>Représenter le réel ↔ faire du signe linguistique un objet de création et de réflexion.</div>
+</div>
+</article>
+<article class="card" style="margin-top:1rem">
+<h3>Exercice d’appariement</h3>
+<div class="exercise-instruction"><strong>Consigne :</strong> <em>Relaciona cada problemática con la temática de los posibles dosieres.</em></div>
+<div id="langagesMatch"></div>
+<div class="actions"><button class="btn btn-primary" id="checkLangagesMatch">Vérifier mes réponses</button><button class="btn btn-secondary" id="resetLangagesMatch">Recommencer</button></div>
+<p aria-live="polite" class="exercise-summary" id="langagesSummary"></p>
+</article>
+</section></div><div class="training-stage-panel" data-training-panel="2"><div class="training-stage-banner"><div><span class="eyebrow">PALIER 2</span><h2>Une partie</h2><p>20 à 30 minutes : produire un bloc cohérent sans faire toute l’épreuve.</p></div><button class="btn btn-secondary" data-training-top="" type="button">Retour aux paliers</button></div><section class="section"><h2>Entraînements chronométrés</h2><div class="grid grid-3"><article class="card"><div class="icon">⏱️</div><h3>Introduction en 25 minutes</h3><p>Analyse du sujet, présentation du dossier, tension, problématique et plan.</p><button class="btn btn-secondary timer-btn" data-minutes="25">Lancer 25 min</button></article><article class="card"><div class="icon">🎧</div><h3>Audio en 10 minutes</h3><p>Deux écoutes, prise de notes, restitution structurée et trois enjeux.</p><button class="btn btn-secondary timer-btn" data-minutes="10">Lancer 10 min</button></article><article class="card"><div class="icon">🎙️</div><h3>Motivation en 5 minutes</h3><p>Présentation sans texte intégral, enregistrée et réécoutée.</p><button class="btn btn-secondary timer-btn" data-minutes="5">Lancer 5 min</button></article></div><div class="callout" hidden="" id="timerBox"><h3 id="timerLabel">Chronomètre</h3><p class="progress-number" id="timerDisplay">00:00</p><button class="btn btn-gold" id="stopTimer">Arrêter</button></div></section><section class="section"><h2>Banque de sujets</h2><div class="grid grid-2"><article class="card"><span class="badge badge-green">Bac+3 · composition</span><h3>Transition et continuités</h3><p>À partir d’un dossier imaginaire réunissant un extrait de <em>La caída de Madrid</em>, une affiche politique de 1976 et un article rétrospectif, analysez la manière dont la rupture démocratique s’accompagne de continuités sociales et mémorielles.</p></article><article class="card"><span class="badge badge-green">Bac+3 · oral</span><h3>Vivre entre générations</h3><p>Un reportage audio sur la mémoire familiale, une photographie, un extrait littéraire et une campagne associative : restituer l’audio, relier les supports et expliquer leur portée interculturelle.</p></article><article class="card"><span class="badge badge-red">Bac+5 · appliquée</span><h3>Identités et échanges</h3><p>Choisir trois supports dans un corpus sur la frontière, construire une séquence de Première et analyser un fait de langue lié à l’expression du déplacement.</p></article><article class="card"><span class="badge badge-red">Bac+5 · leçon</span><h3>Mémoire(s)</h3><p>Analyser un extrait audiovisuel, sélectionner un document complémentaire et proposer une séance avec objectifs, activités, aides et évaluation.</p></article></div></section></div><div class="training-stage-panel" data-training-panel="3"><div class="training-stage-banner"><div><span class="eyebrow">PALIER 3</span><h2>Simulation</h2><p>60 à 90 minutes : travailler un morceau substantiel en temps limité.</p></div><button class="btn btn-secondary" data-training-top="" type="button">Retour aux paliers</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">60–90 minutes</span><h2>Faire une vraie portion d’épreuve.</h2><p>Pas de consultation du cours pendant le temps de travail. Les ressources servent après, au moment du bilan.</p></div></div>
+<div class="grid grid-3">
+<article class="card"><span class="badge badge-green">ÉCRIT</span><h3>60 min · Composition</h3><p>Lecture ciblée du dossier, problématique, plan détaillé et rédaction d’une sous-partie complète.</p><button class="btn btn-secondary timer-btn" data-minutes="60">Lancer 60 min</button><a class="btn btn-link" href="methodologie-composition.html">Méthode →</a></article>
+<article class="card"><span class="badge badge-green">LANGUE</span><h3>60 min · Traduction</h3><p>Version ou thème substantiel, puis justification de deux faits de langue et relecture du français.</p><button class="btn btn-secondary timer-btn" data-minutes="60">Lancer 60 min</button><a class="btn btn-link" href="traduction.html">Méthode →</a></article>
+<article class="card" data-route-view="bac5"><span class="badge badge-red">APPLIQUÉE</span><h3>90 min · Didactique</h3><p>Sélection de supports, objectifs, progression et justification de deux activités.</p><button class="btn btn-secondary timer-btn" data-minutes="90">Lancer 90 min</button><a class="btn btn-link" href="didactique.html">Méthode →</a></article>
+<article class="card" data-route-view="bac3"><span class="badge badge-green">ORAL</span><h3>60 min · Dossier bilingue</h3><p>Préparation d’un dossier : analyse en espagnol puis intérêt culturel et portée interculturelle en français.</p><button class="btn btn-secondary timer-btn" data-minutes="60">Lancer 60 min</button><a class="btn btn-link" href="simulateur-oral1.html">Simulateur →</a></article>
+</div>
+</section><section class="section" data-route-view="bac3" id="simulateurs-complets">
+<div class="section-head"><div><span class="eyebrow">Phase 4 · simulations complètes</span><h2>Faire l’oral, pas seulement le réviser.</h2><p>Deux simulateurs reproduisent la succession des temps officiels et enregistrent localement les bilans.</p></div></div>
+<div class="grid grid-2">
+<article class="card" style="border:2px solid #e8b44c;background:linear-gradient(145deg,#fff,#fff8e8)">
+<span class="badge badge-green">BAC+3 · ORAL 1 · COEFF. 5</span>
+<h3>🎧 Dossier disciplinaire bilingue</h3>
+<p>4 documents, préparation, exposé espagnol, questions du jury, exposé français puis nouvel échange. Mode réel ou express, questions aléatoires et micro.</p>
+<div class="actions"><a class="btn btn-primary" href="simulateur-oral1.html">Lancer l’oral 1 →</a></div>
+</article>
+<article class="card" style="border:2px solid #e8b44c;background:linear-gradient(145deg,#fff,#fff8e8)">
+<span class="badge badge-green">BAC+3 · ENTRETIEN · COEFF. 3</span>
+<h3>🎙️ 35 minutes avec le jury</h3>
+<p>5 minutes de présentation, 10 minutes de relances, puis une question générale et une question contextualisée avec analyse des enjeux.</p>
+<div class="actions"><a class="btn btn-primary" href="simulateur-entretien.html">Lancer l’entretien →</a></div>
+</article>
+</div>
+</section></div><div class="training-stage-panel" data-training-panel="4"><div class="training-stage-banner"><div><span class="eyebrow">PALIER 4</span><h2>Conditions concours</h2><p>Sujet officiel ou simulation complète, puis bilan ciblé et retour vers le bon module.</p></div><button class="btn btn-secondary" data-training-top="" type="button">Retour aux paliers</button></div><section class="section">
+<article class="card">
+<span class="badge badge-red">CONDITIONS CONCOURS</span>
+<h2>Un sujet complet seulement avec un vrai bilan derrière.</h2>
+<p>Avant de commencer, choisis ce que tu vas mesurer : respect de la consigne, gestion du temps, qualité de l’analyse, langue, méthode ou stabilité à l’oral. Après l’épreuve, reviens au bilan ci-dessous et transforme le point faible en prochaine mission.</p>
+<div class="actions"><a class="btn btn-primary" href="sujets-officiels.html">Ouvrir le centre des sujets officiels →</a></div>
+</article>
+</section><section class="section" data-route-view="bac3" id="sujets-officiels"><div class="section-head"><div><span class="eyebrow">Priorité concours</span><h2>Sujets officiels bac+3</h2><p>Commencer par les sujets réellement publiés par le ministère avant de multiplier les sujets inventés.</p></div></div><div class="grid grid-3"><article class="card"><span class="badge badge-green">SESSION 2026 · ÉPREUVE 1</span><h3>Le vrai sujet tombé</h3><p><em>La caída de Madrid</em>, Transition démocratique, analyse littéraire puis commentaire de documents de civilisation.</p><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19696/download" rel="noopener noreferrer" target="_blank">Ouvrir le PDF officiel ↗</a><a class="btn btn-secondary" href="methodologie-composition.html">Voir la méthode</a></article><article class="card"><span class="badge badge-green">SESSION 2026 · ÉPREUVE 2</span><h3>Thème, version et faits de langue</h3><p>Le premier vrai sujet du nouveau concours permet de travailler le traitement de l’allocutaire, le passage français–espagnol et une version contemporaine.</p><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19699/download" rel="noopener noreferrer" target="_blank">Ouvrir le PDF officiel ↗</a><a class="btn btn-secondary" href="traduction.html">Voir la méthode</a></article><article class="card"><span class="badge badge-gold">SUJETS ZÉRO</span><h3>Exemples officiels du nouveau format</h3><p>Le ministère publie aussi les sujets zéro des deux écrits et de la première épreuve orale d’espagnol.</p><a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/exemples-de-sujets-des-concours-externes-bac3-de-recrutement-d-enseignants-1405" rel="noopener noreferrer" target="_blank">Accéder aux sujets zéro ↗</a></article></div><div class="notice"><strong>Ordre conseillé :</strong> 1) lire la consigne sans corrigé ; 2) bâtir un plan ou une réponse ; 3) faire l’épreuve en temps limité ; 4) relever les erreurs ; 5) refaire seulement les points faibles quelques jours plus tard.</div></section><section class="section"><details class="card training-old-diagnostic"><summary>Diagnostic express supplémentaire</summary><p>Ce petit test historique reste disponible. Pour construire le parcours principal, utilise plutôt le diagnostic global de l’accueil.</p><div class="quiz-card card" id="diagnostic"><span class="badge badge-gold">Diagnostic initial</span><h2 id="quizTitle">Prête ?</h2><p id="quizQuestion">Le test comporte des questions sur le programme, le français, l’analyse, la didactique et l’entretien.</p><div id="quizOptions"></div><div id="quizFeedback"></div><div class="actions"><button class="btn btn-primary" id="startQuiz">Commencer</button><button class="btn btn-secondary" hidden="" id="nextQuestion">Question suivante</button></div><p class="counter" id="quizCounter"></p></div></details></section></div><section class="section" id="bilan-entrainement">
+<article class="card training-reflect">
+<div class="training-reflect-grid">
+<div>
+<span class="badge badge-gold">APRÈS L’EXERCICE</span>
+<h2>Qu’est-ce qui a réellement bloqué ?</h2>
+<p>Le bilan est court. Il sert à décider du prochain travail, pas à donner une note générale.</p>
+<div class="training-field">
+<label for="trainingDomain"><strong>Domaine travaillé</strong></label>
+<select id="trainingDomain">
+<option value="">Choisir…</option>
+<option value="methodologie">Méthodologie / composition</option>
+<option value="francais">Français</option>
+<option value="traduction">Traduction</option>
+<option value="didactique">Didactique</option>
+<option value="oral">Oral &amp; entretien</option>
+<option value="chirbes">Chirbes</option>
+<option value="transition">Transition</option>
+<option value="capmany">Capmany</option>
+<option value="usigli">Usigli</option>
+<option value="padilla">Padilla</option>
+</select>
+</div>
+<div class="training-result-buttons">
+<button class="btn btn-secondary" data-training-result="solid" type="button">Solide</button>
+<button class="btn btn-secondary" data-training-result="review" type="button">À consolider</button>
+<button class="btn btn-secondary" data-training-result="blocked" type="button">Bloqué</button>
+</div>
+<div class="actions"><button class="btn btn-primary" disabled="" id="saveTrainingReview" type="button">Enregistrer le bilan</button></div>
+</div>
+<div class="training-next" id="trainingNext">
+<span class="eyebrow">PROCHAINE ACTION</span>
+<p>Choisis un domaine et un résultat : le site te renverra vers le module le plus utile.</p>
+</div>
+</div>
+<div class="training-history" id="trainingHistory"></div>
+</article>
 </section>
 
-<section class="section"><h2>Entraînements chronométrés</h2><div class="grid grid-3"><article class="card"><div class="icon">⏱️</div><h3>Introduction en 25 minutes</h3><p>Analyse du sujet, présentation du dossier, tension, problématique et plan.</p><button class="btn btn-secondary timer-btn" data-minutes="25">Lancer 25 min</button></article><article class="card"><div class="icon">🎧</div><h3>Audio en 10 minutes</h3><p>Deux écoutes, prise de notes, restitution structurée et trois enjeux.</p><button class="btn btn-secondary timer-btn" data-minutes="10">Lancer 10 min</button></article><article class="card"><div class="icon">🎙️</div><h3>Motivation en 5 minutes</h3><p>Présentation sans texte intégral, enregistrée et réécoutée.</p><button class="btn btn-secondary timer-btn" data-minutes="5">Lancer 5 min</button></article></div><div class="callout" id="timerBox" hidden><h3 id="timerLabel">Chronomètre</h3><p class="progress-number" id="timerDisplay">00:00</p><button class="btn btn-gold" id="stopTimer">Arrêter</button></div></section>
-<section class="section"><h2>Banque de sujets</h2><div class="grid grid-2"><article class="card"><span class="badge badge-green">Bac+3 · composition</span><h3>Transition et continuités</h3><p>À partir d’un dossier imaginaire réunissant un extrait de <em>La caída de Madrid</em>, une affiche politique de 1976 et un article rétrospectif, analysez la manière dont la rupture démocratique s’accompagne de continuités sociales et mémorielles.</p></article><article class="card"><span class="badge badge-green">Bac+3 · oral</span><h3>Vivre entre générations</h3><p>Un reportage audio sur la mémoire familiale, une photographie, un extrait littéraire et une campagne associative : restituer l’audio, relier les supports et expliquer leur portée interculturelle.</p></article><article class="card"><span class="badge badge-red">Bac+5 · appliquée</span><h3>Identités et échanges</h3><p>Choisir trois supports dans un corpus sur la frontière, construire une séquence de Première et analyser un fait de langue lié à l’expression du déplacement.</p></article><article class="card"><span class="badge badge-red">Bac+5 · leçon</span><h3>Mémoire(s)</h3><p>Analyser un extrait audiovisuel, sélectionner un document complémentaire et proposer une séance avec objectifs, activités, aides et évaluation.</p></article></div></section>
-<section class="section bac3-oral-zone" data-route-view="bac3" id="bac3-oral-training">
-  <div class="section-head"><div><span class="badge badge-green">BAC+3 · ORAL</span><h2>Vivre entre générations : thématique ou véritable problématique ?</h2><p>Un exercice de catégorisation pour apprendre à distinguer un simple sujet d’un véritable nœud intellectuel.</p></div></div>
-  <div class="exercise-shell card">
-    <div class="exercise-instruction"><strong>Consigne :</strong> <em>Selecciona las problemáticas y las temáticas en relación con el eje del programa « Vivre entre générations ».</em><br><br><strong>Repaso :</strong> <em>Una problemática es un nudo intelectual, una tensión, que permite desarrollar el espíritu crítico del alumno, mientras que una temática se limita a anunciar el tema del eje, suele ser descriptiva o puede acumular dos o tres elementos sin ponerlos en relación ni confrontarlos.</em></div>
-    <div class="sort-grid" id="generationSort"></div>
-    <div class="actions"><button class="btn btn-primary" id="checkGenerationSort">Vérifier mes réponses</button><button class="btn btn-secondary" id="resetGenerationSort">Recommencer</button></div>
-    <p class="exercise-summary" id="generationSummary" aria-live="polite"></p>
-  </div>
-</section>
 
-<section class="section bac3-oral-zone" data-route-view="bac3" id="langages-training">
-  <div class="section-head"><div><span class="badge badge-green">BAC+3 · ORAL</span><span class="eyebrow" style="display:block;margin-top:.7rem">Thème culturel du cycle 4</span><h2>Langages</h2><p>Fiche de révisions puis activité d’appariement entre problématiques et thématiques possibles de dossiers.</p></div></div>
 
-  <article class="card">
-    <h3>Fiche de révisions</h3>
-    <p>Pour construire une problématique, cherche la <strong>tension</strong> entre deux conceptions du langage plutôt qu’un simple intitulé de thème.</p>
-    <div class="revision-grid">
-      <div class="revision-point"><strong>1 · Diversité des langues</strong>Richesse culturelle ↔ rupture de l’unité originaria du langage.</div>
-      <div class="revision-point"><strong>2 · Norme et création</strong>Norme collective ↔ liberté individuelle et créativité linguistique.</div>
-      <div class="revision-point"><strong>3 · Langue et pouvoir</strong>Légitimation du langage ↔ hiérarchies sociales et culturelles.</div>
-      <div class="revision-point"><strong>4 · Registres</strong>Diversité des registres ↔ richesse linguistique ou discrimination sociale.</div>
-      <div class="revision-point"><strong>5 · Langage artistique</strong>Rupture avec les conventions ↔ dialogue avec la tradition.</div>
-      <div class="revision-point"><strong>6 · Poésie et métalangage</strong>Représenter le réel ↔ faire du signe linguistique un objet de création et de réflexion.</div>
-    </div>
-  </article>
 
-  <article class="card" style="margin-top:1rem">
-    <h3>Exercice d’appariement</h3>
-    <div class="exercise-instruction"><strong>Consigne :</strong> <em>Relaciona cada problemática con la temática de los posibles dosieres.</em></div>
-    <div id="langagesMatch"></div>
-    <div class="actions"><button class="btn btn-primary" id="checkLangagesMatch">Vérifier mes réponses</button><button class="btn btn-secondary" id="resetLangagesMatch">Recommencer</button></div>
-    <p class="exercise-summary" id="langagesSummary" aria-live="polite"></p>
-  </article>
-</section>
+
+
 
 </main>
-<script src="assets/app.js?v=20260811-phase1"></script>
+<script src="assets/app.js?v=20260813-training-center"></script><script src="assets/entrainement-path.js"></script>
 <script src="assets/quizzes.js"></script>
-
 <script>
 (function(){
   const generationItems = [
