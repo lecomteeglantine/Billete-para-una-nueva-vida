@@ -76,6 +76,26 @@
 .fr-compact-note{font-size:.9rem;color:#687985}
 @media(max-width:950px){.fr-path-grid,.fr-level-cards,.fr-summary-grid,.fr-route-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.fr-path-grid,.fr-level-cards,.fr-summary-grid,.fr-route-grid{grid-template-columns:1fr}.fr-level-banner{display:block}}
+
+.pp-module{border-top:5px solid #c94355}
+.pp-media-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:start}
+.pp-video{position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;background:#111}
+.pp-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pp-memo-card{display:flex;flex-direction:column;gap:.8rem}
+.pp-rule-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:1rem 0}
+.pp-rule{border:1px solid #e4ddd2;border-radius:14px;padding:.85rem;background:#fff}
+.pp-rule h4{margin:.1rem 0 .45rem;color:#173a5e}
+.pp-exercise{margin-top:1rem;border-top:1px solid #e7dfd3;padding-top:1rem}
+.pp-q{font-family:Georgia,serif;font-size:1.16rem;margin:.5rem 0}
+.pp-options{display:grid;gap:.5rem}
+.pp-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.7rem .8rem;text-align:left;cursor:pointer}
+.pp-option.correct{border-color:#64a979;background:#eef8f1}
+.pp-option.wrong{border-color:#c94355;background:#fff1f2}
+.pp-feedback{margin-top:.65rem;padding:.7rem .8rem;border-radius:12px;background:#f6f8fa}
+.pp-progress{font-size:.88rem;color:#687985;font-weight:800}
+.pp-next{margin-top:.7rem}
+.pp-complete{border:1px solid #64a979;background:#eef8f1;border-radius:14px;padding:.8rem;margin-top:1rem}
+@media(max-width:850px){.pp-media-grid,.pp-rule-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="route-all">
@@ -158,7 +178,57 @@
 <li><strong>De quoi dépend-il ?</strong> Du verbe ? d’un nom ? d’un adjectif ? de l’ensemble de la phrase ?</li>
 <li><strong>Quelle relation entretient-il avec ce noyau ?</strong> C’est sa fonction.</li>
 </ol>
-</div></section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand tu distingues nature et fonction, sais analyser un mot et corriges tes erreurs récurrentes, passe au travail de concours.</p><div class="checklist"><label class="check-item"><input data-progress="fr-gram-1" type="checkbox"/><span>Je distingue nature et fonction sans les confondre.</span></label><label class="check-item"><input data-progress="fr-gram-2" type="checkbox"/><span>Je sais analyser un mot isolé dans son groupe.</span></label><label class="check-item"><input data-progress="fr-5" type="checkbox"/><span>J’ai corrigé mes erreurs dans mon carnet personnel.</span></label></div><div class="fr-validation" data-fr-validation="2"></div></article></section></div><div class="fr-level-panel" data-fr-panel="3"><div class="fr-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je produis un français académique et professionnel et je sais analyser précisément un fait de langue.</p></div><button class="btn btn-secondary" data-fr-top="" type="button">Retour au parcours</button></div><section class="section">
+</div></section><section class="section" id="accord-participe-passe">
+<article class="card pp-module">
+<span class="badge badge-red">ORTHOGRAPHE GRAMMATICALE</span>
+<h2>L’accord du participe passé</h2>
+<p>Un point à automatiser : <strong>identifier l’auxiliaire</strong>, retrouver <strong>sujet / COD / COI</strong>, puis décider si le participe s’accorde ou reste invariable.</p>
+<div class="pp-media-grid">
+<div>
+<h3>1 · Voir la règle en contexte</h3>
+<div class="pp-video">
+<iframe allowfullscreen="" loading="lazy" src="https://mediatheque-pedagogique.unicaen.fr/video/0855-la-conjugaison-laccord-du-participe-passe/?is_iframe=true" title="La conjugaison, l’accord du participe passé — Université de Caen Normandie"></iframe>
+</div>
+<p class="help">Vidéo UniCaen · 8 min 13.</p>
+</div>
+<div class="pp-memo-card">
+<h3>2 · Garder la fiche sous les yeux</h3>
+<p>La fiche mémo résume visuellement les cas avec <strong>être</strong>, <strong>avoir</strong> et les <strong>verbes pronominaux</strong>.</p>
+<div class="actions">
+<a class="btn btn-primary" href="docs/accord-participe-passe-memo.pdf" rel="noopener" target="_blank">Ouvrir la fiche mémo ↗</a>
+</div>
+<p class="help">Source : JF Castille · Université de Caen Normandie.</p>
+</div>
+</div>
+<div class="pp-rule-grid">
+<div class="pp-rule">
+<h4>Avec être</h4>
+<p>Le participe passé s’accorde avec le <strong>sujet</strong>.</p>
+</div>
+<div class="pp-rule">
+<h4>Avec avoir</h4>
+<p>Il s’accorde avec le <strong>COD placé avant</strong>. Avec un COI, il reste invariable.</p>
+</div>
+<div class="pp-rule">
+<h4>Verbes pronominaux</h4>
+<p>Il faut déterminer la fonction de <strong>se</strong> et repérer la place du COD.</p>
+</div>
+</div>
+<div class="pp-exercise" id="ppExercise">
+<span class="eyebrow">3 · AUTOMATISER</span>
+<h3>Quel accord faut-il faire ?</h3>
+<div class="pp-progress" id="ppCounter"></div>
+<div class="pp-q" id="ppQuestion"></div>
+<div class="pp-options" id="ppOptions"></div>
+<div class="pp-feedback" hidden="" id="ppFeedback"></div>
+<button class="btn btn-secondary pp-next" hidden="" id="ppNext" type="button">Question suivante →</button>
+</div>
+<div class="pp-complete" hidden="" id="ppComplete">
+<strong>✓ Accord du participe passé : objectif validé</strong>
+<p>Tu sais identifier l’auxiliaire, retrouver la fonction du groupe concerné et expliquer l’accord ou l’invariabilité.</p>
+</div>
+</article>
+</section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand tu distingues nature et fonction, sais analyser un mot et corriges tes erreurs récurrentes, passe au travail de concours.</p><div class="checklist"><label class="check-item"><input data-progress="fr-gram-1" type="checkbox"/><span>Je distingue nature et fonction sans les confondre.</span></label><label class="check-item"><input data-progress="fr-gram-2" type="checkbox"/><span>Je sais analyser un mot isolé dans son groupe.</span></label><label class="check-item"><input data-progress="fr-5" type="checkbox"/><span>J’ai corrigé mes erreurs dans mon carnet personnel.</span></label></div><div class="fr-validation" data-fr-validation="2"></div></article></section></div><div class="fr-level-panel" data-fr-panel="3"><div class="fr-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je produis un français académique et professionnel et je sais analyser précisément un fait de langue.</p></div><button class="btn btn-secondary" data-fr-top="" type="button">Retour au parcours</button></div><section class="section">
 <div class="fr-route-grid">
 <article class="card" data-route-view="bac3"><span class="badge badge-green">BAC+3</span><h3>Faits de langue</h3><p>La précision terminologique est directement utile pour rédiger en français une analyse de faits de langue : nature, fonction, dépendance et justification.</p></article>
 <article class="card" data-route-view="bac5"><span class="badge badge-red">BAC+5</span><h3>Français académique et professionnel</h3><p>Le même travail améliore la précision des explications, la reformulation et la qualité de la langue dans les épreuves écrites et orales.</p></article>
@@ -201,7 +271,6 @@
 </div>
 <div aria-live="polite" class="grammar-feedback" id="grammarFeedback"></div>
 </div>
-
 </div></section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Ce niveau est suffisamment solide quand tu sais analyser groupes et propositions et produire du français académique à l’écrit comme à l’oral.</p><div class="checklist"><label class="check-item"><input data-progress="fr-gram-3" type="checkbox"/><span>Je sais donner la nature et la fonction d’un groupe nominal.</span></label><label class="check-item"><input data-progress="fr-gram-4" type="checkbox"/><span>Je sais délimiter et analyser une proposition subordonnée.</span></label><label class="check-item"><input data-progress="fr-3" type="checkbox"/><span>J’ai reformulé un paragraphe de rapport de jury en français simple.</span></label><label class="check-item"><input data-progress="fr-4" type="checkbox"/><span>J’ai enregistré une réponse de deux minutes en français.</span></label></div><div class="fr-validation" data-fr-validation="3"></div></article></section></div><div class="fr-level-panel" data-fr-panel="4"><div class="fr-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>Je consulte la terminologie officielle pour résoudre les points encore fragiles et gagner en précision.</p></div><button class="btn btn-secondary" data-fr-top="" type="button">Retour au parcours</button></div><section class="section"><div class="section-head"><div><span class="eyebrow">Approfondissement</span><h2>Aller à la source quand une notion reste fragile.</h2><p>Le guide officiel sert de référence pour vérifier la terminologie et consolider les catégories les moins sûres.</p></div></div><div class="grammar-source card">
 <div>
 <span class="badge badge-gold">Guide de référence</span>
@@ -412,4 +481,4 @@
   draw();
 })();
 </script>
-</body></html>
+<script src="assets/participe-passe.js"></script></body></html>
