@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Littérature · Billete para una nueva vida</title>
-<meta name="description" content="Dossier concours sur La caída de Madrid de Rafael Chirbes et les œuvres du programme bac+5.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<meta content="Dossier concours sur La caída de Madrid de Rafael Chirbes et les œuvres du programme bac+5." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .phase3-intro{display:grid;grid-template-columns:1.35fr .65fr;gap:1rem;align-items:stretch}
 .source-card{background:linear-gradient(145deg,#fff,#fff7e8)}
@@ -41,171 +42,206 @@
 .deep-chirbes-callout .deep-icon{font-size:4.2rem;text-align:center}
 @media(max-width:700px){.deep-chirbes-callout{grid-template-columns:1fr}.deep-chirbes-callout .deep-icon{text-align:left}}
 
+
+.chirbes-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.chirbes-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.chirbes-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.chirbes-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.chirbes-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:175px}
+.chirbes-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.chirbes-level-card.recommended{border:2px solid #c94355;background:#fff7f6}
+.chirbes-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.chirbes-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.level-kicker{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#697b88}
+.chirbes-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.chirbes-diag.hidden{display:none}
+.chirbes-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.chirbes-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.chirbes-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.chirbes-diag-options{display:grid;gap:.55rem}.chirbes-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.chirbes-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.chirbes-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.chirbes-level-panel{display:none}.chirbes-level-panel.active{display:block}
+.chirbes-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.chirbes-level-banner h2{color:#fff;margin:.1rem 0}.chirbes-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.chirbes-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.chirbes-validation.complete{border-color:#64a979;background:#eef8f1}
+.chirbes-validation strong{display:block;margin-bottom:.3rem}
+.chirbes-summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.chirbes-summary-card{border-left:5px solid #c94355}
+.chirbes-external-status{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.chirbes-compact-note{font-size:.9rem;color:#687985}
+@media(max-width:950px){.chirbes-path-grid,.chirbes-level-cards,.chirbes-summary-grid,.chirbes-external-status{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.chirbes-path-grid,.chirbes-level-cards,.chirbes-summary-grid,.chirbes-external-status{grid-template-columns:1fr}.chirbes-level-banner{display:block}}
 </style>
 </head>
 <body class="route-all">
 <main id="main">
 <section class="page-hero">
-  <div class="breadcrumbs"><a href="index.html">Accueil</a> › Littérature</div>
-  <span class="eyebrow">BAC+3 + BAC+5 · SESSION 2027</span>
-  <h1><em>La caída de Madrid</em> : connaître le roman, surtout savoir l’analyser.</h1>
-  <p class="lead">Un dossier de concours sur la structure, les personnages, la classe sociale, la mémoire, les procédés narratifs et les liens avec la Transition — avec entraînement actif.</p>
+<div class="breadcrumbs"><a href="index.html">Accueil</a> › Littérature</div>
+<span class="eyebrow">BAC+3 + BAC+5 · SESSION 2027</span>
+<h1><em>La caída de Madrid</em> : connaître le roman, surtout savoir l’analyser.</h1>
+<p class="lead">Un dossier de concours sur la structure, les personnages, la classe sociale, la mémoire, les procédés narratifs et les liens avec la Transition — avec entraînement actif.</p>
+</section><section class="section" id="chirbes-parcours">
+<article class="card chirbes-path">
+<div class="chirbes-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · COMMUN BAC+3 + BAC+5</span>
+<h2>Chirbes — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il ne verrouille rien : il indique simplement le niveau par lequel commencer pour travailler l’œuvre de manière progressive.</p>
+<div class="actions"><button class="btn btn-primary" id="chirbesDiagStart" type="button">Faire le mini-diagnostic · 5 min</button><button class="btn btn-secondary" hidden="" id="chirbesDiagReset" type="button">Refaire le diagnostic</button></div>
+</div>
+<div class="chirbes-path-status" id="chirbesPathStatus"><span class="eyebrow">POINT DE DÉPART</span><h3>Pas encore déterminé</h3><p>Après 10 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir.</p></div>
+</div>
+<div class="chirbes-diag hidden" id="chirbesDiag">
+<div class="chirbes-compact-note" id="chirbesDiagCount"></div>
+<div class="chirbes-diag-progress"><span id="chirbesDiagBar"></span></div>
+<div class="chirbes-diag-q" id="chirbesDiagQuestion"></div>
+<div class="chirbes-diag-options" id="chirbesDiagOptions"></div>
+<div class="chirbes-diag-nav"><button class="btn btn-secondary" id="chirbesDiagPrev" type="button">← Précédent</button><button class="btn btn-primary" disabled="" id="chirbesDiagNext" type="button">Suivant →</button></div>
+</div>
+<div class="chirbes-level-cards" id="chirbesLevelCards">
+<button class="chirbes-level-card" data-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>Résumé · contexte · personnages · grandes tensions.</span></button>
+<button class="chirbes-level-card" data-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>Focalisation · polyphonie · espace · mémoire · procédés.</span></button>
+<button class="chirbes-level-card" data-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Vrai sujet 2026 · problématique · analyse · entraînement.</span></button>
+<button class="chirbes-level-card" data-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Critique universitaire et lectures pour enrichir une copie déjà solide.</span></button>
+</div>
+</article>
+</section><div class="chirbes-level-panel" data-chirbes-panel="1"><div class="chirbes-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je comprends ce qui se passe, qui est qui et quelles grandes tensions structurent le roman.</p></div><button class="btn btn-secondary" data-scroll-top-chirbes="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Résumé essentiel</span><h2>Le roman en quelques repères.</h2><p>L’objectif n’est pas de mémoriser chaque intrigue secondaire, mais de comprendre le dispositif qui organise l’ensemble.</p></div></div>
+<div class="chirbes-summary-grid">
+<article class="card chirbes-summary-card"><h3>Une seule journée</h3><p>Le roman se concentre sur le 19 novembre 1975, veille de l’annonce officielle de la mort de Franco. Cette journée devient un observatoire de l’Espagne à un moment de bascule.</p></article>
+<article class="card chirbes-summary-card"><h3>Une société fragmentée</h3><p>Entre bourgeoisie, police, intellectuels, étudiants, ouvriers, militants et exilés, les personnages n’occupent ni les mêmes espaces ni les mêmes positions face au changement.</p></article>
+<article class="card chirbes-summary-card"><h3>Des passés qui reviennent</h3><p>Souvenirs, guerre, enrichissement, répression, exil et engagements anciens traversent constamment le présent. La veille de l’après-Franco est déjà chargée de ce qui l’a précédée.</p></article>
+<article class="card chirbes-summary-card"><h3>Une question centrale</h3><p>La rupture politique annoncée ne signifie pas que les rapports de classe, les intérêts, les mémoires et les habitudes disparaissent. Le roman met précisément cette contradiction à l’épreuve.</p></article>
+</div>
+</section><section class="section">
+<div class="phase3-intro">
+<article class="card">
+<span class="badge badge-green">Œuvre au programme</span>
+<h2>Le 19 novembre 1975 comme moment-seuil</h2>
+<p>Le roman se concentre sur la veille de la mort de Franco. Ce temps extrêmement resserré permet à Chirbes de faire converger passé, présent et futur : chaque personnage regarde l’événement depuis sa position sociale, son histoire personnelle, ses fidélités, ses peurs et ses intérêts.</p>
+<p>Le résultat n’est pas un « roman historique » à résumer. C’est un <strong>dispositif polyphonique</strong> où la société madrilène se donne à voir par fragments, contradictions et écarts de perception.</p>
+</article>
+<article class="card source-card">
+<span class="badge badge-gold">À savoir</span>
+<h3>Repères sûrs</h3>
+<p><strong>Rafael Chirbes</strong> (1949-2015), historien de formation, publie le roman en 2000. L’éditeur met au premier plan la lutte pour le pouvoir, l’incertitude face à l’après-Franco et la dialectique des classes sociales.</p>
+<div class="source-links">
+<a class="btn btn-secondary" href="https://www.anagrama-ed.es/libro/narrativas-hispanicas/la-caida-de-madrid/9788433924513/NH_281" rel="noopener" target="_blank">Anagrama ↗</a>
+<a class="btn btn-secondary" href="https://www.cervantes.es/bibliotecas_documentacion_espanol/creadores/chirbes_rafael.htm" rel="noopener" target="_blank">Instituto Cervantes ↗</a>
+</div>
+</article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Personnages</span><h2>Une société mise en coupe.</h2><p>Il faut surtout savoir ce que chaque personnage permet d’observer. Pas réciter une biographie.</p></div></div>
+<div class="character-grid">
+<article class="card character-card"><h3>Don José Ricart</h3><p>Entrepreneur marqué par le temps, la mémoire et l’univers des vainqueurs. Il permet d’interroger la continuité des élites économiques et le rapport entre réussite matérielle et passé franquiste.</p><small>À relier : classe dominante · mémoire · vieillissement · continuité.</small></article>
+<article class="card character-card"><h3>Maximino Arroyo</h3><p>Commissaire inquiet de ce que le changement politique peut faire de ceux qui ont servi l’appareil répressif. Sa peur donne une matérialité psychologique à l’incertitude institutionnelle.</p><small>À relier : police · répression · peur · avenir des serviteurs du régime.</small></article>
+<article class="card character-card"><h3>Chacón</h3><p>Professeur revenu d’exil dans une Espagne qu’il ne reconnaît plus entièrement. Il permet de penser l’écart entre mémoire de la République, exil et pays transformé par des décennies de dictature.</p><small>À relier : exil · mémoire · désajustement · perte.</small></article>
+<article class="card character-card"><h3>Quini</h3><p>Jeune universitaire dont la position sociale et les engagements idéologiques ne coïncident pas parfaitement. Il rend visibles les ambiguïtés d’une contestation issue de milieux privilégiés.</p><small>À relier : jeunesse · privilège · idéologie · contradiction.</small></article>
+<article class="card character-card"><h3>Taboada</h3><p>Figure d’adaptation et d’opportunisme. Il oblige à lire le changement politique aussi comme un déplacement stratégique : certains acteurs comprennent qu’il faut changer pour rester dans le jeu.</p><small>À relier : opportunisme · conversion · pouvoir · adaptation.</small></article>
+<article class="card character-card"><h3>Lucio</h3><p>Ouvrier confronté à sa propre fragilité lorsque les certitudes collectives ou militantes ne suffisent plus à le protéger. Il ramène la politique au corps, au travail et à la vulnérabilité.</p><small>À relier : classe ouvrière · militantisme · fragilité · désillusion.</small></article>
+<article class="card character-card"><h3>Lucas</h3><p>Dans l’extrait choisi au concours 2026, son regard confronte militance communiste, origine populaire, désir et fascination pour des univers plus privilégiés. Le vocabulaire sensoriel révèle une violence de classe intériorisée.</p><small>À relier : PCE · honte sociale · désir · dégoût · mobilité symbolique.</small></article>
+<article class="card character-card"><h3>Margarita</h3><p>Dans ce même passage, elle apparaît à travers le regard de Lucas comme le pôle d’un monde social autre. L’analyse doit donc distinguer le personnage lui-même de la représentation produite par la conscience de Lucas.</p><small>À relier : focalisation · désir · distinction sociale · idéalisation.</small></article>
+<article class="card character-card"><h3>Le collectif</h3><p>Le « personnage » le plus important est peut-être la société elle-même : les trajectoires se croisent sans fusionner et forment une cartographie hiérarchisée de Madrid.</p><small>À relier : polyphonie · classes · espace urbain · totalité fragmentée.</small></article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Axes d’analyse</span><h2>Six tensions qui donnent de la profondeur à une copie.</h2></div></div>
+<div class="axis-grid">
+<article class="card axis-card"><h3>Classe ↔ idéologie</h3><p>Les convictions politiques ne suppriment ni les goûts, ni les habitus, ni les hiérarchies sociales. Un personnage peut défendre l’égalité tout en percevant violemment les marques de classe.</p></article>
+<article class="card axis-card"><h3>Rupture ↔ continuité</h3><p>La mort imminente de Franco ouvre un avenir politique nouveau, mais les positions économiques, administratives, affectives et culturelles ne disparaissent pas en une nuit.</p></article>
+<article class="card axis-card"><h3>Mémoire ↔ présent</h3><p>Le roman ne raconte pas seulement ce qui arrive : il fait affleurer ce qui a déjà eu lieu et montre comment les passés individuels structurent les attentes du lendemain.</p></article>
+<article class="card axis-card"><h3>Discours ↔ corps</h3><p>Odeurs, fatigue, espaces, vêtements, nourriture et sensations empêchent les idées politiques de devenir abstraites. La classe s’inscrit dans les corps et dans les lieux.</p></article>
+<article class="card axis-card"><h3>Fidélité ↔ survie</h3><p>L’anticipation du changement transforme les choix en tests moraux : rester fidèle, se convertir, attendre, dissimuler, trahir ou simplement tenter de se sauver.</p></article>
+<article class="card axis-card"><h3>Histoire ↔ intime</h3><p>Le basculement national ne se présente jamais comme un décor extérieur : il modifie les amours, les peurs, les ambitions, les souvenirs et les rapports familiaux.</p></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Quand ces trois objectifs sont validés, le socle essentiel est suffisamment solide pour passer au niveau 2.</p><div class="checklist"><label class="check-item"><input data-progress="lit-1" type="checkbox"/><span>Je peux expliquer en 60 secondes pourquoi le 19 novembre 1975 est un choix narratif décisif.</span></label><label class="check-item"><input data-progress="lit-2" type="checkbox"/><span>Je sais associer au moins six personnages à une position sociale et à une tension du roman.</span></label><label class="check-item"><input data-progress="lit-8" type="checkbox"/><span>Je peux relier le roman à la Transition sans le réduire à un document historique.</span></label></div><div class="chirbes-validation" data-level-validation="1"></div></article></section></div><div class="chirbes-level-panel" data-chirbes-panel="2"><div class="chirbes-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je comprends comment Chirbes construit le sens : focalisation, polyphonie, espace, temps, mémoire et matérialité sociale.</p></div><button class="btn btn-secondary" data-scroll-top-chirbes="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Carte de lecture</span><h2>Les 4 couches à voir dans n’importe quel extrait.</h2><p>Le jour du concours, ne pars pas du thème. Pars du texte, puis fais monter l’analyse.</p></div></div>
+<div class="study-map">
+<article class="card"><span class="number-chip">1</span><h3>Qui regarde ?</h3><p>Repère la focalisation, la conscience dominante, le lexique évaluatif, les comparaisons et les perceptions sensorielles. La réalité est toujours filtrée.</p></article>
+<article class="card"><span class="number-chip">2</span><h3>D’où parle-t-il ?</h3><p>Classe sociale, génération, profession, rapport au franquisme, militantisme, exil, ascension ou déclassement : la position sociale organise le regard.</p></article>
+<article class="card"><span class="number-chip">3</span><h3>Quel passé revient ?</h3><p>Souvenir, enfance, guerre, exil, enrichissement, engagement, humiliation : le présent du 19 novembre réactive des temporalités antérieures.</p></article>
+<article class="card"><span class="number-chip">4</span><h3>Quelle contradiction ?</h3><p>Idéologie / intérêt, discours / conduite, fidélité / adaptation, désir / classe, mémoire / oubli, rupture / continuité. C’est souvent là que naît la problématique.</p></article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Écriture de Chirbes</span><h2>Procédés à être capable de commenter.</h2></div></div>
+<div class="table-wrap"><table>
+<thead><tr><th>Procédé</th><th>Ce qu’il faut observer</th><th>Ce que cela peut produire</th></tr></thead>
+<tbody>
+<tr><td>Focalisation / conscience</td><td>Jugements, lexique évaluatif, perception du corps et des lieux</td><td>Une réalité sociale filtrée, jamais neutre.</td></tr>
+<tr><td>Polyphonie</td><td>Multiplication des perspectives et des positions sociales</td><td>Impossible de réduire la société à une voix ou un récit univoque.</td></tr>
+<tr><td>Temps resserré</td><td>Présent du 19 novembre + retours du passé</td><td>Le moment-seuil concentre des décennies d’histoire.</td></tr>
+<tr><td>Accumulations</td><td>Objets, espaces, sensations, souvenirs</td><td>Densité matérielle, saturation, inscription physique de la classe.</td></tr>
+<tr><td>Ironie / décalage</td><td>Écart entre ce qu’un personnage croit de lui-même et ce que le texte laisse apparaître</td><td>Démontage des postures et des justifications.</td></tr>
+<tr><td>Madrid</td><td>Quartiers, intérieurs, déplacements et séparations</td><td>La ville devient une cartographie sociale et politique.</td></tr>
+</tbody>
+</table></div>
+</section><section class="section">
+<article class="card quote-notice">
+<span class="badge badge-gold">Citations</span>
+<h2>Pas de fausses citations.</h2>
+<p>Le site ne te donne volontairement pas une liste de phrases à apprendre hors contexte. Dans ton exemplaire Anagrama, relève toi-même <strong>8 à 10 citations très courtes</strong> et note pour chacune : personnage, situation, procédé et usage analytique.</p>
+<div class="grid grid-2">
+<div><h3>À trouver dans ton exemplaire</h3><ul><li>1 citation sur la classe sociale ;</li><li>1 sur la peur du changement ;</li><li>1 sur l’exil ou la mémoire ;</li><li>1 sur l’opportunisme ;</li><li>1 sur le corps ou les sensations.</li></ul></div>
+<div><h3>La bonne fiche</h3><p><strong>5 mots de citation</strong> valent mieux qu’une phrase mal mémorisée. Ajoute toujours : « pourquoi cette formulation est-elle intéressante ? »</p></div>
+</div>
+</article>
+</section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand ces trois objectifs sont validés, passe à l’entraînement concours.</p><div class="checklist"><label class="check-item"><input data-progress="lit-3" type="checkbox"/><span>Je distingue clairement narrateur, focalisation et jugement du personnage.</span></label><label class="check-item"><input data-progress="lit-4" type="checkbox"/><span>Je sais passer d’un détail matériel à une interprétation littéraire argumentée.</span></label><label class="check-item"><input data-progress="lit-5" type="checkbox"/><span>J’ai sélectionné dans mon exemplaire 8 à 10 citations courtes et exactes.</span></label></div><div class="chirbes-validation" data-level-validation="2"></div></article></section></div><div class="chirbes-level-panel" data-chirbes-panel="3"><div class="chirbes-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je transforme mes connaissances en analyse : observer, interpréter, problématiser et produire une démonstration.</p></div><button class="btn btn-secondary" data-scroll-top-chirbes="" type="button">Retour au parcours</button></div><section class="section">
+<div class="card real-subject">
+<span class="badge badge-green">VRAI SUJET CAPES / CAFEP BAC+3 · 2026</span>
+<h2>Laboratoire : ce que le jury a réellement demandé.</h2>
+<p>Le document littéraire du sujet 2026 était un extrait de <em>La caída de Madrid</em> centré sur Lucas. La consigne demandait une <strong>analyse littéraire en espagnol</strong> comportant introduction problématisée, développement structuré et conclusion.</p>
+<div class="subject-steps">
+<div class="subject-step"><strong>1 · Observer</strong><p>Le passage oppose des univers sociaux à travers les logements, les odeurs, les objets, la nourriture et le vocabulaire.</p></div>
+<div class="subject-step"><strong>2 · Interpréter</strong><p>Ces détails ne sont pas décoratifs : ils matérialisent le regard de Lucas, sa honte sociale, son désir de distinction et les contradictions de son militantisme.</p></div>
+<div class="subject-step"><strong>3 · Problématiser</strong><p>Le passage permet d’interroger la manière dont la conscience de classe fracture l’identité politique et affective du personnage.</p></div>
+</div>
+<div class="analysis-target"><strong>Très bon réflexe :</strong> montrer comment un procédé concret — accumulation, opposition sensorielle, métaphore, focalisation — produit une lecture sociale. Ne jamais sauter directement de « il y a des odeurs » à « Chirbes critique la société ».</div>
+<div class="actions">
+<a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19696/download" rel="noopener" target="_blank">Voir le sujet officiel 2026 ↗</a>
+<a class="btn btn-secondary" href="methodologie-composition.html">Revoir la méthode</a>
+</div>
+</div>
+</section><section class="section lit-quiz" id="quiz-chirbes">
+<div class="section-head"><div><span class="eyebrow">Quiz actif</span><h2>Est-ce que le roman est vraiment maîtrisé ?</h2><p>10 questions, feedback immédiat.</p></div></div>
+<div id="litQuiz"></div>
+<div class="actions"><button class="btn btn-secondary" id="resetLitQuiz">Recommencer</button></div>
+</section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Ces deux objectifs valident le passage des connaissances à la performance de concours.</p><div class="checklist"><label class="check-item"><input data-progress="lit-6" type="checkbox"/><span>Je peux proposer trois problématiques différentes sur le roman sans raconter l’intrigue.</span></label><label class="check-item"><input data-progress="lit-7" type="checkbox"/><span>J’ai travaillé le vrai sujet 2026 en temps limité.</span></label></div><div class="chirbes-validation" data-level-validation="3"></div></article></section></div><div class="chirbes-level-panel" data-chirbes-panel="4"><div class="chirbes-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>J’enrichis une copie déjà solide avec des lectures critiques universitaires, sans plaquer les références.</p></div><button class="btn btn-secondary" data-scroll-top-chirbes="" type="button">Retour au parcours</button></div><section class="section" id="approfondir-chirbes">
+<article class="card deep-chirbes-callout">
+<div>
+<span class="badge badge-gold">COMMUN BAC+3 + BAC+5</span>
+<h2>Approfondir l’œuvre avec la critique universitaire</h2>
+<p>Les lectures universitaires rassemblées ici permettent d’aller au-delà de la fiche de lecture : <strong>espace et classes sociales</strong>, <strong>art et intermédialité</strong>, <strong>mythe et tragédie</strong>, puis <strong>mémoire et écriture fragmentaire</strong>.</p>
+<div class="route-pills"><span>Bac+3 · Chirbes</span><span>Bac+5 · œuvre d’appui</span><span>Composition</span><span>Analyse littéraire</span></div>
+<div class="actions"><a class="btn btn-primary" href="chirbes-approfondir.html">Approfondir ses connaissances sur l’œuvre de Chirbes au programme</a></div>
+</div>
+<div aria-hidden="true" class="deep-icon">🔎📚</div>
+</article>
+</section><section class="section">
+<h2>Sources et approfondissements</h2>
+<div class="grid grid-3">
+<article class="card"><h3>Édition et synopsis</h3><p>Présentation éditoriale du roman, personnages majeurs et rôle de la dialectique de classes.</p><a href="https://www.anagrama-ed.es/libro/narrativas-hispanicas/la-caida-de-madrid/9788433924513/NH_281" rel="noopener" target="_blank">Editorial Anagrama ↗</a></article>
+<article class="card"><h3>Rafael Chirbes</h3><p>Biographie, parcours et chronologie de l’œuvre.</p><a href="https://www.cervantes.es/bibliotecas_documentacion_espanol/creadores/chirbes_rafael.htm" rel="noopener" target="_blank">Instituto Cervantes ↗</a></article>
+<article class="card"><h3>Pour approfondir</h3><p>Travaux universitaires sur mémoire, structure narrative et représentations de la Transition dans le roman.</p><a href="https://dialnet.unirioja.es/servlet/articulo?codigo=8715951" rel="noopener" target="_blank">Dialnet ↗</a></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 4 · Approfondissement</h3><p>Ce niveau n’est pas un prérequis pour « avoir fini Chirbes ». Il sert à enrichir une maîtrise déjà solide et à disposer de lectures critiques mobilisables avec discernement.</p><div class="chirbes-external-status"><div class="chirbes-validation" id="chirbesCritStatus"><strong>Articles critiques</strong><span>Progression à calculer…</span></div><div class="chirbes-validation" id="chirbesOrsiniStatus"><strong>Orsini-Saillet</strong><span>Progression à calculer…</span></div></div></article></section></div><section class="section" data-route-view="bac5">
+<h2>Les trois autres œuvres bac+5</h2>
+<div class="grid grid-3">
+<article class="card"><h3><em>Centinela contra franceses</em></h3><p><strong>Axes :</strong> nation, guerre, propagande, altérité, résistance, naissance d’un discours patriotique.</p><p><strong>À analyser :</strong> stratégies rhétoriques, construction de l’ennemi, mobilisation collective, rapport entre texte et contexte de 1808.</p></article>
+<article class="card"><h3><em>El gesticulador</em></h3><p><strong>Axes :</strong> imposture, identité, légitimité politique, mémoire de la Révolution mexicaine.</p><p><strong>À analyser :</strong> théâtre et vérité, personnage public, pouvoir performatif du récit, hypocrisie sociale.</p></article>
+<article class="card"><h3><em>El caso Padilla</em></h3><p><strong>Axes :</strong> Révolution cubaine, intellectuels, surveillance, censure, autocritique.</p><p><strong>À analyser :</strong> montage d’archives, fabrication d’un récit, parole contrainte, réception internationale.</p></article>
+</div>
 </section>
 
-<section class="section">
-  <div class="phase3-intro">
-    <article class="card">
-      <span class="badge badge-green">Œuvre au programme</span>
-      <h2>Le 19 novembre 1975 comme moment-seuil</h2>
-      <p>Le roman se concentre sur la veille de la mort de Franco. Ce temps extrêmement resserré permet à Chirbes de faire converger passé, présent et futur : chaque personnage regarde l’événement depuis sa position sociale, son histoire personnelle, ses fidélités, ses peurs et ses intérêts.</p>
-      <p>Le résultat n’est pas un « roman historique » à résumer. C’est un <strong>dispositif polyphonique</strong> où la société madrilène se donne à voir par fragments, contradictions et écarts de perception.</p>
-    </article>
-    <article class="card source-card">
-      <span class="badge badge-gold">À savoir</span>
-      <h3>Repères sûrs</h3>
-      <p><strong>Rafael Chirbes</strong> (1949-2015), historien de formation, publie le roman en 2000. L’éditeur met au premier plan la lutte pour le pouvoir, l’incertitude face à l’après-Franco et la dialectique des classes sociales.</p>
-      <div class="source-links">
-        <a class="btn btn-secondary" href="https://www.anagrama-ed.es/libro/narrativas-hispanicas/la-caida-de-madrid/9788433924513/NH_281" target="_blank" rel="noopener">Anagrama ↗</a>
-        <a class="btn btn-secondary" href="https://www.cervantes.es/bibliotecas_documentacion_espanol/creadores/chirbes_rafael.htm" target="_blank" rel="noopener">Instituto Cervantes ↗</a>
-      </div>
-    </article>
-  </div>
-</section>
 
-<section class="section" id="approfondir-chirbes">
-  <article class="card deep-chirbes-callout">
-    <div>
-      <span class="badge badge-gold">COMMUN BAC+3 + BAC+5</span>
-      <h2>Approfondir l’œuvre avec la critique universitaire</h2>
-      <p>Deux articles de <em>Narraplus</em> permettent d’aller au-delà de la fiche de lecture : l’un analyse la <strong>dialectique de l’espace</strong>, les classes sociales et la continuité historique ; l’autre étudie <strong>l’art, l’ekphrasis et la sinesthésie</strong> comme instruments de mémoire, de critique du pouvoir et d’engagement esthétique.</p>
-      <div class="route-pills"><span>Bac+3 · Chirbes</span><span>Bac+5 · œuvre d’appui</span><span>Composition</span><span>Analyse littéraire</span></div>
-      <div class="actions"><a class="btn btn-primary" href="chirbes-approfondir.html">Approfondir ses connaissances sur l’œuvre de Chirbes au programme</a></div>
-    </div>
-    <div class="deep-icon" aria-hidden="true">🔎📚</div>
-  </article>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Carte de lecture</span><h2>Les 4 couches à voir dans n’importe quel extrait.</h2><p>Le jour du concours, ne pars pas du thème. Pars du texte, puis fais monter l’analyse.</p></div></div>
-  <div class="study-map">
-    <article class="card"><span class="number-chip">1</span><h3>Qui regarde ?</h3><p>Repère la focalisation, la conscience dominante, le lexique évaluatif, les comparaisons et les perceptions sensorielles. La réalité est toujours filtrée.</p></article>
-    <article class="card"><span class="number-chip">2</span><h3>D’où parle-t-il ?</h3><p>Classe sociale, génération, profession, rapport au franquisme, militantisme, exil, ascension ou déclassement : la position sociale organise le regard.</p></article>
-    <article class="card"><span class="number-chip">3</span><h3>Quel passé revient ?</h3><p>Souvenir, enfance, guerre, exil, enrichissement, engagement, humiliation : le présent du 19 novembre réactive des temporalités antérieures.</p></article>
-    <article class="card"><span class="number-chip">4</span><h3>Quelle contradiction ?</h3><p>Idéologie / intérêt, discours / conduite, fidélité / adaptation, désir / classe, mémoire / oubli, rupture / continuité. C’est souvent là que naît la problématique.</p></article>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Personnages</span><h2>Une société mise en coupe.</h2><p>Il faut surtout savoir ce que chaque personnage permet d’observer. Pas réciter une biographie.</p></div></div>
-  <div class="character-grid">
-    <article class="card character-card"><h3>Don José Ricart</h3><p>Entrepreneur marqué par le temps, la mémoire et l’univers des vainqueurs. Il permet d’interroger la continuité des élites économiques et le rapport entre réussite matérielle et passé franquiste.</p><small>À relier : classe dominante · mémoire · vieillissement · continuité.</small></article>
-    <article class="card character-card"><h3>Maximino Arroyo</h3><p>Commissaire inquiet de ce que le changement politique peut faire de ceux qui ont servi l’appareil répressif. Sa peur donne une matérialité psychologique à l’incertitude institutionnelle.</p><small>À relier : police · répression · peur · avenir des serviteurs du régime.</small></article>
-    <article class="card character-card"><h3>Chacón</h3><p>Professeur revenu d’exil dans une Espagne qu’il ne reconnaît plus entièrement. Il permet de penser l’écart entre mémoire de la République, exil et pays transformé par des décennies de dictature.</p><small>À relier : exil · mémoire · désajustement · perte.</small></article>
-    <article class="card character-card"><h3>Quini</h3><p>Jeune universitaire dont la position sociale et les engagements idéologiques ne coïncident pas parfaitement. Il rend visibles les ambiguïtés d’une contestation issue de milieux privilégiés.</p><small>À relier : jeunesse · privilège · idéologie · contradiction.</small></article>
-    <article class="card character-card"><h3>Taboada</h3><p>Figure d’adaptation et d’opportunisme. Il oblige à lire le changement politique aussi comme un déplacement stratégique : certains acteurs comprennent qu’il faut changer pour rester dans le jeu.</p><small>À relier : opportunisme · conversion · pouvoir · adaptation.</small></article>
-    <article class="card character-card"><h3>Lucio</h3><p>Ouvrier confronté à sa propre fragilité lorsque les certitudes collectives ou militantes ne suffisent plus à le protéger. Il ramène la politique au corps, au travail et à la vulnérabilité.</p><small>À relier : classe ouvrière · militantisme · fragilité · désillusion.</small></article>
-    <article class="card character-card"><h3>Lucas</h3><p>Dans l’extrait choisi au concours 2026, son regard confronte militance communiste, origine populaire, désir et fascination pour des univers plus privilégiés. Le vocabulaire sensoriel révèle une violence de classe intériorisée.</p><small>À relier : PCE · honte sociale · désir · dégoût · mobilité symbolique.</small></article>
-    <article class="card character-card"><h3>Margarita</h3><p>Dans ce même passage, elle apparaît à travers le regard de Lucas comme le pôle d’un monde social autre. L’analyse doit donc distinguer le personnage lui-même de la représentation produite par la conscience de Lucas.</p><small>À relier : focalisation · désir · distinction sociale · idéalisation.</small></article>
-    <article class="card character-card"><h3>Le collectif</h3><p>Le « personnage » le plus important est peut-être la société elle-même : les trajectoires se croisent sans fusionner et forment une cartographie hiérarchisée de Madrid.</p><small>À relier : polyphonie · classes · espace urbain · totalité fragmentée.</small></article>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Axes d’analyse</span><h2>Six tensions qui donnent de la profondeur à une copie.</h2></div></div>
-  <div class="axis-grid">
-    <article class="card axis-card"><h3>Classe ↔ idéologie</h3><p>Les convictions politiques ne suppriment ni les goûts, ni les habitus, ni les hiérarchies sociales. Un personnage peut défendre l’égalité tout en percevant violemment les marques de classe.</p></article>
-    <article class="card axis-card"><h3>Rupture ↔ continuité</h3><p>La mort imminente de Franco ouvre un avenir politique nouveau, mais les positions économiques, administratives, affectives et culturelles ne disparaissent pas en une nuit.</p></article>
-    <article class="card axis-card"><h3>Mémoire ↔ présent</h3><p>Le roman ne raconte pas seulement ce qui arrive : il fait affleurer ce qui a déjà eu lieu et montre comment les passés individuels structurent les attentes du lendemain.</p></article>
-    <article class="card axis-card"><h3>Discours ↔ corps</h3><p>Odeurs, fatigue, espaces, vêtements, nourriture et sensations empêchent les idées politiques de devenir abstraites. La classe s’inscrit dans les corps et dans les lieux.</p></article>
-    <article class="card axis-card"><h3>Fidélité ↔ survie</h3><p>L’anticipation du changement transforme les choix en tests moraux : rester fidèle, se convertir, attendre, dissimuler, trahir ou simplement tenter de se sauver.</p></article>
-    <article class="card axis-card"><h3>Histoire ↔ intime</h3><p>Le basculement national ne se présente jamais comme un décor extérieur : il modifie les amours, les peurs, les ambitions, les souvenirs et les rapports familiaux.</p></article>
-  </div>
-</section>
 
-<section class="section">
-  <div class="card real-subject">
-    <span class="badge badge-green">VRAI SUJET CAPES / CAFEP BAC+3 · 2026</span>
-    <h2>Laboratoire : ce que le jury a réellement demandé.</h2>
-    <p>Le document littéraire du sujet 2026 était un extrait de <em>La caída de Madrid</em> centré sur Lucas. La consigne demandait une <strong>analyse littéraire en espagnol</strong> comportant introduction problématisée, développement structuré et conclusion.</p>
-    <div class="subject-steps">
-      <div class="subject-step"><strong>1 · Observer</strong><p>Le passage oppose des univers sociaux à travers les logements, les odeurs, les objets, la nourriture et le vocabulaire.</p></div>
-      <div class="subject-step"><strong>2 · Interpréter</strong><p>Ces détails ne sont pas décoratifs : ils matérialisent le regard de Lucas, sa honte sociale, son désir de distinction et les contradictions de son militantisme.</p></div>
-      <div class="subject-step"><strong>3 · Problématiser</strong><p>Le passage permet d’interroger la manière dont la conscience de classe fracture l’identité politique et affective du personnage.</p></div>
-    </div>
-    <div class="analysis-target"><strong>Très bon réflexe :</strong> montrer comment un procédé concret — accumulation, opposition sensorielle, métaphore, focalisation — produit une lecture sociale. Ne jamais sauter directement de « il y a des odeurs » à « Chirbes critique la société ».</div>
-    <div class="actions">
-      <a class="btn btn-primary" href="https://www.devenirenseignant.gouv.fr/media/19696/download" target="_blank" rel="noopener">Voir le sujet officiel 2026 ↗</a>
-      <a class="btn btn-secondary" href="methodologie-composition.html">Revoir la méthode</a>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-head"><div><span class="eyebrow">Écriture de Chirbes</span><h2>Procédés à être capable de commenter.</h2></div></div>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Procédé</th><th>Ce qu’il faut observer</th><th>Ce que cela peut produire</th></tr></thead>
-    <tbody>
-      <tr><td>Focalisation / conscience</td><td>Jugements, lexique évaluatif, perception du corps et des lieux</td><td>Une réalité sociale filtrée, jamais neutre.</td></tr>
-      <tr><td>Polyphonie</td><td>Multiplication des perspectives et des positions sociales</td><td>Impossible de réduire la société à une voix ou un récit univoque.</td></tr>
-      <tr><td>Temps resserré</td><td>Présent du 19 novembre + retours du passé</td><td>Le moment-seuil concentre des décennies d’histoire.</td></tr>
-      <tr><td>Accumulations</td><td>Objets, espaces, sensations, souvenirs</td><td>Densité matérielle, saturation, inscription physique de la classe.</td></tr>
-      <tr><td>Ironie / décalage</td><td>Écart entre ce qu’un personnage croit de lui-même et ce que le texte laisse apparaître</td><td>Démontage des postures et des justifications.</td></tr>
-      <tr><td>Madrid</td><td>Quartiers, intérieurs, déplacements et séparations</td><td>La ville devient une cartographie sociale et politique.</td></tr>
-    </tbody>
-  </table></div>
-</section>
 
-<section class="section">
-  <article class="card quote-notice">
-    <span class="badge badge-gold">Citations</span>
-    <h2>Pas de fausses citations.</h2>
-    <p>Le site ne te donne volontairement pas une liste de phrases à apprendre hors contexte. Dans ton exemplaire Anagrama, relève toi-même <strong>8 à 10 citations très courtes</strong> et note pour chacune : personnage, situation, procédé et usage analytique.</p>
-    <div class="grid grid-2">
-      <div><h3>À trouver dans ton exemplaire</h3><ul><li>1 citation sur la classe sociale ;</li><li>1 sur la peur du changement ;</li><li>1 sur l’exil ou la mémoire ;</li><li>1 sur l’opportunisme ;</li><li>1 sur le corps ou les sensations.</li></ul></div>
-      <div><h3>La bonne fiche</h3><p><strong>5 mots de citation</strong> valent mieux qu’une phrase mal mémorisée. Ajoute toujours : « pourquoi cette formulation est-elle intéressante ? »</p></div>
-    </div>
-  </article>
-</section>
 
-<section class="section lit-quiz" id="quiz-chirbes">
-  <div class="section-head"><div><span class="eyebrow">Quiz actif</span><h2>Est-ce que le roman est vraiment maîtrisé ?</h2><p>10 questions, feedback immédiat.</p></div></div>
-  <div id="litQuiz"></div>
-  <div class="actions"><button class="btn btn-secondary" id="resetLitQuiz">Recommencer</button></div>
-</section>
 
-<section class="section" data-route-view="bac5">
-  <h2>Les trois autres œuvres bac+5</h2>
-  <div class="grid grid-3">
-    <article class="card"><h3><em>Centinela contra franceses</em></h3><p><strong>Axes :</strong> nation, guerre, propagande, altérité, résistance, naissance d’un discours patriotique.</p><p><strong>À analyser :</strong> stratégies rhétoriques, construction de l’ennemi, mobilisation collective, rapport entre texte et contexte de 1808.</p></article>
-    <article class="card"><h3><em>El gesticulador</em></h3><p><strong>Axes :</strong> imposture, identité, légitimité politique, mémoire de la Révolution mexicaine.</p><p><strong>À analyser :</strong> théâtre et vérité, personnage public, pouvoir performatif du récit, hypocrisie sociale.</p></article>
-    <article class="card"><h3><em>El caso Padilla</em></h3><p><strong>Axes :</strong> Révolution cubaine, intellectuels, surveillance, censure, autocritique.</p><p><strong>À analyser :</strong> montage d’archives, fabrication d’un récit, parole contrainte, réception internationale.</p></article>
-  </div>
-</section>
 
-<section class="section">
-  <h2>Sources et approfondissements</h2>
-  <div class="grid grid-3">
-    <article class="card"><h3>Édition et synopsis</h3><p>Présentation éditoriale du roman, personnages majeurs et rôle de la dialectique de classes.</p><a href="https://www.anagrama-ed.es/libro/narrativas-hispanicas/la-caida-de-madrid/9788433924513/NH_281" target="_blank" rel="noopener">Editorial Anagrama ↗</a></article>
-    <article class="card"><h3>Rafael Chirbes</h3><p>Biographie, parcours et chronologie de l’œuvre.</p><a href="https://www.cervantes.es/bibliotecas_documentacion_espanol/creadores/chirbes_rafael.htm" target="_blank" rel="noopener">Instituto Cervantes ↗</a></article>
-    <article class="card"><h3>Pour approfondir</h3><p>Travaux universitaires sur mémoire, structure narrative et représentations de la Transition dans le roman.</p><a href="https://dialnet.unirioja.es/servlet/articulo?codigo=8715951" target="_blank" rel="noopener">Dialnet ↗</a></article>
-  </div>
-</section>
 
-<section class="section">
-  <h2>Travail actif</h2>
-  <div class="checklist">
-    <label class="check-item"><input type="checkbox" data-progress="lit-1"><span>Je peux expliquer en 60 secondes pourquoi le 19 novembre 1975 est un choix narratif décisif.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="lit-2"><span>Je sais associer au moins six personnages à une position sociale et à une tension du roman.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="lit-3"><span>Je distingue clairement narrateur, focalisation et jugement du personnage.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="lit-4"><span>Je sais passer d’un détail matériel à une interprétation littéraire argumentée.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="lit-5"><span>J’ai sélectionné dans mon exemplaire 8 à 10 citations courtes et exactes.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="lit-6"><span>Je peux proposer trois problématiques différentes sur le roman sans raconter l’intrigue.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="lit-7"><span>J’ai travaillé le vrai sujet 2026 en temps limité.</span></label>
-    <label class="check-item"><input type="checkbox" data-progress="lit-8"><span>Je peux relier le roman à la Transition sans le réduire à un document historique.</span></label>
-  </div>
-</section>
 </main>
-<script src="assets/app.js"></script>
+<script src="assets/app.js"></script><script src="assets/chirbes-path.js"></script>
 <script>
 (function(){
  const qs=[
