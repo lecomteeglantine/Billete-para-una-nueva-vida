@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Capmany · Centinela contra franceses · Billete</title>
-<meta name="description" content="Dossier bac+5 sur Centinela contra franceses d'Antonio de Capmany.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<meta content="Dossier bac+5 sur Centinela contra franceses d'Antonio de Capmany." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .work-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem}
 .analysis-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
@@ -32,156 +33,189 @@
 .work-hero-grid:has(.source-primary .capmany-source-details[open]) > article:first-child{grid-column:1/-1}
 .work-hero-grid:has(.source-primary .capmany-source-details[open]) > .source-primary{grid-column:1/-1}
 
+
+.capmany-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.capmany-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.capmany-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.capmany-path [hidden]{display:none!important}
+.capmany-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.capmany-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:175px}
+.capmany-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.capmany-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.capmany-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.capmany-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.capmany-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.capmany-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.capmany-diag.hidden{display:none}
+.capmany-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.capmany-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.capmany-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.capmany-diag-options{display:grid;gap:.55rem}.capmany-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.capmany-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.capmany-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.capmany-level-panel{display:none}.capmany-level-panel.active{display:block}
+.capmany-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.capmany-level-banner h2{color:#fff;margin:.1rem 0}.capmany-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.capmany-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.capmany-validation.complete{border-color:#64a979;background:#eef8f1}
+.capmany-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.capmany-summary-card{border-left:5px solid #c94355}
+.capmany-context-single{max-width:850px}
+.capmany-etienvre-card{width:100%}
+.capmany-etienvre-card .capmany-source-content{max-width:none}
+.capmany-compact-note{font-size:.9rem;color:#687985}
+@media(max-width:950px){.capmany-path-grid,.capmany-level-cards,.capmany-summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.capmany-path-grid,.capmany-level-cards,.capmany-summary-grid{grid-template-columns:1fr}.capmany-level-banner{display:block}}
 </style>
 </head>
 <body class="route-bac5">
 <main id="main">
 <section class="page-hero">
- <div class="breadcrumbs"><a href="index.html">Accueil</a> › <a href="bac5.html">Bac+5</a> › Capmany</div>
- <span class="eyebrow">BAC+5 · ANTONIO DE CAPMANY · 1808</span>
- <h1><em>Centinela contra franceses</em> : écrire pour mobiliser.</h1>
- <p class="lead">Un texte d’intervention politique où la langue fabrique un « nous », désigne un adversaire et transforme la défense de la liberté et de la patrie en devoir collectif.</p>
+<div class="breadcrumbs"><a href="index.html">Accueil</a> › <a href="bac5.html">Bac+5</a> › Capmany</div>
+<span class="eyebrow">BAC+5 · ANTONIO DE CAPMANY · 1808</span>
+<h1><em>Centinela contra franceses</em> : écrire pour mobiliser.</h1>
+<p class="lead">Un texte d’intervention politique où la langue fabrique un « nous », désigne un adversaire et transforme la défense de la liberté et de la patrie en devoir collectif.</p>
+</section><section class="section" id="capmany-parcours">
+<article class="card capmany-path">
+<div class="capmany-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · BAC+5 · CAPMANY</span>
+<h2>Capmany — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il vérifie si tu sais passer du <strong>contexte de 1808</strong> à l’analyse de la <strong>rhétorique de mobilisation</strong>, puis à une utilisation efficace au concours.</p>
+<div class="actions"><button class="btn btn-primary" id="capmanyDiagStart" type="button">Faire le mini-diagnostic · 5 min</button><button class="btn btn-secondary" hidden="" id="capmanyDiagReset" type="button">Refaire le diagnostic</button></div>
+</div>
+<div class="capmany-path-status" id="capmanyPathStatus"><span class="eyebrow">POINT DE DÉPART</span><h3>Pas encore déterminé</h3><p>Après 10 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir.</p></div>
+</div>
+<div class="capmany-diag hidden" id="capmanyDiag">
+<div class="capmany-compact-note" id="capmanyDiagCount"></div>
+<div class="capmany-diag-progress"><span id="capmanyDiagBar"></span></div>
+<div class="capmany-diag-q" id="capmanyDiagQuestion"></div>
+<div class="capmany-diag-options" id="capmanyDiagOptions"></div>
+<div class="capmany-diag-nav"><button class="btn btn-secondary" id="capmanyDiagPrev" type="button">← Précédent</button><button class="btn btn-primary" disabled="" id="capmanyDiagNext" type="button">Suivant →</button></div>
+</div>
+<div class="capmany-level-cards">
+<button class="capmany-level-card" data-capmany-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>Capmany · 1808 · invasion · patrie · plume · mobilisation.</span></button>
+<button class="capmany-level-card" data-capmany-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>« nous » · adversaire · ironie · satire · injonction · axes.</span></button>
+<button class="capmany-level-card" data-capmany-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Problématique · citations · analyse · éviter la paraphrase.</span></button>
+<button class="capmany-level-card" data-capmany-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Introduction Étienvre · biographie · Lumières · propagande de 1808.</span></button>
+</div>
+</article>
+</section><div class="capmany-level-panel" data-capmany-panel="1"><div class="capmany-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je comprends qui écrit, dans quel contexte, dans quel but et pourquoi la « plume » devient une forme d’action.</p></div><button class="btn btn-secondary" data-capmany-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Résumé essentiel</span><h2>Quatre repères pour entrer dans <em>Centinela contra franceses</em>.</h2></div></div>
+<div class="capmany-summary-grid">
+<article class="card capmany-summary-card"><h3>1808 : écrire dans l’urgence</h3><p>Le texte naît dans la crise provoquée par l’invasion napoléonienne. Il ne cherche pas seulement à raconter les événements : il veut agir sur l’opinion et soutenir la résistance.</p></article>
+<article class="card capmany-summary-card"><h3>La plume devient une arme</h3><p>Capmany valorise l’intervention de l’écrivain dans la défense de la liberté et de la patrie. Écrire, alerter et convaincre deviennent des formes d’action civique.</p></article>
+<article class="card capmany-summary-card"><h3>Le discours fabrique un « nous »</h3><p>Pronoms, valeurs partagées et oppositions construisent une communauté espagnole à mobiliser, tandis que l’adversaire français est représenté comme une menace collective.</p></article>
+<article class="card capmany-summary-card"><h3>La rhétorique sert la mobilisation</h3><p>Ironie, parodie, invective, impératifs, hyperboles et lexique affectif ne sont pas de simples ornements : ils cherchent à provoquer une réaction et à transformer le lecteur en acteur.</p></article>
+</div>
+</section><section class="section"><div class="capmany-context-single"><article class="card">
+<span class="badge badge-red">CONTEXTE</span><h2>1808 : guerre, crise de souveraineté, mobilisation.</h2>
+<p>Le texte paraît en 1808, dans le contexte de l’invasion napoléonienne et de la guerre d’Indépendance espagnole. Capmany écrit dans l’urgence : son objectif n’est pas seulement de décrire une situation, mais d’<strong>agir sur ses lecteurs</strong>.</p>
+<p>Le texte devient donc particulièrement fécond pour étudier la formation discursive de la nation, la représentation de l’ennemi, la liberté menacée et le pouvoir politique de la parole.</p>
+</article></div></section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Une contextualisation courte et précise suffit pour valider le socle historique.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-cap-1" type="checkbox"/><span>Je peux contextualiser 1808 en 90 secondes sans réciter toute la guerre.</span></label></div><div class="capmany-validation" data-capmany-validation="1"></div></article></section></div><div class="capmany-level-panel" data-capmany-panel="2"><div class="capmany-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je sais expliquer comment le discours construit le collectif, l’adversaire et l’urgence, puis relier cette lecture aux axes du bac+5.</p></div><button class="btn btn-secondary" data-capmany-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Architecture du texte</span><h2>Six réflexes d’analyse.</h2></div></div>
+<div class="analysis-grid">
+<article class="card rhetoric-card"><h3>Énonciateur engagé</h3><p>Identifier une parole qui assume sa fonction civique. Le locuteur ne prétend pas à la neutralité : il veut convaincre, alerter et mobiliser.</p></article>
+<article class="card rhetoric-card"><h3>Construction du « nous »</h3><p>Observer pronoms, possessifs, valeurs partagées et catégories collectives. La communauté politique est produite par le discours.</p></article>
+<article class="card rhetoric-card"><h3>Construction de l’adversaire</h3><p>Repérer généralisations, oppositions, jugements et vocabulaire affectif. La représentation des Français sert à renforcer la cohésion du camp espagnol.</p></article>
+<article class="card rhetoric-card"><h3>Urgence</h3><p>Impératifs, injonctions, exclamations, rythmes et oppositions transforment une situation politique en nécessité immédiate d’agir.</p></article>
+<article class="card rhetoric-card"><h3>Liberté et patrie</h3><p>Ne pas traiter ces termes comme des évidences : analyser ce qu’ils signifient dans le contexte de 1808 et comment ils sont hiérarchisés.</p></article>
+<article class="card rhetoric-card"><h3>Plume et action</h3><p>Le texte valorise le rôle de la parole écrite dans la résistance. La rhétorique elle-même devient une forme d’engagement.</p></article>
+</div>
+</section><section class="section">
+<h2>Résonances possibles avec les cinq axes</h2>
+<div class="grid grid-2">
+<article class="card"><h3>Rencontres avec d’autres cultures</h3><p>Rencontre ici conflictuelle : le texte construit une altérité française menaçante. Très bon terrain pour analyser stéréotype, opposition et identité collective.</p></article>
+<article class="card"><h3>Identités et échanges</h3><p>La crise accélère la définition d’un « nous » espagnol ; la circulation des idées révolutionnaires et impériales complique en même temps l’opposition entre intérieur et extérieur.</p></article>
+<article class="card"><h3>Vivre entre générations</h3><p>Résonance moins évidente mais possible par la transmission du devoir civique, des récits nationaux et de la mémoire de 1808.</p></article>
+<article class="card"><h3>Mémoire(s)</h3><p>Le texte est à la fois document de 1808 et matériau ultérieur de mémoire nationale. Il faut distinguer contexte de production et usages mémoriels postérieurs.</p></article>
+<article class="card"><h3>Dominations et insoumissions</h3><p>Résonance centrale : occupation, souveraineté, menace politique et appel à la résistance.</p></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand ces trois objectifs sont validés, passe à l’entraînement de concours.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-cap-2" type="checkbox"/><span>Je sais analyser la construction discursive du « nous » et de l’adversaire.</span></label><label class="check-item"><input data-progress="bac5-cap-3" type="checkbox"/><span>Je sais commenter impératifs, oppositions et lexique affectif.</span></label><label class="check-item"><input data-progress="bac5-cap-4" type="checkbox"/><span>Je peux relier le texte à au moins trois axes sans prétendre qu’un axe lui est officiellement assigné.</span></label></div><div class="capmany-validation" data-capmany-validation="2"></div></article></section></div><div class="capmany-level-panel" data-capmany-panel="3"><div class="capmany-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je transforme une observation rhétorique en argument, je construis une problématique et j’utilise des citations courtes sans paraphraser.</p></div><button class="btn btn-secondary" data-capmany-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Questions de concours</span><h2>Transformer un thème en problème.</h2></div></div>
+<div class="grid grid-3">
+<article class="card"><h3>Altérité</h3><p>Comment la représentation de l’ennemi extérieur contribue-t-elle à produire une communauté nationale intérieure ?</p></article>
+<article class="card"><h3>Langue et pouvoir</h3><p>Comment l’écriture politique cherche-t-elle à transformer des lecteurs en acteurs de la résistance ?</p></article>
+<article class="card"><h3>Liberté</h3><p>Comment un discours de défense de la liberté articule-t-il mobilisation patriotique et simplification de l’adversaire ?</p></article>
+</div>
+</section><section class="section">
+<article class="card">
+<span class="badge badge-gold">CITATIONS</span><h2>Constitue ta propre banque dans l’édition au programme.</h2>
+<p>Relève 6 à 8 fragments très courts autour de : <strong>liberté · patrie · Français · devoir · parole · mobilisation</strong>. Pour chacun, note le procédé rhétorique et l’effet produit. Le site évite volontairement de fabriquer des citations hors contexte.</p>
+</article>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Entraînement</span><h2>Analyse ou paraphrase ?</h2></div></div>
+<div class="trainer" id="capGame"></div>
+</section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>La banque de citations doit rester courte, exacte et reliée à un procédé et à un effet.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-cap-5" type="checkbox"/><span>J’ai sélectionné des citations courtes et exactes dans l’édition au programme.</span></label></div><div class="capmany-validation" data-capmany-validation="3"></div></article></section></div><div class="capmany-level-panel" data-capmany-panel="4"><div class="capmany-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>J’enrichis une maîtrise déjà solide grâce à l’introduction biographique et critique de Françoise Étienvre.</p></div><button class="btn btn-secondary" data-capmany-top="" type="button">Retour au parcours</button></div><section class="section"><div class="section-head"><div><span class="eyebrow">LECTURE CRITIQUE · FRANÇOISE ÉTIENVRE</span><h2>Replacer l’œuvre dans le parcours de Capmany et dans la culture imprimée de 1808.</h2><p>À utiliser lorsque le socle sur l’œuvre et son fonctionnement rhétorique est déjà solide.</p></div></div><article class="card source-primary capmany-etienvre-card">
+<span class="badge badge-gold">ÉDITION DU PROGRAMME</span>
+<h3>Édition Françoise Étienvre</h3>
+<p>Le programme 2027 retient l’édition du Centro de Estudios Políticos y Constitucionales. La BNE conserve plusieurs éditions de 1808.</p>
+<div class="actions"><a class="btn btn-secondary" href="https://www.cepc.gob.es/publicaciones/monografias/centinela-contra-franceses-7" rel="noopener" target="_blank">CEPC ↗</a><a class="btn btn-secondary" href="https://datos.bne.es/edicion/bima0000026870" rel="noopener" target="_blank">BNE ↗</a></div>
+<details class="capmany-source-details">
+<summary>Lire la synthèse de l’introduction de Françoise Étienvre</summary>
+<div class="capmany-source-content">
+<div class="source-intro">
+<span class="badge badge-green">CENTINELA CONTRA LOS FRANCESES</span>
+<h3>Introduction : Antonio de Capmany et son époque</h3>
+<p class="capmany-source-ref"><strong>Source principale :</strong> Françoise Étienvre, « Introduction biographique et critique », dans <em>Centinela contra franceses</em>.</p>
+<p>L’introduction de Françoise Étienvre présente à la fois la vie d’Antonio de Capmany et le contexte historique, politique et littéraire dans lequel son œuvre a été écrite. Elle ne prétend pas proposer une biographie définitive : plusieurs aspects de la vie de Capmany demeurent incertains. Son objectif est surtout de retracer les étapes qui permettent de comprendre l’homme qui écrit <em>Centinela contra franceses</em> en 1808.</p>
+</div>
+<section class="source-section">
+<h4>I · La formation et les premières expériences de Capmany</h4>
+<p>Antonio de Capmany Surís y de Montpalau naît à Barcelone le 24 novembre 1742 dans une famille noble mais économiquement déclinante. Sa famille possède une ancienne tradition de résistance aux Français : son grand-père avait notamment participé à la défense de Gérone contre les troupes françaises. Cette mémoire familiale contribue à éclairer l’importance que Capmany accordera plus tard à la lutte contre la France napoléonienne.</p>
+<p>Après des études humanistes à Barcelone, il choisit d’abord la carrière militaire et participe à l’expédition espagnole contre le Portugal en 1762. Son goût pour les livres lui vaut le surnom d’« Alférez de los libros ». En 1770, il quitte l’armée pour une carrière intellectuelle et administrative.</p>
+<p>À Séville, il entre en contact avec le milieu réformateur de Pablo de Olavide, adhère aux idées des Lumières et souhaite voir l’Espagne participer au mouvement européen de rénovation. En 1773, il contribue à un projet visant à introduire dans les nouvelles populations de Sierra Morena des techniques agricoles utilisées en Catalogne et devient ensuite « Director de la Agricultura » dans les Nuevas Poblaciones.</p>
 </section>
-
-<section class="section">
- <div class="work-hero-grid">
-  <article class="card">
-   <span class="badge badge-red">CONTEXTE</span><h2>1808 : guerre, crise de souveraineté, mobilisation.</h2>
-   <p>Le texte paraît en 1808, dans le contexte de l’invasion napoléonienne et de la guerre d’Indépendance espagnole. Capmany écrit dans l’urgence : son objectif n’est pas seulement de décrire une situation, mais d’<strong>agir sur ses lecteurs</strong>.</p>
-   <p>Le texte devient donc particulièrement fécond pour étudier la formation discursive de la nation, la représentation de l’ennemi, la liberté menacée et le pouvoir politique de la parole.</p>
-  </article>
-  <article class="card source-primary">
-   <span class="badge badge-gold">ÉDITION DU PROGRAMME</span>
-   <h3>Édition Françoise Étienvre</h3>
-   <p>Le programme 2027 retient l’édition du Centro de Estudios Políticos y Constitucionales. La BNE conserve plusieurs éditions de 1808.</p>
-   <div class="actions"><a class="btn btn-secondary" href="https://www.cepc.gob.es/publicaciones/monografias/centinela-contra-franceses-7" target="_blank" rel="noopener">CEPC ↗</a><a class="btn btn-secondary" href="https://datos.bne.es/edicion/bima0000026870" target="_blank" rel="noopener">BNE ↗</a></div>
-
-   <details class="capmany-source-details">
-    <summary>Lire la synthèse de l’introduction de Françoise Étienvre</summary>
-    <div class="capmany-source-content">
-      <div class="source-intro">
-        <span class="badge badge-green">CENTINELA CONTRA LOS FRANCESES</span>
-        <h3>Introduction : Antonio de Capmany et son époque</h3>
-        <p class="capmany-source-ref"><strong>Source principale :</strong> Françoise Étienvre, « Introduction biographique et critique », dans <em>Centinela contra franceses</em>.</p>
-        <p>L’introduction de Françoise Étienvre présente à la fois la vie d’Antonio de Capmany et le contexte historique, politique et littéraire dans lequel son œuvre a été écrite. Elle ne prétend pas proposer une biographie définitive : plusieurs aspects de la vie de Capmany demeurent incertains. Son objectif est surtout de retracer les étapes qui permettent de comprendre l’homme qui écrit <em>Centinela contra franceses</em> en 1808.</p>
-      </div>
-
-      <section class="source-section">
-        <h4>I · La formation et les premières expériences de Capmany</h4>
-        <p>Antonio de Capmany Surís y de Montpalau naît à Barcelone le 24 novembre 1742 dans une famille noble mais économiquement déclinante. Sa famille possède une ancienne tradition de résistance aux Français : son grand-père avait notamment participé à la défense de Gérone contre les troupes françaises. Cette mémoire familiale contribue à éclairer l’importance que Capmany accordera plus tard à la lutte contre la France napoléonienne.</p>
-        <p>Après des études humanistes à Barcelone, il choisit d’abord la carrière militaire et participe à l’expédition espagnole contre le Portugal en 1762. Son goût pour les livres lui vaut le surnom d’« Alférez de los libros ». En 1770, il quitte l’armée pour une carrière intellectuelle et administrative.</p>
-        <p>À Séville, il entre en contact avec le milieu réformateur de Pablo de Olavide, adhère aux idées des Lumières et souhaite voir l’Espagne participer au mouvement européen de rénovation. En 1773, il contribue à un projet visant à introduire dans les nouvelles populations de Sierra Morena des techniques agricoles utilisées en Catalogne et devient ensuite « Director de la Agricultura » dans les Nuevas Poblaciones.</p>
-      </section>
-
-      <section class="source-section">
-        <h4>II · La carrière madrilène : historien, écrivain et académicien</h4>
-        <p>En 1775, Capmany quitte La Carolina pour Madrid. Il travaille à la Contaduría General de Correos, tout en développant une intense activité intellectuelle. Il devient membre de la Real Academia de la Historia, puis secrétaire et enfin secrétaire perpétuel en 1790, fonction qu’il conserve jusqu’en 1802.</p>
-        <p>Entre 1776 et 1794, il publie neuf œuvres consacrées notamment à la langue, à l’éloquence, à l’histoire, au commerce et aux institutions. Parmi elles figurent <em>Arte de traducir el idioma francés al castellano</em>, <em>Filosofía de la Eloquencia</em>, <em>Memorias históricas sobre la Marina, Comercio y Artes de la antigua ciudad de Barcelona</em>, <em>Teatro Histórico-Crítico de la Eloquencia Española</em> et <em>Código de las costumbres marítimas de Barcelona</em>.</p>
-        <p>Deux orientations dominent : l’étude de la langue et de l’éloquence d’une part, la recherche historique d’autre part. Ses <em>Memorias históricas</em>, fondées sur un important travail d’archives, montrent l’importance de la recherche documentaire dans sa formation. Malgré des problèmes financiers et la lourdeur de ses fonctions administratives, il poursuit ses travaux et, après 1802, dispose de davantage de temps pour ses recherches personnelles.</p>
-      </section>
-
-      <section class="source-section">
-        <h4>III · Capmany face à la crise politique et à l’invasion française</h4>
-        <p>À la fin du XVIII<sup>e</sup> siècle, Capmany s’intéresse de plus en plus à la situation politique espagnole et critique certains responsables, notamment Godoy. En 1808, cette inquiétude devient un engagement patriotique direct.</p>
-        <p>Après la capitulation de Madrid devant les forces napoléoniennes, il quitte la capitale pour Séville. Cet épisode est essentiel pour comprendre <em>Centinela contra franceses</em>, qui doit être replacé dans la guerre d’Indépendance espagnole et la résistance à Napoléon.</p>
-        <p>À Séville, Capmany met son expérience au service de la Junta Central, participe à la rédaction de la <em>Gaceta del Gobierno</em> et aux travaux préparatoires aux Cortes. En 1810, il se rend à Cadix comme député de Catalogne. Il intervient notamment sur la liberté de la presse, les corporations et l’Inquisition. Il meurt à Cadix le 14 novembre 1813.</p>
-      </section>
-
-      <section class="source-section">
-        <h4>IV · Le contexte de <em>Centinela contra franceses</em> : la guerre et la propagande</h4>
-        <p>La partie « Sátira e historia » replace l’œuvre dans l’explosion de la production imprimée de 1808. Après les événements de Bayonne et de Madrid, les juntes provinciales diffusent proclamations, manifestes et décrets pour justifier et encourager la résistance.</p>
-        <p>À ces textes officiels s’ajoutent brochures, chansons, poèmes, journaux, sermons, estampes, pamphlets et satires. Cette littérature sert à combattre la propagande française, soutenir l’opinion publique et maintenir l’ardeur patriotique. La Junta de Sevilla encourage d’ailleurs les personnes instruites à publier de courts discours contre les mensonges de la propagande impériale.</p>
-        <p>La satire devient ainsi une arme politique : elle dénonce l’ennemi, ridiculise ses représentants et recherche une réaction émotionnelle immédiate. <em>Centinela contra franceses</em> appartient à cette vaste production antinapoléonienne ; son intérêt tient moins à l’originalité absolue de ses thèmes qu’à l’efficacité rhétorique de leur traitement.</p>
-      </section>
-
-      <section class="source-section">
-        <h4>V · Le rôle de la « plume » dans la défense de la patrie</h4>
-        <p>L’idée centrale apparaît dès le début de l’œuvre : ceux qui ne peuvent combattre avec une arme doivent combattre avec leur plume. La liberté et la patrie étant menacées, chacun doit participer à leur défense. Capmany établit ainsi une équivalence symbolique entre l’épée du combattant et la plume de l’écrivain.</p>
-        <p>Le titre correspond à cette fonction : Capmany se présente comme une « sentinelle » chargée de surveiller et de signaler les dangers menaçant la nation. Napoléon est l’ennemi principal, mais le texte attaque également les responsables espagnols jugés coupables, notamment Godoy, ainsi que les Espagnols soumis à l’influence française.</p>
-        <p>Le mot « centinela », relativement nouveau dans ce contexte éditorial, sera ensuite repris dans plusieurs publications entre 1810 et 1814.</p>
-      </section>
-
-      <section class="source-section">
-        <h4>VI · Une satire fondée sur l’ironie, la parodie et l’invective</h4>
-        <p>Capmany utilise constamment les procédés satiriques. L’ironie lui permet de feindre l’éloge de Napoléon ou des Français pour mieux les condamner : les Français deviennent ironiquement « nos chers voisins », tandis que l’empereur peut être présenté comme un grand politique ou un homme généreux alors que le contexte affirme l’inverse.</p>
-        <p>La parodie détourne les titres grandioses de Napoléon — « Pacificador del Continente », « Árbitro de la Europa » — et retourne contre l’ennemi son propre vocabulaire politique, notamment le terme « regenerar ».</p>
-        <p>L’ironie peut devenir invective. Apostrophes, répétitions, anaphores, rythmes ternaires, hyperboles et comparaisons dégradantes expriment la colère et cherchent à provoquer le lecteur. Napoléon est rapproché de figures associées à la tyrannie et à la cruauté comme Néron, Caligula, Tamerlan ou Attila ; il est également animalisé sous les traits du renard, du loup ou du tigre.</p>
-      </section>
-
-      <section class="source-section">
-        <h4>VII · Une œuvre de propagande patriotique</h4>
-        <p>Cette violence satirique n’a pas pour simple fonction de divertir. Elle vise à mobiliser les Espagnols et à empêcher qu’ils sous-estiment le danger napoléonien. La satire devient donc une arme patriotique.</p>
-        <p>Étienvre souligne toutefois que la littérature antinapoléonienne doit être replacée dans les conditions exceptionnelles de 1808 : les textes sont rédigés très rapidement, dans un climat d’exaltation nationale. Cette urgence explique la répétition des procédés, insultes et comparaisons, ainsi qu’une agressivité parfois extrême.</p>
-        <p><em>Centinela contra franceses</em> se distingue néanmoins par la combinaison de l’expérience historique, de l’engagement politique et du talent rhétorique de Capmany, qui n’est pas seulement pamphlétaire mais aussi historien, écrivain et acteur des débats politiques de son temps.</p>
-      </section>
-
-      <section class="source-section source-conclusion">
-        <h4>Conclusion · Une véritable « arme de la plume »</h4>
-        <p>L’introduction d’Étienvre invite à comprendre l’œuvre selon deux dimensions complémentaires : le parcours militaire, intellectuel, historique et politique de Capmany explique son engagement patriotique de 1808 ; parallèlement, <em>Centinela contra franceses</em> appartient à l’explosion de la littérature antinapoléonienne née de la guerre d’Indépendance.</p>
-        <p>Satire, ironie, parodie, invective, hyperbole et métaphores servent à dénoncer Napoléon, les Français et certains responsables espagnols, mais surtout à pousser les lecteurs à défendre leur liberté et leur patrie. Dans l’Espagne de 1808, <strong>écrire contre Napoléon devient une manière de combattre pour la nation</strong>.</p>
-      </section>
-    </div>
-   </details>
-  </article>
- </div>
+<section class="source-section">
+<h4>II · La carrière madrilène : historien, écrivain et académicien</h4>
+<p>En 1775, Capmany quitte La Carolina pour Madrid. Il travaille à la Contaduría General de Correos, tout en développant une intense activité intellectuelle. Il devient membre de la Real Academia de la Historia, puis secrétaire et enfin secrétaire perpétuel en 1790, fonction qu’il conserve jusqu’en 1802.</p>
+<p>Entre 1776 et 1794, il publie neuf œuvres consacrées notamment à la langue, à l’éloquence, à l’histoire, au commerce et aux institutions. Parmi elles figurent <em>Arte de traducir el idioma francés al castellano</em>, <em>Filosofía de la Eloquencia</em>, <em>Memorias históricas sobre la Marina, Comercio y Artes de la antigua ciudad de Barcelona</em>, <em>Teatro Histórico-Crítico de la Eloquencia Española</em> et <em>Código de las costumbres marítimas de Barcelona</em>.</p>
+<p>Deux orientations dominent : l’étude de la langue et de l’éloquence d’une part, la recherche historique d’autre part. Ses <em>Memorias históricas</em>, fondées sur un important travail d’archives, montrent l’importance de la recherche documentaire dans sa formation. Malgré des problèmes financiers et la lourdeur de ses fonctions administratives, il poursuit ses travaux et, après 1802, dispose de davantage de temps pour ses recherches personnelles.</p>
 </section>
-
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Architecture du texte</span><h2>Six réflexes d’analyse.</h2></div></div>
- <div class="analysis-grid">
-  <article class="card rhetoric-card"><h3>Énonciateur engagé</h3><p>Identifier une parole qui assume sa fonction civique. Le locuteur ne prétend pas à la neutralité : il veut convaincre, alerter et mobiliser.</p></article>
-  <article class="card rhetoric-card"><h3>Construction du « nous »</h3><p>Observer pronoms, possessifs, valeurs partagées et catégories collectives. La communauté politique est produite par le discours.</p></article>
-  <article class="card rhetoric-card"><h3>Construction de l’adversaire</h3><p>Repérer généralisations, oppositions, jugements et vocabulaire affectif. La représentation des Français sert à renforcer la cohésion du camp espagnol.</p></article>
-  <article class="card rhetoric-card"><h3>Urgence</h3><p>Impératifs, injonctions, exclamations, rythmes et oppositions transforment une situation politique en nécessité immédiate d’agir.</p></article>
-  <article class="card rhetoric-card"><h3>Liberté et patrie</h3><p>Ne pas traiter ces termes comme des évidences : analyser ce qu’ils signifient dans le contexte de 1808 et comment ils sont hiérarchisés.</p></article>
-  <article class="card rhetoric-card"><h3>Plume et action</h3><p>Le texte valorise le rôle de la parole écrite dans la résistance. La rhétorique elle-même devient une forme d’engagement.</p></article>
- </div>
+<section class="source-section">
+<h4>III · Capmany face à la crise politique et à l’invasion française</h4>
+<p>À la fin du XVIII<sup>e</sup> siècle, Capmany s’intéresse de plus en plus à la situation politique espagnole et critique certains responsables, notamment Godoy. En 1808, cette inquiétude devient un engagement patriotique direct.</p>
+<p>Après la capitulation de Madrid devant les forces napoléoniennes, il quitte la capitale pour Séville. Cet épisode est essentiel pour comprendre <em>Centinela contra franceses</em>, qui doit être replacé dans la guerre d’Indépendance espagnole et la résistance à Napoléon.</p>
+<p>À Séville, Capmany met son expérience au service de la Junta Central, participe à la rédaction de la <em>Gaceta del Gobierno</em> et aux travaux préparatoires aux Cortes. En 1810, il se rend à Cadix comme député de Catalogne. Il intervient notamment sur la liberté de la presse, les corporations et l’Inquisition. Il meurt à Cadix le 14 novembre 1813.</p>
 </section>
-
-<section class="section">
- <h2>Résonances possibles avec les cinq axes</h2>
- <div class="grid grid-2">
-  <article class="card"><h3>Rencontres avec d’autres cultures</h3><p>Rencontre ici conflictuelle : le texte construit une altérité française menaçante. Très bon terrain pour analyser stéréotype, opposition et identité collective.</p></article>
-  <article class="card"><h3>Identités et échanges</h3><p>La crise accélère la définition d’un « nous » espagnol ; la circulation des idées révolutionnaires et impériales complique en même temps l’opposition entre intérieur et extérieur.</p></article>
-  <article class="card"><h3>Vivre entre générations</h3><p>Résonance moins évidente mais possible par la transmission du devoir civique, des récits nationaux et de la mémoire de 1808.</p></article>
-  <article class="card"><h3>Mémoire(s)</h3><p>Le texte est à la fois document de 1808 et matériau ultérieur de mémoire nationale. Il faut distinguer contexte de production et usages mémoriels postérieurs.</p></article>
-  <article class="card"><h3>Dominations et insoumissions</h3><p>Résonance centrale : occupation, souveraineté, menace politique et appel à la résistance.</p></article>
- </div>
+<section class="source-section">
+<h4>IV · Le contexte de <em>Centinela contra franceses</em> : la guerre et la propagande</h4>
+<p>La partie « Sátira e historia » replace l’œuvre dans l’explosion de la production imprimée de 1808. Après les événements de Bayonne et de Madrid, les juntes provinciales diffusent proclamations, manifestes et décrets pour justifier et encourager la résistance.</p>
+<p>À ces textes officiels s’ajoutent brochures, chansons, poèmes, journaux, sermons, estampes, pamphlets et satires. Cette littérature sert à combattre la propagande française, soutenir l’opinion publique et maintenir l’ardeur patriotique. La Junta de Sevilla encourage d’ailleurs les personnes instruites à publier de courts discours contre les mensonges de la propagande impériale.</p>
+<p>La satire devient ainsi une arme politique : elle dénonce l’ennemi, ridiculise ses représentants et recherche une réaction émotionnelle immédiate. <em>Centinela contra franceses</em> appartient à cette vaste production antinapoléonienne ; son intérêt tient moins à l’originalité absolue de ses thèmes qu’à l’efficacité rhétorique de leur traitement.</p>
 </section>
-
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Questions de concours</span><h2>Transformer un thème en problème.</h2></div></div>
- <div class="grid grid-3">
-  <article class="card"><h3>Altérité</h3><p>Comment la représentation de l’ennemi extérieur contribue-t-elle à produire une communauté nationale intérieure ?</p></article>
-  <article class="card"><h3>Langue et pouvoir</h3><p>Comment l’écriture politique cherche-t-elle à transformer des lecteurs en acteurs de la résistance ?</p></article>
-  <article class="card"><h3>Liberté</h3><p>Comment un discours de défense de la liberté articule-t-il mobilisation patriotique et simplification de l’adversaire ?</p></article>
- </div>
+<section class="source-section">
+<h4>V · Le rôle de la « plume » dans la défense de la patrie</h4>
+<p>L’idée centrale apparaît dès le début de l’œuvre : ceux qui ne peuvent combattre avec une arme doivent combattre avec leur plume. La liberté et la patrie étant menacées, chacun doit participer à leur défense. Capmany établit ainsi une équivalence symbolique entre l’épée du combattant et la plume de l’écrivain.</p>
+<p>Le titre correspond à cette fonction : Capmany se présente comme une « sentinelle » chargée de surveiller et de signaler les dangers menaçant la nation. Napoléon est l’ennemi principal, mais le texte attaque également les responsables espagnols jugés coupables, notamment Godoy, ainsi que les Espagnols soumis à l’influence française.</p>
+<p>Le mot « centinela », relativement nouveau dans ce contexte éditorial, sera ensuite repris dans plusieurs publications entre 1810 et 1814.</p>
 </section>
-
-<section class="section">
- <article class="card">
-  <span class="badge badge-gold">CITATIONS</span><h2>Constitue ta propre banque dans l’édition au programme.</h2>
-  <p>Relève 6 à 8 fragments très courts autour de : <strong>liberté · patrie · Français · devoir · parole · mobilisation</strong>. Pour chacun, note le procédé rhétorique et l’effet produit. Le site évite volontairement de fabriquer des citations hors contexte.</p>
- </article>
+<section class="source-section">
+<h4>VI · Une satire fondée sur l’ironie, la parodie et l’invective</h4>
+<p>Capmany utilise constamment les procédés satiriques. L’ironie lui permet de feindre l’éloge de Napoléon ou des Français pour mieux les condamner : les Français deviennent ironiquement « nos chers voisins », tandis que l’empereur peut être présenté comme un grand politique ou un homme généreux alors que le contexte affirme l’inverse.</p>
+<p>La parodie détourne les titres grandioses de Napoléon — « Pacificador del Continente », « Árbitro de la Europa » — et retourne contre l’ennemi son propre vocabulaire politique, notamment le terme « regenerar ».</p>
+<p>L’ironie peut devenir invective. Apostrophes, répétitions, anaphores, rythmes ternaires, hyperboles et comparaisons dégradantes expriment la colère et cherchent à provoquer le lecteur. Napoléon est rapproché de figures associées à la tyrannie et à la cruauté comme Néron, Caligula, Tamerlan ou Attila ; il est également animalisé sous les traits du renard, du loup ou du tigre.</p>
 </section>
-
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Entraînement</span><h2>Analyse ou paraphrase ?</h2></div></div>
- <div class="trainer" id="capGame"></div>
+<section class="source-section">
+<h4>VII · Une œuvre de propagande patriotique</h4>
+<p>Cette violence satirique n’a pas pour simple fonction de divertir. Elle vise à mobiliser les Espagnols et à empêcher qu’ils sous-estiment le danger napoléonien. La satire devient donc une arme patriotique.</p>
+<p>Étienvre souligne toutefois que la littérature antinapoléonienne doit être replacée dans les conditions exceptionnelles de 1808 : les textes sont rédigés très rapidement, dans un climat d’exaltation nationale. Cette urgence explique la répétition des procédés, insultes et comparaisons, ainsi qu’une agressivité parfois extrême.</p>
+<p><em>Centinela contra franceses</em> se distingue néanmoins par la combinaison de l’expérience historique, de l’engagement politique et du talent rhétorique de Capmany, qui n’est pas seulement pamphlétaire mais aussi historien, écrivain et acteur des débats politiques de son temps.</p>
 </section>
-
-<section class="section">
- <h2>Maîtrise Capmany</h2>
- <div class="checklist">
-  <label class="check-item"><input type="checkbox" data-progress="bac5-cap-1"><span>Je peux contextualiser 1808 en 90 secondes sans réciter toute la guerre.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-cap-2"><span>Je sais analyser la construction discursive du « nous » et de l’adversaire.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-cap-3"><span>Je sais commenter impératifs, oppositions et lexique affectif.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-cap-4"><span>Je peux relier le texte à au moins trois axes sans prétendre qu’un axe lui est officiellement assigné.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-cap-5"><span>J’ai sélectionné des citations courtes et exactes dans l’édition au programme.</span></label>
- </div>
+<section class="source-section source-conclusion">
+<h4>Conclusion · Une véritable « arme de la plume »</h4>
+<p>L’introduction d’Étienvre invite à comprendre l’œuvre selon deux dimensions complémentaires : le parcours militaire, intellectuel, historique et politique de Capmany explique son engagement patriotique de 1808 ; parallèlement, <em>Centinela contra franceses</em> appartient à l’explosion de la littérature antinapoléonienne née de la guerre d’Indépendance.</p>
+<p>Satire, ironie, parodie, invective, hyperbole et métaphores servent à dénoncer Napoléon, les Français et certains responsables espagnols, mais surtout à pousser les lecteurs à défendre leur liberté et leur patrie. Dans l’Espagne de 1808, <strong>écrire contre Napoléon devient une manière de combattre pour la nation</strong>.</p>
 </section>
+</div>
+</details>
+</article></section><section class="section"><article class="card"><h3>Niveau 4 · Approfondissement</h3><p>L’introduction d’Étienvre permet de relier <em>Centinela contra franceses</em> au parcours intellectuel de Capmany, aux Lumières, à la crise de 1808 et à l’explosion de la littérature antinapoléonienne. Ce niveau sert à enrichir une copie déjà structurée ; il ne remplace jamais l’analyse précise de l’extrait proposé.</p></article></section></div>
+
+
+
+
+
+
+
 </main>
-<script src="assets/app.js"></script>
+<script src="assets/app.js"></script><script src="assets/capmany-path.js"></script>
 <script>
 (function(){
  const qs=[
