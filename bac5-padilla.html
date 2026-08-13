@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>El caso Padilla · Pavel Giroud · Billete</title>
-<meta name="description" content="Dossier bac+5 sur le documentaire El caso Padilla de Pavel Giroud.">
-<meta name="theme-color" content="#c33b4a">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="stylesheet" href="assets/styles.css">
+<meta content="Dossier bac+5 sur le documentaire El caso Padilla de Pavel Giroud." name="description"/>
+<meta content="#c33b4a" name="theme-color"/>
+<link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon-192.png" rel="icon"/><link href="assets/styles.css" rel="stylesheet"/>
 <style>
 .p-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
 .p-source{border-top:6px solid #e0ad43;background:linear-gradient(145deg,#fff,#fff8e9)}
@@ -17,99 +18,145 @@
 .p-q.good{border-color:#55a36b}.p-q.bad{border-color:#c84455}
 @media(max-width:850px){.p-grid,.archive-flow{grid-template-columns:1fr 1fr}}
 @media(max-width:580px){.p-grid,.archive-flow{grid-template-columns:1fr}}
+
+.padilla-path{border-top:6px solid #e5bd66;background:linear-gradient(145deg,#fff,#fff8e8)}
+.padilla-path-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;align-items:start}
+.padilla-path-status{background:#f6f8fa;border:1px solid #dfe6eb;border-radius:16px;padding:1rem}
+.padilla-path [hidden]{display:none!important}
+.padilla-level-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+.padilla-level-card{background:#fff;border:1px solid #e3ded5;border-radius:16px;padding:1rem;cursor:pointer;text-align:left;min-height:175px}
+.padilla-level-card:hover{border-color:#173a5e;transform:translateY(-1px)}
+.padilla-level-card.recommended{position:relative;border:2px solid #c94355;background:#fff7f6}
+.padilla-level-card.recommended::after{content:"→ Commence ici";display:inline-block;margin-top:.75rem;padding:.28rem .5rem;border-radius:999px;background:#c94355;color:#fff;font-size:.78rem;font-weight:900}
+.padilla-level-card.active{box-shadow:0 0 0 3px rgba(23,58,94,.08);border-color:#173a5e}
+.padilla-level-card strong{display:block;color:#173a5e;font-size:1.02rem;margin:.35rem 0}
+.padilla-diag{margin-top:1rem;border-top:1px solid #e8dfcf;padding-top:1rem}.padilla-diag.hidden{display:none}
+.padilla-diag-progress{height:9px;background:#ece6dd;border-radius:999px;overflow:hidden;margin:.7rem 0}.padilla-diag-progress span{display:block;height:100%;background:#c94355;width:0}
+.padilla-diag-q{font-family:Georgia,serif;font-size:1.28rem;line-height:1.35;margin:.75rem 0}
+.padilla-diag-options{display:grid;gap:.55rem}.padilla-diag-option{border:1px solid #dbe2e8;background:#fff;border-radius:12px;padding:.72rem .8rem;text-align:left;cursor:pointer}
+.padilla-diag-option.selected{border:2px solid #c94355;background:#fff7f6}
+.padilla-diag-nav{display:flex;justify-content:space-between;gap:.7rem;margin-top:.8rem}
+.padilla-level-panel{display:none}.padilla-level-panel.active{display:block}
+.padilla-level-banner{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;background:#173a5e;color:#fff;border-radius:18px;padding:1rem 1.15rem;margin:1.25rem 0 .3rem}
+.padilla-level-banner h2{color:#fff;margin:.1rem 0}.padilla-level-banner p{margin:.3rem 0 0;color:#e8edf2}
+.padilla-validation{border:1px solid #dfe6eb;background:#f8fafb;border-radius:14px;padding:.9rem 1rem;margin:1rem 0}.padilla-validation.complete{border-color:#64a979;background:#eef8f1}
+.padilla-summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.padilla-summary-card{border-left:5px solid #c94355}
+.padilla-compact-note{font-size:.9rem;color:#687985}
+@media(max-width:950px){.padilla-path-grid,.padilla-level-cards,.padilla-summary-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.padilla-path-grid,.padilla-level-cards,.padilla-summary-grid{grid-template-columns:1fr}.padilla-level-banner{display:block}}
 </style>
 </head>
 <body class="route-bac5">
 <main id="main">
 <section class="page-hero">
- <div class="breadcrumbs"><a href="index.html">Accueil</a> › <a href="bac5.html">Bac+5</a> › El caso Padilla</div>
- <span class="eyebrow">BAC+5 · PAVEL GIROUD · DOCUMENTAIRE · 2022</span>
- <h1><em>El caso Padilla</em> : une archive n’est jamais « juste montrée ».</h1>
- <p class="lead">Le film revient sur l’autocritique publique d’Heberto Padilla en 1971 à partir d’images d’archives longtemps restées hors de la vue du public. L’enjeu du concours est historique ET cinématographique.</p>
-</section>
+<div class="breadcrumbs"><a href="index.html">Accueil</a> › <a href="bac5.html">Bac+5</a> › El caso Padilla</div>
+<span class="eyebrow">BAC+5 · PAVEL GIROUD · DOCUMENTAIRE · 2022</span>
+<h1><em>El caso Padilla</em> : une archive n’est jamais « juste montrée ».</h1>
+<p class="lead">Le film revient sur l’autocritique publique d’Heberto Padilla en 1971 à partir d’images d’archives longtemps restées hors de la vue du public. L’enjeu du concours est historique ET cinématographique.</p>
+</section><section class="section" id="padilla-parcours">
+<article class="card padilla-path">
+<div class="padilla-path-grid">
+<div>
+<span class="badge badge-gold">PARCOURS GUIDÉ · BAC+5 · PADILLA</span>
+<h2>Padilla — où en es-tu ?</h2>
+<p>Le mini-diagnostic dure environ 5 minutes. Il vérifie si tu sais distinguer <strong>l’affaire de 1971</strong>, <strong>l’archive audiovisuelle</strong> et <strong>le documentaire monté en 2022</strong>.</p>
+<div class="actions"><button class="btn btn-primary" id="padillaDiagStart" type="button">Faire le mini-diagnostic · 5 min</button><button class="btn btn-secondary" hidden="" id="padillaDiagReset" type="button">Refaire le diagnostic</button></div>
+</div>
+<div class="padilla-path-status" id="padillaPathStatus"><span class="eyebrow">POINT DE DÉPART</span><h3>Pas encore déterminé</h3><p>Après 10 questions, le site te conseillera Essentiel, Consolider, Concours ou Approfondir.</p></div>
+</div>
+<div class="padilla-diag hidden" id="padillaDiag">
+<div class="padilla-compact-note" id="padillaDiagCount"></div>
+<div class="padilla-diag-progress"><span id="padillaDiagBar"></span></div>
+<div class="padilla-diag-q" id="padillaDiagQuestion"></div>
+<div class="padilla-diag-options" id="padillaDiagOptions"></div>
+<div class="padilla-diag-nav"><button class="btn btn-secondary" id="padillaDiagPrev" type="button">← Précédent</button><button class="btn btn-primary" disabled="" id="padillaDiagNext" type="button">Suivant →</button></div>
+</div>
+<div class="padilla-level-cards">
+<button class="padilla-level-card" data-padilla-level="1" type="button"><span class="level-kicker">NIVEAU 1</span><strong>L’essentiel</strong><span>1971 · autocritique · intellectuels · rupture · film de 2022.</span></button>
+<button class="padilla-level-card" data-padilla-level="2" type="button"><span class="level-kicker">NIVEAU 2</span><strong>Consolider</strong><span>Archive · sélection · montage · dissidence · pouvoir · mémoire.</span></button>
+<button class="padilla-level-card" data-padilla-level="3" type="button"><span class="level-kicker">NIVEAU 3</span><strong>Concours</strong><span>Analyse filmique · axes · pièges · entraînement.</span></button>
+<button class="padilla-level-card" data-padilla-level="4" type="button"><span class="level-kicker">NIVEAU 4</span><strong>Approfondir</strong><span>Sources · voix du film · circulation internationale · mémoire critique.</span></button>
+</div>
+</article>
+</section><div class="padilla-level-panel" data-padilla-panel="1"><div class="padilla-level-banner"><div><span class="eyebrow">NIVEAU 1</span><h2>L’essentiel</h2><p>Je comprends l’affaire Padilla, sa portée intellectuelle et la différence entre l’événement de 1971, son enregistrement et le film de 2022.</p></div><button class="btn btn-secondary" data-padilla-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Résumé essentiel</span><h2>Quatre repères pour entrer dans <em>El caso Padilla</em>.</h2></div></div>
+<div class="padilla-summary-grid">
+<article class="card padilla-summary-card"><h3>Un événement de 1971</h3><p>Après son arrestation, Heberto Padilla est libéré puis prononce une autocritique publique devant le milieu des écrivains cubains, tout en mettant en cause plusieurs collègues.</p></article>
+<article class="card padilla-summary-card"><h3>Une rupture intellectuelle</h3><p>L’affaire provoque une forte réaction d’intellectuels internationaux auparavant proches ou sympathisants de la Révolution cubaine et devient un moment de rupture dans leurs rapports avec Cuba.</p></article>
+<article class="card padilla-summary-card"><h3>Une archive à analyser</h3><p>L’enregistrement possède une force documentaire, mais il n’est jamais transparent : il faut interroger ses conditions de production, sa sélection, son ordre et les relations créées par le montage.</p></article>
+<article class="card padilla-summary-card"><h3>1971 relu depuis 2022</h3><p>Le documentaire ne se contente pas de restituer un événement. Il le relit depuis un autre présent et transforme l’archive en objet de mémoire, de réflexion sur la dissidence et sur les rapports entre intellectuels et pouvoir.</p></article>
+</div>
+</section><section class="section">
+<div class="grid grid-2">
+<article class="card">
+<span class="badge badge-red">1971</span><h2>L’affaire Padilla</h2>
+<p>Après son arrestation, le poète Heberto Padilla est libéré puis comparaît devant le milieu des écrivains cubains. Il prononce une autocritique, se présente comme contre-révolutionnaire et met également en cause plusieurs collègues, dont son épouse.</p>
+<p>L’affaire provoque une forte réaction d’intellectuels internationaux auparavant proches ou sympathisants de la Révolution cubaine et devient un moment majeur de rupture dans les rapports entre Cuba et une partie du monde intellectuel.</p>
+</article>
+<article class="card p-source">
+<span class="badge badge-gold">FILM AU PROGRAMME</span><h3>Espagne–Cuba · 2022 · 78 min</h3>
+<p>Le Festival de San Sebastián présente le film comme un documentaire construit autour de l’enregistrement de l’autocritique, complété par des interventions et archives de plusieurs intellectuels et de Fidel Castro.</p>
+<div class="actions"><a class="btn btn-secondary" href="https://www.sansebastianfestival.com/2022/sections_and_films/7/701977/in" rel="noopener" target="_blank">San Sebastián ↗</a><a class="btn btn-secondary" href="https://cultura.cervantes.es/nuevayork/es/el-caso-padilla/176191" rel="noopener" target="_blank">Instituto Cervantes ↗</a></div>
+</article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 1 · Validation</h3><p>Quand tu sais expliquer l’affaire et distinguer événement, archive et film, passe au niveau 2.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-pad-1" type="checkbox"/><span>Je peux expliquer l’affaire Padilla en 90 secondes sans transformer le documentaire en simple cours d’histoire.</span></label><label class="check-item"><input data-progress="bac5-pad-2" type="checkbox"/><span>Je distingue événement de 1971, archive audiovisuelle et film monté en 2022.</span></label></div><div class="padilla-validation" data-padilla-validation="1"></div></article></section></div><div class="padilla-level-panel" data-padilla-panel="2"><div class="padilla-level-banner"><div><span class="eyebrow">NIVEAU 2</span><h2>Consolider</h2><p>Je sais analyser ce que fait un documentaire avec une archive : retrouver, sélectionner, monter, relire, contextualiser et construire une mémoire.</p></div><button class="btn btn-secondary" data-padilla-top="" type="button">Retour au parcours</button></div><section class="section">
+<div class="section-head"><div><span class="eyebrow">Méthode filmique</span><h2>Quatre opérations à analyser.</h2></div></div>
+<div class="archive-flow">
+<article class="archive-step"><h3>1 · Retrouver</h3><p>Le film donne accès à un matériau audiovisuel longtemps peu accessible au public. L’existence même de l’archive devient un enjeu.</p></article>
+<article class="archive-step"><h3>2 · Sélectionner</h3><p>Un documentaire ne montre jamais « tout ». Le choix des images et des voix construit une lecture.</p></article>
+<article class="archive-step"><h3>3 · Monter</h3><p>La juxtaposition de l’autocritique et d’autres interventions crée des relations de contraste, d’écho et de contextualisation.</p></article>
+<article class="archive-step"><h3>4 · Relire</h3><p>Le film de 2022 relit 1971 depuis un autre présent. Il faut distinguer l’événement historique de sa reconstruction documentaire.</p></article>
+</div>
+</section><section class="section">
+<h2>Six axes d’analyse du documentaire</h2>
+<div class="p-grid">
+<article class="card"><h3>Parole contrainte</h3><p>Étudier les conditions dans lesquelles une autocritique publique devient simultanément parole personnelle, performance institutionnelle et instrument politique.</p></article>
+<article class="card"><h3>Dissidence</h3><p>Le film interroge la place de la critique dans un système révolutionnaire qui définit des limites à ce qui peut être dit publiquement.</p></article>
+<article class="card"><h3>Intellectuels et pouvoir</h3><p>Écrivains, artistes et autorités ne sont pas seulement témoins : ils occupent des positions différentes dans un champ culturel soumis à des rapports de force.</p></article>
+<article class="card"><h3>Archive et preuve</h3><p>L’image enregistrée possède une force documentaire, mais elle doit toujours être contextualisée : qui filme, dans quelles conditions, pour quel usage ?</p></article>
+<article class="card"><h3>Internationalisation</h3><p>La réaction de figures intellectuelles étrangères transforme une affaire cubaine en conflit international sur la Révolution et la liberté de création.</p></article>
+<article class="card"><h3>Mémoire du régime</h3><p>Revenir sur 1971 en 2022 produit une mémoire critique et rend visible ce qui a longtemps été peu accessible au public.</p></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 2 · Validation</h3><p>Quand tu sais analyser sélection, montage, contraste et contextualisation, passe au travail de concours.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-pad-3" type="checkbox"/><span>Je sais analyser sélection, montage, contraste et contextualisation des archives.</span></label></div><div class="padilla-validation" data-padilla-validation="2"></div></article></section></div><div class="padilla-level-panel" data-padilla-panel="3"><div class="padilla-level-banner"><div><span class="eyebrow">NIVEAU 3</span><h2>S’entraîner au concours</h2><p>Je ne transforme pas le film en simple cours d’histoire : je relie construction cinématographique, enjeux historiques et axes du programme.</p></div><button class="btn btn-secondary" data-padilla-top="" type="button">Retour au parcours</button></div><section class="section">
+<h2>Résonances possibles avec les axes</h2>
+<div class="grid grid-2">
+<article class="card"><h3>Rencontres avec d’autres cultures</h3><p>La Révolution cubaine est observée, soutenue puis critiquée depuis un espace intellectuel international ; les regards se croisent et se divisent.</p></article>
+<article class="card"><h3>Identités et échanges</h3><p>Circulation des textes, lettres, prises de position et images entre Cuba, Europe et Amériques ; identité révolutionnaire confrontée à la dissidence.</p></article>
+<article class="card"><h3>Vivre entre générations</h3><p>Résonance possible par l’écart entre la génération de 1971 et le regard documentaire de 2022 : comment transmettre une mémoire politique conflictuelle ?</p></article>
+<article class="card"><h3>Mémoire(s)</h3><p>Résonance majeure : archive, oubli, révélation, montage, réécriture du passé et conflit de récits.</p></article>
+<article class="card"><h3>Dominations et insoumissions</h3><p>Résonance majeure : contrôle de la parole, autocritique, normes révolutionnaires, dissidence et résistance intellectuelle.</p></article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Piège de concours</span><h2>Document historique ≠ analyse filmique.</h2></div></div>
+<div class="grid grid-2">
+<article class="card"><h3>Insuffisant</h3><p>« Le film montre que Padilla a été réprimé par le pouvoir cubain. »</p><p>→ Cela résume un enjeu historique mais ne dit rien de la construction du documentaire.</p></article>
+<article class="card"><h3>Analytique</h3><p>Observer comment Giroud sélectionne, ordonne et met en relation des archives pour transformer l’autocritique en objet de mémoire et de réflexion sur le contrôle culturel.</p></article>
+</div>
+</section><section class="section">
+<div class="section-head"><div><span class="eyebrow">Entraînement</span><h2>Historien ou analyste du film ?</h2></div></div>
+<div class="p-game" id="pGame"></div>
+</section><section class="section"><article class="card"><h3>Niveau 3 · Validation</h3><p>Le travail sur les axes est validé quand tu proposes des résonances argumentées sans assigner officiellement le film à un axe unique.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-pad-4" type="checkbox"/><span>Je peux relier le film à Mémoire(s) et Dominations/insoumissions, mais aussi proposer d’autres résonances argumentées.</span></label></div><div class="padilla-validation" data-padilla-validation="3"></div></article></section></div><div class="padilla-level-panel" data-padilla-panel="4"><div class="padilla-level-banner"><div><span class="eyebrow">NIVEAU 4</span><h2>Approfondir</h2><p>J’enrichis une maîtrise déjà solide en revenant aux sources et aux principales voix mobilisées par le documentaire.</p></div><button class="btn btn-secondary" data-padilla-top="" type="button">Retour au parcours</button></div><section class="section">
+<h2>Sources de travail</h2>
+<div class="grid grid-3">
+<article class="card"><h3>San Sebastián</h3><p>Synopsis, fiche technique et place de l’archive dans la narration du film.</p><a href="https://www.sansebastianfestival.com/2022/sections_and_films/7/701977/in" rel="noopener" target="_blank">Ouvrir ↗</a></article>
+<article class="card"><h3>Spain Audiovisual Hub</h3><p>Fiche institutionnelle du documentaire, participants et production.</p><a href="https://spainaudiovisualhub.digital.gob.es/es/panorama/documentales/el-caso-padilla" rel="noopener" target="_blank">Ouvrir ↗</a></article>
+<article class="card"><h3>Instituto Cervantes</h3><p>Présentation du film dans le cadre d’une réflexion sur liberté d’expression et pouvoir de la désinformation.</p><a href="https://cultura.cervantes.es/nuevayork/es/el-caso-padilla/176191" rel="noopener" target="_blank">Ouvrir ↗</a></article>
+</div>
+</section><section class="section"><article class="card"><h3>Niveau 4 · Validation</h3><p>Cette fiche d’approfondissement sert à mieux identifier les positions et fonctions des voix mobilisées par le film.</p><div class="checklist"><label class="check-item"><input data-progress="bac5-pad-5" type="checkbox"/><span>J’ai préparé une fiche sur les principales voix et figures intellectuelles mobilisées par le film.</span></label></div><div class="padilla-validation" data-padilla-validation="4"></div></article></section><section class="section"><article class="card">
+<h3>Niveau 4 · Approfondissement</h3>
+<p>Ce niveau prolonge l’analyse à partir des sources de travail déjà réunies sur le site. L’objectif n’est pas d’accumuler des informations, mais de mieux comprendre comment le film met en relation archive, témoignages, pouvoir, dissidence et mémoire.</p>
+</article></section></div>
 
-<section class="section">
- <div class="grid grid-2">
-  <article class="card">
-   <span class="badge badge-red">1971</span><h2>L’affaire Padilla</h2>
-   <p>Après son arrestation, le poète Heberto Padilla est libéré puis comparaît devant le milieu des écrivains cubains. Il prononce une autocritique, se présente comme contre-révolutionnaire et met également en cause plusieurs collègues, dont son épouse.</p>
-   <p>L’affaire provoque une forte réaction d’intellectuels internationaux auparavant proches ou sympathisants de la Révolution cubaine et devient un moment majeur de rupture dans les rapports entre Cuba et une partie du monde intellectuel.</p>
-  </article>
-  <article class="card p-source">
-   <span class="badge badge-gold">FILM AU PROGRAMME</span><h3>Espagne–Cuba · 2022 · 78 min</h3>
-   <p>Le Festival de San Sebastián présente le film comme un documentaire construit autour de l’enregistrement de l’autocritique, complété par des interventions et archives de plusieurs intellectuels et de Fidel Castro.</p>
-   <div class="actions"><a class="btn btn-secondary" href="https://www.sansebastianfestival.com/2022/sections_and_films/7/701977/in" target="_blank" rel="noopener">San Sebastián ↗</a><a class="btn btn-secondary" href="https://cultura.cervantes.es/nuevayork/es/el-caso-padilla/176191" target="_blank" rel="noopener">Instituto Cervantes ↗</a></div>
-  </article>
- </div>
-</section>
 
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Méthode filmique</span><h2>Quatre opérations à analyser.</h2></div></div>
- <div class="archive-flow">
-  <article class="archive-step"><h3>1 · Retrouver</h3><p>Le film donne accès à un matériau audiovisuel longtemps peu accessible au public. L’existence même de l’archive devient un enjeu.</p></article>
-  <article class="archive-step"><h3>2 · Sélectionner</h3><p>Un documentaire ne montre jamais « tout ». Le choix des images et des voix construit une lecture.</p></article>
-  <article class="archive-step"><h3>3 · Monter</h3><p>La juxtaposition de l’autocritique et d’autres interventions crée des relations de contraste, d’écho et de contextualisation.</p></article>
-  <article class="archive-step"><h3>4 · Relire</h3><p>Le film de 2022 relit 1971 depuis un autre présent. Il faut distinguer l’événement historique de sa reconstruction documentaire.</p></article>
- </div>
-</section>
 
-<section class="section">
- <h2>Six axes d’analyse du documentaire</h2>
- <div class="p-grid">
-  <article class="card"><h3>Parole contrainte</h3><p>Étudier les conditions dans lesquelles une autocritique publique devient simultanément parole personnelle, performance institutionnelle et instrument politique.</p></article>
-  <article class="card"><h3>Dissidence</h3><p>Le film interroge la place de la critique dans un système révolutionnaire qui définit des limites à ce qui peut être dit publiquement.</p></article>
-  <article class="card"><h3>Intellectuels et pouvoir</h3><p>Écrivains, artistes et autorités ne sont pas seulement témoins : ils occupent des positions différentes dans un champ culturel soumis à des rapports de force.</p></article>
-  <article class="card"><h3>Archive et preuve</h3><p>L’image enregistrée possède une force documentaire, mais elle doit toujours être contextualisée : qui filme, dans quelles conditions, pour quel usage ?</p></article>
-  <article class="card"><h3>Internationalisation</h3><p>La réaction de figures intellectuelles étrangères transforme une affaire cubaine en conflit international sur la Révolution et la liberté de création.</p></article>
-  <article class="card"><h3>Mémoire du régime</h3><p>Revenir sur 1971 en 2022 produit une mémoire critique et rend visible ce qui a longtemps été peu accessible au public.</p></article>
- </div>
-</section>
 
-<section class="section">
- <h2>Résonances possibles avec les axes</h2>
- <div class="grid grid-2">
-  <article class="card"><h3>Rencontres avec d’autres cultures</h3><p>La Révolution cubaine est observée, soutenue puis critiquée depuis un espace intellectuel international ; les regards se croisent et se divisent.</p></article>
-  <article class="card"><h3>Identités et échanges</h3><p>Circulation des textes, lettres, prises de position et images entre Cuba, Europe et Amériques ; identité révolutionnaire confrontée à la dissidence.</p></article>
-  <article class="card"><h3>Vivre entre générations</h3><p>Résonance possible par l’écart entre la génération de 1971 et le regard documentaire de 2022 : comment transmettre une mémoire politique conflictuelle ?</p></article>
-  <article class="card"><h3>Mémoire(s)</h3><p>Résonance majeure : archive, oubli, révélation, montage, réécriture du passé et conflit de récits.</p></article>
-  <article class="card"><h3>Dominations et insoumissions</h3><p>Résonance majeure : contrôle de la parole, autocritique, normes révolutionnaires, dissidence et résistance intellectuelle.</p></article>
- </div>
-</section>
 
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Piège de concours</span><h2>Document historique ≠ analyse filmique.</h2></div></div>
- <div class="grid grid-2">
-  <article class="card"><h3>Insuffisant</h3><p>« Le film montre que Padilla a été réprimé par le pouvoir cubain. »</p><p>→ Cela résume un enjeu historique mais ne dit rien de la construction du documentaire.</p></article>
-  <article class="card"><h3>Analytique</h3><p>Observer comment Giroud sélectionne, ordonne et met en relation des archives pour transformer l’autocritique en objet de mémoire et de réflexion sur le contrôle culturel.</p></article>
- </div>
-</section>
 
-<section class="section">
- <div class="section-head"><div><span class="eyebrow">Entraînement</span><h2>Historien ou analyste du film ?</h2></div></div>
- <div class="p-game" id="pGame"></div>
-</section>
 
-<section class="section">
- <h2>Sources de travail</h2>
- <div class="grid grid-3">
-  <article class="card"><h3>San Sebastián</h3><p>Synopsis, fiche technique et place de l’archive dans la narration du film.</p><a href="https://www.sansebastianfestival.com/2022/sections_and_films/7/701977/in" target="_blank" rel="noopener">Ouvrir ↗</a></article>
-  <article class="card"><h3>Spain Audiovisual Hub</h3><p>Fiche institutionnelle du documentaire, participants et production.</p><a href="https://spainaudiovisualhub.digital.gob.es/es/panorama/documentales/el-caso-padilla" target="_blank" rel="noopener">Ouvrir ↗</a></article>
-  <article class="card"><h3>Instituto Cervantes</h3><p>Présentation du film dans le cadre d’une réflexion sur liberté d’expression et pouvoir de la désinformation.</p><a href="https://cultura.cervantes.es/nuevayork/es/el-caso-padilla/176191" target="_blank" rel="noopener">Ouvrir ↗</a></article>
- </div>
-</section>
 
-<section class="section">
- <h2>Maîtrise Padilla</h2>
- <div class="checklist">
-  <label class="check-item"><input type="checkbox" data-progress="bac5-pad-1"><span>Je peux expliquer l’affaire Padilla en 90 secondes sans transformer le documentaire en simple cours d’histoire.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-pad-2"><span>Je distingue événement de 1971, archive audiovisuelle et film monté en 2022.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-pad-3"><span>Je sais analyser sélection, montage, contraste et contextualisation des archives.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-pad-4"><span>Je peux relier le film à Mémoire(s) et Dominations/insoumissions, mais aussi proposer d’autres résonances argumentées.</span></label>
-  <label class="check-item"><input type="checkbox" data-progress="bac5-pad-5"><span>J’ai préparé une fiche sur les principales voix et figures intellectuelles mobilisées par le film.</span></label>
- </div>
-</section>
 </main>
-<script src="assets/app.js"></script>
+<script src="assets/app.js"></script><script src="assets/padilla-path.js"></script>
 <script>
 (function(){
  const qs=[
